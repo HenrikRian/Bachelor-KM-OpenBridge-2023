@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "stylelint-no-px"
+  ],
+  "extends": [
+    "stylelint-config-twbs-bootstrap/scss"
+  ],
+  "rules": {
+    "property-blacklist": [
+      "transition"
+    ],
+    "meowtec/no-px": true
+  }
+}

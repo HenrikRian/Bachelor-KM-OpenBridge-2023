@@ -1,0 +1,12 @@
+@mixin overlay-outline-normal {
+  color: $color-on-background-active;
+
+  background-color: $color-outline-overlay-background-normal;
+  border: $border-width solid $color-outline-overlay-border-normal;
+}
+
+@mixin overlay-outline-hover {
+  background-color: $color-outline-overlay-background-hover;
+  border-color: $color-outline-overlay-border-hover;
+
+}

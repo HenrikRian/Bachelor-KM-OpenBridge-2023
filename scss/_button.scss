@@ -1,0 +1,19 @@
+.ob-btn {
+
+  display: inline-block;
+  min-width: $btn-width-min - 2 * $btn-padding-x;
+  padding: $btn-padding-y $btn-padding-x;
+
+  font-weight: $font-weight-bold;
+  line-height: $btn-line-height;
+  text-align: center;
+  vertical-align: middle;
+
+  border-radius: $btn-border-radius;
+
+  @include overlay-outline-normal();
+
+  &:hover {
+    @include overlay-outline-hover();
+  }
+}
