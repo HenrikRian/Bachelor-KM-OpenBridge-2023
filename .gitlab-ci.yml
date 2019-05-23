@@ -12,17 +12,17 @@ before_script:
 
 test_angular:
   script:
-    - ng test --watch=false --browsers=ChromeHeadless
+    - npm test
 
 lint:
   script:
-   - npm lint dist ng-test-headless bundlesize
+   - npm run lint
 
 dist:
   script:
-    - npm dist
+    - npm run dist
 
 bundlesize:
   script:
-    - npm bundlesize
+    - npm run bundlesize
 
