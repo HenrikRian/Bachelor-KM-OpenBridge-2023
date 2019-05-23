@@ -7,14 +7,22 @@ cache:
   paths:
   - node_modules/
 
-test_chrome:
+before_script:
+  - npm install
+
+test_angular:
   script:
-    - google-chrome --headless --disable-gpu --no-sandbox --remote-debugging-port=9222
+    - ng test --watch=false --browsers=ChromeHeadless
 
-test_async:
+lint:
   script:
-   - npm install
-   - npm test
+   - npm lint dist ng-test-headless bundlesize
 
+dist:
+  script:
+    - npm dist
 
+bundlesize:
+  script:
+    - npm bundlesize
 
