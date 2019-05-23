@@ -24,5 +24,6 @@ dist:
 
 bundlesize:
   script:
+    - npm run css
     - npm run bundlesize
 
