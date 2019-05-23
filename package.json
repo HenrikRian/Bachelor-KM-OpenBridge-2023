@@ -58,6 +58,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "bundlesize": "0.15.3",
     "clean-css-cli": "^4.3.0",
     "codelyzer": "~4.5.0",
     "find-unused-sass-variables": "^0.3.3",
@@ -77,5 +78,14 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/css/openbridge.css",
+      "maxSize": "3 kB"
+    },
+    {
+      "path": "./dist/css/openbridge.min.css",
+      "maxSize": "1 kB"
+    }]
 }
