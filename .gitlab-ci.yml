@@ -7,12 +7,14 @@ cache:
   paths:
   - node_modules/
 
+test_chrome:
+  script:
+    - google-chrome --headless --disable-gpu --no-sandbox --remote-debugging-port=9222
+
 test_async:
   script:
    - npm install
    - npm test
 
-test_chrome:
-  script:
-    - chrome --headless --disable-gpu --no-sandbox --remote-debugging-port=9222
+
 
