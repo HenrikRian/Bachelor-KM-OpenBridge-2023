@@ -12,3 +12,7 @@ test_async:
    - npm install
    - npm test
 
+test_chrome:
+  script:
+    - chrome --headless --disable-gpu --no-sandbox --remote-debugging-port=9222
+
