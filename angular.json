@@ -27,8 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "scss/openbridge.scss"
+              "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
