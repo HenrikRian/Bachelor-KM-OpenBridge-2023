@@ -15,5 +15,7 @@
 
   &:hover {
     @include overlay-outline-hover();
+
+    cursor: pointer;
   }
 }
