@@ -1,9 +1,14 @@
 //$color-surface-backdrop: #c0c0c0 !default;
 $color-surface-background: #fff !default;
 //$color-surface-app: #f2f2f2 !default;
-$color-surface-global: #f2f2f2 !default;
+$color-surface-global: #d5d5d5 !default;
 
 $color-on-background-active: #000c !default;
+$color-on-background-focused: rgba(0, 0, 0, .9) !default;
+$color-on-background-unfocused: rgba(0, 0, 0, .7) !default;
+
+$color-border-divider: rgba(0, 0, 0, .12) !default;
+$color-border-outline: rgba(0, 0, 0, .2) !default;
 
 /*
 $color-indent-overlay-background-normal: rgba(0, 0, 0, .0) !default;
