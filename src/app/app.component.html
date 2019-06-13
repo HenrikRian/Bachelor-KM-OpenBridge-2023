@@ -1,5 +1,8 @@
 <app-top-bar></app-top-bar>
 <div style="padding: 100px; ">
-  <app-button [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"></app-button>
+  <app-button-normal [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"></app-button-normal>
+  <app-button-raised [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"></app-button-raised>
+  <app-button-normal [label]="'Select button'" (onclick)="toggleSelected()" [isSelected]="isSelected"></app-button-normal>
+  <app-button-raised [label]="'Select button'" (onclick)="toggleSelected()" [isSelected]="isSelected"></app-button-raised>
 </div>
 

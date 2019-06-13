@@ -1,3 +1,13 @@
+@mixin btn-selected {
+  &.ob-selected {
+    @include overlay-outline-selected();
+
+    &:hover {
+      @include overlay-outline-hover();
+    }
+  }
+}
+
 .ob-btn {
 
   display: inline-block;
@@ -12,11 +22,29 @@
 
   border-radius: $btn-border-radius;
 
-  @include overlay-outline-normal();
-
   &:hover {
-    @include overlay-outline-hover();
-
     cursor: pointer;
   }
+
+  &.ob-normal {
+    @include overlay-outline-normal();
+    @include btn-selected();
+
+    &:hover {
+      @include overlay-outline-hover();
+    }
+  }
+
+  &.ob-raised {
+    @include overlay-outline-raised();
+    @include btn-selected();
+
+    &:hover {
+      @include overlay-outline-hover();
+    }
+  }
+
+
 }
+
+

@@ -33,7 +33,7 @@ describe('ButtonComponent', () => {
     expect(button.textContent).toBe(label);
   });
 
-  it('should have class ob-btn', () => {
+  it('should have styleClasses ob-btn', () => {
     expect(button.className).toContain('ob-btn');
   });
 

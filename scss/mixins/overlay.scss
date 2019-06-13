@@ -5,6 +5,20 @@
   border: $border-width solid $color-outline-overlay-border-normal;
 }
 
+@mixin overlay-outline-raised {
+  color: #fff;
+
+  background-color: $color-on-background-unfocused;
+  border: $border-width solid $color-on-background-unfocused;
+}
+
+@mixin overlay-outline-selected {
+  color: #fff;
+
+  background-color: $color-ui-primary;
+  border: $border-width solid $color-border-on-selected-normal;
+}
+
 @mixin overlay-outline-hover {
   color: $color-on-background-focused;
 
