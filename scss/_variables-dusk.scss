@@ -1,7 +1,11 @@
+$color-ui-primary: #00f !default;
+
 //$color-surface-backdrop: #121212 !default;
 $color-surface-background: #1e1e1e !default;
 //$color-surface-app: #303030 !default;
 $color-surface-global: #3c3c3c !default;
+
+$color-border-on-selected-normal: rgba(0, 0, 0, .06) !default;
 
 $color-on-background-active: #000 !default;
 $color-on-background-focused: rgba(255, 255, 255, .9) !default;

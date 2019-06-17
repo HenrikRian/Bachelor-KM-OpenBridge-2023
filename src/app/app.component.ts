@@ -8,8 +8,12 @@ import {PaletteSwitchService} from './palette-switch.service';
 })
 export class AppComponent {
   title = 'openbridge-angular';
-
+  isSelected = true;
   constructor(private palletSwitchService: PaletteSwitchService) {
 
+  }
+
+  toggleSelected() {
+    this.isSelected = !this.isSelected;
   }
 }

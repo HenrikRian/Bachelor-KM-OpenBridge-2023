@@ -1,3 +1,9 @@
+@mixin btn-selected {
+  &.ob-selected {
+    @include overlay-outline-selected();
+  }
+}
+
 .ob-btn {
 
   display: inline-block;
@@ -12,11 +18,22 @@
 
   border-radius: $btn-border-radius;
 
-  @include overlay-outline-normal();
-
   &:hover {
-    @include overlay-outline-hover();
-
     cursor: pointer;
   }
+
+
+  &.ob-normal {
+    @include btn-normal-style();
+    @include btn-selected();
+  }
+
+  &.ob-raised {
+    @include btn-raised-style();
+    @include btn-selected();
+  }
+
+
 }
+
+

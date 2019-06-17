@@ -1,0 +1,2 @@
+@mixin btn-normal-style { @include overlay-outline-normal(); }
+@mixin btn-raised-style { @include overlay-outline-raised(); }
