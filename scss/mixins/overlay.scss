@@ -3,6 +3,13 @@
 
   background-color: $color-outline-overlay-background-normal;
   border: $border-width solid $color-outline-overlay-border-normal;
+
+  &:hover {
+    color: $color-on-background-focused;
+
+    background-color: $color-outline-overlay-background-hover;
+    border-color: $color-outline-overlay-border-hover;
+  }
 }
 
 @mixin overlay-outline-raised {
@@ -17,12 +24,4 @@
 
   background-color: $color-ui-primary;
   border: $border-width solid $color-border-on-selected-normal;
-}
-
-@mixin overlay-outline-hover {
-  color: $color-on-background-focused;
-
-  background-color: $color-outline-overlay-background-hover;
-  border-color: $color-outline-overlay-border-hover;
-
 }

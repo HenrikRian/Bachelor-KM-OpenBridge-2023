@@ -1,10 +1,6 @@
 @mixin btn-selected {
   &.ob-selected {
     @include overlay-outline-selected();
-
-    &:hover {
-      @include overlay-outline-hover();
-    }
   }
 }
 
@@ -26,22 +22,15 @@
     cursor: pointer;
   }
 
-  &.ob-normal {
-    @include overlay-outline-normal();
-    @include btn-selected();
 
-    &:hover {
-      @include overlay-outline-hover();
-    }
+  &.ob-normal {
+    @include btn-normal-style();
+    @include btn-selected();
   }
 
   &.ob-raised {
-    @include overlay-outline-raised();
+    @include btn-raised-style();
     @include btn-selected();
-
-    &:hover {
-      @include overlay-outline-hover();
-    }
   }
 
 
