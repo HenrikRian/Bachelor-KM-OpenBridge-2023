@@ -1,13 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {ButtonComponent} from './button/button.component';
+import {ButtonComponent} from './components/button/button.component';
+import {TopBarComponent} from './components/navigation/top-bar/top-bar.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        ButtonComponent
+        ButtonComponent,
+        TopBarComponent
       ],
     }).compileComponents();
   }));

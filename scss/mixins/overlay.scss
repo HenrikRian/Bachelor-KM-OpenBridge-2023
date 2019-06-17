@@ -6,6 +6,8 @@
 }
 
 @mixin overlay-outline-hover {
+  color: $color-on-background-focused;
+
   background-color: $color-outline-overlay-background-hover;
   border-color: $color-outline-overlay-border-hover;
 
