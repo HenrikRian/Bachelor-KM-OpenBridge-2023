@@ -10,8 +10,14 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to openbridge-angular!');
+    expect(page.getTitleText()).toEqual('App title');
   });
+
+  it('should have css tag', () => {
+    page.navigateTo();
+    const titleElement = page.getTitle();
+    titleElement.getCssValue()
+  })
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
