@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-const quixote = require('quixote');
-
-import { TopBarComponent } from './top-bar.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {TopBarComponent} from './top-bar.component';
 import * as assert from 'assert';
+
+const quixote = require('quixote');
 
 describe('TopBarComponent', () => {
   let component: TopBarComponent;
@@ -10,9 +10,9 @@ describe('TopBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopBarComponent ]
+      declarations: [TopBarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -30,7 +30,8 @@ describe('TopBarStyle', () => {
 
   let frame;
   let container;
-  let button;
+  let navbarContainer;
+  let rem;
 
   beforeAll((done) => {
     frame = quixote.createFrame({
@@ -42,26 +43,66 @@ describe('TopBarStyle', () => {
     frame.remove();
   });
 
-  beforeEach(() =>  {
+  beforeEach(() => {
     frame.reset();
-    container = frame.add(
-      '<div>' +
-      '  <a id=\'button\' class=\'button\' href=\'#anything\'>foo</a>' +
-      '</div>'
-    );
-    button = frame.get('#button');
+    container = frame.add(`
+<div class="ob-nav-top-bar" id="navbar-container">
+  <div class="ob-menu-container">
+    <div class="ob-nav-item ob-nav-btn" >
+      <i class="material-icons" id="first-icon">menu</i>
+    </div>
+    <div class="ob-sub-title ob-nav-item">App title</div>
+  </div>
+  <div class="ob-menu-container">
+    <div class="ob-divider"></div>
+    <div class="ob-nav-item ob-nav-btn">
+      <i class="material-icons">notifications</i>
+    </div>
+    <div class="ob-nav-item ob-nav-btn" >
+      <i class="material-icons" id="second-last-icon">brightness_4</i>
+    </div>
+    <div class="ob-nav-item ob-nav-btn">
+      <i class="material-icons" id="last-icon">apps</i>
+    </div>
+  </div>
+</div>
+  `);
+    navbarContainer = frame.get('#navbar-container');
+    rem = navbarContainer.calculatePixelValue('1rem');
   });
 
-  it('fills its container', () =>  {
-    button.assert({
-      width: container.width
+  it('First icon is 2 rem from edges', () => {
+    const firstIcon = frame.get('#first-icon');
+    firstIcon.assert({
+      left: navbarContainer.left.plus(2 * rem),
+      top: navbarContainer.top.plus(2 * rem),
+      bottom: navbarContainer.bottom.minus(2 * rem),
     });
   });
 
-  it('has styled text', () => {
-    assert.equal(button.getRawStyle('text-align'), 'left', 'should be centered');
-    assert.equal(button.getRawStyle('text-decoration'), 'none', 'should not be underlined');
-    assert.equal(button.getRawStyle('text-transform'), 'uppercase', 'should be uppercase');
+  it('Last icon is 2 rem from edges', () => {
+    const lastIcon = frame.get('#last-icon');
+    lastIcon.assert({
+      right: navbarContainer.right.minus(2 * rem),
+      top: navbarContainer.top.plus(2 * rem),
+      bottom: navbarContainer.bottom.minus(2 * rem),
+    });
+  });
+
+  it('Icons shold be 3 rem apart', () => {
+    const secondLastIcon = frame.get('#second-last-icon');
+    const lastIcon = frame.get('#last-icon');
+    lastIcon.assert({
+      left: secondLastIcon.right.plus(3 * rem)
+    });
+  });
+
+  it('Icons should be 3X3 rem', () => {
+    const icon = frame.get('#last-icon');
+    icon.assert({
+      width: 3 * rem,
+      height: 3 * rem
+    });
   });
 
 });

@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/material-icons/css/material-icons.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -85,7 +86,8 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/styles.scss",
-              "scss/openbridge-day.scss"
+              "scss/openbridge-day.scss",
+              "node_modules/material-icons/css/material-icons.scss"
             ],
             "scripts": [],
             "assets": [
