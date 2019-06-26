@@ -39,7 +39,9 @@
     "test-all": "npm-run-all lint dist test bundlesize",
     "netlify": "npm run dist && npm run release-sri",
     "watch": "npm-run-all --parallel watch-*",
-    "watch-css": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\""
+    "watch-css": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -63,9 +65,17 @@
     "@angular/cli": "~7.3.9",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-a11y": "^5.1.9",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/angular": "^5.1.9",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "babel-loader": "^8.0.6",
     "bundlesize": "0.15.3",
     "clean-css-cli": "^4.3.0",
     "codelyzer": "~4.5.0",
