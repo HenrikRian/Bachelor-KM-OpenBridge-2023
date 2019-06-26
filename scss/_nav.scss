@@ -12,73 +12,48 @@
   .ob-menu-container {
     display: flex;
 
-    height: $nav-top-bar-container-height;
-    padding: $nav-top-bar-container-padding;
+    height: $nav-top-bar-height;
+
 
     .ob-nav-item {
-      margin: 0 ($nav-item-margin-x);
+      padding: ($nav-top-bar-height - $nav-btn-height) / 2;
+
       color: $color-on-background-unfocused;
 
-      &:first-child {
-        margin-left: 0;
-      }
+      & > * {
+        margin: 0 ($nav-top-bar-spacing / 2);
 
-      &:last-child {
-        margin-right: 0;
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
 
     .ob-nav-btn {
       $border-width-and-padding: $nav-btn-padding + $border-width;
-      position: relative;
-      width: $nav-btn-height;
+      display: flex;
       height: $nav-btn-height;
 
 
-      padding: $nav-btn-padding;
-      margin: (- $border-width-and-padding) ($nav-item-margin-x - $border-width-and-padding);
-
       cursor: pointer;
-      background-color: rgba(0, 0, 0, 0);
-      border-color: rgba(0, 0, 0, 0);
-      border-style: solid;
-      border-width: $border-width;
-      border-radius: $nav-btn-border-radius;
-
 
       &:hover {
         background-color: rgba(0, 0, 0, .12);
-        border-color: rgba(0, 0, 0, .06);
-      }
-
-      &:first-child {
-        margin-left: - $border-width-and-padding;
-      }
-
-      &:last-child {
-        margin-right: - $border-width-and-padding;
       }
     }
 
     .ob-divider {
-      position: relative;
-      top: ($nav-top-bar-container-height - $nav-divider-height) / 2;
       width: $nav-divider-width;
       height: $nav-divider-height;
-      margin: 0 ($nav-divider-space-between-divider-and-icon - $nav-item-margin-x);
+
+      margin: (( $nav-top-bar-height - $nav-divider-height ) / 2) 0;
 
       background-color: $color-border-divider;
-
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
     }
-
 
     .ob-sub-title {
       font-size: $nav-sub-title-font-size;

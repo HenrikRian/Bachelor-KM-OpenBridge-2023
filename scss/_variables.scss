@@ -4,7 +4,7 @@ $base-size: 1rem !default; // when converting from px in style guide assume base
 
 $border-width: .125 * $base-size !default;
 
-$border-radius-normal: .5 * $base-size !default;
+//$border-radius-normal: .5 * $base-size !default;
 $border-radius-large: .75 * $base-size !default;
 
 $btn-line-height: 1 !default;
@@ -26,19 +26,13 @@ $font-weight-bold: 600 !default;
 $nav-top-bar-height: 7 * $base-size !default;
 $nav-top-bar-width: 100% !default;
 
-$nav-top-bar-container-padding: 2 * $base-size !default;
-$nav-top-bar-container-height: $nav-top-bar-height - 2 * $nav-top-bar-container-padding !default;
-
-$nav-item-margin-x: 1.5 * $base-size !default;
-
 $nav-btn-height: 3 * $base-size !default;
 $nav-btn-padding: .5 * $base-size !default;
-$nav-btn-border-radius: $border-radius-normal !default;
 
+$nav-top-bar-spacing: ($nav-top-bar-height - $nav-btn-height) / 2 !default;
 
 $nav-divider-height: 4 * $base-size !default;
 $nav-divider-width: .125 * $base-size !default;
-$nav-divider-space-between-divider-and-icon: 2 * $base-size !default;
 
 $nav-sub-title-font-size: 2.5 * $base-size !default;
 $nav-sub-title-letter-spacing: .025 * $base-size !default;

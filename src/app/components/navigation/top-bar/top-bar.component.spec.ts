@@ -48,8 +48,9 @@ describe('TopBarStyle', () => {
     container = frame.add(`
 <div class="ob-nav-top-bar" id="navbar-container">
   <div class="ob-menu-container">
-    <div class="ob-nav-item ob-nav-btn" >
-      <i class="material-icons" id="icon-hamburg">menu</i>
+    <div class="ob-nav-item ob-nav-btn" id="btn-hamburger">
+      <i class="material-icons" id="icon-hamburger">menu</i>
+      <div class="ob-nav-menu-title" id="title-hamburger">Ecdis</div>
     </div>
     <div class="ob-sub-title ob-nav-item" id="title">App title</div>
   </div>
@@ -72,7 +73,7 @@ describe('TopBarStyle', () => {
   });
 
   it('First icon is 2 rem from edges', () => {
-    const firstIcon = frame.get('#icon-hamburg');
+    const firstIcon = frame.get('#icon-hamburger');
     firstIcon.assert({
       left: navbarContainer.left.plus(2 * rem),
       top: navbarContainer.top.plus(2 * rem),
@@ -89,13 +90,18 @@ describe('TopBarStyle', () => {
     });
   });
 
-  it('Icons should be 3 rem apart', () => {
-    const secondLastIcon = frame.get('#icon-middle');
-    const lastIcon = frame.get('#icon-right');
-    lastIcon.assert({
-      left: secondLastIcon.right.plus(3 * rem)
+  it('Menu name should be 2 rem from everything', () => {
+    const menuName = frame.get('#title-hamburger');
+    const menuIcion = frame.get('#icon-hamburger');
+    const menuBtn = frame.get('#btn-hamburger');
+    menuName.assert({
+      top: container.top.plus(2 * rem),
+      bottom: container.bottom.minus(2 * rem),
+      left: menuIcion.right.plus(2 * rem),
+      right: menuBtn.right.minus(2 * rem)
     });
   });
+
 
   it('Icons should be 3X3 rem', () => {
     const icon = frame.get('#icon-right');
@@ -105,27 +111,43 @@ describe('TopBarStyle', () => {
     });
   });
 
-  it('Title should be 3 rem from icon', () => {
-    const secondLastIcon = frame.get('#icon-hamburg');
-    const lastIcon = frame.get('#title');
-    lastIcon.assert({
-      left: secondLastIcon.right.plus(3 * rem)
-    });
-  });
-
   it('Button should be squared', () => {
     const btn = frame.get('#btn-right');
+    // noinspection JSSuspiciousNameCombination
     btn.assert({
       width: btn.height
     });
   });
 
-  it('Divider should be 2 rem from icon', () => {
-    const divider = frame.get('#divider');
-    const icon = frame.get('#icon-left');
-    divider.assert({
-      right: icon.left.minus(2 * rem)
+  it('Button should have same height as navbar', () => {
+    const btn = frame.get('#btn-right');
+    btn.assert({
+      top: navbarContainer.top,
+      bottom: navbarContainer.bottom,
     });
+  });
+
+  it('Divider should be adjacent to button', () => {
+    const divider = frame.get('#divider');
+    const icon = frame.get('#btn-left');
+    divider.assert({
+      right: icon.left
+    });
+  });
+
+  it('Buttons should be adjacent', () => {
+    const btnLeft = frame.get('#btn-left');
+    const btnMiddle = frame.get('#btn-middle');
+    btnLeft.assert({
+      right: btnMiddle.left
+    });
+  });
+
+  it('Spacing between divider and the container should be equal on top and bottom', () => {
+    const divider = frame.get('#divider');
+    const topDistance = divider.getRawPosition().top - container.getRawPosition().top;
+    const bottomDistance = divider.getRawPosition().bottom - container.getRawPosition().bottom;
+    expect(topDistance).toBeCloseTo(-bottomDistance, 0);
   });
 
 });
