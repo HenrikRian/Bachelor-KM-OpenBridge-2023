@@ -51,7 +51,7 @@ describe('TopBarStyle', () => {
     <div class="ob-nav-item ob-nav-btn" >
       <i class="material-icons" id="first-icon">menu</i>
     </div>
-    <div class="ob-sub-title ob-nav-item">App title</div>
+    <div class="ob-sub-title ob-nav-item" id="title">App title</div>
   </div>
   <div class="ob-menu-container">
     <div class="ob-divider"></div>
@@ -61,7 +61,7 @@ describe('TopBarStyle', () => {
     <div class="ob-nav-item ob-nav-btn" >
       <i class="material-icons" id="second-last-icon">brightness_4</i>
     </div>
-    <div class="ob-nav-item ob-nav-btn">
+    <div class="ob-nav-item ob-nav-btn" id="icon-btn">
       <i class="material-icons" id="last-icon">apps</i>
     </div>
   </div>
@@ -102,6 +102,21 @@ describe('TopBarStyle', () => {
     icon.assert({
       width: 3 * rem,
       height: 3 * rem
+    });
+  });
+
+  it('Title should be 3 rem from icon', () => {
+    const secondLastIcon = frame.get('#first-icon');
+    const lastIcon = frame.get('#title');
+    lastIcon.assert({
+      left: secondLastIcon.right.plus(3 * rem)
+    });
+  });
+
+  it('Button should be squared', () => {
+    const btn = frame.get('#icon-btn');
+    btn.assert({
+      width: btn.height
     });
   });
 

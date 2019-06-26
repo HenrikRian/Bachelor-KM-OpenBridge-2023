@@ -31,7 +31,9 @@
     .ob-nav-btn {
       $border-width-and-padding: $nav-btn-padding + $border-width;
       position: relative;
+      width: $nav-btn-height;
       height: $nav-btn-height;
+
 
       padding: $nav-btn-padding;
       margin: (- $border-width-and-padding) ($nav-item-margin-x - $border-width-and-padding);
