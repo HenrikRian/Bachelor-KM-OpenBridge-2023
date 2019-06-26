@@ -6,7 +6,7 @@
     "ng-start": "ng serve",
     "build": "ng build",
     "ng-test": "ng test",
-    "test": "npm-run-all css-main test-once-headless test-e2e lint bundlesize",
+    "test": "npm-run-all css-main test-once-headless lint bundlesize",
     "test-once-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "test-e2e": "ng e2e",
     "start": "npm-run-all --parallel watch ng-start",
