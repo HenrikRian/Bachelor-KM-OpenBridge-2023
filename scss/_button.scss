@@ -16,12 +16,8 @@
   text-align: center;
   vertical-align: middle;
 
+  cursor: pointer;
   border-radius: $btn-border-radius;
-
-  &:hover {
-    cursor: pointer;
-  }
-
 
   &.ob-normal {
     @include btn-normal-style();
@@ -32,7 +28,37 @@
     @include btn-raised-style();
     @include btn-selected();
   }
+}
 
+.ob-toggle-switch {
+  @include indent();
+
+  display: flex;
+  align-items: center;
+
+  width: $btn-width-toggle;
+  height: $btn-height-small;
+
+  border-radius: $btn-height-small;
+
+  $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
+
+  $transition-time: .3s;
+  transition: background-color $transition-time;
+
+  .ob-thumb {
+    @include thumb();
+    margin: $space-x;
+    transition: margin-left $transition-time;
+  }
+
+  &.ob-checked {
+    background-color: $color-alert-running;
+
+    .ob-thumb {
+      margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
+    }
+  }
 
 }
 

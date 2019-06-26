@@ -6,6 +6,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { TopBarComponent } from './components/navigation/top-bar/top-bar.component';
 import { ButtonNormalComponent } from './components/button/button-normal/button-normal.component';
 import { ButtonRaisedComponent } from './components/button/button-raised/button-raised.component';
+import { ButtonToggleComponent } from './components/button-toggle/button-toggle.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ButtonRaisedComponent } from './components/button/button-raised/button-
     ButtonComponent,
     TopBarComponent,
     ButtonNormalComponent,
-    ButtonRaisedComponent
+    ButtonRaisedComponent,
+    ButtonToggleComponent
   ],
   imports: [
     BrowserModule
