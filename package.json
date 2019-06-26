@@ -93,7 +93,7 @@
   "bundlesize": [
     {
       "path": "./dist/css/openbridge-day.css",
-      "maxSize": "5 kB"
+      "maxSize": "10 kB"
     },
     {
       "path": "./dist/css/openbridge-day.min.css",
