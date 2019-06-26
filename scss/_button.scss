@@ -46,7 +46,8 @@
   $transition-time: .3s;
   transition: background-color $transition-time;
 
-  .ob-thumb {
+  &::after {
+    content: "";
     @include thumb();
     margin: $space-x;
     transition: margin-left $transition-time;
@@ -55,7 +56,7 @@
   &.ob-checked {
     background-color: $color-alert-running;
 
-    .ob-thumb {
+    &::after {
       margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
     }
   }
