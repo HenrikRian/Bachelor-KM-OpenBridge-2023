@@ -15,13 +15,28 @@
     height: $nav-top-bar-container-height;
     padding: $nav-top-bar-container-padding;
 
+    .ob-nav-item {
+      margin: 0 ($nav-item-margin-x);
+      color: $color-on-background-unfocused;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
     .ob-nav-btn {
+      $border-width-and-padding: $nav-btn-padding + $border-width;
       position: relative;
-      top: - ($border-width + $nav-btn-padding);
+      width: $nav-btn-height;
       height: $nav-btn-height;
 
+
       padding: $nav-btn-padding;
-      margin: 0 ($nav-item-margin-x - $nav-btn-padding - $border-width);
+      margin: (- $border-width-and-padding) ($nav-item-margin-x - $border-width-and-padding);
 
       cursor: pointer;
       background-color: rgba(0, 0, 0, 0);
@@ -35,6 +50,14 @@
         background-color: rgba(0, 0, 0, .12);
         border-color: rgba(0, 0, 0, .06);
       }
+
+      &:first-child {
+        margin-left: - $border-width-and-padding;
+      }
+
+      &:last-child {
+        margin-right: - $border-width-and-padding;
+      }
     }
 
     .ob-divider {
@@ -42,13 +65,10 @@
       top: ($nav-top-bar-container-height - $nav-divider-height) / 2;
       width: $nav-divider-width;
       height: $nav-divider-height;
+      margin: 0 ($nav-divider-space-between-divider-and-icon - $nav-item-margin-x);
 
       background-color: $color-border-divider;
-    }
 
-    .ob-nav-item {
-      margin: 0 $nav-item-margin-x;
-      color: $color-on-background-unfocused;
 
       &:first-child {
         margin-left: 0;
@@ -58,6 +78,7 @@
         margin-right: 0;
       }
     }
+
 
     .ob-sub-title {
       font-size: $nav-sub-title-font-size;

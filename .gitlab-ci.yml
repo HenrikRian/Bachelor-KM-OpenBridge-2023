@@ -10,20 +10,6 @@ cache:
 before_script:
   - npm install
 
-test_angular:
+test:
   script:
     - npm test
-
-lint:
-  script:
-   - npm run lint
-
-dist:
-  script:
-    - npm run dist
-
-bundlesize:
-  script:
-    - npm run css
-    - npm run bundlesize
-

@@ -6,13 +6,16 @@
     "ng-start": "ng serve",
     "build": "ng build",
     "ng-test": "ng test",
-    "test": "ng test --watch=false --browsers=ChromeHeadless",
+    "test": "npm-run-all css-main test-once-headless lint bundlesize",
+    "test-once-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test-e2e": "ng e2e",
     "start": "npm-run-all --parallel watch ng-start",
+    "start-day": "ng serve openbridge-angular-day",
     "e2e": "ng e2e",
     "linkinator": "linkinator _gh_pages --recurse --silent --skip \"^(?!http://localhost)\"",
     "bundlesize": "bundlesize",
     "css": "npm-run-all css-compile css-prefix css-minify",
-    "css-main": "npm-run-all css-lint css-compile css-prefix css-minify css-copy",
+    "css-main": "npm-run-all css-compile css-copy css-lint css-prefix css-minify",
     "css-compile": "npm-run-all --parallel css-compile-*",
     "css-compile-day": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/openbridge-day.scss dist/css/openbridge-day.css",
     "css-compile-dusk": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/openbridge-dusk.scss dist/css/openbridge-dusk.css",
@@ -49,6 +52,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "material-icons": "^0.3.1",
     "nodemon": "^1.19.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
@@ -77,6 +81,7 @@
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.2",
     "protractor": "~5.4.0",
+    "quixote": "^0.14.0",
     "shx": "^0.3.2",
     "stylelint": "^10.0.1",
     "stylelint-config-twbs-bootstrap": "^0.3.1",
@@ -88,7 +93,7 @@
   "bundlesize": [
     {
       "path": "./dist/css/openbridge-day.css",
-      "maxSize": "5 kB"
+      "maxSize": "10 kB"
     },
     {
       "path": "./dist/css/openbridge-day.min.css",

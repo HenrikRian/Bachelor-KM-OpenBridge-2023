@@ -2,6 +2,7 @@
 import {Inject, Injectable} from '@angular/core';
 // We import DOCUMENT from @angular/common. Be careful, because the old import from '@angular/platform-browser' is deprecated.
 import {DOCUMENT} from '@angular/common';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,21 @@ export class PaletteSwitchService {
   private cssPostfix = '.css';
 
   constructor(@Inject(DOCUMENT) private document: HTMLDocument) {
+    if (environment.disablePalettes) {
+      return;
+    }
     this.styleSheetDomElement = this.document.createElement('link');
     this.styleSheetDomElement.setAttribute('rel', 'stylesheet');
     this.setStyle(this.styles[this.styleId]);
+
     document.head.appendChild(this.styleSheetDomElement);
   }
 
   setStyle(style: string) {
+    if (environment.disablePalettes) {
+      alert('Palette switch is disabled.');
+      return;
+    }
     const file = this.folder + this.cssPrefix + style + this.cssPostfix;
     this.styleSheetDomElement.setAttribute('href', file);
   }
