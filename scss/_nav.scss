@@ -65,8 +65,18 @@
       top: ($nav-top-bar-container-height - $nav-divider-height) / 2;
       width: $nav-divider-width;
       height: $nav-divider-height;
+      margin: 0 ($nav-divider-space-between-divider-and-icon - $nav-item-margin-x);
 
       background-color: $color-border-divider;
+
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
 

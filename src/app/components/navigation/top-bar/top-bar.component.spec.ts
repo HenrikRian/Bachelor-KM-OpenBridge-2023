@@ -54,9 +54,9 @@ describe('TopBarStyle', () => {
     <div class="ob-sub-title ob-nav-item" id="title">App title</div>
   </div>
   <div class="ob-menu-container">
-    <div class="ob-divider"></div>
+    <div class="ob-divider" id="divider"></div>
     <div class="ob-nav-item ob-nav-btn">
-      <i class="material-icons">notifications</i>
+      <i class="material-icons" id="icon-right-of-divider">notifications</i>
     </div>
     <div class="ob-nav-item ob-nav-btn" >
       <i class="material-icons" id="second-last-icon">brightness_4</i>
@@ -117,6 +117,14 @@ describe('TopBarStyle', () => {
     const btn = frame.get('#icon-btn');
     btn.assert({
       width: btn.height
+    });
+  });
+
+  it('Divider should be 2 rem from icon', () => {
+    const divider = frame.get('#divider');
+    const icon = frame.get('#icon-right-of-divider');
+    divider.assert({
+      right: icon.left.minus(2 * rem)
     });
   });
 
