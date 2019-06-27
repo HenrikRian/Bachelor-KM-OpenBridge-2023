@@ -1,9 +1,10 @@
 <app-top-bar></app-top-bar>
-<div style="padding: 100px; ">
+<div style="padding: 10rem; ">
   <app-button-normal [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"></app-button-normal>
   <app-button-raised [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"></app-button-raised>
   <app-button-normal [label]="'Select button'" (onclick)="toggleSelected()" [isSelected]="isSelected"></app-button-normal>
   <app-button-raised [label]="'Select button'" (onclick)="toggleSelected()" [isSelected]="isSelected"></app-button-raised>
   <app-button-toggle></app-button-toggle>
+  <app-button-group></app-button-group>
 </div>
 
