@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {ComponentStyle} from '../../variables';
 
 @Component({
   selector: 'app-button',
@@ -7,10 +8,11 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 export class ButtonComponent implements OnInit, OnChanges {
   @Input() label: string;
   @Input() isSelected = false;
+  @Input() componentStyle: ComponentStyle;
+  @Input() setSelectedOnClick = false;
   @Output() onclick = new EventEmitter();
 
   protected styleClasses: string[] = [];
-  protected setSelectedOnClick = false;
   private styleClassesInternal = [];
 
   constructor() {
@@ -35,7 +37,9 @@ export class ButtonComponent implements OnInit, OnChanges {
     if (isSelected) {
       this.styleClassesInternal.push('ob-selected');
     }
-    console.log('changed selected' + this.styleClassesInternal);
+    if (this.componentStyle !== undefined) {
+      this.styleClassesInternal.push(this.componentStyle.valueOf());
+    }
   }
 
   private onClickListener() {

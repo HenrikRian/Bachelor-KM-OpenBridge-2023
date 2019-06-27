@@ -2,10 +2,9 @@ import {Component} from '@angular/core';
 import {ButtonComponent} from '../button.component';
 
 @Component({
-  selector: 'app-button-raised',
+  selector: 'app-button-text',
   templateUrl: '../button.component.html'
 })
-export class ButtonRaisedComponent extends ButtonComponent {
-  protected styleClasses = ['ob-btn', 'ob-raised'];
-
+export class ButtonTextComponent extends ButtonComponent {
+  protected styleClasses = ['ob-btn'];
 }

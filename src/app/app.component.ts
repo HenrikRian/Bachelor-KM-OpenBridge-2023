@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {PaletteSwitchService} from './palette-switch.service';
+import {ComponentStyle} from './variables';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import {PaletteSwitchService} from './palette-switch.service';
 export class AppComponent {
   title = 'openbridge-angular';
   isSelected = true;
+  normalStyle = ComponentStyle.Normal;
+  raisedStyle = ComponentStyle.Raised;
   constructor(private palletSwitchService: PaletteSwitchService) {
 
   }

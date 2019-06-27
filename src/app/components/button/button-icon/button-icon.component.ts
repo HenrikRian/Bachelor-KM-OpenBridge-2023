@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ButtonComponent} from '../button.component';
 
 @Component({
@@ -6,5 +6,6 @@ import {ButtonComponent} from '../button.component';
   templateUrl: './button-icon.component.html',
 })
 export class ButtonIconComponent extends ButtonComponent {
-  protected styleClasses = ['ob-btn', 'ob-normal'];
+  @Input() materialDesignIconName: string;
+  protected styleClasses = ['ob-btn'];
 }

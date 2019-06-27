@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ButtonComponent} from '../button.component';
 
 @Component({
@@ -7,5 +7,5 @@ import {ButtonComponent} from '../button.component';
 })
 export class ButtonToggleComponent extends ButtonComponent {
   protected styleClasses = ['ob-toggle-switch'];
-  protected setSelectedOnClick = true;
+  @Input() setSelectedOnClick = true;
 }
