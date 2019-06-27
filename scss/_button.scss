@@ -38,12 +38,11 @@
 
   width: $btn-width-toggle;
   height: $btn-height-small;
+  cursor: pointer;
 
   border-radius: $btn-height-small;
 
   $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
-
-  cursor: pointer;
 
   $transition-time: .3s;
   transition: background-color $transition-time;

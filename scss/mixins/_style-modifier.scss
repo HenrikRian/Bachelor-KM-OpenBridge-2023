@@ -4,13 +4,13 @@
   border: 1px solid $stroke;
 
   &:hover {
-    background-color: rgba($color: $fill, $alpha: (opacity($fill)+ .12));
-    border-color: rgba($color: $stroke, $alpha: (opacity($stroke)+ .12));
+    background-color: rgba($color: $fill, $alpha: (opacity($fill) + .12));
+    border-color: rgba($color: $stroke, $alpha: (opacity($stroke) + .12));
   }
 
   &:active {
-    background-color: rgba($color: $fill, $alpha: (opacity($fill)+ .24));
-    //border-color: rgba($color: $stroke, $alpha: (opacity($stroke)+ .12));
+    background-color: rgba($color: $fill, $alpha: (opacity($fill) + .24));
+    //border-color: rgba($color: $stroke, $alpha: (opacity($stroke)+ .12) );
   }
 }
 

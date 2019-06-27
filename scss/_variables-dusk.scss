@@ -1,10 +1,56 @@
 $color-ui-primary: #00f !default;
+$color-ui-primary: rgb(0, 0, 255) !default;
+$color-ui-input: rgb(255, 200, 0) !default;
 
-//$color-surface-backdrop: #121212 !default;
+$color-alert-alarm: rgb(255, 0, 0) !default;
+$color-alert-warning: rgb(255, 140, 0) !default;
+$color-alert-caution: rgb(255, 220, 0) !default;
+$color-alert-running: rgb(0, 180, 20) !default;
+
+$color-surface-backdrop: #121212 !default;
 $color-surface-background: #1e1e1e !default;
-//$color-surface-app: #303030 !default;
+$color-surface-app: #303030 !default;
 $color-surface-global: #3c3c3c !default;
 
+$color-on-background: rgb(0, 0, 0) !default;
+$color-on-background-active: rgba($color-on-background, .9) !default;
+$color-on-background-inactive: rgba($color-on-background, .6) !default;
+$color-on-background-raised: rgba($color-on-background, .6) !default;
+$color-on-background-disabled: rgba($color-on-background, .3) !default;
+$color-on-background-hinted: rgba($color-on-background, .12) !default;
+$color-on-background-transparent: rgba($color-on-background, 0) !default;
+
+$color-on-primary: rgb(255, 255, 255) !default;
+$color-on-primary-active: rgba($color-on-primary, 1) !default;
+$color-on-primary-inactive: rgba($color-on-primary, .6) !default;
+$color-on-primary-disabled: rgba($color-on-primary, .3) !default;
+$color-on-primary-hinted: rgba($color-on-primary, .12) !default;
+
+$color-border-outline: rgba($color-on-background, .2) !default;
+$color-border-divider: rgba($color-on-background, .12) !default;
+
+//Raised style colors
+$color-raised-fill: $color-on-background-raised !default;
+$color-raised-stroke: rgba($color-on-background, .12) !default;
+// Outline style colors
+$color-outlined-fill: $color-surface-background !default;
+$color-outlined-stroke: rgba($color-on-background, .6) !default;
+// Indent style colors
+$color-indent-fill: $color-on-background-hinted !default;
+$color-indent-stroke: rgba($color-on-background, .12) !default;
+
+
+// States
+$alpha-state-hover-fill: .12 !default;
+$alpha-state-hover-stroke: .12 !default;
+$alpha-state-pressed-fill: .24 !default;
+$alpha-state-pressed-stroke: .12 !default;
+$alpha-state-focused-fill: 0 !default;
+$alpha-state-focused-stroke: 1 !default;
+$alpha-state-disabled-fill: 0 !default;
+$alpha-state-disabled-stroke: .12 !default;
+
+// TODO: Colors below should be checked
 $color-border-on-selected-normal: rgba(0, 0, 0, .06) !default;
 
 $color-on-background-active: #000 !default;

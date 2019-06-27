@@ -15,10 +15,11 @@ $btn-height-small: 3 * $base-size !default; // Checkbox, Radiobutton & Toggle
 $btn-border-radius: $border-radius-large !default;
 $btn-width-min: 12 * $base-size !default;
 $btn-width-toggle: 2 * $btn-height-small !default;
-$btn-diameter-thumb: $btn-height-small - 1.25rem;
-$btn-padding-y: 1.5 * $base-size !default;
-$btn-padding-x: 3 * $base-size !default;
+$btn-diameter-thumb: $btn-height-small - 1.25 * $base-size !default;
 $btn-font-size: 2 * $base-size !default;
+$btn-padding-y: ($btn-height-normal - $btn-font-size) / 2 !default;
+$btn-padding-x: 3 * $base-size !default;
+
 
 $font-default: "Open Sans", sans-serif !default;
 

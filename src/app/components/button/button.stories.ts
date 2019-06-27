@@ -36,7 +36,6 @@ storiesOf('Components|ButtonToggle', module)
   .add('on click', () => ({
     component: ButtonToggleComponent,
     props: {
-      label: 'Button',
       onclick: action('Button clicked'),
     }
   }));
