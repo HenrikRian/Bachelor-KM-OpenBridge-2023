@@ -5,9 +5,13 @@
 }
 
 .ob-btn {
-
+  position: relative;
   display: inline-block;
+
+  $content-height: $btn-height-normal - 2 * $btn-padding-y;
+
   min-width: $btn-width-min - 2 * $btn-padding-x;
+  height: $content-height;
   padding: $btn-padding-y $btn-padding-x;
 
   font-size: $btn-font-size;
@@ -27,6 +31,17 @@
   &.ob-raised {
     @include btn-raised-style();
     @include btn-selected();
+  }
+
+  & > .ob-text-under {
+    position: absolute;
+    top: $btn-height-normal + $btn-text-under-spacing;
+    left: 0;
+    width: 100%;
+  }
+
+  & > .ob-icon .material-icons {
+    margin-top: ($content-height - $icon-height) / 2;
   }
 }
 

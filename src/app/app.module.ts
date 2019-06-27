@@ -8,6 +8,7 @@ import { ButtonNormalComponent } from './components/button/button-normal/button-
 import { ButtonRaisedComponent } from './components/button/button-raised/button-raised.component';
 import { ButtonToggleComponent } from './components/button/button-toggle/button-toggle.component';
 import { ButtonGroupComponent } from './components/button/button-group/button-group.component';
+import { ButtonIconComponent } from './components/button/button-icon/button-icon.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ButtonGroupComponent } from './components/button/button-group/button-gr
     ButtonNormalComponent,
     ButtonRaisedComponent,
     ButtonToggleComponent,
-    ButtonGroupComponent
+    ButtonGroupComponent,
+    ButtonIconComponent
   ],
   imports: [
     BrowserModule

@@ -1,5 +1,6 @@
 $base-rem: 8px !default; /* stylelint-disable meowtec/no-px */
 $base-size: 1rem !default; // when converting from px in style guide assume base-size=8px
+$icon-height: 3rem !default; // material design icon height
 
 
 $border-width: .125 * $base-size !default;
@@ -19,6 +20,7 @@ $btn-diameter-thumb: $btn-height-small - 1.25 * $base-size !default;
 $btn-font-size: 2 * $base-size !default;
 $btn-padding-y: ($btn-height-normal - $btn-font-size) / 2 !default;
 $btn-padding-x: 3 * $base-size !default;
+$btn-text-under-spacing: 2 * $base-size !default;
 
 
 $font-default: "Open Sans", sans-serif !default;
