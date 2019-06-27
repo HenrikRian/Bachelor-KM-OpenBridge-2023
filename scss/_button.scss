@@ -43,17 +43,20 @@
 
   $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
 
+  cursor: pointer;
+
   $transition-time: .3s;
   transition: background-color $transition-time;
 
   &::after {
-    content: "";
+
     @include thumb();
     margin: $space-x;
+    content: "";
     transition: margin-left $transition-time;
   }
 
-  &.ob-checked {
+  &.ob-selected {
     background-color: $color-alert-running;
 
     &::after {

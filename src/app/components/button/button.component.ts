@@ -10,6 +10,7 @@ export class ButtonComponent implements OnInit, OnChanges {
   @Output() onclick = new EventEmitter();
 
   protected styleClasses: string[] = [];
+  protected setSelectedOnClick = false;
   private styleClassesInternal = [];
 
   constructor() {
@@ -32,12 +33,17 @@ export class ButtonComponent implements OnInit, OnChanges {
   private setClassesInternal(isSelected: boolean) {
     this.styleClassesInternal = [...this.styleClasses]; // Clone styleClasses
     if (isSelected) {
-
       this.styleClassesInternal.push('ob-selected');
-
     }
     console.log('changed selected' + this.styleClassesInternal);
   }
 
+  private onClickListener() {
+    if (this.setSelectedOnClick) {
+      this.isSelected = !this.isSelected;
+      this.setClassesInternal(this.isSelected);
+    }
+    this.onclick.emit();
+  }
 
 }

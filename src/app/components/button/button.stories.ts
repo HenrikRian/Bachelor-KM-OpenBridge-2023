@@ -2,6 +2,7 @@ import {storiesOf} from '@storybook/angular';
 import {ButtonNormalComponent} from './button-normal/button-normal.component';
 import {ButtonRaisedComponent} from './button-raised/button-raised.component';
 import {action} from '@storybook/addon-actions';
+import {ButtonToggleComponent} from './button-toggle/button-toggle.component';
 
 
 function buttonStory(name: string, component) {
@@ -31,3 +32,11 @@ function buttonStory(name: string, component) {
 buttonStory('ButtonNormalComponent', ButtonNormalComponent);
 buttonStory('ButtonRaisedComponent', ButtonRaisedComponent);
 
+storiesOf('Components|ButtonToggle', module)
+  .add('on click', () => ({
+    component: ButtonToggleComponent,
+    props: {
+      label: 'Button',
+      onclick: action('Button clicked'),
+    }
+  }));

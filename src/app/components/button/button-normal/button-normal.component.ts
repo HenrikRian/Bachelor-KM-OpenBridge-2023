@@ -6,5 +6,5 @@ import {ButtonComponent} from '../button.component';
   templateUrl: '../button.component.html'
 })
 export class ButtonNormalComponent extends ButtonComponent {
-  protected styleClasses = ['ob-normal'];
+  protected styleClasses = ['ob-btn', 'ob-normal'];
 }

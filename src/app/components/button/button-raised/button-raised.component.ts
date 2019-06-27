@@ -6,6 +6,6 @@ import {ButtonComponent} from '../button.component';
   templateUrl: '../button.component.html'
 })
 export class ButtonRaisedComponent extends ButtonComponent {
-  protected styleClasses = ['ob-raised'];
+  protected styleClasses = ['ob-btn', 'ob-raised'];
 
 }
