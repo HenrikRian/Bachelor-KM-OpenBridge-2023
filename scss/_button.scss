@@ -58,7 +58,7 @@
   }
 }
 
-.ob-toggle-switch {
+.ob-slide-toggle {
   @include indent();
 
   display: flex;
@@ -75,7 +75,7 @@
   $transition-time: .3s;
   transition: background-color $transition-time;
 
-  &::after {
+  & > .ob-thumb {
 
     @include thumb();
     margin: $space-x;
@@ -86,7 +86,7 @@
   &.ob-selected {
     background-color: $color-alert-running;
 
-    &::after {
+    & .ob-thumb {
       margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
     }
   }

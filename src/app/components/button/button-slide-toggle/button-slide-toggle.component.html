@@ -1,0 +1,26 @@
+<label [attr.for]="inputId" #label>
+  <div #toggleBar class="ob-slide-toggle"
+       [class.ob-selected]='checked'>
+    <input #input class="ob-visually-hidden" type="checkbox"
+           role="switch"
+           [id]="inputId"
+           [required]="required"
+           [tabIndex]="tabIndex"
+           [checked]="checked"
+           [disabled]="disabled"
+           [attr.name]="name"
+           [attr.aria-checked]="checked.toString()"
+           [attr.aria-label]="ariaLabel"
+           [attr.aria-labelledby]="ariaLabelledby"
+           (change)="_onChangeEvent($event)"
+           (click)="_onInputClick($event)">
+
+    <div class="ob-thumb"
+         #thumbContainer
+         (slidestart)="_onDragStart()"
+         (slide)="_onDrag($event)"
+         (slideend)="_onDragEnd()">
+
+    </div>
+  </div>
+</label>

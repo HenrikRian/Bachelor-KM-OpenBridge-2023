@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Material+Icons");
-
-
 @import "variables";
 @import "mixins";
+@import "utilities";
 
 html {
   font-size: $base-rem;
