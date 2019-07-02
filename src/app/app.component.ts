@@ -3,7 +3,7 @@ import {PaletteSwitchService} from './palette-switch.service';
 import {ComponentStyle} from './variables';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ob-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

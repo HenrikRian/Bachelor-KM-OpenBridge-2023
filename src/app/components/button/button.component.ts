@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 import {ComponentStyle} from '../../variables';
 
 @Component({
-  selector: 'app-button',
+  selector: 'ob-button',
   templateUrl: './button.component.html'
 })
 export class ButtonComponent implements OnInit, OnChanges {

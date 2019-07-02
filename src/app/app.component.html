@@ -1,19 +1,19 @@
-<app-top-bar></app-top-bar>
+<ob-top-bar></ob-top-bar>
 <div style="padding: 10rem; ">
-  <app-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
-                   [componentStyle]="normalStyle"></app-button-text>
-  <app-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
-                   [componentStyle]="raisedStyle"></app-button-text>
-  <app-button-text [label]="'Select button'" [componentStyle]="normalStyle"
-                   [setSelectedOnClick]="true"></app-button-text>
-  <app-button-text [label]="'Select button'" [componentStyle]="raisedStyle"
-                   [setSelectedOnClick]="true"></app-button-text>
+  <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
+                   [componentStyle]="normalStyle"></ob-button-text>
+  <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
+                   [componentStyle]="raisedStyle"></ob-button-text>
+  <ob-button-text [label]="'Select button'" [componentStyle]="normalStyle"
+                   [setSelectedOnClick]="true"></ob-button-text>
+  <ob-button-text [label]="'Select button'" [componentStyle]="raisedStyle"
+                   [setSelectedOnClick]="true"></ob-button-text>
   <ob-slide-toggle></ob-slide-toggle>
-  <app-button-group></app-button-group>
-  <app-button-icon [label]="'Icon'" [componentStyle]="normalStyle"
-                   [materialDesignIconName]="'wb_sunny'"></app-button-icon>
-  <app-button-icon [label]="'Icon'" [componentStyle]="raisedStyle"
-                   [materialDesignIconName]="'wb_cloudy'"></app-button-icon>
+  <ob-button-group></ob-button-group>
+  <ob-button-icon [label]="'Icon'" [componentStyle]="normalStyle"
+                   [materialDesignIconName]="'wb_sunny'"></ob-button-icon>
+  <ob-button-icon [label]="'Icon'" [componentStyle]="raisedStyle"
+                   [materialDesignIconName]="'wb_cloudy'"></ob-button-icon>
   <div style="padding: 5rem;" class="ob-btn-group">
     <div class="ob-btn ob-normal">
       <span class="ob-icon">

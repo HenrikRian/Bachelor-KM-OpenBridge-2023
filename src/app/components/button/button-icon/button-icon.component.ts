@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ButtonComponent} from '../button.component';
 
 @Component({
-  selector: 'app-button-icon',
+  selector: 'ob-button-icon',
   templateUrl: './button-icon.component.html',
 })
 export class ButtonIconComponent extends ButtonComponent {

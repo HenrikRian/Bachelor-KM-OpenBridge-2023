@@ -33,10 +33,6 @@ describe('ButtonComponent', () => {
     expect(button.textContent).toBe(label);
   });
 
-  it('should have styleClasses ob-btn', () => {
-    expect(button.className).toContain('ob-btn');
-  });
-
   it('should emit on click', () => {
     spyOn(component.onclick, 'emit');
 

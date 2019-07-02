@@ -1,13 +1,16 @@
 .ob-visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
-  width: 1px;
+
+  width: 1px; /* stylelint-disable-line meowtec/no-px */
+  height: 1px; /* stylelint-disable-line meowtec/no-px */
+
+  padding: 0;
+  margin: -1px; /* stylelint-disable-line meowtec/no-px */
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+
   outline: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+  -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
 }
