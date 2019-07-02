@@ -8,7 +8,6 @@
  */
 
 import {FocusMonitor} from '@angular/cdk/a11y';
-import {Directionality} from '@angular/cdk/bidi';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   Attribute,
@@ -19,17 +18,12 @@ import {
   EventEmitter,
   HostBinding,
   HostListener,
-  Inject,
   Input,
-  NgZone,
   OnDestroy,
-  Optional,
   Output,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {ANIMATION_MODULE_TYPE} from '@angular/platform-browser/animations';
-import {MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS, MatSlideToggleDefaultOptions} from '@angular/material';
 import {HasTabIndex, TabIndexAndDisable} from '../../mixins/tabindex';
 import {CanDisable} from '../../mixins/disabled';
 
@@ -106,18 +100,13 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements On
   }
 
   /** Reference to the underlying input element. */
-  @ViewChild('input') _inputElement: ElementRef<HTMLInputElement>;
+  @ViewChild('input', {static: false}) _inputElement: ElementRef<HTMLInputElement>;
 
 
   constructor(elementRef: ElementRef,
               private _focusMonitor: FocusMonitor,
               private _changeDetectorRef: ChangeDetectorRef,
-              @Attribute('tabindex') tabIndex: string,
-              private _ngZone: NgZone,
-              @Inject(MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS)
-              public defaults: MatSlideToggleDefaultOptions,
-              @Optional() @Inject(ANIMATION_MODULE_TYPE) public _animationMode?: string,
-              @Optional() private _dir?: Directionality) {
+              @Attribute('tabindex') tabIndex: string) {
     super();
     this.tabIndex = parseInt(tabIndex, 10) || 0;
   }
