@@ -65,7 +65,7 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
 
   /** Whether the slide-toggle is required. */
-  @Input('required')
+  @Input()
   get required(): boolean {
     return this._required;
   }
