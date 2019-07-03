@@ -14,3 +14,10 @@
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
   -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
 }
+
+/** Use this function for unit testing
+ *  Sets content to $tag, so that getCalculatedStyle can be used to assert the style with highest priority.
+ */
+@mixin test-tag($tag) {
+  content: $tag;
+}

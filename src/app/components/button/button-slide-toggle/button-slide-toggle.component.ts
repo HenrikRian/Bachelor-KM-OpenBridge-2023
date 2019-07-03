@@ -33,9 +33,9 @@ let nextUniqueId = 0;
 /** Change event object emitted by a MatSlideToggle. */
 export class ObButtonSlideToggleChange {
   constructor(
-    /** The source of the event. */
+    /** source: source of the event. */
     public source: ButtonSlideToggleComponent,
-    /** The new `checked` value of the MatSlideToggle. */
+    /** checked: new `checked` value of the MatSlideToggle. */
     public checked: boolean) {
   }
 }
@@ -70,25 +70,27 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements On
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
 
   /** Whether the slide-toggle is required. */
-  @Input()
+  @Input('required')
   get required(): boolean {
     return this._required;
   }
 
-  set required(value) {
+  set required(value: boolean) {
     this._required = coerceBooleanProperty(value);
   }
 
+
   /** Whether the slide-toggle element is checked or not. */
   @Input()
-  get checked(): boolean {
-    return this._checked;
-  }
-
   set checked(value) {
     this._checked = coerceBooleanProperty(value);
     this._changeDetectorRef.markForCheck();
   }
+
+  get checked(): boolean {
+    return this._checked;
+  }
+
 
   /** An event will be dispatched each time the slide-toggle changes its value. */
   @Output() readonly change: EventEmitter<ObButtonSlideToggleChange> =
