@@ -7,19 +7,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   Attribute,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
   HostBinding,
   HostListener,
   Input,
-  OnDestroy,
   Output,
   ViewChild,
   ViewEncapsulation,
@@ -49,13 +46,11 @@ export class ObButtonSlideToggleChange {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonSlideToggleComponent extends TabIndexAndDisable implements OnDestroy,
-  CanDisable,
+export class ButtonSlideToggleComponent extends TabIndexAndDisable implements CanDisable,
   HasTabIndex {
   private _uniqueId: string = `ob-slide-toggle-${++nextUniqueId}`;
   private _required: boolean = false;
   private _checked: boolean = false;
-  public _elementRef: ElementRef;
 
   /** Name value will be applied to the input element if present. */
   @Input() name: string | null = null;
@@ -84,7 +79,6 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements On
   @Input()
   set checked(value) {
     this._checked = coerceBooleanProperty(value);
-    this._changeDetectorRef.markForCheck();
   }
 
   get checked(): boolean {
@@ -105,16 +99,9 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements On
   @ViewChild('input', {static: false}) _inputElement: ElementRef<HTMLInputElement>;
 
 
-  constructor(elementRef: ElementRef,
-              private _focusMonitor: FocusMonitor,
-              private _changeDetectorRef: ChangeDetectorRef,
-              @Attribute('tabindex') tabIndex: string) {
+  constructor(@Attribute('tabindex') tabIndex: string) {
     super();
     this.tabIndex = parseInt(tabIndex, 10) || 0;
-  }
-
-  ngOnDestroy() {
-    this._focusMonitor.stopMonitoring(this._elementRef);
   }
 
   /** Method being called whenever the underlying input emits a change event. */
@@ -139,7 +126,7 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements On
 
   /** Focuses the slide-toggle. */
   @HostListener('focus') focus(): void {
-    this._focusMonitor.focusVia(this._inputElement, 'keyboard');
+    this._inputElement.nativeElement.focus();
   }
 
   /** Toggles the checked state of the slide-toggle. */
