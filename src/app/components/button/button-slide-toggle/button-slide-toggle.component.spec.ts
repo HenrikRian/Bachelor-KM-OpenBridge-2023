@@ -6,11 +6,13 @@ import {By, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import {ButtonSlideToggleComponent, ObButtonSlideToggleChange} from './button-slide-toggle.component';
 
 
-describe('MatSlideToggle without forms', () => {
+describe('ButtonSlideToggle without forms', () => {
   /*let gestureConfig: TestGestureConfig;
   let mutationObserverCallbacks: Function[];
   let flushMutationObserver = () => mutationObserverCallbacks.forEach(callback => callback());
 */
+  const checkedClass = 'ob-selected';
+
   beforeEach(fakeAsync(() => {
     //  mutationObserverCallbacks = [];
 
@@ -35,6 +37,7 @@ describe('MatSlideToggle without forms', () => {
     let testComponent: SlideToggleBasicComponent;
     let slideToggle: ButtonSlideToggleComponent;
     let slideToggleElement: HTMLElement;
+    let slideToggleDivElement: HTMLElement;
     let labelElement: HTMLLabelElement;
     let inputElement: HTMLInputElement;
 
@@ -48,14 +51,23 @@ describe('MatSlideToggle without forms', () => {
       // Initialize the slide-toggle component, by triggering the first change detection cycle.
       fixture.detectChanges();
 
-      const slideToggleDebug = fixture.debugElement;
+      const slideToggleDebug = fixture.debugElement.children[0];
 
       testComponent = fixture.debugElement.componentInstance;
       slideToggle = slideToggleDebug.componentInstance;
       slideToggleElement = slideToggleDebug.nativeElement;
+      slideToggleDivElement = fixture.debugElement.query(By.css('.ob-slide-toggle')).nativeElement;
       inputElement = fixture.debugElement.query(By.css('input')).nativeElement;
       labelElement = fixture.debugElement.query(By.css('label')).nativeElement;
     }));
+
+    function expectCheckedClassToBeExcluded() {
+      expect(slideToggleDivElement.classList).not.toContain(checkedClass);
+    }
+
+    function expectCheckedClassToBeIncluded() {
+      expect(slideToggleDivElement.classList).toContain(checkedClass);
+    }
 
     it('should correctly update the disabled property', () => {
       expect(inputElement.disabled).toBeFalsy();
@@ -77,40 +89,42 @@ describe('MatSlideToggle without forms', () => {
       expect(inputElement.getAttribute('aria-checked')).toBe('true');
     });
 
+
+
     it('should set the toggle to checked on click', () => {
       expect(slideToggle.checked).toBe(false);
       expect(inputElement.getAttribute('aria-checked')).toBe('false');
-      expect(slideToggleElement.classList).not.toContain('mat-checked');
+      expectCheckedClassToBeExcluded();
 
       labelElement.click();
       fixture.detectChanges();
 
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expectCheckedClassToBeIncluded();
       expect(slideToggle.checked).toBe(true);
       expect(inputElement.getAttribute('aria-checked')).toBe('true');
     });
 
     it('should trigger the change event properly', () => {
       expect(inputElement.checked).toBe(false);
-      expect(slideToggleElement.classList).not.toContain('mat-checked');
+      expectCheckedClassToBeExcluded();
 
       labelElement.click();
       fixture.detectChanges();
 
       expect(inputElement.checked).toBe(true);
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expectCheckedClassToBeIncluded();
       expect(testComponent.onSlideChange).toHaveBeenCalledTimes(1);
     });
 
     it('should not trigger the change event by changing the native value', fakeAsync(() => {
       expect(inputElement.checked).toBe(false);
-      expect(slideToggleElement.classList).not.toContain('mat-checked');
+      expectCheckedClassToBeExcluded();
 
       testComponent.slideChecked = true;
       fixture.detectChanges();
 
       expect(inputElement.checked).toBe(true);
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expectCheckedClassToBeIncluded();
       tick();
 
       expect(testComponent.onSlideChange).not.toHaveBeenCalled();
@@ -118,13 +132,13 @@ describe('MatSlideToggle without forms', () => {
 
     it('should not trigger the change event on initialization', fakeAsync(() => {
       expect(inputElement.checked).toBe(false);
-      expect(slideToggleElement.classList).not.toContain('mat-checked');
+      expectCheckedClassToBeExcluded();
 
       testComponent.slideChecked = true;
       fixture.detectChanges();
 
       expect(inputElement.checked).toBe(true);
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expectCheckedClassToBeIncluded();
       tick();
 
       expect(testComponent.onSlideChange).not.toHaveBeenCalled();
@@ -147,7 +161,7 @@ describe('MatSlideToggle without forms', () => {
       fixture.detectChanges();
 
       // Once the id binding is set to null, the id property should auto-generate a unique id.
-      expect(inputElement.id).toMatch(/mat-slide-toggle-\d+-input/);
+      expect(inputElement.id).toMatch(/ob-slide-toggle-\d+-input/);
     });
 
     it('should forward the tabIndex to the underlying input', () => {
@@ -545,7 +559,7 @@ describe('MatSlideToggle with forms', () => {
     });
 
     it('should update the model programmatically', fakeAsync(() => {
-      expect(slideToggleElement.classList).not.toContain('mat-checked');
+      expect(slideToggleElement.classList).not.toContain(checkedClass);
 
       testComponent.modelValue = true;
       fixture.detectChanges();
@@ -554,7 +568,7 @@ describe('MatSlideToggle with forms', () => {
       flushMicrotasks();
 
       fixture.detectChanges();
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expect(slideToggleElement.classList).toContain(checkedClass);
     }));
 
     it('should have the correct control state initially and after interaction', fakeAsync(() => {
@@ -611,7 +625,7 @@ describe('MatSlideToggle with forms', () => {
       fixture.detectChanges();
 
       expect(slideToggleModel.touched).toBe(false);
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expect(slideToggleElement.classList).toContain(checkedClass);
 
       // Once the input element loses focus, the control should remain dirty but should
       // also turn touched.
@@ -620,7 +634,7 @@ describe('MatSlideToggle with forms', () => {
       flushMicrotasks();
 
       expect(slideToggleModel.touched).toBe(true);
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expect(slideToggleElement.classList).toContain(checkedClass);
     }));
 
     it('should not set the control to touched when changing the model', fakeAsync(() => {
@@ -639,7 +653,7 @@ describe('MatSlideToggle with forms', () => {
 
       expect(slideToggleModel.touched).toBe(false);
       expect(slideToggle.checked).toBe(true);
-      expect(slideToggleElement.classList).toContain('mat-checked');
+      expect(slideToggleElement.classList).toContain(checkedClass);
     }));
 
     it('should update checked state on click if control is checked initially', fakeAsync(() => {

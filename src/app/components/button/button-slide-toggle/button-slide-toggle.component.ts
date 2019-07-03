@@ -123,8 +123,6 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements On
     // Otherwise the change event, from the input element, will bubble up and
     // emit its event object to the component's `change` output.
     event.stopPropagation();
-
-    this.change.emit();
   }
 
   /** Method being called whenever the slide-toggle has been clicked. */
