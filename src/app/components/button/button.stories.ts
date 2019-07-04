@@ -1,68 +1,35 @@
-import {storiesOf} from '@storybook/angular';
+import {moduleMetadata, storiesOf} from '@storybook/angular';
 import {action} from '@storybook/addon-actions';
-import {ButtonToggleComponent} from './button-toggle/button-toggle.component';
 import {ButtonGroupComponent} from './button-group/button-group.component';
 import {ButtonTextComponent} from './button-text/button-text.component';
 import {ComponentStyle} from '../../variables';
 import {ButtonIconComponent} from './button-icon/button-icon.component';
+import {ButtonAnchorComponent, ButtonComponent} from './button.component';
 
 
-storiesOf('Components|ButtonText', module)
+storiesOf('Components|Button', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [ButtonComponent, ButtonAnchorComponent],
+    })
+  )
   .add('Normal style', () => ({
-    component: ButtonTextComponent,
-    props: {
-      label: 'Normal',
-      componentStyle: ComponentStyle.Normal
-    },
+    template: `<a ob-button-normal>Hi </a>`
   }))
   .add('Raised style', () => ({
-    component: ButtonTextComponent,
-    props: {
-      label: 'Raised',
-      componentStyle: ComponentStyle.Raised
-    },
+    template: `<a ob-button-raised>Hi </a>`
   }))
-  .add('with text', () => ({
-    component: ButtonTextComponent,
-    props: {
-      label: 'Hello Button',
-      componentStyle: ComponentStyle.Normal
-    },
+  .add('With icon', () => ({
+    template: `
+    <a ob-button-normal>
+      <span class="ob-icon">
+          <i class="material-icons">wb_sunny</i>
+        </span>
+      <span class="ob-text-under">sun</span> 
+    </a>`,
   }))
-  .add('selected', () => ({
-    component: ButtonTextComponent,
-    props: {
-      label: 'Button',
-      componentStyle: ComponentStyle.Normal,
-      isSelected: true,
-    },
-  }))
-  .add('on click', () => ({
-    component: ButtonTextComponent,
-    props: {
-      label: 'Button',
-      componentStyle: ComponentStyle.Normal,
-      onclick: action('Button clicked'),
-    }
-  }))
-  .add('on click with setSelectedOnClick', () => ({
-    component: ButtonTextComponent,
-    props: {
-      label: 'Button',
-      componentStyle: ComponentStyle.Normal,
-      setSelectedOnClick: true,
-      onclick: action('Button clicked'),
-    }
-  }));
+ ;
 
-
-storiesOf('Components|ButtonToggle', module)
-  .add('on click', () => ({
-    component: ButtonToggleComponent,
-    props: {
-      onclick: action('Button clicked'),
-    }
-  }));
 
 storiesOf('Components|ButtonGroup', module)
   .add('default', () => ({

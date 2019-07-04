@@ -6,6 +6,70 @@ import {ButtonSlideToggleComponent, ObButtonSlideToggleChange} from './button-sl
 
 const checkedClass = 'ob-selected';
 
+@Component({
+  template: `
+    <ob-slide-toggle
+      [required]="isRequired"
+      [disabled]="isDisabled"
+      [id]="slideId"
+      [checked]="slideChecked"
+      [name]="slideName"
+      [aria-label]="slideLabel"
+      [aria-labelledby]="slideLabelledBy"
+      [tabIndex]="slideTabindex"
+      (change)="onSlideChange($event)">
+      <span>Test Slide Toggle</span>
+    </ob-slide-toggle>`,
+})
+class SlideToggleBasicComponent {
+  isDisabled = false;
+  isRequired = false;
+  slideChecked = false;
+  slideId: string | null;
+  slideName: string | null;
+  slideLabel: string | null;
+  slideLabelledBy: string | null;
+  slideTabindex: number;
+  lastEvent: ObButtonSlideToggleChange;
+
+  onSlideChange = (event: ObButtonSlideToggleChange) => this.lastEvent = event;
+}
+
+
+@Component({
+  template: `
+    <ob-slide-toggle tabindex="5" [disabled]="disabled"></ob-slide-toggle>`
+})
+class SlideToggleWithTabindexAttrComponent {
+  disabled = false;
+}
+
+@Component({
+  template: `
+    <ob-slide-toggle>{{label}}</ob-slide-toggle>`
+})
+class SlideToggleWithoutLabelComponent {
+  label: string;
+}
+
+@Component({
+  template: `
+    <ob-slide-toggle>
+      <ob-some-text></ob-some-text>
+    </ob-slide-toggle>`
+})
+class SlideToggleProjectedLabelComponent {
+}
+
+@Component({
+  selector: 'ob-some-text',
+  template: `<span>{{text}}</span>`
+})
+class TextBindingComponent {
+  text = 'Some text';
+}
+
+
 describe('ButtonSlideToggle without forms', () => {
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
@@ -311,65 +375,3 @@ describe('ButtonSlideToggle without forms', () => {
   });
 });
 
-@Component({
-  template: `
-    <ob-slide-toggle
-      [required]="isRequired"
-      [disabled]="isDisabled"
-      [id]="slideId"
-      [checked]="slideChecked"
-      [name]="slideName"
-      [aria-label]="slideLabel"
-      [aria-labelledby]="slideLabelledBy"
-      [tabIndex]="slideTabindex"
-      (change)="onSlideChange($event)">
-      <span>Test Slide Toggle</span>
-    </ob-slide-toggle>`,
-})
-class SlideToggleBasicComponent {
-  isDisabled = false;
-  isRequired = false;
-  slideChecked = false;
-  slideId: string | null;
-  slideName: string | null;
-  slideLabel: string | null;
-  slideLabelledBy: string | null;
-  slideTabindex: number;
-  lastEvent: ObButtonSlideToggleChange;
-
-  onSlideChange = (event: ObButtonSlideToggleChange) => this.lastEvent = event;
-}
-
-
-@Component({
-  template: `
-    <ob-slide-toggle tabindex="5" [disabled]="disabled"></ob-slide-toggle>`
-})
-class SlideToggleWithTabindexAttrComponent {
-  disabled = false;
-}
-
-@Component({
-  template: `
-    <ob-slide-toggle>{{label}}</ob-slide-toggle>`
-})
-class SlideToggleWithoutLabelComponent {
-  label: string;
-}
-
-@Component({
-  template: `
-    <ob-slide-toggle>
-      <ob-some-text></ob-some-text>
-    </ob-slide-toggle>`
-})
-class SlideToggleProjectedLabelComponent {
-}
-
-@Component({
-  selector: 'ob-some-text',
-  template: `<span>{{text}}</span>`
-})
-class TextBindingComponent {
-  text = 'Some text';
-}

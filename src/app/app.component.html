@@ -1,5 +1,6 @@
 <ob-top-bar></ob-top-bar>
 <div style="padding: 10rem; ">
+  <!--
   <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
                    [componentStyle]="normalStyle"></ob-button-text>
   <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
@@ -8,12 +9,22 @@
                    [setSelectedOnClick]="true"></ob-button-text>
   <ob-button-text [label]="'Select button'" [componentStyle]="raisedStyle"
                    [setSelectedOnClick]="true"></ob-button-text>
-  <ob-slide-toggle></ob-slide-toggle>
+
   <ob-button-group></ob-button-group>
   <ob-button-icon [label]="'Icon'" [componentStyle]="normalStyle"
                    [materialDesignIconName]="'wb_sunny'"></ob-button-icon>
   <ob-button-icon [label]="'Icon'" [componentStyle]="raisedStyle"
                    [materialDesignIconName]="'wb_cloudy'"></ob-button-icon>
+                   -->
+  <a ob-button-normal>Hi a</a>
+  <button ob-button-normal>Hi button</button>
+  <a ob-button-normal>
+    <span class="ob-icon">
+      <i class="material-icons">wb_sunny</i>
+    </span>
+    <span class="ob-text-under">sun</span>
+  </a>
+  <ob-slide-toggle></ob-slide-toggle>
   <div style="padding: 5rem;" class="ob-btn-group">
     <div class="ob-btn ob-normal">
       <span class="ob-icon">

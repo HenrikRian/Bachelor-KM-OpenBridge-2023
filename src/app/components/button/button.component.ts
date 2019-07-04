@@ -1,53 +1,116 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {ComponentStyle} from '../../variables';
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 
+import {FocusMonitor} from '@angular/cdk/a11y';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Input,
+  OnDestroy,
+  ViewEncapsulation,
+} from '@angular/core';
+import {CanDisable} from '../mixins/disabled';
+
+
+/**
+ * OpenBridge design button.
+ */
 @Component({
-  selector: 'ob-button',
-  templateUrl: './button.component.html'
+  moduleId: module.id,
+  // tslint:disable-next-line:component-selector
+  selector: `button[ob-button-raised], button[ob-button-normal]`,
+  exportAs: 'ButtonComponent',
+  templateUrl: 'button.component.html',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements OnInit, OnChanges {
-  @Input() label: string;
-  @Input() isSelected = false;
-  @Input() componentStyle: ComponentStyle;
-  @Input() setSelectedOnClick = false;
-  @Output() onclick = new EventEmitter();
+export class ButtonComponent extends CanDisable
+  implements OnDestroy {
 
-  protected styleClasses: string[] = [];
-  private styleClassesInternal = [];
+  @HostBinding('class.ob-btn') btnClass = true;
 
-  constructor() {
+  @HostBinding('class.ob-raised') get isRaised(): boolean {
+    return this._hasHostAttributes('ob-button-raised');
   }
 
-  ngOnInit(): void {
-    this.setClassesInternal(this.isSelected);
+  @HostBinding('class.ob-normal') get isNormal(): boolean {
+    return this._hasHostAttributes('ob-button-normal');
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    const isSelected = changes.isSelected;
+  @HostBinding('attr.disabled') get isDisabled() {
+    return this.disabled || null;
+  }
 
-    if (isSelected !== undefined) {
-      this.setClassesInternal(isSelected.currentValue);
+  constructor(private elementRef: ElementRef,
+              private focusMonitor: FocusMonitor) {
+    super();
+    this.focusMonitor.monitor(elementRef, true);
+  }
+
+  ngOnDestroy() {
+    this.focusMonitor.stopMonitoring(this.elementRef);
+  }
+
+  /** Focuses the button. */
+  focus(): void {
+    this._getHostElement().focus();
+  }
+
+  _getHostElement() {
+    return this.elementRef.nativeElement;
+  }
+
+  /** Gets whether the button has one of the given attributes. */
+  _hasHostAttributes(...attributes: string[]) {
+    return attributes.some(attribute => this._getHostElement().hasAttribute(attribute));
+  }
+
+  @HostListener('click', ['$event']) _haltDisabledEvents(event: Event) {
+    // A disabled button shouldn't apply any actions
+    if (this.disabled) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
     }
+  }
+}
 
+/**
+ * Material design anchor button.
+ */
+@Component({
+  moduleId: module.id,
+  // tslint:disable-next-line:component-selector
+  selector: `a[ob-button-raised], a[ob-button-normal]`,
+  exportAs: 'ButtonAnchorComponent',
+  templateUrl: 'button.component.html',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ButtonAnchorComponent extends ButtonComponent {
+  /** Tabindex of the button. */
+  @Input() tabIndex: number;
+
+  @HostBinding('attr.tabindex') get _tabIndex() {
+    return this.disabled ? -1 : (this.tabIndex || 0);
   }
 
-
-  private setClassesInternal(isSelected: boolean) {
-    this.styleClassesInternal = [...this.styleClasses]; // Clone styleClasses
-    if (isSelected) {
-      this.styleClassesInternal.push('ob-selected');
-    }
-    if (this.componentStyle !== undefined) {
-      this.styleClassesInternal.push(this.componentStyle.valueOf());
-    }
+  @HostBinding('attr.aria-disabled') get ariaDisabled(): string {
+    return this.disabled.toString();
   }
 
-  private onClickListener() {
-    if (this.setSelectedOnClick) {
-      this.isSelected = !this.isSelected;
-      this.setClassesInternal(this.isSelected);
-    }
-    this.onclick.emit();
+  constructor(
+    focusMonitor: FocusMonitor,
+    elementRef: ElementRef) {
+    super(elementRef, focusMonitor);
   }
+
 
 }

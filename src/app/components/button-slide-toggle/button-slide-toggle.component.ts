@@ -22,8 +22,8 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {HasTabIndex, TabIndexAndDisable} from '../../mixins/tabindex';
-import {CanDisable} from '../../mixins/disabled';
+import {HasTabIndex, TabIndexAndDisable} from '../mixins/tabindex';
+import {CanDisable} from '../mixins/disabled';
 
 // Increasing integer for generating unique ids for slide-toggle components.
 let nextUniqueId = 0;

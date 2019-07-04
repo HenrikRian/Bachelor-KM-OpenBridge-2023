@@ -6,13 +6,15 @@
 
 .ob-btn {
   position: relative;
+  box-sizing: border-box;
   display: inline-block;
 
   $content-height: $btn-height-normal - 2 * $btn-padding-y;
 
   min-width: $btn-width-min - 2 * $btn-padding-x;
-  height: $content-height;
+  height: $btn-height-normal;
   padding: $btn-padding-y $btn-padding-x;
+
 
   font-size: $btn-font-size;
   font-weight: $font-weight-bold;
