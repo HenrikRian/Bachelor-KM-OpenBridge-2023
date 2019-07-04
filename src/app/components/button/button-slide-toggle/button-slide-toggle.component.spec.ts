@@ -257,15 +257,14 @@ describe('ButtonSlideToggle without forms', () => {
       expect(document.activeElement).toBe(inputElement);
     });
 
-    it('should focus on underlying input element when the host is focused', fakeAsync(() => {
+    it('should focus on underlying input element when the host is focused', () => {
       expect(document.activeElement).not.toBe(inputElement);
 
-      slideToggleElement.focus();
+      slideToggleElement.dispatchEvent( new Event('focus'));
 
-      tick();
       fixture.detectChanges();
       expect(document.activeElement.id).toBe(inputElement.id);
-    }));
+    });
   });
 
 

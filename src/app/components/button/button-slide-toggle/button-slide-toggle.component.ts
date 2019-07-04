@@ -11,6 +11,7 @@ import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {
   Attribute,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -79,6 +80,7 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
   @Input()
   set checked(value) {
     this._checked = coerceBooleanProperty(value);
+    this.changeDetectorRef.markForCheck();
   }
 
   get checked(): boolean {
@@ -99,7 +101,8 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
   @ViewChild('input', {static: false}) _inputElement: ElementRef<HTMLInputElement>;
 
 
-  constructor(@Attribute('tabindex') tabIndex: string) {
+  constructor(@Attribute('tabindex') tabIndex: string,
+              private changeDetectorRef: ChangeDetectorRef) {
     super();
     this.tabIndex = parseInt(tabIndex, 10) || 0;
   }
