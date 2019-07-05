@@ -1,5 +1,6 @@
 <label [attr.for]="inputId" #label>
   <div #toggleBar class="ob-slide-toggle"
+       (click)="_onClick()"
        [class.ob-selected]='checked'>
     <input #input class="ob-visually-hidden" type="checkbox"
            role="switch"

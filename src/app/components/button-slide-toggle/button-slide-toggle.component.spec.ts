@@ -151,7 +151,7 @@ describe('ButtonSlideToggle without forms', () => {
       expect(inputElement.getAttribute('aria-checked')).toBe('false');
       expectCheckedClassToBeExcluded();
 
-      labelElement.click();
+      slideToggleDivElement.click();
       fixture.detectChanges();
 
       expectCheckedClassToBeIncluded();
@@ -163,7 +163,7 @@ describe('ButtonSlideToggle without forms', () => {
       expect(inputElement.checked).toBe(false);
       expectCheckedClassToBeExcluded();
 
-      labelElement.click();
+      slideToggleDivElement.click();
       fixture.detectChanges();
 
       expect(inputElement.checked).toBe(true);
@@ -278,7 +278,7 @@ describe('ButtonSlideToggle without forms', () => {
     });
 
     it('should emit the new values properly', fakeAsync(() => {
-      labelElement.click();
+      slideToggleDivElement.click();
       fixture.detectChanges();
       tick();
 
@@ -292,7 +292,7 @@ describe('ButtonSlideToggle without forms', () => {
       const spy = jasmine.createSpy('change spy');
       const subscription = slideToggle.change.subscribe(spy);
 
-      labelElement.click();
+      slideToggleDivElement.click();
       fixture.detectChanges();
       tick();
 

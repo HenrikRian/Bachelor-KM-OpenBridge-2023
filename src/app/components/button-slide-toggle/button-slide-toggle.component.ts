@@ -137,7 +137,7 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
     this.checked = !this.checked;
   }
 
-  @HostListener('click') _onClick(): void {
+  _onClick(): void {
     this.toggle();
     this._emitChangeEvent();
   }
