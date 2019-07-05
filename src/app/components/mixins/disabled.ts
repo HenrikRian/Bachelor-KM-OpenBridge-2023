@@ -7,7 +7,7 @@
  */
 
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {Input} from '@angular/core';
+import {ElementRef, HostListener, Input} from '@angular/core';
 
 
 /** Mixin to augment a directive with a `disabled` property. */
@@ -22,4 +22,10 @@ export class CanDisable implements CanDisable {
   get disabled() {
     return this._disabled;
   }
+
+  @HostListener('keyup.enter') keyUpEnter() {
+    this.elementRef.nativeElement.click();
+  }
+
+  constructor(protected elementRef: ElementRef) {}
 }

@@ -1,14 +1,49 @@
+@mixin focus-ring($border-radius) {
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: - $border-width-focus;
+
+    content: "";
+    border: $border-width-focus $color-ui-input solid;
+    border-radius: $border-radius;
+  }
+}
+
 @mixin overlay-outline-normal {
   color: $color-on-background-active;
 
   background-color: $color-outline-overlay-background-normal;
-  border: $border-width solid $color-outline-overlay-border-normal;
+  border-color: $color-outline-overlay-border-normal;
+  border-style: solid;
+  @include set-border-width-and-margin-for-constant-margin-box-size($border-width);
 
-  &:hover {
+  &:hover:not(:disabled) {
     color: $color-on-background-focused;
 
     background-color: $color-outline-overlay-background-hover;
     border-color: $color-outline-overlay-border-hover;
+  }
+
+  &:focus-within {
+    background-color: $color-on-primary-active;
+    @include focus-ring($border-radius-large);
+
+
+    &:active {
+      background-color: $color-on-primary-active;
+      border-color: rgba(0, 0, 0, .84); // TODO Extract color
+      @include set-border-width-and-margin-for-constant-margin-box-size($border-width);
+    }
+  }
+
+
+  &:disabled {
+    color: rgba(0, 0, 0, .3); // TODO Extract color
+    border-color: $color-border-divider;
   }
 }
 

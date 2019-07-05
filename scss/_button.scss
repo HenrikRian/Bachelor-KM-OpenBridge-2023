@@ -6,13 +6,13 @@
 
 .ob-btn {
   position: relative;
-  box-sizing: border-box;
+  box-sizing: content-box;
   display: inline-block;
 
   $content-height: $btn-height-normal - 2 * $btn-padding-y;
 
   min-width: $btn-width-min - 2 * $btn-padding-x;
-  height: $btn-height-normal;
+  height: $content-height;
   padding: $btn-padding-y $btn-padding-x;
 
 
@@ -22,8 +22,12 @@
   text-align: center;
   vertical-align: middle;
 
-  cursor: pointer;
+
   border-radius: $btn-border-radius;
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
 
   &.ob-normal {
     @include btn-normal-style();
@@ -63,6 +67,8 @@
 .ob-slide-toggle {
   @include indent();
 
+  position: relative;
+
   display: flex;
   align-items: center;
 
@@ -91,6 +97,10 @@
     & .ob-thumb {
       margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
     }
+  }
+
+  &:focus-within {
+    @include focus-ring($btn-height-small);
   }
 
 }

@@ -6,17 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {FocusMonitor} from '@angular/cdk/a11y';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  Input,
-  OnDestroy,
-  ViewEncapsulation,
-} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostBinding, HostListener, Input, ViewEncapsulation,} from '@angular/core';
 import {CanDisable} from '../mixins/disabled';
 
 
@@ -32,8 +22,7 @@ import {CanDisable} from '../mixins/disabled';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent extends CanDisable
-  implements OnDestroy {
+export class ButtonComponent extends CanDisable {
 
   @HostBinding('class.ob-btn') btnClass = true;
 
@@ -49,14 +38,8 @@ export class ButtonComponent extends CanDisable
     return this.disabled || null;
   }
 
-  constructor(private elementRef: ElementRef,
-              private focusMonitor: FocusMonitor) {
-    super();
-    this.focusMonitor.monitor(elementRef, true);
-  }
-
-  ngOnDestroy() {
-    this.focusMonitor.stopMonitoring(this.elementRef);
+  constructor(elementRef: ElementRef) {
+    super(elementRef);
   }
 
   /** Focuses the button. */
@@ -107,9 +90,8 @@ export class ButtonAnchorComponent extends ButtonComponent {
   }
 
   constructor(
-    focusMonitor: FocusMonitor,
     elementRef: ElementRef) {
-    super(elementRef, focusMonitor);
+    super(elementRef);
   }
 
 

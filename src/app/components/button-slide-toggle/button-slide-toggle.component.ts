@@ -102,8 +102,9 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
 
 
   constructor(@Attribute('tabindex') tabIndex: string,
-              private changeDetectorRef: ChangeDetectorRef) {
-    super();
+              private changeDetectorRef: ChangeDetectorRef,
+              elementRef: ElementRef) {
+    super(elementRef);
     this.tabIndex = parseInt(tabIndex, 10) || 0;
   }
 

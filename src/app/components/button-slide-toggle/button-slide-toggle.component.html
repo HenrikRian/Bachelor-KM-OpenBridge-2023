@@ -1,7 +1,9 @@
 <label [attr.for]="inputId" #label>
   <div #toggleBar class="ob-slide-toggle"
        (click)="_onClick()"
-       [class.ob-selected]='checked'>
+       [class.ob-selected]='checked'
+       (keyup.enter)="_onClick()"
+  >
     <input #input class="ob-visually-hidden" type="checkbox"
            role="switch"
            [id]="inputId"
@@ -14,7 +16,8 @@
            [attr.aria-label]="ariaLabel"
            [attr.aria-labelledby]="ariaLabelledby"
            (change)="_onChangeEvent($event)"
-           (click)="_onInputClick($event)">
+           (click)="_onInputClick($event)"
+    >
 
     <div class="ob-thumb"
          #thumbContainer>
