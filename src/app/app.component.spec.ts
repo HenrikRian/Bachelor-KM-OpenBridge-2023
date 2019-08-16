@@ -3,7 +3,8 @@ import {AppComponent} from './app.component';
 import {TopBarComponent} from './components/navigation/top-bar/top-bar.component';
 import {ButtonComponent} from './components/button/button.component';
 import {ButtonSlideToggleComponent} from './components/button-slide-toggle/button-slide-toggle.component';
-import {ButtonGroupComponent} from './components/button-group/button-group.component';
+import {ButtonToggleGroupComponent} from './components/button-toggle/button-toggle.component';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +14,7 @@ describe('AppComponent', () => {
         ButtonComponent,
         TopBarComponent,
         ButtonSlideToggleComponent,
-        ButtonGroupComponent,
+        ButtonToggleGroupComponent,
       ],
     }).compileComponents();
   }));
