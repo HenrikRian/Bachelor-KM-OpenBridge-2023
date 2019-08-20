@@ -53,8 +53,7 @@ export interface MatButtonToggleDefaultOptions {
  * default options for all button toggles within an app.
  */
 export const MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS =
-    new InjectionToken<MatButtonToggleDefaultOptions>('MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS');
-
+  new InjectionToken<MatButtonToggleDefaultOptions>('MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS');
 
 
 /**
@@ -75,9 +74,9 @@ export class ButtonToggleChange {
   constructor(
     /** The ButtonToggleComponent that emits the event. */
     public source: ButtonToggleComponent,
-
     /** The value assigned to the ButtonToggleComponent. */
-    public value: any) {}
+    public value: any) {
+  }
 }
 
 /** Exclusive selection button toggle group that behaves like a radio-button group. */
@@ -95,7 +94,10 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
   /** `name` attribute for the underlying `input` element. */
   @Input()
-  get name(): string { return this._name; }
+  get name(): string {
+    return this._name;
+  }
+
   set name(value: string) {
     this._name = value;
 
@@ -109,7 +111,10 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
   /** Whether the toggle group is vertical. */
   @Input()
-  get vertical(): boolean { return this._vertical; }
+  get vertical(): boolean {
+    return this._vertical;
+  }
+
   set vertical(value: boolean) {
     this._vertical = coerceBooleanProperty(value);
   }
@@ -125,6 +130,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
     return selected[0] ? selected[0].value : undefined;
   }
+
   set value(newValue: any) {
     this._setSelectionByValue(newValue);
     this.valueChange.emit(this.value);
@@ -138,14 +144,20 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
   /** Whether multiple button toggles can be selected. */
   @Input()
-  get multiple(): boolean { return this._multiple; }
+  get multiple(): boolean {
+    return this._multiple;
+  }
+
   set multiple(value: boolean) {
     this._multiple = coerceBooleanProperty(value);
   }
 
   /** Whether multiple button toggle group is disabled. */
   @Input()
-  get disabled(): boolean { return this._disabled; }
+  get disabled(): boolean {
+    return this._disabled;
+  }
+
   set disabled(value: boolean) {
     this._disabled = coerceBooleanProperty(value);
 
@@ -157,11 +169,12 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   constructor(
     private _changeDetector: ChangeDetectorRef,
     @Optional() @Inject(MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS)
-        defaultOptions?: MatButtonToggleDefaultOptions) {
+      defaultOptions?: MatButtonToggleDefaultOptions) {
 
-      this.appearance =
-          defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
-    }
+    this.appearance =
+      defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
+  }
+
   private _vertical = false;
   private _multiple = false;
   private _disabled = false;
@@ -191,16 +204,18 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
   /** Event emitted when the group's value changes. */
   @Output() readonly change: EventEmitter<ButtonToggleChange> =
-      new EventEmitter<ButtonToggleChange>();
+    new EventEmitter<ButtonToggleChange>();
 
   /**
    * The method to be called in order to update ngModel.
    * Now `ngModel` binding is not supported in multiple selection mode.
    */
-  _controlValueAccessorChangeFn: (value: any) => void = () => {};
+  _controlValueAccessorChangeFn: (value: any) => void = () => {
+  };
 
   /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
-  _onTouched: () => any = () => {};
+  _onTouched: () => any = () => {
+  };
 
   ngOnInit() {
     this._selectionModel = new SelectionModel<ButtonToggleComponent>(this.multiple, undefined, false);
@@ -299,7 +314,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   }
 
   /** Updates the selection state of the toggles in the group based on a value. */
-  private _setSelectionByValue(value: any|any[]) {
+  private _setSelectionByValue(value: any | any[]) {
     this._rawValue = value;
 
     if (!this._buttonToggles) {
@@ -352,38 +367,41 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
 // Boilerplate for applying mixins to the ButtonToggleComponent class.
 /** @docs-private */
-class MatButtonToggleBase {}
+class MatButtonToggleBase {
+}
+
 const _MatButtonToggleMixinBase: CanDisableRippleCtor & typeof MatButtonToggleBase =
-    mixinDisableRipple(MatButtonToggleBase);
+  mixinDisableRipple(MatButtonToggleBase);
 
 /** Single button inside of a toggle group. */
 @Component({
   moduleId: module.id,
-  selector: 'ob-button-toggle',
+  selector: 'button[ob-button-toggle]',
   templateUrl: 'button-toggle.component.html',
   encapsulation: ViewEncapsulation.None,
   exportAs: 'ButtonToggleComponent',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  inputs: ['disableRipple'],
   host: {
     class: 'ob-btn ob-normal',
-    '[class.mat-button-toggle-standalone]': '!buttonToggleGroup',
-    '[class.mat-button-toggle-checked]': 'checked',
-    '[class.mat-button-toggle-disabled]': 'disabled',
-    '[class.mat-button-toggle-appearance-standard]': 'appearance === "standard"',
     // Always reset the tabindex to -1 so it doesn't conflict with the one on the `button`,
     // but can still receive focus from things like cdkFocusInitial.
-    '[attr.tabindex]': '-1',
     '[attr.id]': 'id',
-    '[attr.name]': 'null',
+    '[id]': 'buttonId',
+    '[attr.tabindex]': 'disabled ? -1 : tabIndex',
+    '[attr.aria-pressed]': 'checked',
+    '[disabled]': 'disabled || null',
+    '[attr.name]': 'name || null',
+    '[attr.aria-label]': 'ariaLabel',
+    '[attr.aria-labelledby]': 'ariaLabelledby',
     '(focus)': 'focus()',
+    '(click)': '_onButtonClick()'
   }
 })
 export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements OnInit,
   CanDisableRipple, OnDestroy {
 
-  private _isSingleSelector = false;
-  private _checked = false;
+  /** ButtonToggleGroupComponent reads this to assign its own value. */
+  @Input() value: any;
 
   /**
    * Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
@@ -396,16 +414,17 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
    */
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
 
-  /** Type of the button toggle. Either 'radio' or 'checkbox'. */
-  _type: ToggleType;
 
-  @ViewChild('button', {static: false}) _buttonElement: ElementRef<HTMLButtonElement>;
 
-  /** The parent button toggle group (exclusive selection). Optional. */
-  buttonToggleGroup: ButtonToggleGroupComponent;
+    /** Whether the button is disabled. */
+  @Input()
+  get disabled(): boolean {
+    return this._disabled || (this.buttonToggleGroup && this.buttonToggleGroup.disabled);
+  }
 
-  /** Unique ID for the underlying `button` element. */
-  get buttonId(): string { return `${this.id}-button`; }
+  set disabled(value: boolean) {
+    this._disabled = coerceBooleanProperty(value);
+  }
 
   /** The unique ID for this button toggle. */
   @Input() id: string;
@@ -413,8 +432,7 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   /** HTML's 'name' attribute used to group radios for unique selection. */
   @Input() name: string;
 
-  /** ButtonToggleGroupComponent reads this to assign its own value. */
-  @Input() value: any;
+
 
   /** Tabindex for the toggle. */
   @Input() tabIndex: number | null;
@@ -424,9 +442,11 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   get appearance(): MatButtonToggleAppearance {
     return this.buttonToggleGroup ? this.buttonToggleGroup.appearance : this._appearance;
   }
+
   set appearance(value: MatButtonToggleAppearance) {
     this._appearance = value;
   }
+
   private _appearance: MatButtonToggleAppearance;
 
   /** Whether the button is checked. */
@@ -434,6 +454,7 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   get checked(): boolean {
     return this.buttonToggleGroup ? this.buttonToggleGroup._isSelected(this) : this._checked;
   }
+
   set checked(value: boolean) {
     const newValue = coerceBooleanProperty(value);
 
@@ -448,17 +469,27 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
     }
   }
 
-  /** Whether the button is disabled. */
-  @Input()
-  get disabled(): boolean {
-    return this._disabled || (this.buttonToggleGroup && this.buttonToggleGroup.disabled);
+   /** Type of the button toggle. Either 'radio' or 'checkbox'. */
+  _type: ToggleType;
+
+  @ViewChild('button', {static: false}) _buttonElement: ElementRef<HTMLButtonElement>;
+
+  /** The parent button toggle group (exclusive selection). Optional. */
+  buttonToggleGroup: ButtonToggleGroupComponent;
+
+  /** Unique ID for the underlying `button` element. */
+  get buttonId(): string {
+    return `${this.id}-button`;
   }
-  set disabled(value: boolean) { this._disabled = coerceBooleanProperty(value); }
+
+  private _isSingleSelector = false;
+  private _checked = false;
+
   private _disabled = false;
 
   /** Event emitted when the group value changes. */
   @Output() readonly change: EventEmitter<ButtonToggleChange> =
-      new EventEmitter<ButtonToggleChange>();
+    new EventEmitter<ButtonToggleChange>();
 
   constructor(@Optional() toggleGroup: ButtonToggleGroupComponent,
               private _changeDetectorRef: ChangeDetectorRef,
@@ -467,14 +498,14 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
               // @breaking-change 8.0.0 `defaultTabIndex` to be made a required parameter.
               @Attribute('tabindex') defaultTabIndex: string,
               @Optional() @Inject(MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS)
-                  defaultOptions?: MatButtonToggleDefaultOptions) {
+                defaultOptions?: MatButtonToggleDefaultOptions) {
     super();
 
     const parsedTabIndex = Number(defaultTabIndex);
     this.tabIndex = (parsedTabIndex || parsedTabIndex === 0) ? parsedTabIndex : null;
     this.buttonToggleGroup = toggleGroup;
     this.appearance =
-        defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
+      defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
   }
 
   ngOnInit() {
@@ -507,7 +538,7 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
 
   /** Focuses the button. */
   focus(options?: FocusOptions): void {
-    this._buttonElement.nativeElement.focus(options);
+    this._elementRef.nativeElement.focus(options);
   }
 
   /** Checks the button toggle due to an interaction with the underlying native button. */
