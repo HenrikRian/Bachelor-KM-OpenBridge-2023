@@ -32,6 +32,16 @@ $font-default: "Open Sans", sans-serif !default;
 $font-weight-bold: 600 !default;
 //$font-weight-bolder: bolder !default;
 
+$nav-menu-width: 40 * $base-size !default;
+$nav-menu-item-height: 7 * $base-size !default;
+$nav-menu-item-margin-x: 3 * $base-size !default;
+$nav-menu-label-margin-x: 5 * $base-size !default;
+$nav-menu-item-divider-thickness: .125 * $base-size !default;
+$nav-menu-font-size: 2 * $base-size !default;
+$nav-menu-footer-logo-height: 12 * $base-size !default;
+$nav-menu-footer-divider-thickness: .25 * $base-size !default;
+
+
 $nav-top-bar-height: 7 * $base-size !default;
 $nav-top-bar-width: 100% !default;
 
@@ -45,3 +55,6 @@ $nav-divider-width: .125 * $base-size !default;
 
 $nav-sub-title-font-size: 2.5 * $base-size !default;
 $nav-sub-title-letter-spacing: .025 * $base-size !default;
+
+$z-index-hover: 1 !default;
+$z-index-focus: 2 !default;

@@ -91,8 +91,6 @@ describe('ButtonToggle with forms', () => {
       buttonToggleInstances = buttonToggleDebugElements.map(debugEl => debugEl.componentInstance);
       innerButtons = groupDebugElement.queryAll(By.css('button')).map(debugEl => debugEl.nativeElement);
 
-      console.log(innerButtons);
-
       fixture.detectChanges();
     }));
 
@@ -181,32 +179,7 @@ describe('ButtonToggle with forms', () => {
 
       expect(testComponent.modelValue).toBe('green');
     }));
-    /* TODO
-      it('should show a ripple on label click', () => {
-        const groupElement = groupDebugElement.nativeElement;
 
-        expect(groupElement.querySelectorAll('.mat-ripple-element').length).toBe(0);
-
-        dispatchMouseEvent(innerButtons[0], 'mousedown');
-        dispatchMouseEvent(innerButtons[0], 'mouseup');
-
-        expect(groupElement.querySelectorAll('.mat-ripple-element').length).toBe(1);
-      });
-
-      it('should allow ripples to be disabled', () => {
-        const groupElement = groupDebugElement.nativeElement;
-
-        testComponent.disableRipple = true;
-        fixture.detectChanges();
-
-        expect(groupElement.querySelectorAll('.mat-ripple-element').length).toBe(0);
-
-        dispatchMouseEvent(innerButtons[0], 'mousedown');
-        dispatchMouseEvent(innerButtons[0], 'mouseup');
-
-        expect(groupElement.querySelectorAll('.mat-ripple-element').length).toBe(0);
-      });
-  */
     it('should maintain the selected value when swapping out the list of toggles with one ' +
       'that still contains the value', fakeAsync(() => {
       expect(buttonToggleInstances[0].checked).toBe(false);
@@ -247,7 +220,6 @@ describe('ButtonToggleComponent without forms', () => {
         StandaloneButtonToggleComponent,
         ButtonToggleWithAriaLabelComponent,
         ButtonToggleWithAriaLabelledbyComponent,
-        // RepeatedButtonTogglesWithPreselectedValue,
         ButtonToggleWithTabindexComponent,
         ButtonToggleWithStaticNameComponent,
       ],
@@ -746,41 +718,19 @@ describe('ButtonToggleComponent without forms', () => {
     });
 
   });
-  /* TODO
-  it('should not throw on init when toggles are repeated and there is an initial value', () => {
-    const fixture = TestBed.createComponent(RepeatedButtonTogglesWithPreselectedValue);
 
-    expect(() => fixture.detectChanges()).not.toThrow();
-    expect(fixture.componentInstance.toggleGroup.value).toBe('Two');
-    expect(fixture.componentInstance.toggles.toArray()[1].checked).toBe(true);
-  });
+
 
   it('should not throw on init when toggles are repeated and there is an initial value', () => {
-    const fixture = TestBed.createComponent(ButtonToggleWithStaticName);
+    const fixture = TestBed.createComponent(ButtonToggleWithStaticNameComponent);
     fixture.detectChanges();
 
-    const hostNode: HTMLElement = fixture.nativeElement.querySelector('.ob-button-toggle');
+    const hostNode: HTMLElement = fixture.debugElement.query(By.directive(ButtonToggleComponent)).nativeElement;
 
-    expect(hostNode.hasAttribute('name')).toBe(false);
-    expect(hostNode.querySelector('button')!.getAttribute('name')).toBe('custom-name');
+    expect(hostNode.getAttribute('name')).toBe('custom-name');
   });
 
-  it('should maintain the selected state when the value and toggles are swapped out at ' +
-    'the same time', () => {
-      const fixture = TestBed.createComponent(RepeatedButtonTogglesWithPreselectedValue);
-      fixture.detectChanges();
 
-      expect(fixture.componentInstance.toggleGroup.value).toBe('Two');
-      expect(fixture.componentInstance.toggles.toArray()[1].checked).toBe(true);
-
-      fixture.componentInstance.possibleValues = ['Five', 'Six', 'Seven'];
-      fixture.componentInstance.value = 'Seven';
-      fixture.detectChanges();
-
-      expect(fixture.componentInstance.toggleGroup.value).toBe('Seven');
-      expect(fixture.componentInstance.toggles.toArray()[2].checked).toBe(true);
-    });
-  */
   it('should select falsy button toggle value in multiple selection', () => {
     const fixture = TestBed.createComponent(FalsyButtonTogglesInsideButtonToggleGroupMultipleComponent);
     fixture.detectChanges();
@@ -815,7 +765,6 @@ describe('ButtonToggleComponent without forms', () => {
 @Component({
   template: `
     <ob-button-toggle-group [disabled]="isGroupDisabled"
-                            [vertical]="isVertical"
                             [(value)]="groupValue">
       <button ob-button-toggle value="test1" *ngIf="renderFirstToggle">Test1</button>
       <button ob-button-toggle value="test2">Test2</button>
@@ -825,7 +774,6 @@ describe('ButtonToggleComponent without forms', () => {
 })
 class ButtonTogglesInsideButtonToggleGroupComponent {
   isGroupDisabled = false;
-  isVertical = false;
   groupValue: string;
   renderFirstToggle = true;
 }
@@ -851,12 +799,11 @@ class ButtonToggleGroupWithNgModelComponent {
     {label: 'Blue', value: 'blue'},
   ];
   lastEvent: ButtonToggleChange;
-  disableRipple = false;
 }
 
 @Component({
   template: `
-    <ob-button-toggle-group [disabled]="isGroupDisabled" [vertical]="isVertical" multiple>
+    <ob-button-toggle-group [disabled]="isGroupDisabled" multiple>
       <button ob-button-toggle value="eggs">Eggs</button>
       <button ob-button-toggle value="flour">Flour</button>
       <button ob-button-toggle value="sugar">Sugar</button>
@@ -865,7 +812,6 @@ class ButtonToggleGroupWithNgModelComponent {
 })
 class ButtonTogglesInsideButtonToggleGroupMultipleComponent {
   isGroupDisabled = false;
-  isVertical = false;
 }
 
 @Component({

@@ -27,4 +27,9 @@
   content: $tag;
 }
 
+@mixin material-icon($content-height) {
+  & > .ob-icon .material-icons {
+    margin-top: ($content-height - $icon-height) / 2;
+  }
+}
 

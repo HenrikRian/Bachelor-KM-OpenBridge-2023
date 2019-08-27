@@ -46,9 +46,7 @@
     width: 100%;
   }
 
-  & > .ob-icon .material-icons {
-    margin-top: ($content-height - $icon-height) / 2;
-  }
+  @include material-icon($content-height);
 }
 
 .ob-btn-group .ob-btn {

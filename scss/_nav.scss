@@ -70,6 +70,57 @@
     }
 
   }
+}
 
+.ob-nav-menu {
+  position: absolute;
+  top: $nav-top-bar-height;
+  bottom: 0;
+  left: 0;
+  width: $nav-menu-width;
 
+  font-size: $nav-menu-font-size;
+  background-color: $color-surface-global;
+
+  .ob-nav-item {
+    display: flex;
+    align-items: center;
+
+    height: $nav-menu-item-height;
+    margin: 0 $nav-menu-item-margin-x;
+
+    border-bottom: $nav-menu-item-divider-thickness solid $color-border-outline;
+
+    &.ob-active .ob-nav-icon {
+      transform: rotate(90deg);
+    }
+
+    .ob-nav-icon {
+      position: absolute;
+      right: $nav-menu-item-margin-x;
+    }
+
+    .ob-label {
+      position: absolute;
+      left: $nav-menu-label-margin-x + $nav-menu-item-margin-x;
+    }
+
+    &.ob-active .ob-label {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .ob-nav-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    background-color: $color-surface-section;
+    border-top: $nav-menu-footer-divider-thickness solid $color-border-outline;
+
+    .ob-nav-footer-logo {
+      height: $nav-menu-footer-logo-height;
+    }
+
+  }
 }

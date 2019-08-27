@@ -1,3 +1,4 @@
+/* tslint:disable:variable-name */
 /**
  * @license
  * Copyright Google LLC All Rights Reserved.
@@ -31,7 +32,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {CanDisableRipple, CanDisableRippleCtor, mixinDisableRipple} from '@angular/material/core';
 
 
 /** Acceptable types for a button toggle. */
@@ -109,16 +109,6 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
     }
   }
 
-  /** Whether the toggle group is vertical. */
-  @Input()
-  get vertical(): boolean {
-    return this._vertical;
-  }
-
-  set vertical(value: boolean) {
-    this._vertical = coerceBooleanProperty(value);
-  }
-
   /** Value of the toggle group. */
   @Input()
   get value(): any {
@@ -175,7 +165,6 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
       defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
   }
 
-  private _vertical = false;
   private _multiple = false;
   private _disabled = false;
   private _selectionModel: SelectionModel<ButtonToggleComponent>;
@@ -210,12 +199,10 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
    * The method to be called in order to update ngModel.
    * Now `ngModel` binding is not supported in multiple selection mode.
    */
-  _controlValueAccessorChangeFn: (value: any) => void = () => {
-  };
+  _controlValueAccessorChangeFn: (value: any) => void = () => {};
 
   /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
-  _onTouched: () => any = () => {
-  };
+  _onTouched: () => any = () => {};
 
   ngOnInit() {
     this._selectionModel = new SelectionModel<ButtonToggleComponent>(this.multiple, undefined, false);
@@ -370,8 +357,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 class MatButtonToggleBase {
 }
 
-const _MatButtonToggleMixinBase: CanDisableRippleCtor & typeof MatButtonToggleBase =
-  mixinDisableRipple(MatButtonToggleBase);
+const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBase);
 
 /** Single button inside of a toggle group. */
 @Component({
@@ -398,7 +384,7 @@ const _MatButtonToggleMixinBase: CanDisableRippleCtor & typeof MatButtonToggleBa
   }
 })
 export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements OnInit,
-  CanDisableRipple, OnDestroy {
+   OnDestroy {
 
   /** ButtonToggleGroupComponent reads this to assign its own value. */
   @Input() value: any;
