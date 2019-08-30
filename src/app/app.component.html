@@ -1,4 +1,5 @@
 <ob-top-bar></ob-top-bar>
+<ob-navigation-menu #menuComponent></ob-navigation-menu>
 <div style="padding-left: 50rem; padding-top: 10rem;">
   <!--
   <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
@@ -17,7 +18,7 @@
                    [materialDesignIconName]="'wb_cloudy'"></ob-button-icon>
                    -->
   <a ob-button-normal>Hi a</a>
-  <button ob-button-normal>Hi button</button>
+  <button ob-button-normal (click)="menuComponent.toggle()">Toggle menu</button>
   <a ob-button-normal>
     <span class="ob-icon">
       <i class="material-icons">wb_sunny</i>
@@ -48,5 +49,5 @@
   </ob-button-toggle-group>
 </div>
 
-<ob-navigation-menu></ob-navigation-menu>
+
 

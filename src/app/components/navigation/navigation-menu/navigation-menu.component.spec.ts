@@ -1,13 +1,14 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {NavigationMenuComponent} from './navigation-menu.component';
+import {By} from '@angular/platform-browser';
 
 const quixote = require('quixote');
 
 describe('NavigationMenuComponent', () => {
   let component: NavigationMenuComponent;
   let fixture: ComponentFixture<NavigationMenuComponent>;
-
+  let navMenu: HTMLDivElement;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NavigationMenuComponent]
@@ -19,10 +20,31 @@ describe('NavigationMenuComponent', () => {
     fixture = TestBed.createComponent(NavigationMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    navMenu = fixture.debugElement.query(By.css('.ob-nav-menu')).nativeElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should be disabled by default', () => {
+    expect(component.disabled).toBeTruthy();
+    expect(navMenu.classList).not.toContain('ob-active');
+  });
+
+  it('should detect change of disabled', () => {
+    expect(component.disabled).toBeTruthy();
+    component.disabled = false;
+    fixture.detectChanges();
+    expect(navMenu.classList).toContain('ob-active');
+  });
+
+  it('can toggle disabled', () => {
+    expect(component.disabled).toBeTruthy();
+    component.toggle();
+    expect(component.disabled).toBeFalsy();
+    component.toggle();
+    expect(component.disabled).toBeTruthy();
   });
 });
 
@@ -64,8 +86,8 @@ describe('Button Style', () => {
   });
 
   it('icon and label are vertically aligned', () => {
-    const centerIcon = (icon.getRawPosition().top + icon.getRawPosition().bottom ) / 2;
-    const labelCenter = (label.getRawPosition().top + label.getRawPosition().bottom ) / 2;
+    const centerIcon = (icon.getRawPosition().top + icon.getRawPosition().bottom) / 2;
+    const labelCenter = (label.getRawPosition().top + label.getRawPosition().bottom) / 2;
     expect(centerIcon).toBeCloseTo(labelCenter);
   });
 

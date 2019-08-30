@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'ob-navigation-menu',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationMenuComponent implements OnInit {
 
+  @Input() disabled = true;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  public toggle() {
+    this.disabled = !this.disabled;
+  }
 }

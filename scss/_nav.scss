@@ -77,12 +77,18 @@
   top: $nav-top-bar-height;
   bottom: 0;
   left: 0;
+  display: none;
+
   width: $nav-menu-width;
 
   font-size: $nav-menu-font-size;
   background-color: $color-surface-global;
 
   border-top: $color-on-background-active solid $nav-menu-footer-divider-thickness;
+
+  &.ob-active {
+    display: block;
+  }
 
   .ob-nav-item {
     position: relative;
