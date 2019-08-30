@@ -116,7 +116,7 @@
     }
   }
 
-  .ob-active > .ob-nav-item {
+  .ob-active.ob-nav-item {
     border-bottom: none;
 
     .ob-nav-icon {
@@ -128,10 +128,6 @@
     .ob-nav-item {
       margin-left: $nav-menu-label-margin-x + $nav-menu-item-margin-x;
     }
-  }
-
-  :not(.ob-active) .ob-nav-sub-item-container {
-    display: none;
   }
 
   .ob-nav-footer {

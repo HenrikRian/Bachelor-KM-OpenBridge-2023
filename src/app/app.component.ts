@@ -19,4 +19,8 @@ export class AppComponent {
   toggleSelected() {
     this.isSelected = !this.isSelected;
   }
+
+  log(txt: string) {
+    alert(txt);
+  }
 }
