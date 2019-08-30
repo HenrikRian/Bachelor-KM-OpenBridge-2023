@@ -1,0 +1,16 @@
+<div class="ob-expandable"  (click)="this.onClick()" >
+  <div class="ob-nav-item" [class.ob-active]="active">
+  <span class="ob-icon" *ngIf="materialLogo !== undefined">
+      <i class="material-icons">{{materialLogo}}</i>
+    </span>
+    <span class="ob-label">{{label}}</span>
+    <span class="ob-nav-icon">
+        <i class="material-icons">play_arrow</i>
+    </span>
+  </div>
+  <div class="ob-nav-sub-item-container" *ngIf="active">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+
