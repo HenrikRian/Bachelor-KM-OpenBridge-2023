@@ -109,11 +109,11 @@
   "bundlesize": [
     {
       "path": "./dist/css/openbridge-day.css",
-      "maxSize": "10 kB"
+      "maxSize": "20 kB"
     },
     {
       "path": "./dist/css/openbridge-day.min.css",
-      "maxSize": "1 kB"
+      "maxSize": "2 kB"
     }
   ]
 }
