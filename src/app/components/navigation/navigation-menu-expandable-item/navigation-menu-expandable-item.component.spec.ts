@@ -7,6 +7,7 @@ describe('NavigationMenuExpandableItemComponent', () => {
   let component: NavigationMenuExpandableItemComponent;
   let fixture: ComponentFixture<NavigationMenuExpandableItemComponent>;
   let expandDiv: HTMLDivElement;
+  let navItemDiv: HTMLDivElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,17 +21,18 @@ describe('NavigationMenuExpandableItemComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     expandDiv = fixture.debugElement.query(By.css('.ob-expandable')).nativeElement;
+    navItemDiv = fixture.debugElement.query(By.css('.ob-nav-item')).nativeElement;
   });
 
-  it('should be collapsed by default', () => {
-    expect(component.collapsed).toBeTruthy();
-    expect(expandDiv.classList).not.toContain('ob-active');
+  it('should not be active default', () => {
+    expect(component.active).toBeFalsy();
+    expect(navItemDiv.classList).not.toContain('ob-active');
   });
 
-  it('should be expandable', () => {
-    component.collapsed = false;
+  it('should be able to become active', () => {
+    component.active = true;
     fixture.detectChanges();
-    expect(expandDiv.classList).toContain('ob-active');
+    expect(navItemDiv.classList).toContain('ob-active');
   });
 
   it('should be expandable on click', () => {

@@ -21,6 +21,6 @@ export class AppComponent {
   }
 
   log(txt: string) {
-    alert(txt);
+    console.log(txt);
   }
 }
