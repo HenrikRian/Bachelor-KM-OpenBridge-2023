@@ -7,6 +7,137 @@ import {ButtonToggleModule} from './button-toggle-module';
 import {ButtonToggleChange, ButtonToggleComponent, ButtonToggleGroupComponent} from './button-toggle.component';
 
 
+
+@Component({
+  template: `
+    <ob-button-toggle-group [disabled]="isGroupDisabled"
+                            [(value)]="groupValue">
+      <button ob-button-toggle value="test1" *ngIf="renderFirstToggle">Test1</button>
+      <button ob-button-toggle value="test2">Test2</button>
+      <button ob-button-toggle value="test3">Test3</button>
+    </ob-button-toggle-group>
+  `
+})
+class ButtonTogglesInsideButtonToggleGroupComponent {
+  isGroupDisabled = false;
+  groupValue: string;
+  renderFirstToggle = true;
+}
+
+@Component({
+  template: `
+    <ob-button-toggle-group
+      [name]="groupName"
+      [(ngModel)]="modelValue"
+      (change)="lastEvent = $event">
+      <button ob-button-toggle *ngFor="let option of options" [value]="option.value">
+        {{option.label}}
+      </button>
+    </ob-button-toggle-group>
+  `
+})
+class ButtonToggleGroupWithNgModelComponent {
+  groupName = 'group-name';
+  modelValue: string;
+  options = [
+    {label: 'Red', value: 'red'},
+    {label: 'Green', value: 'green'},
+    {label: 'Blue', value: 'blue'},
+  ];
+  lastEvent: ButtonToggleChange;
+}
+
+@Component({
+  template: `
+    <ob-button-toggle-group [disabled]="isGroupDisabled" multiple>
+      <button ob-button-toggle value="eggs">Eggs</button>
+      <button ob-button-toggle value="flour">Flour</button>
+      <button ob-button-toggle value="sugar">Sugar</button>
+    </ob-button-toggle-group>
+  `
+})
+class ButtonTogglesInsideButtonToggleGroupMultipleComponent {
+  isGroupDisabled = false;
+}
+
+@Component({
+  template: `
+    <ob-button-toggle-group multiple [value]="value">
+      <button ob-button-toggle [value]="0">Eggs</button>
+      <button ob-button-toggle [value]="null">Flour</button>
+      <button ob-button-toggle [value]="false">Sugar</button>
+      <button ob-button-toggle>Sugar</button>
+    </ob-button-toggle-group>
+  `
+})
+class FalsyButtonTogglesInsideButtonToggleGroupMultipleComponent {
+  value: ('' | number | null | undefined | boolean)[] = [0];
+  @ViewChildren(ButtonToggleComponent) toggles: QueryList<ButtonToggleComponent>;
+}
+
+@Component({
+  template: `
+    <button ob-button-toggle>Yes</button>
+  `
+})
+class StandaloneButtonToggleComponent {
+}
+
+@Component({
+  template: `
+    <ob-button-toggle-group (change)="lastEvent = $event" value="red">
+      <button ob-button-toggle value="red">Value Red</button>
+      <button ob-button-toggle value="green">Value Green</button>
+    </ob-button-toggle-group>
+  `
+})
+class ButtonToggleGroupWithInitialValueComponent {
+  lastEvent: ButtonToggleChange;
+}
+
+@Component({
+  template: `
+    <ob-button-toggle-group [formControl]="control">
+      <button ob-button-toggle value="red">Value Red</button>
+      <button ob-button-toggle value="green">Value Green</button>
+      <button ob-button-toggle value="blue">Value Blue</button>
+    </ob-button-toggle-group>
+  `
+})
+class ButtonToggleGroupWithFormControlComponent {
+  control = new FormControl();
+}
+
+/** Simple test component with an aria-label set. */
+@Component({
+  template: `
+    <button ob-button-toggle aria-label="Super effective"></button>`
+})
+class ButtonToggleWithAriaLabelComponent {
+}
+
+/** Simple test component with an aria-label set. */
+@Component({
+  template: `
+    <button ob-button-toggle aria-labelledby="some-id"></button>`
+})
+class ButtonToggleWithAriaLabelledbyComponent {
+}
+
+@Component({
+  template: `
+    <button ob-button-toggle tabindex="3"></button>`
+})
+class ButtonToggleWithTabindexComponent {
+}
+
+@Component({
+  template: `
+    <button ob-button-toggle name="custom-name"></button>`
+})
+class ButtonToggleWithStaticNameComponent {
+}
+
 describe('ButtonToggle with forms', () => {
 
   beforeEach(fakeAsync(() => {
@@ -762,151 +893,3 @@ describe('ButtonToggleComponent without forms', () => {
 
 });
 
-@Component({
-  template: `
-    <ob-button-toggle-group [disabled]="isGroupDisabled"
-                            [(value)]="groupValue">
-      <button ob-button-toggle value="test1" *ngIf="renderFirstToggle">Test1</button>
-      <button ob-button-toggle value="test2">Test2</button>
-      <button ob-button-toggle value="test3">Test3</button>
-    </ob-button-toggle-group>
-  `
-})
-class ButtonTogglesInsideButtonToggleGroupComponent {
-  isGroupDisabled = false;
-  groupValue: string;
-  renderFirstToggle = true;
-}
-
-@Component({
-  template: `
-    <ob-button-toggle-group
-      [name]="groupName"
-      [(ngModel)]="modelValue"
-      (change)="lastEvent = $event">
-      <button ob-button-toggle *ngFor="let option of options" [value]="option.value">
-        {{option.label}}
-      </button>
-    </ob-button-toggle-group>
-  `
-})
-class ButtonToggleGroupWithNgModelComponent {
-  groupName = 'group-name';
-  modelValue: string;
-  options = [
-    {label: 'Red', value: 'red'},
-    {label: 'Green', value: 'green'},
-    {label: 'Blue', value: 'blue'},
-  ];
-  lastEvent: ButtonToggleChange;
-}
-
-@Component({
-  template: `
-    <ob-button-toggle-group [disabled]="isGroupDisabled" multiple>
-      <button ob-button-toggle value="eggs">Eggs</button>
-      <button ob-button-toggle value="flour">Flour</button>
-      <button ob-button-toggle value="sugar">Sugar</button>
-    </ob-button-toggle-group>
-  `
-})
-class ButtonTogglesInsideButtonToggleGroupMultipleComponent {
-  isGroupDisabled = false;
-}
-
-@Component({
-  template: `
-    <ob-button-toggle-group multiple [value]="value">
-      <button ob-button-toggle [value]="0">Eggs</button>
-      <button ob-button-toggle [value]="null">Flour</button>
-      <button ob-button-toggle [value]="false">Sugar</button>
-      <button ob-button-toggle>Sugar</button>
-    </ob-button-toggle-group>
-  `
-})
-class FalsyButtonTogglesInsideButtonToggleGroupMultipleComponent {
-  value: ('' | number | null | undefined | boolean)[] = [0];
-  @ViewChildren(ButtonToggleComponent) toggles: QueryList<ButtonToggleComponent>;
-}
-
-@Component({
-  template: `
-    <button ob-button-toggle>Yes</button>
-  `
-})
-class StandaloneButtonToggleComponent {
-}
-
-@Component({
-  template: `
-    <ob-button-toggle-group (change)="lastEvent = $event" value="red">
-      <button ob-button-toggle value="red">Value Red</button>
-      <button ob-button-toggle value="green">Value Green</button>
-    </ob-button-toggle-group>
-  `
-})
-class ButtonToggleGroupWithInitialValueComponent {
-  lastEvent: ButtonToggleChange;
-}
-
-@Component({
-  template: `
-    <ob-button-toggle-group [formControl]="control">
-      <button ob-button-toggle value="red">Value Red</button>
-      <button ob-button-toggle value="green">Value Green</button>
-      <button ob-button-toggle value="blue">Value Blue</button>
-    </ob-button-toggle-group>
-  `
-})
-class ButtonToggleGroupWithFormControlComponent {
-  control = new FormControl();
-}
-
-/** Simple test component with an aria-label set. */
-@Component({
-  template: `
-    <button ob-button-toggle aria-label="Super effective"></button>`
-})
-class ButtonToggleWithAriaLabelComponent {
-}
-
-/** Simple test component with an aria-label set. */
-@Component({
-  template: `
-    <button ob-button-toggle aria-labelledby="some-id"></button>`
-})
-class ButtonToggleWithAriaLabelledbyComponent {
-}
-
-/* Depricate
-@Component({
-  template: `
-    <ob-button-toggle-group [(value)]="value">
-      <button ob-button-toggle *ngFor="let toggle of possibleValues" [value]="toggle">
-        {{toggle}}
-      </button>
-    </ob-button-toggle-group>
-  `
-})
-class RepeatedButtonTogglesWithPreselectedValue {
-  @ViewChild(MatButtonToggleGroup, {static: false}) toggleGroup: MatButtonToggleGroup;
-  @ViewChildren(MatButtonToggle) toggles: QueryList<MatButtonToggle>;
-
-  possibleValues = ['One', 'Two', 'Three'];
-  value = 'Two';
-}
-*/
-
-@Component({
-  template: `
-    <button ob-button-toggle tabindex="3"></button>`
-})
-class ButtonToggleWithTabindexComponent {
-}
-
-@Component({
-  template: `
-    <button ob-button-toggle name="custom-name"></button>`
-})
-class ButtonToggleWithStaticNameComponent {
-}

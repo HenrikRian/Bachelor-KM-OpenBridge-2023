@@ -6,6 +6,7 @@ import {ButtonSlideToggleComponent} from './components/button-slide-toggle/butto
 import {ButtonToggleGroupComponent} from './components/button-toggle/button-toggle.component';
 import {NavigationMenuComponent} from './components/navigation/navigation-menu/navigation-menu.component';
 import {NavigationMenuItemComponent} from './components/navigation/navigation-menu-item/navigation-menu-item.component';
+// tslint:disable-next-line:max-line-length
 import {NavigationMenuExpandableItemComponent} from './components/navigation/navigation-menu-expandable-item/navigation-menu-expandable-item.component';
 
 

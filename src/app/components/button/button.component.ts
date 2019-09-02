@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {ChangeDetectionStrategy, Component, ElementRef, HostBinding, HostListener, Input, ViewEncapsulation,} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostBinding, HostListener, Input, ViewEncapsulation} from '@angular/core';
 import {CanDisable} from '../mixins/disabled';
 
 

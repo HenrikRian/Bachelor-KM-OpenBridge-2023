@@ -63,7 +63,7 @@ export const MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS =
  */
 export const MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => ButtonToggleGroupComponent),
+  useExisting: forwardRef(() => ButtonToggleGroupComponent), /* tslint:disable-line:no-use-before-declare*/
   multi: true
 };
 
@@ -83,6 +83,7 @@ export class ButtonToggleChange {
 @Component({
   selector: 'ob-button-toggle-group',
   providers: [MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR],
+  // tslint:disable-next-line:use-host-property-decorator
   host: {
     role: 'group',
     class: 'ob-btn-group',
@@ -178,6 +179,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   private _rawValue: any;
 
   /** Child button toggle buttons. */
+    // tslint:disable-next-line:no-use-before-declare
   @ContentChildren(forwardRef(() => ButtonToggleComponent)) _buttonToggles: QueryList<ButtonToggleComponent>;
 
   /** The appearance for all the buttons in the group. */
@@ -240,7 +242,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   _emitChangeEvent(): void {
     const selected = this.selected;
     const source = Array.isArray(selected) ? selected[selected.length - 1] : selected;
-    const event = new ButtonToggleChange(source!, this.value);
+    const event = new ButtonToggleChange(source, this.value);
     this._controlValueAccessorChangeFn(event.value);
     this.change.emit(event);
   }
@@ -362,11 +364,12 @@ const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBa
 /** Single button inside of a toggle group. */
 @Component({
   moduleId: module.id,
-  selector: 'button[ob-button-toggle]',
+  selector: 'button[ob-button-toggle]',   // tslint:disable-line:component-selector
   templateUrl: 'button-toggle.component.html',
   encapsulation: ViewEncapsulation.None,
   exportAs: 'ButtonToggleComponent',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  // tslint:disable-next-line:use-host-property-decorator
   host: {
     class: 'ob-btn ob-normal',
     // Always reset the tabindex to -1 so it doesn't conflict with the one on the `button`,
