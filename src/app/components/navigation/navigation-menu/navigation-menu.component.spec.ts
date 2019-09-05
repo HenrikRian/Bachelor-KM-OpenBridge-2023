@@ -1,7 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import {NavigationMenuComponent} from './navigation-menu.component';
 import {By} from '@angular/platform-browser';
+import {Component, DebugElement} from '@angular/core';
+import {NavigationMenuItemComponent} from '../navigation-menu-item/navigation-menu-item.component';
+import {NavigationMenuExpandableItemComponent} from '../navigation-menu-expandable-item/navigation-menu-expandable-item.component';
 
 const quixote = require('quixote');
 
@@ -46,6 +49,85 @@ describe('NavigationMenuComponent', () => {
     component.toggle();
     expect(component.disabled).toBeTruthy();
   });
+});
+
+@Component({
+  template: `
+    <ob-navigation-menu #menu>
+      <ob-navigation-menu-item id="firstNavItem" [label]="'first'" (changeActiveStatus)="menu.onActiveItemChange($event)">
+      </ob-navigation-menu-item>
+      <ob-navigation-menu-expandable-item id="secondNavItem"  [label]="'second'" (changeActiveStatus)="menu.onActiveItemChange($event)">
+      </ob-navigation-menu-expandable-item>
+    </ob-navigation-menu>
+  `
+})
+class NavigationMenuWithItemsComponent {
+}
+
+describe('Navigation menu with items', () => {
+  let component: NavigationMenuWithItemsComponent;
+  let menuComponent: NavigationMenuComponent;
+  let fixture: ComponentFixture<NavigationMenuWithItemsComponent>;
+  let navItemFirst: DebugElement;
+  let navItemSecond: DebugElement;
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        NavigationMenuWithItemsComponent,
+        NavigationMenuComponent,
+        NavigationMenuItemComponent,
+        NavigationMenuExpandableItemComponent
+      ]
+    })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(NavigationMenuWithItemsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    navItemFirst = fixture.debugElement.query(By.css('#firstNavItem'));
+    navItemSecond = fixture.debugElement.query(By.css('#secondNavItem'));
+    const menuComponentDebugElement = fixture.debugElement.query(By.directive(NavigationMenuComponent));
+    menuComponent = menuComponentDebugElement.componentInstance;
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should get activated event', fakeAsync(() => {
+    const changeSpy = jasmine.createSpy('navigation active change listener');
+    menuComponent.changeActiveItem.subscribe(changeSpy);
+
+    navItemFirst.nativeElement.click();
+    fixture.detectChanges();
+    tick();
+    expect(changeSpy).toHaveBeenCalledTimes(1);
+  }));
+
+  it('should get activated event also for extended items', fakeAsync(() => {
+    const changeSpy = jasmine.createSpy('navigation active change listener');
+    menuComponent.changeActiveItem.subscribe(changeSpy);
+
+    navItemSecond.nativeElement.click();
+    fixture.detectChanges();
+    tick();
+    expect(changeSpy).toHaveBeenCalledTimes(1);
+  }));
+
+  it('should get change the disable active element when new element gets active', fakeAsync(() => {
+    navItemFirst.nativeElement.click();
+    fixture.detectChanges();
+    tick();
+    expect(navItemFirst.componentInstance.active).toBeTruthy();
+
+    navItemSecond.nativeElement.click();
+    fixture.detectChanges();
+    tick();
+    expect(navItemFirst.componentInstance.active).toBeFalsy();
+    expect(navItemSecond.componentInstance.active).toBeTruthy();
+  }));
 });
 
 describe('Button Style', () => {
@@ -93,3 +175,5 @@ describe('Button Style', () => {
 
 
 });
+
+

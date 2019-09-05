@@ -23,7 +23,7 @@ storiesOf('Components|Button', module)
       <span class="ob-icon">
           <i class="material-icons">wb_sunny</i>
         </span>
-      <span class="ob-text-under">sun</span> 
+      <span class="ob-text-under">sun</span>
     </a>`,
   }))
  ;

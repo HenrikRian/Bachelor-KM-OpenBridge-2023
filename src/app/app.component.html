@@ -1,12 +1,12 @@
 <ob-top-bar></ob-top-bar>
 <ob-navigation-menu #menuComponent [disabled]="false">
-  <ob-navigation-menu-item (click)="log('hei');" [materialLogo]="'settings'" [label]="'Selection1'">
+  <ob-navigation-menu-item  (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection1'">
   </ob-navigation-menu-item>
-  <ob-navigation-menu-expandable-item (click)="log('hei');" [materialLogo]="'settings'" [label]="'Selection2'">
-    <ob-navigation-menu-item (click)="log('hei');" [materialLogo]="'settings'" [label]="'SubSelection1'">
-  </ob-navigation-menu-item>
-    <ob-navigation-menu-item (click)="log('hei');" [materialLogo]="'settings'" [label]="'SubSelection2'">
-  </ob-navigation-menu-item>
+  <ob-navigation-menu-expandable-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection2'">
+    <ob-navigation-menu-item [materialLogo]="'settings'" [label]="'SubSelection1'">
+    </ob-navigation-menu-item>
+    <ob-navigation-menu-item  [materialLogo]="'settings'" [label]="'SubSelection2'">
+    </ob-navigation-menu-item>
   </ob-navigation-menu-expandable-item>
 </ob-navigation-menu>
 <div style="padding-left: 50rem; padding-top: 10rem;">

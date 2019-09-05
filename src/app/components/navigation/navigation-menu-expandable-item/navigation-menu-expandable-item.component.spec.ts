@@ -38,7 +38,7 @@ describe('NavigationMenuExpandableItemComponent', () => {
   it('should be expandable on click', () => {
     expect(component.collapsed).toBeTruthy();
     expect(component.active).toBeFalsy();
-    expandDiv.click();
+    fixture.nativeElement.click();
     expect(component.collapsed).toBeFalsy();
     expect(component.active).toBeTruthy();
   });
