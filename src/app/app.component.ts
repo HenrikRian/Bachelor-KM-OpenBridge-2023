@@ -11,7 +11,7 @@ import {MenuItemActiveChange} from './components/navigation/navigation-menu-item
 export class AppComponent {
   title = 'openbridge-angular';
   isSelected = true;
-  menuActive = false;
+  menuActive = true;
   subTitle = 'Section';
   constructor(private palletSwitchService: PaletteSwitchService) {
 

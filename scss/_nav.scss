@@ -107,7 +107,7 @@
 
     .ob-nav-expand-icon {
       position: absolute;
-      right: $nav-menu-item-margin-x;
+      right: 0;
     }
 
     .ob-label {
@@ -146,8 +146,36 @@
     border-top: $nav-menu-footer-divider-thickness solid $color-border-outline;
 
     .ob-nav-footer-logo {
-      height: $nav-menu-footer-logo-height;
+      max-width: 70%;
+      max-height: 100%;
+
+
     }
 
+  }
+
+  .ob-nav-footer-logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $nav-menu-footer-logo-height;
+
+    margin: 0 $nav-menu-item-margin-x;
+
+
+  }
+}
+
+.ob-number-tag-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: $number-tag-diameter;
+  height: $number-tag-diameter;
+  border-radius: $number-tag-diameter;
+
+  &.ob-warning {
+    background-color: $color-alert-warning;
   }
 }

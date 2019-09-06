@@ -2,12 +2,23 @@ $base-rem: 8px !default; /* stylelint-disable-line meowtec/no-px */
 $base-size: 1rem !default; // when converting from px in style guide assume base-size=8px
 $icon-height: 3rem !default; // material design icon height
 
+$font-default: "Open Sans", sans-serif !default;
+
+//$font-weight-lighter: lighter !default;
+//$font-weight-light: 300 !default;
+//$font-weight-normal: 400 !default;
+$font-weight-semi-bold: 500 !default;
+$font-weight-bold: 600 !default;
+//$font-weight-bolder: bolder !default;
 
 $border-width: .125 * $base-size !default;
 $border-width-focus: .5 * $base-size !default;
 
 //$border-radius-normal: .5 * $base-size !default;
 $border-radius-large: .75 * $base-size !default;
+
+
+$number-tag-diameter: 4 * $base-size !default;
 
 $btn-line-height: 1 !default;
 
@@ -24,14 +35,9 @@ $btn-padding-x: 3 * $base-size !default;
 $btn-text-under-spacing: .5 * $base-size !default;
 
 
-$font-default: "Open Sans", sans-serif !default;
 
-//$font-weight-lighter: lighter !default;
-//$font-weight-light: 300 !default;
-//$font-weight-normal: 400 !default;
-$font-weight-semi-bold: 500 !default;
-$font-weight-bold: 600 !default;
-//$font-weight-bolder: bolder !default;
+
+
 
 $nav-menu-width: 40 * $base-size !default;
 $nav-menu-item-height: 7 * $base-size !default;
