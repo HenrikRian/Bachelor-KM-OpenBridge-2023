@@ -13,6 +13,8 @@ export class NavigationMenuComponent {
     new EventEmitter<MenuItemActiveChange>();
 
   @Input() disabled = true;
+  @Input() numberOfNotifications = 0;
+  @Input() logoSrc: string;
 
 
   constructor() {

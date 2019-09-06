@@ -1,13 +1,19 @@
-<ob-top-bar [title]="'Application'" [subTitle]="subTitle" [menuActive]="menuActive" (clickOnMenuEvent)="toggleMenu()"></ob-top-bar>
-<ob-navigation-menu #menuComponent [disabled]="!menuActive" (changeActiveItem)="changeActiveView($event)">
-  <ob-navigation-menu-item  (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection1'">
+<ob-top-bar [title]="'Application'" [subTitle]="subTitle" [menuActive]="menuActive"
+            (clickOnMenuEvent)="toggleMenu()"></ob-top-bar>
+<ob-navigation-menu #menuComponent [disabled]="!menuActive" (changeActiveItem)="changeActiveView($event)"
+                    [numberOfNotifications]="numberOfNotifications"
+                    logoSrc="/assets/img/OpenBridge_Logo2-p-500.png"
+>
+  <ob-navigation-menu-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'"
+                           [label]="'Selection1'">
   </ob-navigation-menu-item>
-  <ob-navigation-menu-expandable-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection2'">
+  <ob-navigation-menu-expandable-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)"
+                                      [materialLogo]="'settings'" [label]="'Selection2'">
     <ob-navigation-menu-item [materialLogo]="'settings'" [label]="'SubSelection1'"
-    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
+                             (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
     </ob-navigation-menu-item>
-    <ob-navigation-menu-item  [materialLogo]="'settings'" [label]="'SubSelection2'"
-    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
+    <ob-navigation-menu-item [materialLogo]="'settings'" [label]="'SubSelection2'"
+                             (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
     </ob-navigation-menu-item>
   </ob-navigation-menu-expandable-item>
 </ob-navigation-menu>
