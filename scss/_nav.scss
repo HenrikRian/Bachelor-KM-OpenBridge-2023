@@ -101,7 +101,7 @@
     cursor: pointer;
     border-bottom: $nav-menu-item-divider-thickness solid $color-border-outline;
 
-    .ob-nav-icon {
+    .ob-nav-expand-icon {
       position: absolute;
       right: $nav-menu-item-margin-x;
     }
@@ -116,10 +116,10 @@
     }
   }
 
-  .ob-expandable > .ob-active.ob-nav-item {
+  .ob-expandable > .ob-expanded.ob-nav-item {
     border-bottom: none;
 
-    .ob-nav-icon {
+    .ob-nav-expand-icon {
       transform: rotate(90deg);
     }
   }

@@ -1,4 +1,4 @@
-<div class="ob-nav-item" [class.ob-active]="active">
+<div class="ob-nav-item" [class.ob-active]="active" (click)="makeActive()">
 <ng-content></ng-content>
   <span class="ob-icon" *ngIf="materialLogo !== undefined">
       <i class="material-icons">{{materialLogo}}</i>

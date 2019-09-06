@@ -37,7 +37,7 @@ export class NavigationMenuItemComponent implements OnInit {
   }
 
 
-  @HostListener('click') protected onClick() {
+  protected makeActive() {
     this.active = true;
   }
 

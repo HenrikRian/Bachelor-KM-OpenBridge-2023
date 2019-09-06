@@ -3,9 +3,11 @@
   <ob-navigation-menu-item  (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection1'">
   </ob-navigation-menu-item>
   <ob-navigation-menu-expandable-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection2'">
-    <ob-navigation-menu-item [materialLogo]="'settings'" [label]="'SubSelection1'">
+    <ob-navigation-menu-item [materialLogo]="'settings'" [label]="'SubSelection1'"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
     </ob-navigation-menu-item>
-    <ob-navigation-menu-item  [materialLogo]="'settings'" [label]="'SubSelection2'">
+    <ob-navigation-menu-item  [materialLogo]="'settings'" [label]="'SubSelection2'"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
     </ob-navigation-menu-item>
   </ob-navigation-menu-expandable-item>
 </ob-navigation-menu>

@@ -8,12 +8,16 @@ import {NavigationMenuItemComponent} from '../navigation-menu-item/navigation-me
 export class NavigationMenuExpandableItemComponent extends NavigationMenuItemComponent {
   @Input() collapsed = true;
 
-  protected onClick() {
-    super.onClick();
-    this.collapsed = false;
-  }
-
   constructor() {
     super();
+  }
+
+  protected onToggleCollapsedClick(event: Event) {
+    this.toggleCollapsed();
+    event.stopPropagation();
+  }
+
+  protected toggleCollapsed() {
+    this.collapsed = !this.collapsed;
   }
 }
