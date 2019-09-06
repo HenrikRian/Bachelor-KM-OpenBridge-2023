@@ -1,23 +1,23 @@
 .ob-nav-top-bar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   width: $nav-top-bar-width;
   height: $nav-top-bar-height;
 
   background-color: $color-surface-global;
-  border-bottom: solid $color-border-outline .0416 * $base-size;
+  border-bottom: solid $color-border-outline .25 * $base-size;
 
 
   .ob-menu-container {
     display: flex;
-
+    align-items: center;
     height: $nav-top-bar-height;
 
 
     .ob-nav-item {
       padding: ($nav-top-bar-height - $nav-btn-height) / 2;
-
       color: $color-on-background-unfocused;
 
       & > * {
@@ -31,12 +31,16 @@
           margin-right: 0;
         }
       }
+
+      &.ob-active {
+        color: white;
+        background: $color-on-background-active;
+      }
     }
 
     .ob-nav-btn {
       $border-width-and-padding: $nav-btn-padding + $border-width;
       display: flex;
-      height: $nav-btn-height;
 
 
       cursor: pointer;
@@ -50,23 +54,23 @@
       width: $nav-divider-width;
       height: $nav-divider-height;
 
-      margin: (( $nav-top-bar-height - $nav-divider-height ) / 2) 0;
-
       background-color: $color-border-divider;
     }
 
-    .ob-sub-title {
-      font-size: $nav-sub-title-font-size;
-      font-style: normal;
-      font-weight: $font-weight-bold;
-      font-stretch: normal;
+    .ob-title {
+      margin-left: $nav-title-spacing-x;
 
-      line-height: normal;
-
+      font-size: $nav-title-font-size;
+      font-weight: $nav-title-font-weight;
       color: $color-on-background-focused;
+    }
 
-      letter-spacing: $nav-sub-title-letter-spacing;
+    .ob-sub-title {
+      margin-left: $nav-title-spacing-x;
 
+      font-size: $nav-sub-title-font-size;
+      font-weight: $nav-sub-title-font-weight;
+      color: $color-on-background-focused;
     }
 
   }
@@ -116,11 +120,14 @@
     }
   }
 
-  .ob-expandable > .ob-expanded.ob-nav-item {
-    border-bottom: none;
+  .ob-expandable > .ob-expanded {
+    &.ob-nav-item {
+      border-bottom: none;
+    }
 
-    .ob-nav-expand-icon {
+    > .ob-nav-expand-icon {
       transform: rotate(90deg);
+
     }
   }
 

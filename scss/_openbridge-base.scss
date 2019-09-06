@@ -4,5 +4,10 @@
 @import "mixins";
 
 html {
+
   font-size: $base-rem;
+}
+
+* {
+  box-sizing: border-box;
 }

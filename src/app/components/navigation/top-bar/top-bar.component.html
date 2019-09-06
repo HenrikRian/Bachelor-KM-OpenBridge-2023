@@ -1,10 +1,10 @@
 <div class="ob-nav-top-bar">
   <div class="ob-menu-container">
-    <div class="ob-nav-item ob-nav-btn">
+    <div class="ob-nav-item ob-nav-btn"  [class.ob-active]="menuActive" (click)="onClickOnMenu($event)">
       <i class="material-icons">menu</i>
-      <div class="ob-nav-menu-title">Ecdis</div>
     </div>
-    <div class="ob-sub-title ob-nav-item">Monitoring</div>
+    <div class="ob-title" >{{title}}</div>
+    <div class="ob-sub-title">{{subTitle}}</div>
   </div>
   <div class="ob-menu-container">
     <div class="ob-divider"></div>

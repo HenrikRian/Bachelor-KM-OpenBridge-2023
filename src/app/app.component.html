@@ -1,5 +1,5 @@
-<ob-top-bar></ob-top-bar>
-<ob-navigation-menu #menuComponent [disabled]="false">
+<ob-top-bar [title]="'Application'" [subTitle]="subTitle" [menuActive]="menuActive" (clickOnMenuEvent)="toggleMenu()"></ob-top-bar>
+<ob-navigation-menu #menuComponent [disabled]="!menuActive" (changeActiveItem)="changeActiveView($event)">
   <ob-navigation-menu-item  (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection1'">
   </ob-navigation-menu-item>
   <ob-navigation-menu-expandable-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'" [label]="'Selection2'">
@@ -29,7 +29,6 @@
                    [materialDesignIconName]="'wb_cloudy'"></ob-button-icon>
                    -->
   <a ob-button-normal>Hi a</a>
-  <button ob-button-normal (click)="menuComponent.toggle()">Toggle menu</button>
   <a ob-button-normal>
     <span class="ob-icon">
       <i class="material-icons">wb_sunny</i>

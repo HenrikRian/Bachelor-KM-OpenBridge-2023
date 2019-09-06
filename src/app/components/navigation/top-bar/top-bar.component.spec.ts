@@ -50,9 +50,9 @@ describe('TopBarStyle', () => {
   <div class="ob-menu-container">
     <div class="ob-nav-item ob-nav-btn" id="btn-hamburger">
       <i class="material-icons" id="icon-hamburger">menu</i>
-      <div class="ob-nav-menu-title" id="title-hamburger">Ecdis</div>
-    </div>
-    <div class="ob-sub-title ob-nav-item" id="title">App title</div>
+     </div>
+    <div class="ob-title" id="title">Title</div>
+    <div class="ob-sub-title" id="subtitle">Subtitle</div>
   </div>
   <div class="ob-menu-container">
     <div class="ob-divider" id="divider"></div>
@@ -90,16 +90,24 @@ describe('TopBarStyle', () => {
     });
   });
 
-  it('Menu name should be 2 rem from everything', () => {
-    const menuName = frame.get('#title-hamburger');
-    const menuIcion = frame.get('#icon-hamburger');
+  it('Title should be should be 2 rem from everything', () => {
+    const title = frame.get('#title');
     const menuBtn = frame.get('#btn-hamburger');
-    menuName.assert({
-      top: container.top.plus(2 * rem),
-      bottom: container.bottom.minus(2 * rem),
-      left: menuIcion.right.plus(2 * rem),
-      right: menuBtn.right.minus(2 * rem)
+    const subtitle = frame.get('#subtitle');
+    title.assert({
+      left: menuBtn.right.plus(2 * rem),
+      right: subtitle.left.minus(2 * rem)
     });
+  });
+
+  it('Titles baseline should be 20px from bottom', () => {
+    const title = frame.get('#title');
+    const menuBtn = frame.get('#btn-hamburger');
+    const subtitle = frame.get('#subtitle');
+    title.assert({
+      bottom: container.bottom.minus(2 * rem),
+    });
+    title.com
   });
 
 

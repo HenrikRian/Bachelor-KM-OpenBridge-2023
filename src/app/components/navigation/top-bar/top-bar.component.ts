@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'ob-top-bar',
-  templateUrl: './top-bar.component.html',
-  styleUrls: ['./top-bar.component.scss']
+  templateUrl: './top-bar.component.html'
 })
-export class TopBarComponent implements OnInit {
+export class TopBarComponent {
+  @Input() title: string;
+  @Input() subTitle: string;
+
+  @Input() menuActive = false;
+
+  @Output() clickOnMenuEvent = new EventEmitter<Event>();
 
   constructor() { }
 
-  ngOnInit() {
+  private onClickOnMenu(event: Event) {
+    event.stopPropagation();
+    this.clickOnMenuEvent.emit(event);
   }
 
 }

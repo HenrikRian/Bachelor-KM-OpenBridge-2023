@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {PaletteSwitchService} from './palette-switch.service';
 import {ComponentStyle} from './variables';
+import {MenuItemActiveChange} from './components/navigation/navigation-menu-item/navigation-menu-item.component';
 
 @Component({
   selector: 'ob-root',
@@ -10,14 +11,24 @@ import {ComponentStyle} from './variables';
 export class AppComponent {
   title = 'openbridge-angular';
   isSelected = true;
-  normalStyle = ComponentStyle.Normal;
-  raisedStyle = ComponentStyle.Raised;
+  menuActive = false;
+  subTitle = 'Section';
   constructor(private palletSwitchService: PaletteSwitchService) {
 
   }
 
   toggleSelected() {
     this.isSelected = !this.isSelected;
+  }
+
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
+  }
+
+  changeActiveView(event: MenuItemActiveChange) {
+    if (event.active) {
+      this.subTitle = event.source.label;
+    }
   }
 
   log(txt: string) {
