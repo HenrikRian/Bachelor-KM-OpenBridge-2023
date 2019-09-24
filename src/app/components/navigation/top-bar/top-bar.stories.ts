@@ -7,8 +7,18 @@ storiesOf('Components|Navigation TopBarComponent', module)
   .add('Default', () => ({
     component,
     props: {
-      label: 'Hello Button',
+      title: 'Application',
+      subTitle: 'Selection'
     },
-  }));
+  }))
+  .add('Set menu active', () => ({
+    component,
+    props: {
+      title: 'Application',
+      subTitle: 'Selection',
+      menuActive: true
+    },
+  }))
+  ;
 
 
