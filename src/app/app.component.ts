@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {PaletteSwitchService} from './palette-switch.service';
-import {MenuItemActiveChange} from './components/navigation/navigation-menu-item/navigation-menu-item.component';
+import {MenuItemActiveChange} from '../components/navigation/navigation-menu-item/navigation-menu-item.component';
 
 @Component({
   selector: 'ob-root',
