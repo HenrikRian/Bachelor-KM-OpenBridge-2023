@@ -26,19 +26,27 @@ export class NavigationMenuItemComponent implements OnInit {
 
   ngOnInit() {
   }
+
   /** Whether the element is marked as active or not. */
   @Input()
   set active(value) {
-    this._active = coerceBooleanProperty(value);
+    const newActive = coerceBooleanProperty(value);
+    if (this._active === newActive) {
+      return;
+    }
+    this._active = newActive;
     this.changeActiveStatus.emit(new MenuItemActiveChange(this, this.active));
   }
+
   get active(): boolean {
     return this._active;
   }
 
 
-  protected makeActive() {
+  @HostListener('click', ['$event'])
+  protected makeActive(event: Event) {
     this.active = true;
+    event.stopPropagation();
   }
 
 

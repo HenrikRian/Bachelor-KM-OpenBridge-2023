@@ -6,7 +6,7 @@
       <span class="ob-label">Selection</span>
     </div>
     <div class="ob-nav-footer-logo-row">
-      <img class="ob-nav-footer-logo" [src]="logoSrc">
+      <img class="ob-nav-footer-logo" [src]="logoSrc" *ngIf="logoSrc!==undefined">
       <div class="ob-nav-notification-badge" *ngIf="numberOfNotifications>0">
         <div class="ob-number-tag-container ob-warning" >
           <div class="ob-number-tag">{{numberOfNotifications}}</div>

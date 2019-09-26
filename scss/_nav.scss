@@ -6,8 +6,9 @@
   width: $nav-top-bar-width;
   height: $nav-top-bar-height;
 
+  font-family: $font-default;
   background-color: $color-surface-global;
-  border-bottom: solid $color-border-outline .25 * $base-size;
+  border-bottom: solid $color-border-outline $nav-top-bar-border-bottom-width;
 
 
   .ob-menu-container {
@@ -85,6 +86,7 @@
 
   width: $nav-menu-width;
 
+  font-family: $font-default;
   font-size: $nav-menu-font-size;
   background-color: $color-surface-global;
 

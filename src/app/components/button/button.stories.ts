@@ -8,9 +8,8 @@ storiesOf('Components|Button', module)
       declarations: [ButtonComponent, ButtonAnchorComponent],
     })
   )
-   /*
   .add('Normal style', () => ({
-    template: "<a ob-button-normal>Hi </a>"
+    template: '<a ob-button-normal>Hi </a>'
 
   }))
   .add('Raised style', () => ({
@@ -19,7 +18,7 @@ storiesOf('Components|Button', module)
   .add('Button elemennt style', () => ({
     template: `<button ob-button-normal>Hi </button>`
   }))
- .add('With icon', () => ({
+  .add('With icon', () => ({
     template: `<a ob-button-normal>
       <span class="ob-icon">
           <i class="material-icons">wb_sunny</i>
@@ -27,4 +26,4 @@ storiesOf('Components|Button', module)
       <span class="ob-text-under">sun</span>
     </a>`,
   }))
- ;*/
+;
