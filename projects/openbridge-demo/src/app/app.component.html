@@ -2,7 +2,7 @@
             (clickOnMenuEvent)="toggleMenu()"></ob-top-bar>
 <ob-navigation-menu #menuComponent [disabled]="!menuActive" (changeActiveItem)="changeActiveView($event)"
                     [numberOfNotifications]="numberOfNotifications"
-                    logoSrc="/assets/img/OpenBridge_Logo2-p-500.png"
+                    logoSrc="/assets/img/OpenBridge_Logo.png"
 >
   <ob-navigation-menu-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'"
                            [label]="'Selection1'">
@@ -34,7 +34,7 @@
   <ob-button-icon [label]="'Icon'" [componentStyle]="raisedStyle"
                    [materialDesignIconName]="'wb_cloudy'"></ob-button-icon>
                    -->
-  <a ob-button-normal>Hi a</a>
+  <a ob-button-normal (click)="rotatePalette()">Rotate palette</a>
   <a ob-button-normal>
     <span class="ob-icon">
       <i class="material-icons">wb_sunny</i>

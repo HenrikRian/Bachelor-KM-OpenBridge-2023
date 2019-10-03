@@ -34,7 +34,7 @@
       }
 
       &.ob-active {
-        color: white;
+        color: $color-on-primary-active;
         background: $color-on-background-active;
       }
     }

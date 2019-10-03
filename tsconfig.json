@@ -11,13 +11,23 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "openbridge-components": [
+        "projects/openbridge-components/src/public-api.ts"
+      ],
+      "openbridge-components/*": [
+        "projects/openbridge-components/src/*"
+      ]
+    }
   }
 }

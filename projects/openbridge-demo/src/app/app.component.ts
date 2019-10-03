@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
+import {MenuItemActiveChange} from 'openbridge-components/lib/navigation/navigation-menu-item/navigation-menu-item.component';
 import {PaletteSwitchService} from './palette-switch.service';
-import {MenuItemActiveChange} from '../components/navigation/navigation-menu-item/navigation-menu-item.component';
 
 @Component({
-  selector: 'ob-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -17,8 +17,8 @@ export class AppComponent {
 
   }
 
-  toggleSelected() {
-    this.isSelected = !this.isSelected;
+  rotatePalette() {
+    this.palletSwitchService.rotatePalette();
   }
 
   toggleMenu() {
