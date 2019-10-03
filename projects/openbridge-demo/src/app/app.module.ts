@@ -2,30 +2,26 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {ButtonAnchorComponent, ButtonComponent} from 'openbridge-components/lib/button/button.component';
-import {TopBarComponent} from 'openbridge-components/lib/navigation/top-bar/top-bar.component';
-import {ButtonSlideToggleComponent} from 'openbridge-components/lib/button-slide-toggle/button-slide-toggle.component';
-import {ButtonToggleModule} from 'openbridge-components';
-import { NavigationMenuComponent } from 'openbridge-components/lib/navigation/navigation-menu/navigation-menu.component';
-import { NavigationMenuItemComponent } from 'openbridge-components/lib/navigation/navigation-menu-item/navigation-menu-item.component';
-// tslint:disable-next-line:max-line-length
-import { NavigationMenuExpandableItemComponent } from 'openbridge-components/lib/navigation/navigation-menu-expandable-item/navigation-menu-expandable-item.component';
+import {
+  ButtonModule,
+  ButtonSlideToggleModule,
+  ButtonToggleModule,
+  NavigationMenuModule,
+  TopBarModule
+} from 'openbridge-components';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ButtonComponent,
-    ButtonAnchorComponent,
-    TopBarComponent,
-    ButtonSlideToggleComponent,
-    NavigationMenuComponent,
-    NavigationMenuItemComponent,
-    NavigationMenuExpandableItemComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     ButtonToggleModule,
+    ButtonModule,
+    ButtonSlideToggleModule,
+    NavigationMenuModule,
+    TopBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

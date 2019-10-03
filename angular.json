@@ -35,7 +35,7 @@
       "projectType": "library",
       "root": "projects/openbridge-components",
       "sourceRoot": "projects/openbridge-components/src",
-      "prefix": "lib",
+      "prefix": "ob",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
