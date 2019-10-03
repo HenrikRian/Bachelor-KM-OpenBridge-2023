@@ -3,7 +3,7 @@ import { withA11y } from '@storybook/addon-a11y';
 
 addDecorator(withA11y);
 // automatically import all files ending in *.stories.ts
-const req = require.context('../src', true, /\.stories\.ts$/);
+const req = require.context('../projects/openbridge-components/src', true, /\.stories\.ts$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
