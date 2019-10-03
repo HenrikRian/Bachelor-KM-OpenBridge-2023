@@ -3,7 +3,7 @@ import {Component, DebugElement, QueryList, ViewChildren} from '@angular/core';
 import {ComponentFixture, fakeAsync, flush, TestBed, tick} from '@angular/core/testing';
 import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
 import {By} from '@angular/platform-browser';
-import {ButtonToggleModule} from './button-toggle-module';
+import {ButtonToggleModule} from 'openbridge-components';
 import {ButtonToggleChange, ButtonToggleComponent, ButtonToggleGroupComponent} from './button-toggle.component';
 
 

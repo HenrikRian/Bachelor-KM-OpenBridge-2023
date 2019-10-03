@@ -107,7 +107,6 @@ describe('TopBarStyle', () => {
     title.assert({
       bottom: container.bottom.minus(2 * rem),
     });
-    title.com
   });
 
 

@@ -18,8 +18,10 @@ storiesOf('Components|Navigation NavigationMenuComponent', module)
   .add('With item:', () => ({
     template: `
 <ob-navigation-menu #menuComponent  [disabled]="false">
-  <ob-navigation-menu-item materialLogo="settings" label="Selection1" (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
-  <ob-navigation-menu-item materialLogo="settings" label="Selection2" (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
+  <ob-navigation-menu-item materialLogo="settings" label="Selection1"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
+  <ob-navigation-menu-item materialLogo="settings" label="Selection2"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
 </ob-navigation-menu>`,
     props: {
       changeActiveItem: action('active item set')
@@ -28,9 +30,12 @@ storiesOf('Components|Navigation NavigationMenuComponent', module)
   .add('With extendable item:', () => ({
     template: `
 <ob-navigation-menu #menuComponent  [disabled]="false">
-<ob-navigation-menu-expandable-item materialLogo="settings" label="Main Selection" (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
-  <ob-navigation-menu-item materialLogo="settings" label="Selection1" (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
-  <ob-navigation-menu-item materialLogo="settings" label="Selection2" (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
+<ob-navigation-menu-expandable-item materialLogo="settings" label="Main Selection"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
+    <ob-navigation-menu-item materialLogo="settings" label="Selection1"
+      (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
+    <ob-navigation-menu-item materialLogo="settings" label="Selection2"
+      (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
   </ob-navigation-menu-expandable-item>
 </ob-navigation-menu>`,
     props: {
@@ -40,9 +45,14 @@ storiesOf('Components|Navigation NavigationMenuComponent', module)
     .add('With extendable item expanded:', () => ({
     template: `
 <ob-navigation-menu #menuComponent  [disabled]="false">
-<ob-navigation-menu-expandable-item materialLogo="settings" label="Main Selection" [collapsed]="false" (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
-  <ob-navigation-menu-item materialLogo="settings" label="Selection1" (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
-  <ob-navigation-menu-item materialLogo="settings" label="Selection2" (changeActiveStatus)="menuComponent.onActiveItemChange($event)"></ob-navigation-menu-item>
+  <ob-navigation-menu-expandable-item materialLogo="settings" label="Main Selection" [collapsed]="false"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
+    <ob-navigation-menu-item materialLogo="settings" label="Selection1"
+      (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
+    </ob-navigation-menu-item>
+    <ob-navigation-menu-item materialLogo="settings" label="Selection2"
+    (changeActiveStatus)="menuComponent.onActiveItemChange($event)">
+    </ob-navigation-menu-item>
   </ob-navigation-menu-expandable-item>
 </ob-navigation-menu>`,
     props: {
