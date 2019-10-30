@@ -41,7 +41,7 @@
     background-color: $style-normal-focused-fill-color;
     //border-color: none; // TODO
     //border-width: $style-normal-focused-border-width; // TODO
-    @include focus-ring($border-radius-large, $style-normal-focused-border-width);
+    @include focus-ring($border-radius-large, $style-normal-focused-stroke-color);
 
 
     &:active {
@@ -82,7 +82,7 @@
     background-color: $style-raised-focused-fill-color;
     //border-color: none; // TODO
     //border-width: $style-raised-focused-border-width; // TODO
-    @include focus-ring($border-radius-large, $style-raised-focused-border-width);
+    @include focus-ring($border-radius-large, $style-raised-focused-stroke-color);
 
 
     &:active {
@@ -123,7 +123,7 @@
     background-color: $style-raised-focused-fill-color;
     //border-color: none; // TODO
     //border-width: $style-raised-focused-border-width; // TODO
-    @include focus-ring($border-radius-large, $style-raised-focused-border-width);
+    @include focus-ring($border-radius-large, $style-raised-focused-stroke-color);
 
 
     &:active {
@@ -164,7 +164,7 @@
     background-color: $style-indent-focused-fill-color;
     //border-color: none; // TODO
     //border-width: $style-indent-focused-border-width; // TODO
-    @include focus-ring($border-radius-large, $style-indent-focused-border-width);
+    @include focus-ring($border-radius-large, $style-indent-focused-stroke-color);
 
 
     &:active {
