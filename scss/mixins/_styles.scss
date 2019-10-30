@@ -1,0 +1,259 @@
+@mixin focus-ring($border-radius, $focus-ring-color) {
+  z-index: $z-index-focus;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-index-focus;
+    width: 100%;
+    height: 100%;
+    margin: - $border-width-focus;
+
+    content: "";
+    border: $border-width-focus $focus-ring-color solid;
+    border-radius: $border-radius;
+
+
+  }
+}
+
+@mixin style-normal {
+  color: $on-background-active-color;
+
+  background-color: $style-normal-normal-fill-color;
+  border-color: $style-normal-normal-stroke-color;
+  border-width: $style-normal-normal-border-width;
+  border-style: solid;
+  @include set-border-width-and-margin-for-constant-margin-box-size($style-normal-normal-border-width);
+
+  &:hover:not(:disabled) {
+    z-index: $z-index-hover;
+    color: $on-background-focused-color;
+
+    background-color: $style-normal-hover-fill-color;
+    border-color: $style-normal-hover-stroke-color;
+    border-width: $style-normal-hover-border-width;
+    @include set-border-width-and-margin-for-constant-margin-box-size($style-normal-hover-border-width);
+
+  }
+
+  &:focus-within {
+    background-color: $style-normal-focused-fill-color;
+    //border-color: none; // TODO
+    //border-width: $style-normal-focused-border-width; // TODO
+    @include focus-ring($border-radius-large, $style-normal-focused-border-width);
+
+
+    &:active {
+      background-color: $style-normal-pressed-fill-color;
+      border-color: $style-normal-pressed-stroke-color;
+      @include set-border-width-and-margin-for-constant-margin-box-size($style-normal-pressed-border-width);
+    }
+  }
+
+  &:disabled {
+    color: $on-background-disabled-color;
+    background-color: $style-normal-disabled-fill-color;
+    border-color: $style-normal-disabled-fill-color;
+  }
+}
+
+@mixin style-raised {
+  color: $on-background-active-color;
+
+  background-color: $style-raised-normal-fill-color;
+  border-color: $style-raised-normal-stroke-color;
+  border-width: $style-raised-normal-border-width;
+  border-style: solid;
+  @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-normal-border-width);
+
+  &:hover:not(:disabled) {
+    z-index: $z-index-hover;
+    color: $on-background-focused-color;
+
+    background-color: $style-raised-hover-fill-color;
+    border-color: $style-raised-hover-stroke-color;
+    border-width: $style-raised-hover-border-width;
+    @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-hover-border-width);
+
+  }
+
+  &:focus-within {
+    background-color: $style-raised-focused-fill-color;
+    //border-color: none; // TODO
+    //border-width: $style-raised-focused-border-width; // TODO
+    @include focus-ring($border-radius-large, $style-raised-focused-border-width);
+
+
+    &:active {
+      background-color: $style-raised-pressed-fill-color;
+      border-color: $style-raised-pressed-stroke-color;
+      @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-pressed-border-width);
+    }
+  }
+
+  &:disabled {
+    color: $on-background-disabled-color;
+    background-color: $style-raised-disabled-fill-color;
+    border-color: $style-raised-disabled-fill-color;
+  }
+}
+
+@mixin style-selected {
+  color: $on-background-active-color;
+
+  background-color: $style-raised-normal-fill-color;
+  border-color: $style-raised-normal-stroke-color;
+  border-width: $style-raised-normal-border-width;
+  border-style: solid;
+  @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-normal-border-width);
+
+  &:hover:not(:disabled) {
+    z-index: $z-index-hover;
+    color: $on-background-focused-color;
+
+    background-color: $style-raised-hover-fill-color;
+    border-color: $style-raised-hover-stroke-color;
+    border-width: $style-raised-hover-border-width;
+    @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-hover-border-width);
+
+  }
+
+  &:focus-within {
+    background-color: $style-raised-focused-fill-color;
+    //border-color: none; // TODO
+    //border-width: $style-raised-focused-border-width; // TODO
+    @include focus-ring($border-radius-large, $style-raised-focused-border-width);
+
+
+    &:active {
+      background-color: $style-raised-pressed-fill-color;
+      border-color: $style-raised-pressed-stroke-color;
+      @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-pressed-border-width);
+    }
+  }
+
+  &:disabled {
+    color: $on-background-disabled-color;
+    background-color: $style-raised-disabled-fill-color;
+    border-color: $style-raised-disabled-fill-color;
+  }
+}
+
+@mixin style-indent {
+  color: $on-background-active-color;
+
+  background-color: $style-indent-normal-fill-color;
+  border-color: $style-indent-normal-stroke-color;
+  border-width: $style-indent-normal-border-width;
+  border-style: solid;
+  @include set-border-width-and-margin-for-constant-margin-box-size($style-indent-normal-border-width);
+
+  &:hover:not(:disabled) {
+    z-index: $z-index-hover;
+    color: $on-background-focused-color;
+
+    background-color: $style-indent-hover-fill-color;
+    border-color: $style-indent-hover-stroke-color;
+    border-width: $style-indent-hover-border-width;
+    @include set-border-width-and-margin-for-constant-margin-box-size($style-indent-hover-border-width);
+
+  }
+
+  &:focus-within {
+    background-color: $style-indent-focused-fill-color;
+    //border-color: none; // TODO
+    //border-width: $style-indent-focused-border-width; // TODO
+    @include focus-ring($border-radius-large, $style-indent-focused-border-width);
+
+
+    &:active {
+      background-color: $style-indent-pressed-fill-color;
+      border-color: $style-indent-pressed-stroke-color;
+      @include set-border-width-and-margin-for-constant-margin-box-size($style-indent-pressed-border-width);
+    }
+  }
+
+  &:disabled {
+    color: $on-background-disabled-color;
+    background-color: $style-indent-disabled-fill-color;
+    border-color: $style-indent-disabled-fill-color;
+  }
+}
+
+@mixin style-thumb {
+  color: $on-background-active-color;
+
+  background-color: $style-thumb-normal-fill-color;
+  border-color: $style-thumb-normal-stroke-color;
+  border-width: $style-thumb-normal-border-width;
+  border-style: solid;
+  @include set-border-width-and-margin-for-constant-margin-box-size($style-thumb-normal-border-width);
+
+  &:hover:not(:disabled) {
+    z-index: $z-index-hover;
+    color: $on-background-focused-color;
+
+    background-color: $style-thumb-hover-fill-color;
+    border-color: $style-thumb-hover-stroke-color;
+    border-width: $style-thumb-hover-border-width;
+    @include set-border-width-and-margin-for-constant-margin-box-size($style-thumb-hover-border-width);
+
+  }
+
+  &:focus-within {
+    background-color: $style-thumb-focused-fill-color;
+    //border-color: none; // TODO
+    //border-width: $style-thumb-focused-border-width; // TODO
+    @include focus-ring($border-radius-large, $style-thumb-focused-border-width);
+
+
+    &:active {
+      background-color: $style-thumb-pressed-fill-color;
+      border-color: $style-thumb-pressed-stroke-color;
+      @include set-border-width-and-margin-for-constant-margin-box-size($style-thumb-pressed-border-width);
+    }
+  }
+
+  &:disabled {
+    color: $on-background-disabled-color;
+    background-color: $style-thumb-disabled-fill-color;
+    border-color: $style-thumb-disabled-fill-color;
+  }
+}
+
+/*
+@mixin overlay-outline-selected {
+ color: #fff;
+
+ background-color: $ui-primary-color;
+ border: $border-width solid $border-on-selected-normal-color;
+}
+
+@mixin raised {
+ color: $on-primary-active-color;
+ @include alpha-states($raised-fill-color, $raised-stroke-color);
+}
+
+@mixin outlined {
+ color: $on-background-active-color;
+ @include solid-states($outlined-fill-color, $outlined-stroke-color);
+}
+
+@mixin indent {
+ color: $on-background-inactive-color;
+ @include alpha-states($indent-fill-color, $indent-stroke-color);
+}
+
+@mixin transparent {
+ color: $on-background-active-color;
+ @include alpha-states($on-background-transparent-color, $on-background-transparent-color);
+}
+
+@mixin selected {
+ color: $on-primary-active-color;
+ @include solid-states($ui-primary-color, $raised-stroke-color);
+}
+
+
+*/

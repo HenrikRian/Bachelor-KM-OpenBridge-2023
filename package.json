@@ -11,7 +11,7 @@
     "test-once-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "test-e2e": "ng e2e",
     "start": "npm-run-all --parallel watch ng-start",
-    "start-day": "ng serve openbridge-angular-day",
+    "start-day": "ng serve openbridge-demo-day",
     "e2e": "ng e2e",
     "linkinator": "linkinator _gh_pages --recurse --silent --skip \"^(?!http://localhost)\"",
     "bundlesize": "bundlesize",

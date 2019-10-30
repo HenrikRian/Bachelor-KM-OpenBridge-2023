@@ -7,8 +7,8 @@
   height: $nav-top-bar-height;
 
   font-family: $font-default;
-  background-color: $color-surface-global;
-  border-bottom: solid $color-border-outline $nav-top-bar-border-bottom-width;
+  background-color: $ui-container-global;
+  border-bottom: solid $border-outline-color $nav-top-bar-border-bottom-width;
 
 
   .ob-menu-container {
@@ -19,7 +19,7 @@
 
     .ob-nav-item {
       padding: ($nav-top-bar-height - $nav-btn-height) / 2;
-      color: $color-on-background-unfocused;
+      color: $on-background-unfocused-color;
 
       & > * {
         margin: 0 ($nav-top-bar-spacing / 2);
@@ -34,8 +34,8 @@
       }
 
       &.ob-active {
-        color: $color-on-primary-active;
-        background: $color-on-background-active;
+        color: $on-primary-active-color;
+        background: $on-background-active-color;
       }
     }
 
@@ -55,7 +55,7 @@
       width: $nav-divider-width;
       height: $nav-divider-height;
 
-      background-color: $color-border-divider;
+      background-color: $border-divider-color;
     }
 
     .ob-title {
@@ -63,7 +63,7 @@
 
       font-size: $nav-title-font-size;
       font-weight: $nav-title-font-weight;
-      color: $color-on-background-focused;
+      color: $on-background-focused-color;
     }
 
     .ob-sub-title {
@@ -71,7 +71,7 @@
 
       font-size: $nav-sub-title-font-size;
       font-weight: $nav-sub-title-font-weight;
-      color: $color-on-background-focused;
+      color: $on-background-focused-color;
     }
 
   }
@@ -88,9 +88,9 @@
 
   font-family: $font-default;
   font-size: $nav-menu-font-size;
-  background-color: $color-surface-global;
+  background-color: $ui-container-global;
 
-  border-top: $color-on-background-active solid $nav-menu-footer-divider-thickness;
+  border-top: $on-background-active-color solid $nav-menu-footer-divider-thickness;
 
   &.ob-active {
     display: block;
@@ -105,7 +105,7 @@
     margin: 0 $nav-menu-item-margin-x;
 
     cursor: pointer;
-    border-bottom: $nav-menu-item-divider-thickness solid $color-border-outline;
+    border-bottom: $nav-menu-item-divider-thickness solid $border-outline-color;
 
     .ob-nav-expand-icon {
       position: absolute;
@@ -144,16 +144,13 @@
     bottom: 0;
     width: 100%;
 
-    background-color: $color-surface-section;
-    border-top: $nav-menu-footer-divider-thickness solid $color-border-outline;
+    background-color: $ui-contianer-section;
+    border-top: $nav-menu-footer-divider-thickness solid $border-outline-color;
 
     .ob-nav-footer-logo {
       max-width: 70%;
       max-height: 100%;
-
-
     }
-
   }
 
   .ob-nav-footer-logo-row {
@@ -163,8 +160,6 @@
     height: $nav-menu-footer-logo-height;
 
     margin: 0 $nav-menu-item-margin-x;
-
-
   }
 }
 
@@ -178,6 +173,6 @@
   border-radius: $number-tag-diameter;
 
   &.ob-warning {
-    background-color: $color-alert-warning;
+    background-color: $alert-warning-color;
   }
 }

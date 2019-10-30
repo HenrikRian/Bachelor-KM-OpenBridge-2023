@@ -1,9 +1,3 @@
-@mixin btn-selected {
-  &.ob-selected {
-    @include overlay-outline-selected();
-  }
-}
-
 .ob-btn {
   position: relative;
   box-sizing: content-box;
@@ -31,12 +25,10 @@
 
   &.ob-normal {
     @include btn-normal-style();
-    @include btn-selected();
   }
 
   &.ob-raised {
     @include btn-raised-style();
-    @include btn-selected();
   }
 
   & > .ob-text-under {
@@ -63,7 +55,7 @@
 }
 
 .ob-slide-toggle {
-  @include indent();
+  @include style-indent();
 
   position: relative;
 
@@ -82,15 +74,15 @@
   transition: background-color $transition-time;
 
   & > .ob-thumb {
-
     @include thumb();
+    @include style-thumb();
     margin: $space-x;
     content: "";
     transition: margin-left $transition-time;
   }
 
   &.ob-selected {
-    background-color: $color-alert-running;
+    background-color: $alert-running-color;
 
     & .ob-thumb {
       margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
@@ -98,7 +90,7 @@
   }
 
   &:focus-within {
-    @include focus-ring($btn-height-small);
+    @include focus-ring($btn-height-small, $focus-ring-color);
   }
 
 }

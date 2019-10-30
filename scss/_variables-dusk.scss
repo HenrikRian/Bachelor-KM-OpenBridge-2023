@@ -1,74 +1,217 @@
-$color-ui-primary: #00f !default;
-$color-ui-primary: rgb(0, 0, 255) !default;
-$color-ui-input: rgb(255, 200, 0) !default;
+/*$surface-backdrop-color: rgb(192, 192, 192) !default;
+$surface-background-color: rgb(255, 255, 255) !default;
+$surface-app-color: rgb(242, 242, 242) !default;
+$surface-global-color: rgb(213, 213, 213) !default;
+$surface-section-color: rgb(233, 233, 233) !default;
 
-$color-alert-alarm: rgb(255, 0, 0) !default;
-$color-alert-warning: rgb(255, 140, 0) !default;
-$color-alert-caution: rgb(255, 220, 0) !default;
-$color-alert-running: rgb(0, 180, 20) !default;
 
-$color-surface-backdrop: #121212 !default;
-$color-surface-background: #1e1e1e !default;
-$color-surface-app: #303030 !default;
-$color-surface-global: #3c3c3c !default;
-$color-surface-section: rgb(213, 213, 213) !default;
 
-$color-on-background: rgb(0, 0, 0) !default;
-$color-on-background-active: rgba($color-on-background, .9) !default;
-$color-on-background-inactive: rgba($color-on-background, .6) !default;
-$color-on-background-raised: rgba($color-on-background, .6) !default;
-$color-on-background-disabled: rgba($color-on-background, .3) !default;
-$color-on-background-hinted: rgba($color-on-background, .12) !default;
-$color-on-background-transparent: rgba($color-on-background, 0) !default;
+$border-divider-color: rgba(0, 0, 0, .12) !default;
+$border-outline-color: rgba(0, 0, 0, .2) !default;
 
-$color-on-primary: rgb(255, 255, 255) !default;
-$color-on-primary-active: rgba($color-on-primary, 1) !default;
-$color-on-primary-inactive: rgba($color-on-primary, .6) !default;
-$color-on-primary-disabled: rgba($color-on-primary, .3) !default;
-$color-on-primary-hinted: rgba($color-on-primary, .12) !default;
 
-$color-border-outline: rgba($color-on-background, .2) !default;
-$color-border-divider: rgba($color-on-background, .12) !default;
+$indent-overlay-background-normal-color: rgba(0, 0, 0, .0) !default;
+$indent-overlay-border-normal-color: rgba(0, 0, 0, .06) !default;
+$indent-overlay-background-hover-color: rgba(0, 0, 0, .12) !default;
+$indent-overlay-border-hover-color: rgba(0, 0, 0, .24) !default;
+
+
+
+$outline-overlay-border-normal-color: rgba(0, 0, 0, .24) !default;
+$outline-overlay-background-hover-color: rgba(0, 0, 0, .12) !default;
+$outline-overlay-border-hover-color: rgba(0, 0, 0, .24) !default;
+*/
+// Missing colors:
+$on-background-color: rgb(0, 0, 0) !default;
+$on-background-active-color: rgba($on-background-color, .9) !default;
+$on-background-inactive-color: rgba($on-background-color, .6) !default;
+$on-background-raised-color: rgba($on-background-color, .6) !default;
+$on-background-disabled-color: rgba($on-background-color, .3) !default;
+$on-background-hinted-color: rgba($on-background-color, .12) !default;
+$on-background-transparent-color: rgba($on-background-color, 0) !default;
+
+$on-primary-color: rgb(255, 255, 255) !default;
+$on-primary-active-color: rgba($on-primary-color, 1) !default;
+$on-primary-inactive-color: rgba($on-primary-color, .6) !default;
+$on-primary-disabled-color: rgba($on-primary-color, .3) !default;
+$on-primary-hinted-color: rgba($on-primary-color, .12) !default;
+
+$on-background-active-color: #000c !default;
+$on-background-focused-color: rgba(0, 0, 0, .9) !default;
+$on-background-unfocused-color: rgba(0, 0, 0, .7) !default;
+
+// Element colors:
+$ui-element-active: rgba(0, 0, 0, 0.9);
+$ui-element-active-inverted: rgb (255, 255, 255);
+$ui-element-neutral: rgba(0, 0, 0, 0.6);
+$ui-element-neutral-inverted: rgba(255, 255, 255, 0.6);
+$ui-element-disabled: rgba(0, 0, 0, 0.3);
+$ui-element-disabled-inverted: rgba(255, 255, 255, 0.3);
+
+// container colors
+$ui-container-backdrop: rgb(200, 200, 200);
+$ui-container-background: rgb(234, 234, 234);
+$ui-contianer-section: rgb(221, 221, 221);
+$ui-container-global: rgb(200, 200, 200);
+$ui-container-instrument: rgba(0, 0, 0, 0.06);
+
+// Border colors
+$border-divider-color: rgba($on-background-color, .12) !default;
+$border-outline-color: rgba($on-background-color, .2) !default;
+
+// Instrument colors
+$instrument-static-color: rgba(0, 0, 0, .9) !default;
+$instrument-dynamic-color: rgb(0, 97, 235) !default;
+$instrument-input-color: rgb(255, 200, 0) !default;
+
+// Alert colors
+$alert-running-color: rgb(0, 160, 0) !default;
+$alert-caution-color: rgb(255, 213, 0) !default;
+$alert-warning-color: rgb(255, 160, 0) !default;
+$alert-alarm-color: rgb(255, 40, 0) !default;
+
+// focus ring
+$focus-ring-color: rgb(255, 200, 0);
 
 //Raised style colors
-$color-raised-fill: $color-on-background-raised !default;
-$color-raised-stroke: rgba($color-on-background, .12) !default;
-// Outline style colors
-$color-outlined-fill: $color-surface-background !default;
-$color-outlined-stroke: rgba($color-on-background, .6) !default;
-// Indent style colors
-$color-indent-fill: $color-on-background-hinted !default;
-$color-indent-stroke: rgba($color-on-background, .12) !default;
+$style-raised-base-color: rgb(0, 0, 0) !default;
+
+$style-raised-normal-fill-color: rgba($style-raised-base-color, 0.68) !default;
+$style-raised-normal-stroke-color: rgba($style-raised-base-color, 0.24) !default;
+$style-raised-normal-border-width: $border-width !default;
+
+$style-raised-hover-fill-color: rgba($style-raised-base-color, 0.80) !default;
+$style-raised-hover-stroke-color: rgba($style-raised-base-color, 0.24) !default;
+$style-raised-hover-border-width: $border-width;
+
+$style-raised-pressed-fill-color: rgba($style-raised-base-color, 0.90) !default;
+$style-raised-pressed-stroke-color: rgba($style-raised-base-color, 0.24) !default;
+$style-raised-pressed-border-width: $border-width;
+
+$style-raised-focused-fill-color: rgba($style-raised-base-color, 0.68) !default;
+$style-raised-focused-stroke-color: $focus-ring-color !default;
+$style-raised-focused-border-width: $border-width-focus !default;
+
+$style-raised-disabled-fill-color: rgba($style-raised-base-color, 0) !default;
+$style-raised-disabled-stroke-color: rgba($style-raised-base-color, 0.3) !default;
+$style-raised-disabled-border-width: $border-width !default;
+
+//Normal style colors
+$style-normal-base-color: rgb(255, 255, 255) !default;
+$style-normal-base-stroke-color: rgb(0, 0, 0) !default;
+
+$style-normal-normal-fill-color: $style-normal-base-color !default;
+$style-normal-normal-stroke-color: rgba($style-normal-base-stroke-color, 0.68) !default;
+$style-normal-normal-border-width: $border-width;
+
+$style-normal-hover-fill-color: rgba(244, 244, 244, 0.80) !default;
+$style-normal-hover-stroke-color: rgba($style-normal-base-stroke-color, 0.68) !default;
+$style-normal-hover-border-width: $border-width;
+
+$style-normal-pressed-fill-color: rgb(194, 194, 194) !default;
+$style-normal-pressed-stroke-color: rgba($style-normal-base-color, 0.68) !default;
+$style-normal-pressed-border-width: $border-width;
+
+$style-normal-focused-fill-color: $style-normal-base-color !default;
+$style-normal-focused-stroke-color: $focus-ring-color !default;
+$style-normal-focused-border-width: $border-width-focus !default;
+
+$style-normal-disabled-fill-color: rgba(255, 255, 255, 0) !default;
+$style-normal-disabled-stroke-color: rgba($style-normal-base-color, 0.3) !default;
+$style-normal-disabled-border-width: $border-width !default;
+
+$style-normal-active-fill-color: $style-normal-base-color !default;
+$style-normal-active-stroke-color: rgba($style-normal-base-color, 0.9) !default;
+$style-normal-active-border-width: $border-width-thick !default;
+
+//Indent style colors
+$style-indent-base-color: rgb(0, 0, 0) !default;
+
+$style-indent-normal-fill-color: rgba($style-indent-base-color, 0.16) !default;
+$style-indent-normal-stroke-color: rgba($style-indent-base-color, 0.12) !default;
+$style-indent-normal-border-width: $border-width !default;
+
+$style-indent-hover-fill-color: rgba($style-indent-base-color, 0.32) !default;
+$style-indent-hover-stroke-color: rgba($style-indent-base-color, 0.24) !default;
+$style-indent-hover-border-width: $border-width !default;
+
+$style-indent-pressed-fill-color: rgba($style-indent-base-color, 0.48) !default;
+$style-indent-pressed-stroke-color: rgba($style-indent-base-color, 0.32) !default;
+$style-indent-pressed-border-width: $border-width !default;
+
+$style-indent-focused-fill-color: rgba($style-indent-base-color, 0.48) !default;
+$style-indent-focused-stroke-color: $focus-ring-color !default;
+$style-indent-focused-border-width: $border-width-focus !default;
+
+$style-indent-disabled-fill-color: rgba($style-indent-base-color, 0) !default;
+$style-indent-disabled-stroke-color: rgba($style-indent-base-color, 0.3) !default;
+$style-indent-disabled-border-width: $border-width !default;
+
+//Indent style colors
+$style-selected-base-color: rgb(0, 0, 0) !default;
+
+$style-selected-normal-fill-color: rgba($style-selected-base-color, 0.9) !default;
+$style-selected-normal-stroke-color: rgba($style-selected-base-color, 0) !default;
+$style-selected-normal-border-width: $border-width !default;
+
+$style-selected-hover-fill-color: rgba($style-selected-base-color, 0.76) !default;
+$style-selected-hover-stroke-color: rgba($style-selected-base-color, 0.24) !default;
+$style-selected-hover-border-width: $border-width !default;
+
+$style-selected-pressed-fill-color: rgba($style-selected-base-color, 0.68) !default;
+$style-selected-pressed-stroke-color: rgba($style-selected-base-color, 0.24) !default;
+$style-selected-pressed-border-width: $border-width !default;
+
+$style-selected-focused-fill-color: rgba($style-selected-base-color, 0.90) !default;
+$style-selected-focused-stroke-color: $focus-ring-color !default;
+$style-selected-focused-border-width: $border-width-focus !default;
+
+$style-selected-disabled-fill-color: rgba($style-selected-base-color, 0.3) !default;
+$style-selected-disabled-stroke-color: rgba($style-selected-base-color, 0) !default;
+$style-selected-disabled-border-width: $border-width !default;
+
+//Flat style colors
+$style-flat-base-color: rgb(0, 0, 0) !default;
+
+$style-flat-normal-fill-color: rgba($style-flat-base-color, 0) !default;
+$style-flat-normal-stroke-color: none !default;
+$style-flat-normal-border-width: none !default;
+
+$style-flat-hover-fill-color: rgba($style-flat-base-color, 0.12) !default;
+$style-flat-hover-stroke-color: none !default;
+$style-flat-hover-border-width: none !default;
+
+$style-flat-pressed-fill-color: rgba($style-flat-base-color, 0.24) !default;
+$style-flat-pressed-stroke-color: none !default;
+$style-flat-pressed-border-width: none;
+
+$style-flat-focused-fill-color: rgba($style-flat-base-color, 0) !default;
+$style-flat-focused-stroke-color: $focus-ring-color !default;
+$style-flat-focused-border-width: $border-width-focus !default;
+
+$style-flat-disabled-fill-color: rgba($style-flat-base-color, 0) !default;
+$style-flat-disabled-stroke-color: none !default;
+$style-flat-disabled-border-width: none !default;
+
+//Thumb style colors
+$style-thumb-normal-fill-color: rgb(255, 255, 255) !default;
+$style-thumb-normal-stroke-color: rgba(0, 0, 0, 0.7) !default;
+$style-thumb-normal-border-width: $border-width !default;
+
+$style-thumb-hover-fill-color: rgb(172, 172, 172) !default;
+$style-thumb-hover-stroke-color: rgba(0, 0, 0, .70) !default;
+$style-thumb-hover-border-width: $border-width !default;
+
+$style-thumb-pressed-fill-color: rgb(102, 102, 102) !default;
+$style-thumb-pressed-stroke-color: rgba(0, 0, 0, .70) !default;
+$style-thumb-pressed-border-width: $border-width !default;
+
+$style-thumb-focused-fill-color: rgb(255, 255, 255) !default;
+$style-thumb-focused-stroke-color: $focus-ring-color !default;
+$style-thumb-focused-border-width: $border-width-focus !default;
+
+$style-thumb-disabled-fill-color: rgba(0, 0, 0, 0.3) !default;
+$style-thumb-disabled-stroke-color: none !default;
+$style-thumb-disabled-border-width: none !default;
 
 
-// States
-$alpha-state-hover-fill: .12 !default;
-$alpha-state-hover-stroke: .12 !default;
-$alpha-state-pressed-fill: .24 !default;
-$alpha-state-pressed-stroke: .12 !default;
-$alpha-state-focused-fill: 0 !default;
-$alpha-state-focused-stroke: 1 !default;
-$alpha-state-disabled-fill: 0 !default;
-$alpha-state-disabled-stroke: .12 !default;
-
-// TODO: Colors below should be checked
-$color-border-on-selected-normal: rgba(0, 0, 0, .06) !default;
-
-$color-on-background-active: #000 !default;
-$color-on-background-focused: rgba(255, 255, 255, .9) !default;
-$color-on-background-unfocused: rgba(255, 255, 255, .7) !default;
-
-$color-border-divider: rgba(255, 255, 255, .12) !default;
-$color-border-outline: rgba(255, 255, 255, .2) !default;
-
-/*
-$color-indent-overlay-background-normal: rgba(0, 0, 0, .0) !default;
-$color-indent-overlay-border-normal: rgba(0, 0, 0, .06) !default;
-$color-indent-overlay-background-hover: rgba(0, 0, 0, .12) !default;
-$color-indent-overlay-border-hover: rgba(0, 0, 0, .24) !default;
-*/
-
-$color-outline-overlay-background-normal: rgba(255, 255, 255, 1) !default;
-$color-outline-overlay-border-normal: rgba(255, 255, 255, .24) !default;
-$color-outline-overlay-background-hover: rgba(255, 255, 255, .12) !default;
-$color-outline-overlay-border-hover: rgba(255, 255, 255, .36) !default;
