@@ -43,8 +43,9 @@
   </a>
   <button ob-button-normal disabled>Disabled</button>
   <ob-slide-toggle></ob-slide-toggle>
-  <ob-button-toggle-group style="padding: 5rem;" class="ob-btn-group">
-    <button ob-button-toggle>
+  <div style="margin: 5rem;">
+  <ob-button-toggle-group  class="ob-btn-group">
+    <button ob-button-toggle [checked]="true">
       <span class="ob-icon">
         <i class="material-icons">wb_sunny</i>
       </span>
@@ -63,6 +64,7 @@
       <span class="ob-text-under">sun</span>
     </button>
   </ob-button-toggle-group>
+    </div>
 </div>
 
 

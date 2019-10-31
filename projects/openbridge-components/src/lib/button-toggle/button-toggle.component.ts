@@ -362,7 +362,7 @@ const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBa
   changeDetection: ChangeDetectionStrategy.OnPush,
   // tslint:disable-next-line:use-host-property-decorator
   host: {
-    class: 'ob-btn ob-normal',
+    class: 'ob-btn',
     // Always reset the tabindex to -1 so it doesn't conflict with the one on the `button`,
     // but can still receive focus from things like cdkFocusInitial.
     '[attr.id]': 'id',
@@ -374,7 +374,8 @@ const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBa
     '[attr.aria-label]': 'ariaLabel',
     '[attr.aria-labelledby]': 'ariaLabelledby',
     '(focus)': 'focus()',
-    '(click)': '_onButtonClick()'
+    '(click)': '_onButtonClick()',
+    '[class.ob-selected]': 'checked'
   }
 })
 export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements OnInit,

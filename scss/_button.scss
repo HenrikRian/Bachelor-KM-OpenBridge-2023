@@ -41,16 +41,21 @@
   @include material-icon($content-height);
 }
 
-.ob-btn-group .ob-btn {
-  &:not(:first-child) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+.ob-btn-group {
+  height: $btn-height-normal + 2*$border-width;
+  border-radius: $btn-height-normal;
+  background-color: $style-indent-normal-fill-color;
+  border-width: $style-indent-normal-border-width;
+  border-color: $style-indent-normal-stroke-color;
+  display: inline-block;
+}
 
-  &:not(:last-child) {
-    border-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+.ob-btn-group .ob-btn {
+  border-radius: $btn-height-normal;
+  @include style-flat();
+
+  &.ob-selected {
+    @include style-normal();
   }
 }
 

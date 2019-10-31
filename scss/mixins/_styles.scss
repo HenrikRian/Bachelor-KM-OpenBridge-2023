@@ -22,9 +22,8 @@
 
   background-color: $style-normal-normal-fill-color;
   border-color: $style-normal-normal-stroke-color;
-  border-width: $style-normal-normal-border-width;
   border-style: solid;
-  @include set-border-width-and-margin-for-constant-margin-box-size($style-normal-normal-border-width);
+  border-width: $style-normal-normal-border-width;
 
   &:hover:not(:disabled) {
     z-index: $z-index-hover;
@@ -33,7 +32,6 @@
     background-color: $style-normal-hover-fill-color;
     border-color: $style-normal-hover-stroke-color;
     border-width: $style-normal-hover-border-width;
-    @include set-border-width-and-margin-for-constant-margin-box-size($style-normal-hover-border-width);
 
   }
 
@@ -47,7 +45,7 @@
     &:active {
       background-color: $style-normal-pressed-fill-color;
       border-color: $style-normal-pressed-stroke-color;
-      @include set-border-width-and-margin-for-constant-margin-box-size($style-normal-pressed-border-width);
+      border-width: $style-normal-pressed-border-width;
     }
   }
 
@@ -59,22 +57,19 @@
 }
 
 @mixin style-raised {
-  color: $on-background-active-color;
+  color: $on-primary-active-color;
 
   background-color: $style-raised-normal-fill-color;
   border-color: $style-raised-normal-stroke-color;
-  border-width: $style-raised-normal-border-width;
   border-style: solid;
-  @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-normal-border-width);
+  border-width: $style-raised-normal-border-width;
 
   &:hover:not(:disabled) {
     z-index: $z-index-hover;
-    color: $on-background-focused-color;
 
     background-color: $style-raised-hover-fill-color;
     border-color: $style-raised-hover-stroke-color;
     border-width: $style-raised-hover-border-width;
-    @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-hover-border-width);
 
   }
 
@@ -88,7 +83,7 @@
     &:active {
       background-color: $style-raised-pressed-fill-color;
       border-color: $style-raised-pressed-stroke-color;
-      @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-pressed-border-width);
+      border-width: $style-raised-pressed-border-width;
     }
   }
 
@@ -104,9 +99,8 @@
 
   background-color: $style-raised-normal-fill-color;
   border-color: $style-raised-normal-stroke-color;
-  border-width: $style-raised-normal-border-width;
   border-style: solid;
-  @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-normal-border-width);
+  border-width: $style-raised-normal-border-width;
 
   &:hover:not(:disabled) {
     z-index: $z-index-hover;
@@ -115,7 +109,6 @@
     background-color: $style-raised-hover-fill-color;
     border-color: $style-raised-hover-stroke-color;
     border-width: $style-raised-hover-border-width;
-    @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-hover-border-width);
 
   }
 
@@ -129,7 +122,7 @@
     &:active {
       background-color: $style-raised-pressed-fill-color;
       border-color: $style-raised-pressed-stroke-color;
-      @include set-border-width-and-margin-for-constant-margin-box-size($style-raised-pressed-border-width);
+      border-width: $style-raised-pressed-border-width;
     }
   }
 
@@ -145,9 +138,8 @@
 
   background-color: $style-indent-normal-fill-color;
   border-color: $style-indent-normal-stroke-color;
-  border-width: $style-indent-normal-border-width;
   border-style: solid;
-  @include set-border-width-and-margin-for-constant-margin-box-size($style-indent-normal-border-width);
+  border-width: $style-indent-normal-border-width;
 
   &:hover:not(:disabled) {
     z-index: $z-index-hover;
@@ -156,7 +148,6 @@
     background-color: $style-indent-hover-fill-color;
     border-color: $style-indent-hover-stroke-color;
     border-width: $style-indent-hover-border-width;
-    @include set-border-width-and-margin-for-constant-margin-box-size($style-indent-hover-border-width);
 
   }
 
@@ -170,7 +161,7 @@
     &:active {
       background-color: $style-indent-pressed-fill-color;
       border-color: $style-indent-pressed-stroke-color;
-      @include set-border-width-and-margin-for-constant-margin-box-size($style-indent-pressed-border-width);
+      border-width: $style-indent-pressed-border-width;
     }
   }
 
@@ -181,14 +172,52 @@
   }
 }
 
+@mixin style-flat {
+  color: $on-background-active-color;
+
+  background-color: $style-flat-normal-fill-color;
+  border-color: $style-flat-normal-stroke-color;
+  border-style: solid;
+  border-width: $style-flat-normal-border-width;
+
+  &:hover:not(:disabled) {
+    z-index: $z-index-hover;
+    color: $on-background-focused-color;
+
+    background-color: $style-flat-hover-fill-color;
+    border-color: $style-flat-hover-stroke-color;
+    border-width: $style-flat-hover-border-width;
+
+  }
+
+  &:focus-within {
+    background-color: $style-flat-focused-fill-color;
+    //border-color: none; // TODO
+    border-width: $style-flat-focused-border-width; // TODO
+    @include focus-ring($border-radius-large, $style-flat-focused-stroke-color);
+
+
+    &:active {
+      background-color: $style-flat-pressed-fill-color;
+      border-color: $style-flat-pressed-stroke-color;
+      border-width: $style-flat-pressed-border-width;
+    }
+  }
+
+  &:disabled {
+    color: $on-background-disabled-color;
+    background-color: $style-flat-disabled-fill-color;
+    border-color: $style-flat-disabled-fill-color;
+  }
+}
+
 @mixin style-thumb {
   color: $on-background-active-color;
 
   background-color: $style-thumb-normal-fill-color;
   border-color: $style-thumb-normal-stroke-color;
-  border-width: $style-thumb-normal-border-width;
   border-style: solid;
-  @include set-border-width-and-margin-for-constant-margin-box-size($style-thumb-normal-border-width);
+  border-width: $style-thumb-normal-border-width;
 
   &:hover:not(:disabled) {
     z-index: $z-index-hover;
@@ -197,7 +226,6 @@
     background-color: $style-thumb-hover-fill-color;
     border-color: $style-thumb-hover-stroke-color;
     border-width: $style-thumb-hover-border-width;
-    @include set-border-width-and-margin-for-constant-margin-box-size($style-thumb-hover-border-width);
 
   }
 
@@ -211,7 +239,7 @@
     &:active {
       background-color: $style-thumb-pressed-fill-color;
       border-color: $style-thumb-pressed-stroke-color;
-      @include set-border-width-and-margin-for-constant-margin-box-size($style-thumb-pressed-border-width);
+      border-width: $style-thumb-pressed-border-width;
     }
   }
 
