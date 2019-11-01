@@ -10,15 +10,14 @@
   background-color: $ui-container-global;
   border-bottom: solid $border-outline-color $nav-top-bar-border-bottom-width;
 
-
   .ob-menu-container {
     display: flex;
     align-items: center;
-    height: $nav-top-bar-height;
-
+    height: 100%;
 
     .ob-nav-item {
-      padding: ($nav-top-bar-height - $nav-btn-height) / 2;
+      height: 100%;
+      padding: 0 ($nav-top-bar-height - $nav-btn-height) / 2;
       color: $on-background-unfocused-color;
 
       & > * {
@@ -40,9 +39,8 @@
     }
 
     .ob-nav-btn {
-      $border-width-and-padding: $nav-btn-padding + $border-width;
       display: flex;
-
+      align-items: center;
 
       cursor: pointer;
 

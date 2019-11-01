@@ -1,6 +1,5 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {TopBarComponent} from './top-bar.component';
-import * as assert from 'assert';
 
 const quixote = require('quixote');
 
@@ -27,10 +26,11 @@ describe('TopBarComponent', () => {
 });
 
 describe('TopBarStyle', () => {
-
+  const borderBottom = 2;
   let frame;
   let container;
   let navbarContainer;
+  let navbarContainerBottom;
   let rem;
 
   beforeAll((done) => {
@@ -70,24 +70,27 @@ describe('TopBarStyle', () => {
   `);
     navbarContainer = frame.get('#navbar-container');
     rem = navbarContainer.calculatePixelValue('1rem');
+    navbarContainerBottom = navbarContainer.bottom.minus(borderBottom);
   });
 
-  it('First icon is 2 rem from edges', () => {
+  it('First icon is 2 rem from left edge', () => {
     const firstIcon = frame.get('#icon-hamburger');
     firstIcon.assert({
       left: navbarContainer.left.plus(2 * rem),
-      top: navbarContainer.top.plus(2 * rem),
-      bottom: navbarContainer.bottom.minus(2 * rem),
     });
+  });
+
+  it('First icon is vertically aligned in div', () => {
+    const firstIcon = frame.get('#icon-hamburger');
+    checkEqualSpacingToContainer(firstIcon);
   });
 
   it('Last icon is 2 rem from edges', () => {
     const lastIcon = frame.get('#icon-right');
     lastIcon.assert({
       right: navbarContainer.right.minus(2 * rem),
-      top: navbarContainer.top.plus(2 * rem),
-      bottom: navbarContainer.bottom.minus(2 * rem),
     });
+    checkEqualSpacingToContainer(lastIcon);
   });
 
   it('Title should be should be 2 rem from everything', () => {
@@ -100,16 +103,6 @@ describe('TopBarStyle', () => {
     });
   });
 
-  it('Titles baseline should be 20px from bottom', () => {
-    const title = frame.get('#title');
-    const menuBtn = frame.get('#btn-hamburger');
-    const subtitle = frame.get('#subtitle');
-    title.assert({
-      bottom: container.bottom.minus(2 * rem),
-    });
-  });
-
-
   it('Icons should be 3X3 rem', () => {
     const icon = frame.get('#icon-right');
     icon.assert({
@@ -118,19 +111,11 @@ describe('TopBarStyle', () => {
     });
   });
 
-  it('Button should be squared', () => {
-    const btn = frame.get('#btn-right');
-    // noinspection JSSuspiciousNameCombination
-    btn.assert({
-      width: btn.height
-    });
-  });
-
   it('Button should have same height as navbar', () => {
     const btn = frame.get('#btn-right');
     btn.assert({
       top: navbarContainer.top,
-      bottom: navbarContainer.bottom,
+      bottom: navbarContainerBottom,
     });
   });
 
@@ -150,11 +135,15 @@ describe('TopBarStyle', () => {
     });
   });
 
+  function checkEqualSpacingToContainer(divider) {
+    const topDistance = divider.getRawPosition().top - container.getRawPosition().top;
+    const bottomDistance = divider.getRawPosition().bottom - (container.getRawPosition().bottom - borderBottom);
+    expect(topDistance).toBeCloseTo(-bottomDistance, 0);
+  }
+
   it('Spacing between divider and the container should be equal on top and bottom', () => {
     const divider = frame.get('#divider');
-    const topDistance = divider.getRawPosition().top - container.getRawPosition().top;
-    const bottomDistance = divider.getRawPosition().bottom - container.getRawPosition().bottom;
-    expect(topDistance).toBeCloseTo(-bottomDistance, 0);
+    checkEqualSpacingToContainer(divider);
   });
 
 });
