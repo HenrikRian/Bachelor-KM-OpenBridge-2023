@@ -35,7 +35,7 @@ describe('TopBarStyle', () => {
 
   beforeAll((done) => {
     frame = quixote.createFrame({
-      stylesheet: 'base/assets/styles/openbridge-day.css'
+      stylesheet: 'base/src/assets/styles/openbridge-day.css'
     }, done);
   });
 

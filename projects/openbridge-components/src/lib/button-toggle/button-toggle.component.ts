@@ -11,6 +11,7 @@ import {
   ElementRef,
   EventEmitter,
   forwardRef,
+  HostBinding, HostListener,
   Inject,
   InjectionToken,
   Input,
@@ -74,15 +75,11 @@ export class ButtonToggleChange {
 @Component({
   selector: 'ob-button-toggle-group',
   providers: [MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR],
-  // tslint:disable-next-line:use-host-property-decorator
-  host: {
-    role: 'group',
-    class: 'ob-btn-group',
-    '[attr.aria-disabled]': 'disabled',
-  },
-  templateUrl: 'button-toggle-group.component.html'
+  templateUrl: 'button-toggle-group.component.html',
 })
 export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit, AfterContentInit {
+  @HostBinding('attr.role') role = 'group';
+  @HostBinding('class') cssClass = 'ob-btn-group';
 
   /** `name` attribute for the underlying `input` element. */
   @Input()
@@ -135,6 +132,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   }
 
   /** Whether multiple button toggle group is disabled. */
+  @HostBinding('attr.aria-disabled')
   @Input()
   get disabled(): boolean {
     return this._disabled;
@@ -360,26 +358,11 @@ const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBa
   encapsulation: ViewEncapsulation.None,
   exportAs: 'ButtonToggleComponent',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  // tslint:disable-next-line:use-host-property-decorator
-  host: {
-    class: 'ob-btn',
-    // Always reset the tabindex to -1 so it doesn't conflict with the one on the `button`,
-    // but can still receive focus from things like cdkFocusInitial.
-    '[attr.id]': 'id',
-    '[id]': 'buttonId',
-    '[attr.tabindex]': 'disabled ? -1 : tabIndex',
-    '[attr.aria-pressed]': 'checked',
-    '[disabled]': 'disabled || null',
-    '[attr.name]': 'name || null',
-    '[attr.aria-label]': 'ariaLabel',
-    '[attr.aria-labelledby]': 'ariaLabelledby',
-    '(focus)': 'focus()',
-    '(click)': '_onButtonClick()',
-    '[class.ob-selected]': 'checked'
-  }
 })
 export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements OnInit,
-   OnDestroy {
+  OnDestroy {
+  @HostBinding('class') cssClass = 'ob-btn';
+
 
   /** ButtonToggleGroupComponent reads this to assign its own value. */
   @Input() value: any;
@@ -388,16 +371,18 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
    * Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
    * take precedence so this may be omitted.
    */
+  @HostBinding('attr.aria-label')
   @Input('aria-label') ariaLabel: string;
 
   /**
    * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
    */
+  @HostBinding('attr.aria-labelledby')
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
 
 
-
-    /** Whether the button is disabled. */
+  /** Whether the button is disabled. */
+  @HostBinding('disabled')
   @Input()
   get disabled(): boolean {
     return this._disabled || (this.buttonToggleGroup && this.buttonToggleGroup.disabled);
@@ -408,15 +393,25 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   }
 
   /** The unique ID for this button toggle. */
+  @HostBinding('attr.id')
   @Input() id: string;
 
   /** HTML's 'name' attribute used to group radios for unique selection. */
+  @HostBinding('attr.name')
   @Input() name: string;
 
 
-
   /** Tabindex for the toggle. */
-  @Input() tabIndex: number | null;
+  private _tabIndex: number | null;
+  @HostBinding('attr.tabindex')
+  @Input()
+  get tabIndex(): number | null {
+    return this.disabled ? -1 : this._tabIndex;
+  }
+
+  set tabIndex(value: number | null) {
+    this._tabIndex = value;
+  }
 
   /** The appearance style of the button. */
   @Input()
@@ -431,6 +426,8 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   private _appearance: MatButtonToggleAppearance;
 
   /** Whether the button is checked. */
+  @HostBinding('class.ob-selected')
+  @HostBinding('attr.aria-pressed')
   @Input()
   get checked(): boolean {
     return this.buttonToggleGroup ? this.buttonToggleGroup._isSelected(this) : this._checked;
@@ -450,7 +447,7 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
     }
   }
 
-   /** Type of the button toggle. Either 'radio' or 'checkbox'. */
+  /** Type of the button toggle. Either 'radio' or 'checkbox'. */
   _type: ToggleType;
 
   @ViewChild('button', {static: false}) _buttonElement: ElementRef<HTMLButtonElement>;
@@ -459,6 +456,7 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   buttonToggleGroup: ButtonToggleGroupComponent;
 
   /** Unique ID for the underlying `button` element. */
+  @HostBinding('id')
   get buttonId(): string {
     return `${this.id}-button`;
   }
@@ -492,7 +490,7 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   ngOnInit() {
     this._isSingleSelector = this.buttonToggleGroup && !this.buttonToggleGroup.multiple;
     this._type = this._isSingleSelector ? 'radio' : 'checkbox';
-    this.id = this.id || `mat-button-toggle-${_uniqueIdCounter++}`;
+    this.id = this.id || `ob-button-toggle-${_uniqueIdCounter++}`;
 
     if (this._isSingleSelector) {
       this.name = this.buttonToggleGroup.name;
@@ -518,11 +516,13 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
   }
 
   /** Focuses the button. */
+  @HostListener('focus')
   focus(options?: FocusOptions): void {
     this._elementRef.nativeElement.focus(options);
   }
 
   /** Checks the button toggle due to an interaction with the underlying native button. */
+  @HostListener('click')
   _onButtonClick() {
     const newChecked = this._isSingleSelector ? true : !this._checked;
 

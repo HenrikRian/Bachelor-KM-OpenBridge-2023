@@ -1,10 +1,15 @@
 # OpenbridgeAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Angular and SASS implementation of OpenBridge Design System.  
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Alternativey run `npm run start-day`, this will run the example app with the day pallette only. This will also compile the sass file on-the-fly.
+
+## Style sheets
+The OpenBridge style sheets are implemented in the `scss/` directory. It can be build by running `npm run css` or with watch functionality `npm run watch-css`.
+The base sass files are `openbridge-*palletname*.scss`. Note that parameters should be placed in `_variables.scss`, variables which are changing w  
 
 ## Code scaffolding
 

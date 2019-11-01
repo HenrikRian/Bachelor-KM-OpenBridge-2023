@@ -34,9 +34,9 @@
 }
 
 @mixin thumb {
- width: $btn-diameter-thumb;
- height: $btn-diameter-thumb;
+  width: $btn-diameter-thumb;
+  height: $btn-diameter-thumb;
 
- border-radius: $btn-height-small / 2;
+  border-radius: $btn-height-small / 2;
 }
 

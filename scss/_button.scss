@@ -42,12 +42,12 @@
 }
 
 .ob-btn-group {
-  height: $btn-height-normal + 2*$border-width;
-  border-radius: $btn-height-normal;
-  background-color: $style-indent-normal-fill-color;
-  border-width: $style-indent-normal-border-width;
-  border-color: $style-indent-normal-stroke-color;
   display: inline-block;
+  height: $btn-height-normal + 2 * $border-width;
+  background-color: $style-indent-normal-fill-color;
+  border-color: $style-indent-normal-stroke-color;
+  border-width: $style-indent-normal-border-width;
+  border-radius: $btn-height-normal;
 }
 
 .ob-btn-group .ob-btn {

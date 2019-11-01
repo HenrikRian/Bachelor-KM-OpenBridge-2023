@@ -6,7 +6,6 @@ import {By} from '@angular/platform-browser';
 describe('NavigationMenuExpandableItemComponent', () => {
   let component: NavigationMenuExpandableItemComponent;
   let fixture: ComponentFixture<NavigationMenuExpandableItemComponent>;
-  let expandDiv: HTMLDivElement;
   let navItemDiv: HTMLDivElement;
   let navIconDiv: HTMLDivElement;
 
@@ -21,9 +20,8 @@ describe('NavigationMenuExpandableItemComponent', () => {
     fixture = TestBed.createComponent(NavigationMenuExpandableItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    expandDiv = fixture.debugElement.query(By.css('.ob-expandable')).nativeElement;
     navItemDiv = fixture.debugElement.query(By.css('.ob-nav-item')).nativeElement;
-    navIconDiv = fixture.debugElement.query(By.css('.ob-nav-icon')).nativeElement;
+    navIconDiv = fixture.debugElement.query(By.css('.ob-nav-expand-icon')).nativeElement;
   });
 
   it('should not be active default', () => {
