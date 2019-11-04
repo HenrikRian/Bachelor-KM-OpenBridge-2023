@@ -3,158 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "openbridge-angular": {
-      "root": "",
-      "sourceRoot": "src",
-      "projectType": "application",
-      "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/openbridge-angular",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss",
-              "node_modules/material-icons/css/material-icons.scss"
-            ],
-            "scripts": [],
-            "es5BrowserSupport": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "openbridge-angular:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "openbridge-angular:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "openbridge-angular:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.scss",
-              "scss/openbridge-day.scss",
-              "node_modules/material-icons/css/material-icons.scss"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "openbridge-angular-day": {
-      "root": "",
-      "sourceRoot": "src",
-      "projectType": "application",
-      "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/openbridge-angular",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss",
-              "scss/openbridge-day.scss"
-            ],
-            "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.day.ts"
-                }
-              ],
-            "scripts": [],
-            "es5BrowserSupport": true
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "openbridge-angular-day:build"
-          }
-        }
-      }
-    },
     "openbridge-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
@@ -182,7 +30,298 @@
           }
         }
       }
+    },
+    "openbridge-components": {
+      "projectType": "library",
+      "root": "projects/openbridge-components",
+      "sourceRoot": "projects/openbridge-components/src",
+      "prefix": "ob",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/openbridge-components/tsconfig.lib.json",
+            "project": "projects/openbridge-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/openbridge-components/src/test.ts",
+            "tsConfig": "projects/openbridge-components/tsconfig.spec.json",
+            "karmaConfig": "projects/openbridge-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/openbridge-components/tsconfig.lib.json",
+              "projects/openbridge-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "openbridge-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/openbridge-demo",
+      "sourceRoot": "projects/openbridge-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/openbridge-demo",
+            "index": "projects/openbridge-demo/src/index.html",
+            "main": "projects/openbridge-demo/src/main.ts",
+            "polyfills": "projects/openbridge-demo/src/polyfills.ts",
+            "tsConfig": "projects/openbridge-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/openbridge-demo/src/favicon.ico",
+              "projects/openbridge-demo/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./dist/css",
+                "output": "./assets/styles"
+              }
+            ],
+            "styles": [
+              "projects/openbridge-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/openbridge-demo/src/environments/environment.ts",
+                  "with": "projects/openbridge-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "openbridge-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "openbridge-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "openbridge-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/openbridge-demo/src/test.ts",
+            "polyfills": "projects/openbridge-demo/src/polyfills.ts",
+            "tsConfig": "projects/openbridge-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/openbridge-demo/karma.conf.js",
+            "assets": [
+              "projects/openbridge-demo/src/favicon.ico",
+              "projects/openbridge-demo/src/assets"
+            ],
+            "styles": [
+              "scss/openbridge-day.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/openbridge-demo/tsconfig.app.json",
+              "projects/openbridge-demo/tsconfig.spec.json",
+              "projects/openbridge-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/openbridge-demo/e2e/protractor.conf.js",
+            "devServerTarget": "openbridge-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "openbridge-demo:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "openbridge-demo-day": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/openbridge-demo",
+      "sourceRoot": "projects/openbridge-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/openbridge-demo",
+            "index": "projects/openbridge-demo/src/index.html",
+            "main": "projects/openbridge-demo/src/main.ts",
+            "polyfills": "projects/openbridge-demo/src/polyfills.ts",
+            "tsConfig": "projects/openbridge-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/openbridge-demo/src/favicon.ico",
+              "projects/openbridge-demo/src/assets"
+            ],
+            "styles": [
+              "projects/openbridge-demo/src/styles.scss",
+              "scss/openbridge-day.scss"
+            ],
+            "scripts": [],
+            "fileReplacements": [
+              {
+                "replace": "projects/openbridge-demo/src/environments/environment.ts",
+                "with": "projects/openbridge-demo/src/environments/environment.day.ts"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/openbridge-demo/src/environments/environment.ts",
+                  "with": "projects/openbridge-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "openbridge-demo-day:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "openbridge-demo-day:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "openbridge-demo-day:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/openbridge-demo/src/test.ts",
+            "polyfills": "projects/openbridge-demo/src/polyfills.ts",
+            "tsConfig": "projects/openbridge-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/openbridge-demo/karma.conf.js",
+            "assets": [
+              "projects/openbridge-demo/src/favicon.ico",
+              "projects/openbridge-demo/src/assets"
+            ],
+            "styles": [
+              "scss/openbridge-day.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/openbridge-demo/tsconfig.app.json",
+              "projects/openbridge-demo/tsconfig.spec.json",
+              "projects/openbridge-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/openbridge-demo/e2e/protractor.conf.js",
+            "devServerTarget": "openbridge-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "openbridge-demo:serve:production"
+            }
+          }
+        }
+      }
     }
   },
-  "defaultProject": "openbridge-angular"
+  "defaultProject": "openbridge-demo"
 }

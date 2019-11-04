@@ -1,0 +1,103 @@
+.ob-btn {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+
+  $content-height: $btn-height-normal - 2 * $btn-padding-y;
+
+  min-width: $btn-width-min - 2 * $btn-padding-x;
+  height: $content-height;
+  padding: $btn-padding-y $btn-padding-x;
+
+  font-family: $font-default;
+  font-size: $btn-font-size;
+  font-weight: $font-weight-bold;
+  line-height: $btn-line-height;
+  text-align: center;
+  vertical-align: middle;
+
+
+  border-radius: $btn-border-radius;
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &.ob-normal {
+    @include btn-normal-style();
+  }
+
+  &.ob-raised {
+    @include btn-raised-style();
+  }
+
+  & > .ob-text-under {
+    position: absolute;
+    top: $btn-height-normal + $btn-text-under-spacing;
+    left: 0;
+    width: 100%;
+  }
+
+  @include material-icon($content-height);
+}
+
+.ob-btn-group {
+  display: inline-block;
+  height: $btn-height-normal + 2 * $border-width;
+  background-color: $style-indent-normal-fill-color;
+  border-color: $style-indent-normal-stroke-color;
+  border-width: $style-indent-normal-border-width;
+  border-radius: $btn-height-normal;
+}
+
+.ob-btn-group .ob-btn {
+  border-radius: $btn-height-normal;
+  @include style-flat();
+
+  &.ob-selected {
+    @include style-normal();
+  }
+}
+
+.ob-slide-toggle {
+  @include style-indent();
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: $btn-width-toggle;
+  height: $btn-height-small;
+  cursor: pointer;
+
+  border-radius: $btn-height-small;
+
+  $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
+
+  $transition-time: .3s;
+  transition: background-color $transition-time;
+
+  & > .ob-thumb {
+    @include thumb();
+    @include style-thumb();
+    margin: $space-x;
+    content: "";
+    transition: margin-left $transition-time;
+  }
+
+  &.ob-selected {
+    background-color: $alert-running-color;
+
+    & .ob-thumb {
+      margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
+    }
+  }
+
+  &:focus-within {
+    @include focus-ring($btn-height-small, $focus-ring-color);
+  }
+
+}
+
+

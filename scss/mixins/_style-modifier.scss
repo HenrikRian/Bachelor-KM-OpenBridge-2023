@@ -1,0 +1,30 @@
+@mixin alpha-states($fill, $stroke) {
+
+  background-color: $fill;
+  border: 1px solid $stroke;
+
+  &:hover {
+    background-color: rgba($color: $fill, $alpha: (opacity($fill) + .12));
+    border-color: rgba($color: $stroke, $alpha: (opacity($stroke) + .12));
+  }
+
+  &:active {
+    background-color: rgba($color: $fill, $alpha: (opacity($fill) + .24));
+    //border-color: rgba($color: $stroke, $alpha: (opacity($stroke)+ .12) );
+  }
+}
+
+@mixin solid-states($fill, $stroke) {
+  background-color: $fill;
+  border: 1px solid $stroke;
+
+  &:hover {
+    background-color: darken($fill, $alpha-state-hover-fill * 100);
+    border-color: rgba($color: $stroke, $alpha: (opacity($fill) + .12));
+  }
+
+  &:active {
+    background-color: darken($fill, $alpha-state-pressed-fill * 100);
+    border-color: rgba($color: $stroke, $alpha: (opacity($fill) + .12));
+  }
+}

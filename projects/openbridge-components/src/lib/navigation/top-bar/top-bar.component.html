@@ -1,0 +1,21 @@
+<div class="ob-nav-top-bar">
+  <div class="ob-menu-container">
+    <div class="ob-nav-item ob-nav-btn"  [class.ob-active]="menuActive" (click)="onClickOnMenu($event)">
+      <i class="material-icons">menu</i>
+    </div>
+    <div class="ob-title" >{{title}}</div>
+    <div class="ob-sub-title">{{subTitle}}</div>
+  </div>
+  <div class="ob-menu-container">
+    <div class="ob-divider"></div>
+    <div class="ob-nav-item ob-nav-btn">
+      <i class="material-icons">notifications</i>
+    </div>
+    <div class="ob-nav-item ob-nav-btn">
+      <i class="material-icons">brightness_4</i>
+    </div>
+    <div class="ob-nav-item ob-nav-btn">
+      <i class="material-icons">apps</i>
+    </div>
+  </div>
+</div>

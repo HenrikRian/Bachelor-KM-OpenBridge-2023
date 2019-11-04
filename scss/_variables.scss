@@ -1,44 +1,66 @@
-$base-rem: 8px !default; /* stylelint-disable meowtec/no-px */
+$base-rem: 8px !default; /* stylelint-disable-line meowtec/no-px */
 $base-size: 1rem !default; // when converting from px in style guide assume base-size=8px
-
-
-$border-width: .125 * $base-size !default;
-
-$border-radius-normal: .5 * $base-size !default;
-$border-radius-large: .75 * $base-size !default;
-
-$btn-line-height: 1 !default;
-
-$btn-border-radius: $border-radius-large !default;
-$btn-width-min: 12 * $base-size !default;
-$btn-padding-y: 1.5 * $base-size !default;
-$btn-padding-x: 3 * $base-size !default;
-$btn-font-size: 2 * $base-size !default;
+$icon-height: 3rem !default; // material design icon height
 
 $font-default: "Open Sans", sans-serif !default;
 
 //$font-weight-lighter: lighter !default;
 //$font-weight-light: 300 !default;
 //$font-weight-normal: 400 !default;
+$font-weight-semi-bold: 500 !default;
 $font-weight-bold: 600 !default;
 //$font-weight-bolder: bolder !default;
 
+$border-width: .125 * $base-size !default;
+$border-width-thick: .25 * $base-size !default;
+$border-width-focus: .5 * $base-size !default;
+
+//$border-radius-normal: .5 * $base-size !default;
+$border-radius-large: .75 * $base-size !default;
+
+
+$number-tag-diameter: 4 * $base-size !default;
+
+$btn-line-height: 1 !default;
+
+$btn-height-normal: 5 * $base-size !default; //Used for all clickable components exept checkbox, radiobutton and toggle switch
+$btn-height-small: 3 * $base-size !default; // Checkbox, Radiobutton & Toggle
+
+$btn-border-radius: $border-radius-large !default;
+$btn-width-min: 12 * $base-size !default;
+$btn-width-toggle: 2 * $btn-height-small !default;
+$btn-diameter-thumb: $btn-height-small - 1.25 * $base-size !default;
+$btn-font-size: 2 * $base-size !default;
+$btn-padding-y: ($btn-height-normal - $btn-font-size) / 2 !default;
+$btn-padding-x: 3 * $base-size !default;
+$btn-text-under-spacing: .5 * $base-size !default;
+
+
+$nav-menu-width: 40 * $base-size !default;
+$nav-menu-item-height: 7 * $base-size !default;
+$nav-menu-item-margin-x: 3 * $base-size !default;
+$nav-menu-label-margin-x: 5 * $base-size !default;
+$nav-menu-item-divider-thickness: .125 * $base-size !default;
+$nav-menu-font-size: 2 * $base-size !default;
+$nav-menu-footer-logo-height: 12 * $base-size !default;
+$nav-menu-footer-divider-thickness: .25 * $base-size !default;
+
+
 $nav-top-bar-height: 7 * $base-size !default;
 $nav-top-bar-width: 100% !default;
-
-$nav-top-bar-container-padding: 2 * $base-size !default;
-$nav-top-bar-container-height: $nav-top-bar-height - 2 * $nav-top-bar-container-padding !default;
-
-$nav-item-margin-x: 1.5 * $base-size !default;
+$nav-top-bar-border-bottom-width: .25 * $base-size !default;
 
 $nav-btn-height: 3 * $base-size !default;
-$nav-btn-padding: .5 * $base-size !default;
-$nav-btn-border-radius: $border-radius-normal !default;
-
+$nav-top-bar-spacing: ($nav-top-bar-height - $nav-btn-height) / 2 !default;
 
 $nav-divider-height: 4 * $base-size !default;
 $nav-divider-width: .125 * $base-size !default;
-$nav-divider-space-between-divider-and-icon: 2 * $base-size !default;
 
-$nav-sub-title-font-size: 2.5 * $base-size !default;
-$nav-sub-title-letter-spacing: .025 * $base-size !default;
+$nav-title-font-size: 3 * $base-size !default;
+$nav-title-font-weight: $font-weight-bold !default;
+$nav-title-spacing-x: 2 * $base-size !default;
+$nav-sub-title-font-size: 3 * $base-size !default;
+$nav-sub-title-font-weight: $font-weight-semi-bold !default;
+
+$z-index-hover: 1 !default;
+$z-index-focus: 2 !default;

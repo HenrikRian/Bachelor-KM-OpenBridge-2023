@@ -1,0 +1,7 @@
+<div class="ob-nav-item" [class.ob-active]="active" >
+<ng-content></ng-content>
+  <span class="ob-icon" *ngIf="materialLogo !== undefined">
+      <i class="material-icons">{{materialLogo}}</i>
+    </span>
+    <span class="ob-label">{{label}}</span>
+</div>
