@@ -5,7 +5,7 @@ Angular and SASS implementation of OpenBridge Design System.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-Alternativey run `npm run start-day`, this will run the example app with the day pallette only. 
+Alternatively run `npm run start-day`, this will run the example app with the day palette only. 
 This is useful when developing the style sheet as the sass file are compiled on-the-fly.
 
 ## Projects in the project
@@ -18,7 +18,7 @@ This project consist of three main parts:
 3. Sass style sheets: found in `scss`.
     This is a stylesheet project written using [SASS](https://sass-lang.com/). This project can be compiled to css-files.
 
-## Style sheets
+## Stylesheets
 The OpenBridge style sheets are implemented in the `scss/` directory. It can be build by running `npm run css` or with watch functionality `npm run watch-css`.
 See [scss/readme.md](scss/readme.md) for more information.
 
@@ -29,6 +29,12 @@ Use `npm run storybook` to start the storybook web interface.
 
 # Development of OpenBridge components
 The Angular OpenBridge components are based on [Angular Material library](https://material.angular.io/).
+To implement a component:
+1. Start by finding a similar component in [Angular Material library](https://material.angular.io/components/categories).
+2. Find the [source code](https://github.com/angular/components/tree/master/src/material) of the component.
+3. Copy the source code files into `projects/openbridge-components/scs/lib/*component category*/*component name*`. Include the copyright header and test files (`*.spec.ts`)
+4. Remove unnecessary code, but keep the copyright header. Make sure that the tests are still running.
+5. Stylesheets should be implemented in the `scss/` project not in the components.
 
 ## Code scaffolding
 
