@@ -4,9 +4,14 @@ Angular and SASS implementation of OpenBridge Design System.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+However, when scss files are updated this will happen:
+1. Angular will detect that a file has changed and rebuild the project, this will also reload the web page.
+2. The css-watch will detect that the scss files have changed and rebuild the css files, this is the copied to the angular app.
+3. The angular app will see that the css file have changed and the project is rebuild and the page is reloaded. The css will then be up to date.
+
 Alternatively run `npm run start-day`, this will run the example app with the day palette only. 
-This is useful when developing the style sheet as the sass file are compiled on-the-fly.
+This is useful when developing the style sheet as the sass file are used directly and the therefore a change in css is seen momentarily.
 
 ## Projects in the project
 This project consist of three main parts:
