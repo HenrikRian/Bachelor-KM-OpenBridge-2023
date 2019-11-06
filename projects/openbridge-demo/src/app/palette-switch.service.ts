@@ -9,7 +9,7 @@ import {environment} from '../environments/environment';
 })
 export class PaletteSwitchService {
   private styleSheetDomElement: HTMLElement;
-  private styles = ['day', 'dusk'];
+  private styles = ['bright', 'day', 'dusk', 'night'];
   private styleId = 0;
   private folder = '/assets/styles/';
   private cssPrefix = 'openbridge-';

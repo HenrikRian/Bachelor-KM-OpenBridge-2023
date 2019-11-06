@@ -52,15 +52,15 @@
 
 .ob-btn-group .ob-btn {
   border-radius: $btn-height-normal;
-  @include style-flat();
+  @include style-flat($btn-height-small);
 
   &.ob-selected {
-    @include style-normal();
+    @include style-normal($btn-height-small);
   }
 }
 
 .ob-slide-toggle {
-  @include style-indent();
+  @include style-indent($btn-height-small);
 
   position: relative;
 
@@ -76,7 +76,6 @@
   $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
 
   $transition-time: .3s;
-  transition: background-color $transition-time;
 
   & > .ob-thumb {
     @include thumb();
@@ -87,17 +86,14 @@
   }
 
   &.ob-selected {
-    background-color: $alert-running-color;
+    @include style-alert-running($btn-height-small);
+
+    border-radius: $btn-height-small;
 
     & .ob-thumb {
       margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
     }
   }
-
-  &:focus-within {
-    @include focus-ring($btn-height-small, $focus-ring-color);
-  }
-
 }
 
 

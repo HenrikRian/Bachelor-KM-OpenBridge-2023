@@ -48,7 +48,7 @@ describe('PaletteSwitchService', () => {
     // @ts-ignore
     const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument);
     const e = htmlDocument.head.styleDocument;
-    const stylesheet = 'openbridge-day';
+    const stylesheet = 'openbridge-bright';
     checkStyleSheet(e, stylesheet);
   });
 
@@ -68,13 +68,14 @@ describe('PaletteSwitchService', () => {
     // @ts-ignore
     const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument);
     const e = htmlDocument.head.styleDocument;
-    checkStyleSheet(e, 'openbridge-day');
-    service.rotatePalette();
-    checkStyleSheet(e, 'openbridge-dusk');
+    checkStyleSheet(e, 'openbridge-bright');
     service.rotatePalette();
     checkStyleSheet(e, 'openbridge-day');
     service.rotatePalette();
     checkStyleSheet(e, 'openbridge-dusk');
-
+    service.rotatePalette();
+    checkStyleSheet(e, 'openbridge-night');
+    service.rotatePalette();
+    checkStyleSheet(e, 'openbridge-bright');
   });
 });
