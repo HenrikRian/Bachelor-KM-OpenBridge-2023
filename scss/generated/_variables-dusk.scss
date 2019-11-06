@@ -1,0 +1,179 @@
+// GENERATED
+// raised style
+$style-raised-normal-fill-color: hsla(0, 0%, 100%, .3) !default;
+$style-raised-normal-stroke-color: hsla(0, 0%, 100%, .12) !default;
+$style-raised-normal-border-width: .125 * $base-size !default;
+
+$style-raised-hover-fill-color: hsla(0, 0%, 100%, .45) !default;
+$style-raised-hover-stroke-color: hsla(0, 0%, 100%, .12) !default;
+$style-raised-hover-border-width: .125 * $base-size !default;
+
+$style-raised-pressed-fill-color: hsla(0, 0%, 100%, .6) !default;
+$style-raised-pressed-stroke-color: hsla(0, 0%, 100%, .12) !default;
+$style-raised-pressed-border-width: .125 * $base-size !default;
+
+$style-raised-focused-fill-color: hsla(0, 0%, 100%, .3) !default;
+$style-raised-focused-stroke-color: #ffc800 !default;
+$style-raised-focused-border-width: .5 * $base-size !default;
+
+$style-raised-disabled-fill-color: transparent !default;
+$style-raised-disabled-stroke-color: hsla(0, 0%, 100%, .2) !default;
+$style-raised-disabled-border-width: .125 * $base-size !default;
+
+// normal style
+$style-normal-normal-fill-color: #404040 !default;
+$style-normal-normal-stroke-color: hsla(0, 0%, 100%, .3) !default;
+$style-normal-normal-border-width: .125 * $base-size !default;
+
+$style-normal-hover-fill-color: #666 !default;
+$style-normal-hover-stroke-color: hsla(0, 0%, 100%, .3) !default;
+$style-normal-hover-border-width: .125 * $base-size !default;
+
+$style-normal-pressed-fill-color: rgb(128, 128, 128) !default;
+$style-normal-pressed-stroke-color: hsla(0, 0%, 100%, .3) !default;
+$style-normal-pressed-border-width: .125 * $base-size !default;
+
+$style-normal-focused-fill-color: #404040 !default;
+$style-normal-focused-stroke-color: #ffc800 !default;
+$style-normal-focused-border-width: .5 * $base-size !default;
+
+$style-normal-disabled-fill-color: transparent !default;
+$style-normal-disabled-stroke-color: hsla(0, 0%, 100%, .2) !default;
+$style-normal-disabled-border-width: .125 * $base-size !default;
+
+$style-normal-selected-fill-color: #404040 !default;
+$style-normal-selected-stroke-color: #fff !default;
+$style-normal-selected-border-width: .25 * $base-size !default;
+
+// indent style
+$style-indent-normal-fill-color: rgba(0, 0, 0, .3) !default;
+$style-indent-normal-stroke-color: rgba(0, 0, 0, .6) !default;
+$style-indent-normal-border-width: .125 * $base-size !default;
+
+$style-indent-hover-fill-color: rgba(0, 0, 0, .5) !default;
+$style-indent-hover-stroke-color: rgba(0, 0, 0, .6) !default;
+$style-indent-hover-border-width: .125 * $base-size !default;
+
+$style-indent-focused-fill-color: rgba(0, 0, 0, .14) !default;
+$style-indent-focused-stroke-color: #b39000 !default;
+$style-indent-focused-border-width: .5 * $base-size !default;
+
+$style-indent-disabled-fill-color: transparent !default;
+$style-indent-disabled-stroke-color: hsla(0, 0%, 100%, .2) !default;
+$style-indent-disabled-border-width: .125 * $base-size !default;
+
+$style-indent-pressed-fill-color: rgba(0, 0, 0, .6) !default;
+$style-indent-pressed-stroke-color: rgba(0, 0, 0, .12) !default;
+$style-indent-pressed-border-width: .125 * $base-size !default;
+
+// selected style
+$style-selected-normal-fill-color: rgb(192, 192, 192) !default;
+$style-selected-normal-stroke-color: hsla(0, 0%, 100%, .12) !default;
+$style-selected-normal-border-width: .125 * $base-size !default;
+
+$style-selected-hover-fill-color: #a6a6a6 !default;
+$style-selected-hover-stroke-color: hsla(0, 0%, 100%, .12) !default;
+$style-selected-hover-border-width: .125 * $base-size !default;
+
+$style-selected-pressed-fill-color: rgb(128, 128, 128) !default;
+$style-selected-pressed-stroke-color: hsla(0, 0%, 100%, .12) !default;
+$style-selected-pressed-border-width: .125 * $base-size !default;
+
+$style-selected-focused-fill-color: hsla(0, 0%, 75.3%, .9) !default;
+$style-selected-focused-stroke-color: #ffc800 !default;
+$style-selected-focused-border-width: .5 * $base-size !default;
+
+$style-selected-disabled-fill-color: hsla(0, 0%, 100%, .2) !default;
+$style-selected-disabled-stroke-color: transparent !default;
+$style-selected-disabled-border-width: 0 !default;
+
+$style-selected-outlined-fill-color: rgba(0, 0, 0, .3) !default;
+$style-selected-outlined-stroke-color: transparent !default;
+$style-selected-outlined-border-width: 0 !default;
+
+// flat style
+$style-flat-hover-fill-color: hsla(0, 0%, 100%, .15) !default;
+$style-flat-hover-stroke-color: transparent !default;
+$style-flat-hover-border-width: 0 !default;
+
+$style-flat-pressed-fill-color: hsla(0, 0%, 100%, .3) !default;
+$style-flat-pressed-stroke-color: transparent !default;
+$style-flat-pressed-border-width: 0 !default;
+
+$style-flat-normal-fill-color: transparent !default;
+$style-flat-normal-stroke-color: transparent !default;
+$style-flat-normal-border-width: 0 !default;
+
+$style-flat-disabled-fill-color: transparent !default;
+$style-flat-disabled-stroke-color: transparent !default;
+$style-flat-disabled-border-width: 0 !default;
+
+$style-flat-focused-fill-color: transparent !default;
+$style-flat-focused-stroke-color: #ffc800 !default;
+$style-flat-focused-border-width: .5 * $base-size !default;
+
+// thumb style
+$style-thumb-hover-fill-color: rgb(192, 192, 192) !default;
+$style-thumb-hover-stroke-color: rgba(0, 0, 0, .6) !default;
+$style-thumb-hover-border-width: .125 * $base-size !default;
+
+$style-thumb-pressed-fill-color: #a6a6a6 !default;
+$style-thumb-pressed-stroke-color: rgba(0, 0, 0, .6) !default;
+$style-thumb-pressed-border-width: .125 * $base-size !default;
+
+$style-thumb-disabled-fill-color: hsla(0, 0%, 100%, .2) !default;
+$style-thumb-disabled-stroke-color: transparent !default;
+$style-thumb-disabled-border-width: 0 !default;
+
+$style-thumb-normal-fill-color: #fff !default;
+$style-thumb-normal-stroke-color: rgba(0, 0, 0, .68) !default;
+$style-thumb-normal-border-width: .125 * $base-size !default;
+
+$style-thumb-focused-fill-color: #fff !default;
+$style-thumb-focused-stroke-color: #ffc800 !default;
+$style-thumb-focused-border-width: .5 * $base-size !default;
+
+// alert style
+$style-alert-running-fill-color: #00d200 !default;
+$style-alert-running-stroke-color: rgba(0, 0, 0, .12) !default;
+$style-alert-running-border-width: .125 * $base-size !default;
+
+// Colors
+$ui-element-active-color: rgb(255, 255, 255) !default;
+$ui-element-active-inverted-color: rgb(0, 0, 0) !default;
+$ui-element-neutral-color: rgba(255, 255, 255, .6) !default;
+$ui-element-neutral-inverted-color: rgba(0, 0, 0, .6) !default;
+$ui-element-disabled-color: rgba(255, 255, 255, .3) !default;
+$ui-element-disabled-inverted-color: rgba(0, 0, 0, .3) !default;
+$ui-container-backdrop-color: rgb(30, 30, 30) !default;
+$ui-container-background-color: rgb(46, 46, 46) !default;
+$ui-container-section-color: rgb(54, 54, 54) !default;
+$ui-container-global-color: rgb(64, 64, 64) !default;
+$ui-container-instrument-color: rgba(0, 0, 0, .06) !default;
+$ui-border-divider-color: rgba(255, 255, 255, .12) !default;
+$ui-border-outline-color: rgba(255, 255, 255, .2) !default;
+$ui-primary-color: rgb(0, 0, 255) !default;
+$ui-input-color: rgb(255, 200, 0) !default;
+$alert-running-color: rgb(0, 160, 0) !default;
+$alert-caution-color: rgb(255, 213, 0) !default;
+$alert-warning-color: rgb(255, 116, 0) !default;
+$alert-alarm-color: rgb(255, 0, 0) !default;
+$surface-backdrop-color: rgb(187, 187, 187) !default;
+$surface-background-color: rgb(255, 255, 255) !default;
+$surface-section-color: rgb(234, 234, 234) !default;
+$surface-global-color: rgb(213, 213, 213) !default;
+$border-divider-color: rgba(0, 0, 0, .12) !default;
+$border-outline-color: rgba(0, 0, 0, .2) !default;
+$on-background-active-color: rgba(0, 0, 0, .9) !default;
+$on-background-unfocused-color: rgba(0, 0, 0, .7) !default;
+$on-background-raised-color: rgba(0, 0, 0, .7) !default;
+$on-background-disabled-color: rgba(0, 0, 0, .3) !default;
+$on-background-indent-color: rgba(0, 0, 0, .12) !default;
+$on-background-hinted-color: rgba(0, 0, 0, .06) !default;
+$on-primary-active-color: rgb(255, 255, 255) !default;
+$on-primary-normal-color: rgba(255, 255, 255, .7) !default;
+$on-primary-disabled-color: rgba(255, 255, 255, .3) !default;
+$instrument-static-color: rgb(255, 255, 255) !default;
+$instrument-dynamic-color: rgb(0, 220, 150) !default;
+$instrument-input-color: rgb(255, 200, 0) !default;
+// STOP GENERATED
