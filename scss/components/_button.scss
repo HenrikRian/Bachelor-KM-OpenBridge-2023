@@ -16,7 +16,6 @@
   text-align: center;
   vertical-align: middle;
 
-
   border-radius: $btn-border-radius;
 
   &:hover:not(:disabled) {
@@ -69,13 +68,16 @@
 
   width: $btn-width-toggle;
   height: $btn-height-small;
-  cursor: pointer;
 
   border-radius: $btn-height-small;
 
   $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
 
   $transition-time: .3s;
+
+  &:hover:not(:disabled):not(.ob-disabled){
+    cursor: pointer;
+  }
 
   & > .ob-thumb {
     @include thumb();
