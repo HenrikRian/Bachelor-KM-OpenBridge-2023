@@ -19,9 +19,8 @@ import {
   ElementRef,
   EventEmitter,
   forwardRef,
-  HostBinding, HostListener,
-  Inject,
-  InjectionToken,
+  HostBinding,
+  HostListener,
   Input,
   OnDestroy,
   OnInit,
@@ -34,34 +33,12 @@ import {
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 
-/** Acceptable types for a button toggle. */
-export type ToggleType = 'checkbox' | 'radio';
-
-/** Possible appearance styles for the button toggle. */
-export type MatButtonToggleAppearance = 'legacy' | 'standard';
-
 /**
- * Represents the default options for the button toggle that can be configured
- * using the `MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS` injection token.
- */
-export interface MatButtonToggleDefaultOptions {
-  appearance?: MatButtonToggleAppearance;
-}
-
-/**
- * Injection token that can be used to configure the
- * default options for all button toggles within an app.
- */
-export const MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS =
-  new InjectionToken<MatButtonToggleDefaultOptions>('MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS');
-
-
-/**
- * Provider Expression that allows mat-button-toggle-group to register as a ControlValueAccessor.
+ * Provider Expression that allows ob-button-toggle-group to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)].
  * @docs-private
  */
-export const MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR: any = {
+export const OB_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => ButtonToggleGroupComponent), /* tslint:disable-line:no-use-before-declare*/
   multi: true
@@ -82,7 +59,7 @@ export class ButtonToggleChange {
 /** Exclusive selection button toggle group that behaves like a radio-button group. */
 @Component({
   selector: 'ob-button-toggle-group',
-  providers: [MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR],
+  providers: [OB_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR],
   templateUrl: 'button-toggle-group.component.html',
 })
 export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit, AfterContentInit {
@@ -155,12 +132,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   }
 
   constructor(
-    private _changeDetector: ChangeDetectorRef,
-    @Optional() @Inject(MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS)
-      defaultOptions?: MatButtonToggleDefaultOptions) {
-
-    this.appearance =
-      defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
+    private _changeDetector: ChangeDetectorRef) {
   }
 
   private _multiple = false;
@@ -179,9 +151,7 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
     // tslint:disable-next-line:no-use-before-declare
   @ContentChildren(forwardRef(() => ButtonToggleComponent)) _buttonToggles: QueryList<ButtonToggleComponent>;
 
-  /** The appearance for all the buttons in the group. */
-  @Input() appearance: MatButtonToggleAppearance;
-  private _name = `mat-button-toggle-group-${_uniqueIdCounter++}`;
+  private _name = `ob-button-toggle-group-${_uniqueIdCounter++}`;
 
   /**
    * Event that emits whenever the value of the group changes.
@@ -198,10 +168,12 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
    * The method to be called in order to update ngModel.
    * Now `ngModel` binding is not supported in multiple selection mode.
    */
-  _controlValueAccessorChangeFn: (value: any) => void = () => {};
+  _controlValueAccessorChangeFn: (value: any) => void = () => {
+  }
 
   /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
-  _onTouched: () => any = () => {};
+  _onTouched: () => any = () => {
+  }
 
   ngOnInit() {
     this._selectionModel = new SelectionModel<ButtonToggleComponent>(this.multiple, undefined, false);
@@ -351,12 +323,6 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
   }
 }
 
-// Boilerplate for applying mixins to the ButtonToggleComponent class.
-/** @docs-private */
-class MatButtonToggleBase {
-}
-
-const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBase);
 
 /** Single button inside of a toggle group. */
 @Component({
@@ -367,7 +333,7 @@ const _MatButtonToggleMixinBase: typeof MatButtonToggleBase = (MatButtonToggleBa
   exportAs: 'ButtonToggleComponent',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements OnInit,
+export class ButtonToggleComponent implements OnInit,
   OnDestroy {
   @HostBinding('class') cssClass = 'ob-btn';
 
@@ -421,17 +387,6 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
     this._tabIndex = value;
   }
 
-  /** The appearance style of the button. */
-  @Input()
-  get appearance(): MatButtonToggleAppearance {
-    return this.buttonToggleGroup ? this.buttonToggleGroup.appearance : this._appearance;
-  }
-
-  set appearance(value: MatButtonToggleAppearance) {
-    this._appearance = value;
-  }
-
-  private _appearance: MatButtonToggleAppearance;
 
   /** Whether the button is checked. */
   @HostBinding('class.ob-selected')
@@ -454,9 +409,6 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
       this._changeDetectorRef.markForCheck();
     }
   }
-
-  /** Type of the button toggle. Either 'radio' or 'checkbox'. */
-  _type: ToggleType;
 
   @ViewChild('button', {static: false}) _buttonElement: ElementRef<HTMLButtonElement>;
 
@@ -483,21 +435,15 @@ export class ButtonToggleComponent extends _MatButtonToggleMixinBase implements 
               private _elementRef: ElementRef<HTMLElement>,
               private _focusMonitor: FocusMonitor,
               // @breaking-change 8.0.0 `defaultTabIndex` to be made a required parameter.
-              @Attribute('tabindex') defaultTabIndex: string,
-              @Optional() @Inject(MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS)
-                defaultOptions?: MatButtonToggleDefaultOptions) {
-    super();
+              @Attribute('tabindex') defaultTabIndex: string) {
 
     const parsedTabIndex = Number(defaultTabIndex);
     this.tabIndex = (parsedTabIndex || parsedTabIndex === 0) ? parsedTabIndex : null;
     this.buttonToggleGroup = toggleGroup;
-    this.appearance =
-      defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
   }
 
   ngOnInit() {
     this._isSingleSelector = this.buttonToggleGroup && !this.buttonToggleGroup.multiple;
-    this._type = this._isSingleSelector ? 'radio' : 'checkbox';
     this.id = this.id || `ob-button-toggle-${_uniqueIdCounter++}`;
 
     if (this._isSingleSelector) {
