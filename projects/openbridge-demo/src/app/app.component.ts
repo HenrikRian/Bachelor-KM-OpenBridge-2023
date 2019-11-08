@@ -9,12 +9,16 @@ import {PaletteSwitchService} from './palette-switch.service';
 })
 export class AppComponent {
   title = 'openbridge-angular';
-  isSelected = true;
   menuActive = true;
   numberOfNotifications = 0;
   subTitle = 'Section';
+  btnDisabled = false;
   constructor(private palletSwitchService: PaletteSwitchService) {
 
+  }
+
+  toggleDisable() {
+    this.btnDisabled = !this.btnDisabled;
   }
 
   rotatePalette() {

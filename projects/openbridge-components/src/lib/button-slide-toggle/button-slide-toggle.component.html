@@ -3,6 +3,7 @@
        (click)="_onClick()"
        [class.ob-selected]='checked'
        (keyup.enter)="_onClick()"
+       [class.ob-disabled]="disabled"
   >
     <input #input class="ob-visually-hidden" type="checkbox"
            role="switch"
@@ -18,10 +19,6 @@
            (change)="_onChangeEvent($event)"
            (click)="_onInputClick($event)"
     >
-
-    <div class="ob-thumb"
-         #thumbContainer>
-
-    </div>
+    <div class="ob-thumb" [class.ob-disabled]="disabled" #thumbContainer></div>
   </div>
 </label>

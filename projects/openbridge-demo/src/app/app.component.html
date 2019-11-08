@@ -41,10 +41,14 @@
     </span>
     <span class="ob-text-under">sun</span>
   </a>
-  <button ob-button-normal disabled>Disabled</button>
-  <ob-slide-toggle></ob-slide-toggle>
+  <a ob-button-raised (click)="toggleDisable()">
+    <span *ngIf="btnDisabled">Enable</span>
+    <span *ngIf="!btnDisabled">Disable</span>
+  </a>
+  <button ob-button-normal [disabled]="btnDisabled">Disabled</button>
+  <ob-slide-toggle [disabled]="btnDisabled"></ob-slide-toggle>
   <div style="margin: 5rem;">
-  <ob-button-toggle-group  class="ob-btn-group">
+  <ob-button-toggle-group  class="ob-btn-group" [disabled]="btnDisabled">
     <button ob-button-toggle [checked]="true">
       <span class="ob-icon">
         <i class="material-icons">wb_sunny</i>

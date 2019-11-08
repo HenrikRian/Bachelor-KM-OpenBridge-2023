@@ -12,8 +12,6 @@
     content: "";
     border: $focus-ring-width $focus-ring-color solid;
     border-radius: $border-radius;
-
-
   }
 }
 
@@ -25,13 +23,12 @@
   border-style: solid;
   border-width: $style-normal-normal-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
     background-color: $style-normal-hover-fill-color;
     border-color: $style-normal-hover-stroke-color;
     border-width: $style-normal-hover-border-width;
-
   }
 
   &:focus-within {
@@ -46,12 +43,14 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     color: $ui-element-disabled-color;
     background-color: $style-normal-disabled-fill-color;
     border-color: $style-normal-disabled-stroke-color;
   }
 }
+
 
 @mixin style-normal-selected {
   color: $on-background-disabled-color;
@@ -67,7 +66,7 @@
   border-style: solid;
   border-width: $style-raised-normal-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
     background-color: $style-raised-hover-fill-color;
@@ -88,7 +87,8 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     color: $ui-element-disabled-color;
     background-color: $style-raised-disabled-fill-color;
     border-color: $style-raised-disabled-stroke-color;
@@ -103,7 +103,7 @@
   border-style: solid;
   border-width: $style-selected-normal-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
     color: $on-background-focused-color;
 
@@ -125,7 +125,8 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     color: $ui-element-disabled-color;
     background-color: $style-selected-disabled-fill-color;
     border-color: $style-selected-disabled-stroke-color;
@@ -140,7 +141,7 @@
   border-style: solid;
   border-width: $style-indent-normal-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
     color: $on-background-focused-color;
 
@@ -161,7 +162,8 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     color: $ui-element-disabled-color;
     background-color: $style-indent-disabled-fill-color;
     border-color: $style-indent-disabled-stroke-color;
@@ -176,7 +178,7 @@
   border-style: solid;
   border-width: $style-flat-normal-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
     background-color: $style-flat-hover-fill-color;
@@ -196,7 +198,8 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     color: $ui-element-disabled-color;
     background-color: $style-flat-disabled-fill-color;
     border-color: $style-flat-disabled-stroke-color;
@@ -211,7 +214,7 @@
   border-style: solid;
   border-width: $style-thumb-normal-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
     color: $on-background-focused-color;
 
@@ -231,7 +234,8 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     color: $ui-element-disabled-color;
     background-color: $style-thumb-disabled-fill-color;
     border-color: $style-thumb-disabled-stroke-color;
@@ -244,7 +248,7 @@
   border-style: solid;
   border-width: $style-alert-running-border-width;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
     background-color: $style-alert-running-fill-color; // TODO insert correct variable
@@ -264,7 +268,8 @@
     }
   }
 
-  &:disabled {
+  &:disabled,
+  &.ob-disabled {
     background-color: $style-alert-running-fill-color; // TODO insert correct variable
     border-color: $style-alert-running-stroke-color; // TODO insert correct variable
     border-width: $style-alert-running-border-width; // TODO insert correct variable

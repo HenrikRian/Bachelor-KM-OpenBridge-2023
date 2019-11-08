@@ -136,11 +136,13 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
   /** Toggles the checked state of the slide-toggle. */
   toggle(): void {
     this.checked = !this.checked;
+    this._emitChangeEvent();
   }
 
   _onClick(): void {
-    this.toggle();
-    this._emitChangeEvent();
+    if (!this.disabled) {
+      this.toggle();
+    }
   }
 
   /**
