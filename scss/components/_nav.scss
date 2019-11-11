@@ -100,24 +100,34 @@
     align-items: center;
 
     height: $nav-menu-item-height;
-    margin: 0 $nav-menu-item-margin-x;
+    padding: 0 $nav-menu-item-margin-x;
 
     color: $ui-element-active-color;
     cursor: pointer;
-    border-bottom: $nav-menu-item-divider-thickness solid $ui-border-outline-color;
 
     .ob-nav-expand-icon {
       position: absolute;
-      right: 0;
+      right: $nav-menu-item-margin-x;
     }
 
     .ob-label {
       position: absolute;
-      left: $nav-menu-label-margin-x;
+      left: $nav-menu-item-margin-x + $nav-menu-label-margin-x;
     }
 
-    &.ob-active .ob-label {
-      font-weight: $font-weight-bold;
+    &.ob-active {
+      color: $ui-element-active-inverted-color;
+      background-color: $ui-element-active-color;
+    }
+
+    &::after {
+      position: absolute;
+      right: $nav-menu-item-margin-x;
+      bottom: 0;
+      left: $nav-menu-item-margin-x;
+      height: 0;
+      content: "";
+      border-bottom: $nav-menu-item-divider-thickness solid $ui-border-outline-color;
     }
   }
 
@@ -134,7 +144,12 @@
 
   .ob-nav-sub-item-container {
     .ob-nav-item {
-      margin-left: $nav-menu-label-margin-x + $nav-menu-item-margin-x;
+      padding-left: $nav-menu-label-margin-x + $nav-menu-item-margin-x;
+
+      .ob-label {
+        position: absolute;
+        left: $nav-menu-item-margin-x + 2 * $nav-menu-label-margin-x;
+      }
     }
   }
 

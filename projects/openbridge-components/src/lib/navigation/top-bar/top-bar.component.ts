@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'ob-top-bar',
-  templateUrl: './top-bar.component.html'
+  templateUrl: './top-bar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopBarComponent {
   @Input() title: string;
