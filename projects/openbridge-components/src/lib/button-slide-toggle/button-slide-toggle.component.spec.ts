@@ -22,8 +22,6 @@ const checkedClass = 'ob-selected';
       [id]="slideId"
       [checked]="slideChecked"
       [name]="slideName"
-      [aria-label]="slideLabel"
-      [aria-labelledby]="slideLabelledBy"
       [tabIndex]="slideTabindex"
       (change)="onSlideChange($event)">
       <span>Test Slide Toggle</span>
@@ -144,19 +142,16 @@ describe('ButtonSlideToggle without forms', () => {
 
     it('should correctly update the checked property', () => {
       expect(slideToggle.checked).toBeFalsy();
-      expect(inputElement.getAttribute('aria-checked')).toBe('false');
 
       testComponent.slideChecked = true;
       fixture.detectChanges();
 
       expect(inputElement.checked).toBeTruthy();
-      expect(inputElement.getAttribute('aria-checked')).toBe('true');
     });
 
 
     it('should set the toggle to checked on click', () => {
       expect(slideToggle.checked).toBe(false);
-      expect(inputElement.getAttribute('aria-checked')).toBe('false');
       expectCheckedClassToBeExcluded();
 
       slideToggleDivElement.click();
@@ -164,7 +159,6 @@ describe('ButtonSlideToggle without forms', () => {
 
       expectCheckedClassToBeIncluded();
       expect(slideToggle.checked).toBe(true);
-      expect(inputElement.getAttribute('aria-checked')).toBe('true');
     });
 
     it('should trigger the change event properly', () => {
@@ -253,30 +247,6 @@ describe('ButtonSlideToggle without forms', () => {
       fixture.detectChanges();
 
       expect(inputElement.name).toBe('');
-    });
-
-    it('should forward the aria-label attribute to the input', () => {
-      testComponent.slideLabel = 'ariaLabel';
-      fixture.detectChanges();
-
-      expect(inputElement.getAttribute('aria-label')).toBe('ariaLabel');
-
-      testComponent.slideLabel = null;
-      fixture.detectChanges();
-
-      expect(inputElement.hasAttribute('aria-label')).toBeFalsy();
-    });
-
-    it('should forward the aria-labelledby attribute to the input', () => {
-      testComponent.slideLabelledBy = 'ariaLabelledBy';
-      fixture.detectChanges();
-
-      expect(inputElement.getAttribute('aria-labelledby')).toBe('ariaLabelledBy');
-
-      testComponent.slideLabelledBy = null;
-      fixture.detectChanges();
-
-      expect(inputElement.hasAttribute('aria-labelledby')).toBeFalsy();
     });
 
     it('should set the `for` attribute to the id of the input element', () => {

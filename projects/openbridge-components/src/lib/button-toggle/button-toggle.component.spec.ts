@@ -786,18 +786,6 @@ describe('ButtonToggleComponent without forms', () => {
     it('should not assign a name to the underlying input if one is not passed in', () => {
       expect(buttonToggleButtonElement.getAttribute('name')).toBeFalsy();
     });
-
-    it('should have correct aria-pressed attribute', () => {
-      expect(buttonToggleButtonElement.getAttribute('aria-pressed'))
-        .toBe('false');
-
-      buttonToggleLabelElement.click();
-
-      fixture.detectChanges();
-
-      expect(buttonToggleButtonElement.getAttribute('aria-pressed'))
-        .toBe('true');
-    });
   });
 
   describe('aria-label handling ', () => {

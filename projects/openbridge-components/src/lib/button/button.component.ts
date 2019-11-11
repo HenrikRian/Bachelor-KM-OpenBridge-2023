@@ -85,10 +85,6 @@ export class ButtonAnchorComponent extends ButtonComponent {
     return this.disabled ? -1 : (this.tabIndex || 0);
   }
 
-  @HostBinding('attr.aria-disabled') get ariaDisabled(): string {
-    return this.disabled.toString();
-  }
-
   constructor(
     elementRef: ElementRef) {
     super(elementRef);
