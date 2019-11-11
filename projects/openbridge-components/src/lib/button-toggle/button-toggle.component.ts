@@ -61,6 +61,7 @@ export class ButtonToggleChange {
   selector: 'ob-button-toggle-group',
   providers: [OB_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR],
   templateUrl: 'button-toggle-group.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit, AfterContentInit {
   @HostBinding('class') cssClass = 'ob-btn-group';

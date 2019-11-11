@@ -1,10 +1,14 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {MenuItemActiveChange, NavigationMenuItemComponent} from '../navigation-menu-item/navigation-menu-item.component';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  MenuItemActiveChange,
+  NavigationMenuItemComponent
+} from '../navigation-menu-item/navigation-menu-item.component';
 
 
 @Component({
   selector: 'ob-navigation-menu',
-  templateUrl: './navigation-menu.component.html'
+  templateUrl: './navigation-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationMenuComponent {
   private activeNavigationMenuItem: NavigationMenuItemComponent;
@@ -12,12 +16,28 @@ export class NavigationMenuComponent {
   @Output() readonly changeActiveItem: EventEmitter<MenuItemActiveChange> =
     new EventEmitter<MenuItemActiveChange>();
 
-  @Input() disabled = true;
+  @Output() readonly changeDisabled: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  private _disabled = true;
+  @Input()
+  get disabled(): boolean {
+    return this._disabled;
+  }
+
+  set disabled(value: boolean) {
+    if (value === this._disabled) {
+      return;
+    }
+    this._disabled = value;
+    this.changeDisabled.emit(this._disabled);
+    this._changeDetectorRef.markForCheck();
+  }
+
   @Input() numberOfNotifications = 0;
   @Input() logoSrc: string;
 
 
-  constructor() {
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {
   }
 
   public onActiveItemChange(event: MenuItemActiveChange) {
@@ -28,6 +48,7 @@ export class NavigationMenuComponent {
       this.activeNavigationMenuItem = event.source;
     }
     this.changeActiveItem.emit(event);
+    this.disabled = true;
   }
 
   public toggle() {

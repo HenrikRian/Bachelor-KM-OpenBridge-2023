@@ -2,6 +2,7 @@
             (clickOnMenuEvent)="toggleMenu()"></ob-top-bar>
 <ob-navigation-menu #menuComponent [disabled]="!menuActive" (changeActiveItem)="changeActiveView($event)"
                     [numberOfNotifications]="numberOfNotifications"
+                    (changeDisabled)="menuDisabledChange($event)"
                     logoSrc="/assets/img/OpenBridge_Logo.png"
 >
   <ob-navigation-menu-item (changeActiveStatus)="menuComponent.onActiveItemChange($event)" [materialLogo]="'settings'"

@@ -25,6 +25,10 @@ export class AppComponent {
     this.palletSwitchService.rotatePalette();
   }
 
+  menuDisabledChange(value: boolean) {
+    this.menuActive = !value;
+  }
+
   toggleMenu() {
     this.menuActive = !this.menuActive;
   }
