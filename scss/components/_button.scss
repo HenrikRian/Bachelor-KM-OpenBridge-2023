@@ -1,13 +1,14 @@
 .ob-btn {
   position: relative;
-  box-sizing: content-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   $content-height: $btn-height-normal - 2 * $btn-padding-y;
 
-  min-width: $btn-width-min - 2 * $btn-padding-x;
-  height: $content-height;
-  padding: $btn-padding-y $btn-padding-x;
+  min-width: $btn-width-min;
+  height: $btn-height-normal;
+  padding: 0 $btn-padding-x;
 
   font-family: $font-default;
   font-size: $btn-font-size;
@@ -32,17 +33,21 @@
 
   & > .ob-text-under {
     position: absolute;
-    top: $btn-height-normal + $btn-text-under-spacing;
     left: 0;
     width: 100%;
+    transform: translateY($btn-height-normal / 2 + $btn-font-size / 2 + $btn-text-under-spacing);
   }
 
-  @include material-icon($content-height);
+  .ob-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .ob-btn-group {
   display: inline-block;
-  height: $btn-height-normal + 2 * $border-width;
+  height: $btn-height-normal;
   background-color: $style-indent-normal-fill-color;
   border-color: $style-indent-normal-stroke-color;
   border-width: $style-indent-normal-border-width;
@@ -75,7 +80,7 @@
 
   $transition-time: .3s;
 
-  &:hover:not(:disabled):not(.ob-disabled){
+  &:hover:not(:disabled):not(.ob-disabled) {
     cursor: pointer;
   }
 
