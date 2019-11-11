@@ -59,12 +59,6 @@ export class ButtonSlideToggleComponent extends TabIndexAndDisable implements Ca
   /** A unique id for the slide-toggle input. If none is supplied, it will be auto-generated. */
   @Input() @HostBinding('id') id: string = this._uniqueId;
 
-  /** Used to set the aria-label attribute on the underlying input element. */
-  @Input('aria-label') ariaLabel: string | null = null;
-
-  /** Used to set the aria-labelledby attribute on the underlying input element. */
-  @Input('aria-labelledby') ariaLabelledby: string | null = null;
-
   /** Whether the slide-toggle is required. */
   @Input()
   get required(): boolean {

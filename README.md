@@ -38,7 +38,7 @@ To implement a component:
 1. Start by finding a similar component in [Angular Material library](https://material.angular.io/components/categories).
 2. Find the [source code](https://github.com/angular/components/tree/master/src/material) of the component.
 3. Copy the source code files into `projects/openbridge-components/scs/lib/*component category*/*component name*`. Include the copyright header and test files (`*.spec.ts`)
-4. Remove unnecessary code, but keep the copyright header. Make sure that the tests are still running.
+4. Remove unnecessary code, but keep the copyright header. Make sure that the tests are still running. For instance remove `aria` and `role`. 
 5. Stylesheets should be implemented in the `scss/` project not in the components.
 
 ## Code scaffolding

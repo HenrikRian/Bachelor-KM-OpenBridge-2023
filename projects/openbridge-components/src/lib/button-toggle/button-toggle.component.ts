@@ -63,7 +63,6 @@ export class ButtonToggleChange {
   templateUrl: 'button-toggle-group.component.html',
 })
 export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit, AfterContentInit {
-  @HostBinding('attr.role') role = 'group';
   @HostBinding('class') cssClass = 'ob-btn-group';
 
   /** `name` attribute for the underlying `input` element. */
@@ -341,20 +340,6 @@ export class ButtonToggleComponent implements OnInit,
   /** ButtonToggleGroupComponent reads this to assign its own value. */
   @Input() value: any;
 
-  /**
-   * Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
-   * take precedence so this may be omitted.
-   */
-  @HostBinding('attr.aria-label')
-  @Input('aria-label') ariaLabel: string;
-
-  /**
-   * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
-   */
-  @HostBinding('attr.aria-labelledby')
-  @Input('aria-labelledby') ariaLabelledby: string | null = null;
-
-
   /** Whether the button is disabled. */
   @HostBinding('disabled')
   @Input()
@@ -390,7 +375,6 @@ export class ButtonToggleComponent implements OnInit,
 
   /** Whether the button is checked. */
   @HostBinding('class.ob-selected')
-  @HostBinding('attr.aria-pressed')
   @Input()
   get checked(): boolean {
     return this.buttonToggleGroup ? this.buttonToggleGroup._isSelected(this) : this._checked;
