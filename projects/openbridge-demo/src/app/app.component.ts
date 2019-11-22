@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MenuItemActiveChange} from 'openbridge-components/lib/navigation/navigation-menu-item/navigation-menu-item.component';
 import {PaletteSwitchService} from './palette-switch.service';
+import {IconSize} from 'openbridge-components';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   numberOfNotifications = 0;
   subTitle = 'Section';
   btnDisabled = false;
+  IconSize = IconSize;
   constructor(private palletSwitchService: PaletteSwitchService) {
 
   }

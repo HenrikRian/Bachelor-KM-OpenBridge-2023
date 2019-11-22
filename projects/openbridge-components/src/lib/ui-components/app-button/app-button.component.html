@@ -1,0 +1,9 @@
+<div class="ob-app-btn ob-{{size}}">
+  <button class="ob-btn-icon">
+    <ob-icon [icon]="icon" [size]="size"></ob-icon>
+    <ng-content></ng-content>
+  </button>
+  <div class="ob-label" *ngIf="size==IconSize.large">
+    {{label}}
+  </div>
+</div>

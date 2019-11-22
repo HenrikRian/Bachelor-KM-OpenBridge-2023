@@ -19,22 +19,6 @@
   </ob-navigation-menu-expandable-item>
 </ob-navigation-menu>
 <div style="padding-left: 50rem; padding-top: 10rem;">
-  <!--
-  <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
-                   [componentStyle]="normalStyle"></ob-button-text>
-  <ob-button-text [label]="'Rotate palette'" (onclick)="palletSwitchService.rotatePalette()"
-                   [componentStyle]="raisedStyle"></ob-button-text>
-  <ob-button-text [label]="'Select button'" [componentStyle]="normalStyle"
-                   [setSelectedOnClick]="true"></ob-button-text>
-  <ob-button-text [label]="'Select button'" [componentStyle]="raisedStyle"
-                   [setSelectedOnClick]="true"></ob-button-text>
-
-  <ob-button-group></ob-button-group>
-  <ob-button-icon [label]="'Icon'" [componentStyle]="normalStyle"
-                   [materialDesignIconName]="'wb_sunny'"></ob-button-icon>
-  <ob-button-icon [label]="'Icon'" [componentStyle]="raisedStyle"
-                   [materialDesignIconName]="'wb_cloudy'"></ob-button-icon>
-                   -->
   <a ob-button-normal (click)="rotatePalette()">Rotate palette</a>
   <a ob-button-normal>
     <span class="ob-icon">
@@ -48,6 +32,8 @@
   </a>
   <button ob-button-normal [disabled]="btnDisabled">Disabled</button>
   <ob-slide-toggle [disabled]="btnDisabled"></ob-slide-toggle>
+  <ob-app-button icon="directions_boat" [size]="IconSize.large" label="app button"></ob-app-button>
+  <ob-app-button icon="directions_boat" [size]="IconSize.normal"></ob-app-button>
   <div style="margin: 5rem;">
   <ob-button-toggle-group  class="ob-btn-group" [disabled]="btnDisabled">
     <button ob-button-toggle [checked]="true">

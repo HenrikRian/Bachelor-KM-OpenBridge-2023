@@ -41,6 +41,11 @@ To implement a component:
 4. Remove unnecessary code, but keep the copyright header. Make sure that the tests are still running. For instance remove `aria` and `role`. 
 5. Stylesheets should be implemented in the `scss/` project not in the components.
 
+# Development of Openbridge Components from Westcon repo
+Westcon made an Angular implementation very early. It follows another structure. It can be used as basis for development of new components.
+1. Copy code from the Westcon repo.
+2. 
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

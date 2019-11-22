@@ -1,0 +1,14 @@
+.ob-icon {
+  &.ob-normal {
+    width: $icon-normal-height;
+    height: $icon-normal-height;
+    font-size: $icon-normal-height;
+
+  }
+
+  &.ob-large {
+    width: $icon-large-height;
+    height: $icon-large-height;
+    font-size: $icon-large-height;
+  }
+}

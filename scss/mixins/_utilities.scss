@@ -29,7 +29,7 @@
 
 @mixin material-icon($content-height) {
   & > .ob-icon .material-icons {
-    margin-top: ($content-height - $icon-height) / 2;
+    margin-top: ($content-height - $icon-normal-height) / 2;
   }
 }
 
@@ -38,5 +38,11 @@
   height: $btn-diameter-thumb;
 
   border-radius: $btn-height-small / 2;
+}
+
+@mixin pointer-on-hover-not-disabled {
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
