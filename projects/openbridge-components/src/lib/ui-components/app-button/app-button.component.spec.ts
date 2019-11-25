@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component, DebugElement} from '@angular/core';
 import {AppButtonModule, IconSize} from 'openbridge-components';
-import {By} from "@angular/platform-browser";
+import {By} from '@angular/platform-browser';
 import {AppButtonComponent} from './app-button.component';
 
 @Component({
@@ -9,7 +9,7 @@ import {AppButtonComponent} from './app-button.component';
       <ob-app-button
               [size]="IconSize.large"
               [label]="label"
-      [disabled]="isDisabled">
+              [disabled]="isDisabled">
       </ob-app-button>
   `
 })
@@ -23,7 +23,8 @@ class AppButtonLargeComponent {
   template: `
       <ob-app-button
               [size]="IconSize.normal"
-              [label]="label">
+              [label]="label"
+              [disabled]="isDisabled">
       </ob-app-button>
   `
 })
@@ -65,9 +66,11 @@ describe('ObAppButtonNormalComponent', () => {
   });
 
   it('should disable', () => {
+    const buttonIcon: HTMLButtonElement = appButtonDebugElement.query(By.css('button')).nativeElement;
+    expect(buttonIcon.disabled).toBeFalsy();
     componentNormal.isDisabled = true;
-    const buttonIcon: HTMLButtonElement =  appButtonDebugElement.query(By.css('button')).nativeElement;
-    expect(buttonIcon.classList).toContain('ob-disable');
+    fixture.detectChanges();
+    expect(buttonIcon.disabled).toBeTruthy();
   });
 });
 
