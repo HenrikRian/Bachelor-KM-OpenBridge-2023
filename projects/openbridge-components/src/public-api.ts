@@ -7,4 +7,4 @@ export * from './lib/button-slide-toggle/button-slide-toggle.module';
 export * from './lib/button-toggle/button-toggle.module';
 export * from './lib/navigation/navigation-menu/navigation-menu.module';
 export * from './lib/navigation/top-bar/top-bar.module';
-
+export * from './lib/ui-components/app-button/app-button.module';

@@ -1,0 +1,15 @@
+@mixin text-label() {
+
+  font-family: "Open Sans", sans-serif;
+
+  font-size: $label-font-size;
+  font-weight: $label-font-weight;
+
+  line-height: $label-lineheight;
+  color: $ui-element-active-color;
+
+  &:disabled,
+  &.ob-disabled {
+    color: $ui-element-disabled-color;
+  }
+}

@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {
+  AppButtonModule,
   ButtonModule,
   ButtonSlideToggleModule,
   ButtonToggleModule,
@@ -21,7 +22,8 @@ import {
     ButtonModule,
     ButtonSlideToggleModule,
     NavigationMenuModule,
-    TopBarModule
+    TopBarModule,
+    AppButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

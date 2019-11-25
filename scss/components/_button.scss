@@ -19,9 +19,7 @@
 
   border-radius: $btn-border-radius;
 
-  &:hover:not(:disabled) {
-    cursor: pointer;
-  }
+  @include pointer-on-hover-not-disabled();
 
   &.ob-normal {
     @include btn-normal-style();
@@ -94,7 +92,6 @@
 
   &.ob-selected {
     @include style-alert-running($btn-height-small);
-
     border-radius: $btn-height-small;
 
     & .ob-thumb {
