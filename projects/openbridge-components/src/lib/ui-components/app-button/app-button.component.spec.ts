@@ -8,7 +8,8 @@ import {AppButtonComponent} from './app-button.component';
   template: `
       <ob-app-button
               [size]="IconSize.large"
-              [label]="label">
+              [label]="label"
+      [disabled]="isDisabled">
       </ob-app-button>
   `
 })
@@ -36,6 +37,7 @@ describe('ObAppButtonNormalComponent', () => {
   let appButtonDebugElement: DebugElement;
   let component: AppButtonComponent;
   let fixture: ComponentFixture<AppButtonNormalComponent>;
+  let componentNormal: AppButtonNormalComponent;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -47,6 +49,7 @@ describe('ObAppButtonNormalComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppButtonNormalComponent);
+    componentNormal = fixture.debugElement.componentInstance;
     appButtonDebugElement = fixture.debugElement.query(By.directive(AppButtonComponent));
     component = appButtonDebugElement.injector.get<AppButtonComponent>(AppButtonComponent);
     fixture.detectChanges();
@@ -57,8 +60,14 @@ describe('ObAppButtonNormalComponent', () => {
   });
 
   it('should not have a label', () => {
-    component.label = 'Test';
+    componentNormal.label = 'Test';
     expect(appButtonDebugElement.query(By.css('.ob-label'))).toBeNull();
+  });
+
+  it('should disable', () => {
+    componentNormal.isDisabled = true;
+    const buttonIcon: HTMLButtonElement =  appButtonDebugElement.query(By.css('button')).nativeElement;
+    expect(buttonIcon.classList).toContain('ob-disable');
   });
 });
 

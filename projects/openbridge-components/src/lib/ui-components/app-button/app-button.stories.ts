@@ -20,5 +20,10 @@ storiesOf('Components|App button', module)
       size: IconSize.large
     }
   }))
-
+  .add('Large style disabled', () => ({
+    template: ` <ob-app-button icon="directions_boat" [size]="size" label="app button" [disabled]="true"></ob-app-button>`,
+    props: {
+      size: IconSize.large
+    }
+  }))
 ;
