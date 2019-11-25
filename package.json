@@ -47,7 +47,9 @@
     "build-storybook": "build-storybook"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "stylelint-declaration-use-variable": "^1.7.2"
+  },
   "peerDependencies": {
     "@types/node": "^8.10.54",
     "hammerjs": "^2.0.8",
