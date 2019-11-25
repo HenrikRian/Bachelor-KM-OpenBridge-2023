@@ -18,7 +18,7 @@
     .ob-nav-item {
       height: 100%;
       padding: 0 ($nav-top-bar-height - $nav-btn-height) / 2;
-      color: $ui-element-neutral-color;
+      @include text-body();
 
       & > * {
         margin: 0 ($nav-top-bar-spacing / 2);
@@ -33,20 +33,17 @@
       }
 
       &.ob-active {
+        @include text-selected-body;
         color: $ui-element-active-inverted-color;
         background: $ui-element-active-color;
       }
     }
 
     .ob-nav-btn {
+      @include style-flat();
       display: flex;
       align-items: center;
-
       cursor: pointer;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, .12);
-      }
     }
 
     .ob-divider {
@@ -57,19 +54,13 @@
     }
 
     .ob-title {
+      @include text-title();
       margin-left: $nav-title-spacing-x;
-
-      font-size: $nav-title-font-size;
-      font-weight: $nav-title-font-weight;
-      color: $ui-element-active-color;
     }
 
     .ob-sub-title {
+      @include text-subtitle();
       margin-left: $nav-title-spacing-x;
-
-      font-size: $nav-sub-title-font-size;
-      font-weight: $nav-sub-title-font-weight;
-      color: $ui-element-active-color;
     }
 
   }
@@ -95,6 +86,7 @@
   }
 
   .ob-nav-item {
+    @include text-body();
     position: relative;
     display: flex;
     align-items: center;
@@ -116,6 +108,7 @@
     }
 
     &.ob-active {
+      @include text-selected-body();
       color: $ui-element-active-inverted-color;
       background-color: $ui-element-active-color;
     }

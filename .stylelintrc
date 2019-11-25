@@ -1,11 +1,13 @@
 {
   "plugins": [
-    "stylelint-no-px"
+    "stylelint-no-px",
+    "stylelint-declaration-use-variable"
   ],
   "extends": [
     "stylelint-config-twbs-bootstrap/scss"
   ],
   "rules": {
-    "meowtec/no-px": true
+    "meowtec/no-px": true,
+    "sh-waqar/declaration-use-variable": [["/color/", "/font/"]]
   }
 }

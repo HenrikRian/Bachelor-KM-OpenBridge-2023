@@ -16,8 +16,6 @@
 }
 
 @mixin style-normal($focus-ring-radius: $border-radius-large) {
-  color: $ui-element-active-color;
-
   background-color: $style-normal-normal-fill-color;
   border-color: $style-normal-normal-stroke-color;
   border-style: solid;
