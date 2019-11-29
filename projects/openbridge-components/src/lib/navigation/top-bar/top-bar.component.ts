@@ -15,9 +15,8 @@ export class TopBarComponent {
 
   constructor() { }
 
-  private onClickOnMenu(event: Event) {
+  public onClickOnMenu(event: Event) {
     event.stopPropagation();
     this.clickOnMenuEvent.emit(event);
   }
-
 }

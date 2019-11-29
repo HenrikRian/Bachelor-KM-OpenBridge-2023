@@ -49,12 +49,9 @@ export class NavigationMenuItemComponent {
     return this._active;
   }
 
-
   @HostListener('click', ['$event'])
-  protected makeActive(event: Event) {
+  public makeActive(event: Event) {
     this.active = true;
     event.stopPropagation();
   }
-
-
 }

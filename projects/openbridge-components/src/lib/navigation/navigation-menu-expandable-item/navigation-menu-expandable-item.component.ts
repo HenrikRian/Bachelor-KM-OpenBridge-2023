@@ -13,12 +13,12 @@ export class NavigationMenuExpandableItemComponent extends NavigationMenuItemCom
     super(_changeDetectorRef);
   }
 
-  protected onToggleCollapsedClick(event: Event) {
+  public onToggleCollapsedClick(event: Event) {
     this.toggleCollapsed();
     event.stopPropagation();
   }
 
-  protected toggleCollapsed() {
+  public toggleCollapsed() {
     this.collapsed = !this.collapsed;
     this._changeDetectorRef.markForCheck();
   }
