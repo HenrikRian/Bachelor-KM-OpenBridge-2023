@@ -14,3 +14,11 @@ before_script:
 test:
   script:
     - npm test
+build:
+  script:
+    - ng build --project="openbridge-demo"
+    - ng build --project="openbridge-components"
+    - npm run build:lib
+  artifacts:
+    paths:
+      - "dist/"

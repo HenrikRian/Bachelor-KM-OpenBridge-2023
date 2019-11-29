@@ -5,7 +5,7 @@
     "ng": "ng",
     "ng-start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng-packagr -p package.json",
+    "build:lib": "ng-packagr -p projects/openbridge-components/ng-package.json",
     "ng-test": "ng test",
     "test": "npm-run-all css-main test-once-headless lint bundlesize",
     "test-once-headless": "ng test --watch=false --browsers=ChromeHeadless",
