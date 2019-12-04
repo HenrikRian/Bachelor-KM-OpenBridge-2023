@@ -1,7 +1,7 @@
 // We import not only "Injectable", but "Inject" too, from @angular/core
 import {Inject, Injectable} from '@angular/core';
 // We import DOCUMENT from @angular/common. Be careful, because the old import from '@angular/platform-browser' is deprecated.
-import {DOCUMENT} from '@angular/common';
+import {DOCUMENT, Location} from '@angular/common';
 import {environment} from '../environments/environment';
 
 @Injectable({
@@ -11,11 +11,12 @@ export class PaletteSwitchService {
   private styleSheetDomElement: HTMLElement;
   private styles = ['bright', 'day', 'dusk', 'night'];
   private styleId = 0;
-  private folder = '/assets/styles/';
+  private folder = 'assets/styles/';
   private cssPrefix = 'openbridge-';
   private cssPostfix = '.css';
 
-  constructor(@Inject(DOCUMENT) private document: HTMLDocument) {
+  constructor(@Inject(DOCUMENT) private document: HTMLDocument,
+              private location: Location) {
     if (environment.disablePalettes) {
       return;
     }
@@ -32,7 +33,8 @@ export class PaletteSwitchService {
       return;
     }
     const file = this.folder + this.cssPrefix + style + this.cssPostfix;
-    this.styleSheetDomElement.setAttribute('href', file);
+    const url = this.location.prepareExternalUrl(file);
+    this.styleSheetDomElement.setAttribute('href', url);
   }
 
   changeToDusk() {

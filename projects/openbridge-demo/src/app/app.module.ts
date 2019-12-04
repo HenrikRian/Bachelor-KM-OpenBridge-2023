@@ -10,6 +10,7 @@ import {
   NavigationMenuModule,
   TopBarModule
 } from 'openbridge-components';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {
     TopBarModule,
     AppButtonModule
   ],
-  providers: [],
+  providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -2,6 +2,10 @@
 
 Angular and SASS implementation of OpenBridge Design System.  
 
+[Demo](https://openbridge.gitlab.io/openbridge-angular/demo)
+[Storybook](https://openbridge.gitlab.io/openbridge-angular/storybook)
+[![pipeline status](https://gitlab.com/openbridge/openbridge-angular/badges/master/pipeline.svg)](https://gitlab.com/openbridge/openbridge-angular/commits/master)
+
 ## Development server
 
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

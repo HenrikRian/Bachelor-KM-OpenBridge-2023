@@ -1,6 +1,8 @@
 import {TestBed} from '@angular/core/testing';
 
 import {PaletteSwitchService} from './palette-switch.service';
+import {Location, LocationStrategy} from '@angular/common';
+import {MockLocationStrategy} from '@angular/common/testing';
 
 class MockHtmlElement {
   attributes: Map<string, string> = new Map();
@@ -29,8 +31,16 @@ class MockHtmlDocument {
   }
 }
 
+class MockLocation {
+  public prepareExternalUrl(url: string): string {
+    return url;
+  }
+}
+
 describe('PaletteSwitchService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({
+    providers: [Location, {provide: LocationStrategy, useClass: MockLocationStrategy}]
+  }));
 
   it('should be created', () => {
     const service: PaletteSwitchService = TestBed.get(PaletteSwitchService);
@@ -46,7 +56,7 @@ describe('PaletteSwitchService', () => {
   it('should inject css on construction', () => {
     const htmlDocument = new MockHtmlDocument();
     // @ts-ignore
-    const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument);
+    const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument, new MockLocation());
     const e = htmlDocument.head.styleDocument;
     const stylesheet = 'openbridge-bright';
     checkStyleSheet(e, stylesheet);
@@ -55,7 +65,7 @@ describe('PaletteSwitchService', () => {
   it('should change to dusk on call', () => {
     const htmlDocument = new MockHtmlDocument();
     // @ts-ignore
-    const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument);
+    const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument, new MockLocation());
     service.changeToDusk();
     const e = htmlDocument.head.styleDocument;
     const stylesheet = 'openbridge-dusk';
@@ -66,7 +76,7 @@ describe('PaletteSwitchService', () => {
   it('should rotate palettes on call', () => {
     const htmlDocument = new MockHtmlDocument();
     // @ts-ignore
-    const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument);
+    const service: PaletteSwitchService = new PaletteSwitchService(htmlDocument, new MockLocation());
     const e = htmlDocument.head.styleDocument;
     checkStyleSheet(e, 'openbridge-bright');
     service.rotatePalette();

@@ -326,7 +326,6 @@ export class ButtonToggleGroupComponent implements ControlValueAccessor, OnInit,
 
 /** Single button inside of a toggle group. */
 @Component({
-  moduleId: module.id,
   selector: 'button[ob-button-toggle]',   // tslint:disable-line:component-selector
   templateUrl: 'button-toggle.component.html',
   encapsulation: ViewEncapsulation.None,

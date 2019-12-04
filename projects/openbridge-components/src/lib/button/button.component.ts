@@ -14,7 +14,6 @@ import {CanDisable} from '../mixins/disabled';
  * OpenBridge design button.
  */
 @Component({
-  moduleId: module.id,
   // tslint:disable-next-line:component-selector
   selector: `button[ob-button-raised], button[ob-button-normal]`,
   exportAs: 'ButtonComponent',
@@ -69,7 +68,6 @@ export class ButtonComponent extends CanDisable {
  * Material design anchor button.
  */
 @Component({
-  moduleId: module.id,
   // tslint:disable-next-line:component-selector
   selector: `a[ob-button-raised], a[ob-button-normal]`,
   exportAs: 'ButtonAnchorComponent',
