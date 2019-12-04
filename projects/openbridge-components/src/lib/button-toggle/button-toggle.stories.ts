@@ -9,7 +9,8 @@ storiesOf('Components|ButtonToggle', module)
     })
   )
   .add('Normal style', () => ({
-    template: `<ob-button-toggle-group><button ob-button-toggle>
+    template: `<ob-button-toggle-group>
+    <button ob-button-toggle [checked]="true">
       <span class="ob-icon">
         <i class="material-icons">wb_sunny</i>
       </span>

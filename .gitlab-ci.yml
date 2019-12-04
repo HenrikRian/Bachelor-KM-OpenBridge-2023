@@ -22,3 +22,14 @@ build:
   artifacts:
     paths:
       - "dist/"
+pages:
+  stage: deploy
+  script:
+    - npm run css
+    - ng build --project="openbridge-demo" --prod --aot --outputPath=public/demo --baseHref="/openbridge-angular/demo/"
+    - npm run build-storybook
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
