@@ -68,7 +68,7 @@
 
 .ob-nav-menu {
   position: absolute;
-  top: $nav-top-bar-height;
+  top: $nav-top-bar-height - $nav-menu-top-border-thickness;
   bottom: 0;
   left: 0;
   display: none;
@@ -79,7 +79,7 @@
   font-size: $nav-menu-font-size;
   background-color: $ui-container-global-color;
 
-  border-top: $ui-element-active-color solid $nav-menu-footer-divider-thickness;
+  border-top: $ui-element-active-color solid $nav-menu-top-border-thickness;
 
   &.ob-active {
     display: block;
