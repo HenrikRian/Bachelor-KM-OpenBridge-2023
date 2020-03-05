@@ -23,6 +23,7 @@
     "css-compile-dusk": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/openbridge-dusk.scss dist/css/openbridge-dusk.css",
     "css-compile-night": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/openbridge-night.scss dist/css/openbridge-night.css",
     "css-copy": "cross-env-shell shx cp -r dist/css/* projects/openbridge-components/src/assets/styles/",
+    "css-copy-web-components": "cross-env-shell shx cp -r dist/css/* openbridge-components/demos/assets/styles/",
     "css-lint": "npm-run-all --parallel css-lint-*",
     "css-lint-main": "stylelint \"scss/**/*.scss\" --fix",
     "css-lint-vars": "fusv scss",

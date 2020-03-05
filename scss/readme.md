@@ -2,9 +2,9 @@
 
 ## Files
 These are the main files in the sass project:
-- `openbridge-*palletname*` root files, compile each of these to get pallet css files.
-- `_variables.scss` pallet independent variables.
-- `_variables-*palletname*.scss` pallet dependent variables.
+- `openbridge` root file, compile each of these to get pallet css files.
+- `_variables.scss` pallet independent variables and pallet dependent variables defined as css custom parameters
+- `variables-*palletname*.scss` pallet dependent variables.
 - `mixins/` folder with mixins
 - `mixins/_styles.scss` mixins of styles and states.
 - `components/` folder with definition of components.

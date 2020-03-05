@@ -1,3 +1,10 @@
+@import "../reset";
+@import "../variables-variables";
+@import "../mixins/styles";
+@import "../mixins/text_category";
+@import "../mixins/utilities";
+@import "../variables";
+
 .ob-btn {
   @include text-button();
   position: relative;
@@ -17,11 +24,11 @@
   @include pointer-on-hover-not-disabled();
 
   &.ob-normal {
-    @include btn-normal-style();
+    @include style-normal();;
   }
 
   &.ob-raised {
-    @include btn-raised-style();
+    @include style-raised();;
   }
 
   & > .ob-text-under {

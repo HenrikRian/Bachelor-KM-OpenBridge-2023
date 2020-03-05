@@ -1,0 +1,163 @@
+@import "variables";
+
+
+:root {
+  --on-background-color: rgb(0, 0, 0);
+  --on-background-inactive-color: rgba(0, 0, 0, .6);
+  --on-background-transparent-color: rgba(0, 0, 0, 0);
+  --on-primary-color: rgb(255, 255, 255);
+  --on-primary-inactive-color: rgba(0, 0, 0, .6);
+  --on-primary-hinted-color: rgba(0, 0, 0, .12);
+  --on-background-active-color: #000c;
+  --on-background-focused-color: rgba(0, 0, 0, .9);
+  --on-background-unfocused-color: rgba(0, 0, 0, .7);
+  // focus ring
+  --focus-ring-color: rgb(255, 200, 0);
+  // GENERATED
+  // raised style
+  --style-raised-normal-fill-color: rgba(0, 0, 0, .6);
+  --style-raised-normal-stroke-color: rgba(0, 0, 0, .12);
+  --style-raised-normal-border-width: #{.125 * $base-size};
+  --style-raised-hover-fill-color: rgba(0, 0, 0, .7);
+  --style-raised-hover-stroke-color: rgba(0, 0, 0, .12);
+  --style-raised-hover-border-width: #{.125 * $base-size};
+  --style-raised-pressed-fill-color: rgba(0, 0, 0, .8);
+  --style-raised-pressed-stroke-color: rgba(0, 0, 0, .12);
+  --style-raised-pressed-border-width: #{.125 * $base-size};
+  --style-raised-focused-fill-color: rgba(0, 0, 0, .6);
+  --style-raised-focused-stroke-color: #ffc800;
+  --style-raised-focused-border-width: #{.5 * $base-size};
+  --style-raised-disabled-fill-color: transparent;
+  --style-raised-disabled-stroke-color: rgba(0, 0, 0, .3);
+  --style-raised-disabled-border-width: #{.125 * $base-size};
+  // normal style
+  --style-normal-normal-fill-color: #fff;
+  --style-normal-normal-stroke-color: rgba(0, 0, 0, .6);
+  --style-normal-normal-border-width: #{.125 * $base-size};
+  --style-normal-hover-fill-color: #b2b2b2;
+  --style-normal-hover-stroke-color: rgba(0, 0, 0, .6);
+  --style-normal-hover-border-width: #{.125 * $base-size};
+  --style-normal-pressed-fill-color: #666;
+  --style-normal-pressed-stroke-color: rgba(0, 0, 0, .6);
+  --style-normal-pressed-border-width: #{.125 * $base-size};
+  --style-normal-disabled-fill-color: transparent;
+  --style-normal-disabled-stroke-color: rgba(0, 0, 0, .3);
+  --style-normal-disabled-border-width: #{.125 * $base-size};
+  --style-normal-focused-fill-color: #fff;
+  --style-normal-focused-stroke-color: #ffc800;
+  --style-normal-focused-border-width: #{.5 * $base-size};
+  --style-normal-selected-fill-color: #fff;
+  --style-normal-selected-stroke-color: rgba(0, 0, 0, .9);
+  --style-normal-selected-border-width: #{.25 * $base-size};
+  // indent style
+  --style-indent-normal-fill-color: rgba(0, 0, 0, .14);
+  --style-indent-normal-stroke-color: rgba(0, 0, 0, .12);
+  --style-indent-normal-border-width: #{.125 * $base-size};
+  --style-indent-hover-fill-color: rgba(0, 0, 0, .3);
+  --style-indent-hover-stroke-color: rgba(0, 0, 0, .12);
+  --style-indent-hover-border-width: #{.125 * $base-size};
+  --style-indent-pressed-fill-color: rgba(0, 0, 0, .6);
+  --style-indent-pressed-stroke-color: rgba(0, 0, 0, .12);
+  --style-indent-pressed-border-width: #{.125 * $base-size};
+  --style-indent-focused-fill-color: rgba(0, 0, 0, .14);
+  --style-indent-focused-stroke-color: #ffc800;
+  --style-indent-focused-border-width: #{.5 * $base-size};
+  --style-indent-disabled-fill-color: transparent;
+  --style-indent-disabled-stroke-color: rgba(0, 0, 0, .3);
+  --style-indent-disabled-border-width: #{.125 * $base-size};
+  // selected style
+  --style-selected-hover-fill-color: rgba(0, 0, 0, .8);
+  --style-selected-hover-stroke-color: rgba(0, 0, 0, .12);
+  --style-selected-hover-border-width: #{.125 * $base-size};
+  --style-selected-pressed-fill-color: rgba(0, 0, 0, .7);
+  --style-selected-pressed-stroke-color: rgba(0, 0, 0, .12);
+  --style-selected-pressed-border-width: #{.125 * $base-size};
+  --style-selected-disabled-fill-color: rgba(0, 0, 0, .3);
+  --style-selected-disabled-stroke-color: transparent;
+  --style-selected-disabled-border-width: 0;
+  --style-selected-normal-fill-color: rgba(0, 0, 0, .9);
+  --style-selected-normal-stroke-color: rgba(0, 0, 0, .12);
+  --style-selected-normal-border-width: #{.125 * $base-size};
+  --style-selected-focused-fill-color: rgba(0, 0, 0, .9);
+  --style-selected-focused-stroke-color: #ffc800;
+  --style-selected-focused-border-width: #{.5 * $base-size};
+  --style-selected-outlined-fill-color: rgba(0, 0, 0, .3);
+  --style-selected-outlined-stroke-color: transparent;
+  --style-selected-outlined-border-width: 0;
+  // flat style
+  --style-flat-hover-fill-color: rgba(0, 0, 0, .3);
+  --style-flat-hover-stroke-color: transparent;
+  --style-flat-hover-border-width: 0;
+  --style-flat-pressed-fill-color: rgba(0, 0, 0, .6);
+  --style-flat-pressed-stroke-color: transparent;
+  --style-flat-pressed-border-width: 0;
+  --style-flat-normal-fill-color: transparent;
+  --style-flat-normal-stroke-color: transparent;
+  --style-flat-normal-border-width: 0;
+  --style-flat-focused-fill-color: transparent;
+  --style-flat-focused-stroke-color: #ffc800;
+  --style-flat-focused-border-width: #{.5 * $base-size};
+  --style-flat-disabled-fill-color: transparent;
+  --style-flat-disabled-stroke-color: transparent;
+  --style-flat-disabled-border-width: 0;
+  // thumb style
+  --style-thumb-normal-fill-color: #fff;
+  --style-thumb-normal-stroke-color: rgba(0, 0, 0, .68);
+  --style-thumb-normal-border-width: #{.125 * $base-size};
+  --style-thumb-hover-fill-color: #b2b2b2;
+  --style-thumb-hover-stroke-color: rgba(0, 0, 0, .68);
+  --style-thumb-hover-border-width: #{.125 * $base-size};
+  --style-thumb-pressed-fill-color: #666;
+  --style-thumb-pressed-stroke-color: rgba(0, 0, 0, .6);
+  --style-thumb-pressed-border-width: #{.125 * $base-size};
+  --style-thumb-focused-fill-color: #fff;
+  --style-thumb-focused-stroke-color: #ffc800;
+  --style-thumb-focused-border-width: #{.5 * $base-size};
+  --style-thumb-disabled-fill-color: rgba(0, 0, 0, .3);
+  --style-thumb-disabled-stroke-color: transparent;
+  --style-thumb-disabled-border-width: 0;
+  // alert style
+  --style-alert-running-fill-color: #00d200;
+  --style-alert-running-stroke-color: rgba(0, 0, 0, .12);
+  --style-alert-running-border-width: #{.125 * $base-size};
+  // Colors
+  --ui-element-active-color: rgba(0, 0, 0, .9);
+  --ui-element-active-inverted-color: rgb(255, 255, 255);
+  --ui-element-neutral-color: rgba(0, 0, 0, .6);
+  --ui-element-neutral-inverted-color: rgba(255, 255, 255, .6);
+  --ui-element-disabled-color: rgba(0, 0, 0, .3);
+  --ui-element-disabled-inverted-color: rgba(255, 255, 255, .3);
+  --ui-container-backdrop-color: rgb(200, 200, 200);
+  --ui-container-background-color: rgb(234, 234, 234);
+  --ui-container-section-color: rgb(221, 221, 221);
+  --ui-container-global-color: rgb(200, 200, 200);
+  --ui-container-instrument-color: rgba(0, 0, 0, .06);
+  --ui-border-divider-color: rgba(0, 0, 0, .12);
+  --ui-border-outline-color: rgba(0, 0, 0, .2);
+  --ui-primary-color: rgb(0, 0, 255);
+  --ui-input-color: rgb(255, 200, 0);
+  --alert-running-color: rgb(0, 160, 0);
+  --alert-caution-color: rgb(255, 213, 0);
+  --alert-warning-color: rgb(255, 160, 0);
+  --alert-alarm-color: rgb(255, 40, 0);
+  --surface-backdrop-color: rgb(187, 187, 187);
+  --surface-background-color: rgb(255, 255, 255);
+  --surface-section-color: rgb(234, 234, 234);
+  --surface-global-color: rgb(213, 213, 213);
+  --border-divider-color: rgba(0, 0, 0, .12);
+  --border-outline-color: rgba(0, 0, 0, .2);
+  --on-background-active-color: rgba(0, 0, 0, .9);
+  --on-background-unfocused-color: rgba(0, 0, 0, .7);
+  --on-background-raised-color: rgba(0, 0, 0, .7);
+  --on-background-disabled-color: rgba(0, 0, 0, .3);
+  --on-background-indent-color: rgba(0, 0, 0, .12);
+  --on-background-hinted-color: rgba(0, 0, 0, .06);
+  --on-primary-active-color: rgb(255, 255, 255);
+  --on-primary-normal-color: rgba(255, 255, 255, .7);
+  --on-primary-disabled-color: rgba(255, 255, 255, .3);
+  --instrument-static-color: rgba(0, 0, 0, .9);
+  --instrument-dynamic-color: rgb(0, 97, 235);
+  --instrument-input-color: rgb(255, 200, 0);
+}
+
+// STOP GENERATED
