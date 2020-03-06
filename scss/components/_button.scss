@@ -1,11 +1,10 @@
 @import "../reset";
-@import "../variables-variables";
+@import "../variables";
 @import "../mixins/styles";
 @import "../mixins/text_category";
 @import "../mixins/utilities";
-@import "../variables";
 
-.ob-btn {
+.ob-button {
   @include text-button();
   position: relative;
   display: inline-flex;
@@ -23,19 +22,12 @@
 
   @include pointer-on-hover-not-disabled();
 
-  &.ob-normal {
+  &.ob-button--normal {
     @include style-normal();;
   }
 
-  &.ob-raised {
+  &.ob-button--raised {
     @include style-raised();;
-  }
-
-  & > .ob-text-under {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    transform: translateY($btn-height-normal / 2 + $button-font-size / 2 + $btn-text-under-spacing);
   }
 
   .ob-icon {
@@ -45,7 +37,7 @@
   }
 }
 
-.ob-btn-group {
+.ob-button-group {
   display: inline-block;
   height: $btn-height-normal;
   background-color: $style-indent-normal-fill-color;
@@ -54,14 +46,33 @@
   border-radius: $btn-height-normal;
 }
 
-.ob-btn-group .ob-btn {
-  border-radius: $btn-height-normal;
-  @include style-flat($btn-height-small);
+.ob-button-group__item {
+  position: relative;
+  display: inline-flex;
+  height: $btn-height-normal;
 
-  &.ob-selected {
-    @include style-normal($btn-height-small);
+  & > .ob-text-under {
+    @include text-button();
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+
+    transform: translateY($btn-height-normal + $btn-text-under-spacing);
   }
 }
+
+
+.ob-button-group__button {
+  border-radius: $btn-height-normal;
+  @include style-flat($btn-height-small);
+}
+
+.ob-button-group__item--selected > .ob-button-group__button {
+  @include style-normal($btn-height-small);
+}
+
 
 .ob-slide-toggle {
   @include style-indent($btn-height-small);

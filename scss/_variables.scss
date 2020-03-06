@@ -219,7 +219,7 @@ $style-flat-normal-border-width: var(--style-flat-normal-border-width) !default;
 
 $style-flat-focused-fill-color: var(--style-flat-focused-fill-color) !default;
 $style-flat-focused-stroke-color: var(--style-flat-focused-stroke-color) !default;
-$style-flat-focused-border-width: var(--style-flat-focused-border-width) !default;
+$style-flat-focused-border-width: .5 * $base-size !default;
 
 $style-flat-disabled-fill-color: var(--style-flat-disabled-fill-color) !default;
 $style-flat-disabled-stroke-color: var(--style-flat-disabled-stroke-color) !default;
