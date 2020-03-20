@@ -23,11 +23,11 @@
   @include pointer-on-hover-not-disabled();
 
   &.ob-button--normal {
-    @include style-normal();;
+    @include style-normal();
   }
 
   &.ob-button--raised {
-    @include style-raised();;
+    @include style-raised();
   }
 
   .ob-icon {
@@ -40,7 +40,7 @@
 .ob-button-group {
   display: inline-block;
   height: $btn-height-normal;
-  background-color: $style-indent-normal-fill-color;
+  background-color: $ui-container-backdrop-color;
   border-color: $style-indent-normal-stroke-color;
   border-width: $style-indent-normal-border-width;
   border-radius: $btn-height-normal;

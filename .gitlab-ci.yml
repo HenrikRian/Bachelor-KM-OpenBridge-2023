@@ -16,8 +16,6 @@ test:
     - npm test
 build:
   script:
-    - ng build --project="openbridge-demo"
-    - ng build --project="openbridge-components"
     - npm run build:lib
   artifacts:
     paths:
@@ -26,7 +24,6 @@ pages:
   stage: deploy
   script:
     - npm run css
-    - ng build --project="openbridge-demo" --prod --aot --outputPath=public/demo --baseHref="/openbridge-angular/demo/"
     - npm run build-storybook
   artifacts:
     paths:

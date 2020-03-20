@@ -257,7 +257,7 @@
 
   &:focus-within {
     background-color: $style-alert-running-fill-color;
-    @include focus-ring($focus-ring-radius, $style-alert-running-border-width, $border-width-focus); // TODO insert correct variable
+    @include focus-ring($focus-ring-radius, $style-alert-running-border-width, $border-width-focused); // TODO insert correct variable
 
     &:active {
       background-color: $style-alert-running-fill-color; // TODO insert correct variable

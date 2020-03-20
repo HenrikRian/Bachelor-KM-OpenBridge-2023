@@ -39,7 +39,8 @@ $label-font-size: 1.5 * $base-size !default;
 $label-lineheight: 3 * $base-size !default;
 
 $border-width: .125 * $base-size !default;
-$border-width-focus: .5 * $base-size !default;
+$border-width-focused: .5 * $base-size !default;
+$border-width-active: .25 * $base-size !default;
 
 //$border-radius-normal: .5 * $base-size !default;
 $border-radius-large: .75 * $base-size !default;
@@ -86,23 +87,13 @@ $nav-title-spacing-x: 2 * $base-size !default;
 $z-index-hover: 1 !default;
 $z-index-focus: 2 !default;
 
-$style-raised-focused-border-width: .5 * $base-size !default;
-$style-normal-focused-border-width: .5 * $base-size !default;
-
-
-$on-background-color: var(--on-background-color) !default;
 $on-background-active-color: var(--on-background-active-color) !default;
-$on-background-inactive-color: var(--on-background-inactive-color) !default;
 $on-background-raised-color: var(--on-background-raised-color) !default;
 $on-background-disabled-color: var(--on-background-disabled-color) !default;
 $on-background-hinted-color: var(--on-background-hinted-color) !default;
-$on-background-transparent-color: var(--on-background-transparent-color) !default;
 
-$on-primary-color: var(--on-primary-color) !default;
 $on-primary-active-color: var(--on-primary-active-color) !default;
-$on-primary-inactive-color: var(--on-primary-inactive-color) !default;
 $on-primary-disabled-color: var(--on-primary-disabled-color) !default;
-$on-primary-hinted-color: var(--on-primary-hinted-color) !default;
 
 $on-background-active-color: var(--on-background-active-color) !default;
 $on-background-focused-color: var(--on-background-focused-color) !default;
@@ -115,141 +106,141 @@ $focus-ring-color: var(--focus-ring-color) !default;
 // raised style
 $style-raised-normal-fill-color: var(--style-raised-normal-fill-color) !default;
 $style-raised-normal-stroke-color: var(--style-raised-normal-stroke-color) !default;
-$style-raised-normal-border-width: var(--style-raised-normal-border-width) !default;
+$style-raised-normal-border-width: $border-width !default;
 
 $style-raised-hover-fill-color: var(--style-raised-hover-fill-color) !default;
 $style-raised-hover-stroke-color: var(--style-raised-hover-stroke-color) !default;
-$style-raised-hover-border-width: var(--style-raised-hover-border-width) !default;
+$style-raised-hover-border-width: $border-width !default;
 
 $style-raised-pressed-fill-color: var(--style-raised-pressed-fill-color) !default;
 $style-raised-pressed-stroke-color: var(--style-raised-pressed-stroke-color) !default;
-$style-raised-pressed-border-width: var(--style-raised-pressed-border-width) !default;
+$style-raised-pressed-border-width: $border-width !default;
 
 $style-raised-focused-fill-color: var(--style-raised-focused-fill-color) !default;
 $style-raised-focused-stroke-color: var(--style-raised-focused-stroke-color) !default;
-
+$style-raised-focused-border-width: $border-width-focused !default;
 
 $style-raised-disabled-fill-color: var(--style-raised-disabled-fill-color) !default;
 $style-raised-disabled-stroke-color: var(--style-raised-disabled-stroke-color) !default;
-$style-raised-disabled-border-width: var(--style-raised-disabled-border-width) !default;
+$style-raised-disabled-border-width: $border-width !default;
 
 // normal style
 $style-normal-normal-fill-color: var(--style-normal-normal-fill-color) !default;
 $style-normal-normal-stroke-color: var(--style-normal-normal-stroke-color) !default;
-$style-normal-normal-border-width: var(--style-normal-normal-border-width) !default;
+$style-normal-normal-border-width: $border-width !default;
 
 $style-normal-hover-fill-color: var(--style-normal-hover-fill-color) !default;
 $style-normal-hover-stroke-color: var(--style-normal-hover-stroke-color) !default;
-$style-normal-hover-border-width: var(--style-normal-hover-border-width) !default;
+$style-normal-hover-border-width: $border-width !default;
 
 $style-normal-pressed-fill-color: var(--style-normal-pressed-fill-color) !default;
 $style-normal-pressed-stroke-color: var(--style-normal-pressed-stroke-color) !default;
-$style-normal-pressed-border-width: var(--style-normal-pressed-border-width) !default;
+$style-normal-pressed-border-width: $border-width !default;
 
 $style-normal-disabled-fill-color: var(--style-normal-disabled-fill-color) !default;
 $style-normal-disabled-stroke-color: var(--style-normal-disabled-stroke-color) !default;
-$style-normal-disabled-border-width: var(--style-normal-disabled-border-width) !default;
+$style-normal-disabled-border-width: $border-width !default;
 
 $style-normal-focused-fill-color: var(--style-normal-focused-fill-color) !default;
 $style-normal-focused-stroke-color: var(--style-normal-focused-stroke-color) !default;
-
+$style-normal-focused-border-width: $border-width-focused !default;
 
 $style-normal-selected-fill-color: var(--style-normal-selected-fill-color) !default;
 $style-normal-selected-stroke-color: var(--style-normal-selected-stroke-color) !default;
-$style-normal-selected-border-width: var(--style-normal-selected-border-width) !default;
+$style-normal-selected-border-width: $border-width !default;
 
 // indent style
 $style-indent-normal-fill-color: var(--style-indent-normal-fill-color) !default;
 $style-indent-normal-stroke-color: var(--style-indent-normal-stroke-color) !default;
-$style-indent-normal-border-width: var(--style-indent-normal-border-width) !default;
+$style-indent-normal-border-width: $border-width !default;
 
 $style-indent-hover-fill-color: var(--style-indent-hover-fill-color) !default;
 $style-indent-hover-stroke-color: var(--style-indent-hover-stroke-color) !default;
-$style-indent-hover-border-width: var(--style-indent-hover-border-width) !default;
+$style-indent-hover-border-width: $border-width !default;
 
 $style-indent-pressed-fill-color: var(--style-indent-pressed-fill-color) !default;
 $style-indent-pressed-stroke-color: var(--style-indent-pressed-stroke-color) !default;
-$style-indent-pressed-border-width: var(--style-indent-pressed-border-width) !default;
+$style-indent-pressed-border-width: $border-width !default;
 
 $style-indent-focused-fill-color: var(--style-indent-focused-fill-color) !default;
 $style-indent-focused-stroke-color: var(--style-indent-focused-stroke-color) !default;
-$style-indent-focused-border-width: var(--style-indent-focused-border-width) !default;
+$style-indent-focused-border-width: $border-width-focused !default;
 
 $style-indent-disabled-fill-color: var(--style-indent-disabled-fill-color) !default;
 $style-indent-disabled-stroke-color: var(--style-indent-disabled-stroke-color) !default;
-$style-indent-disabled-border-width: var(--style-indent-disabled-border-width) !default;
+$style-indent-disabled-border-width: $border-width !default;
 
 // selected style
 $style-selected-hover-fill-color: var(--style-selected-hover-fill-color) !default;
 $style-selected-hover-stroke-color: var(--style-selected-hover-stroke-color) !default;
-$style-selected-hover-border-width: var(--style-selected-hover-border-width) !default;
+$style-selected-hover-border-width: $border-width !default;
 
 $style-selected-pressed-fill-color: var(--style-selected-pressed-fill-color) !default;
 $style-selected-pressed-stroke-color: var(--style-selected-pressed-stroke-color) !default;
-$style-selected-pressed-border-width: var(--style-selected-pressed-border-width) !default;
+$style-selected-pressed-border-width: $border-width !default;
 
 $style-selected-disabled-fill-color: var(--style-selected-disabled-fill-color) !default;
 $style-selected-disabled-stroke-color: var(--style-selected-disabled-stroke-color) !default;
-$style-selected-disabled-border-width: var(--style-selected-disabled-border-width) !default;
+$style-selected-disabled-border-width: $border-width !default;
 
 $style-selected-normal-fill-color: var(--style-selected-normal-fill-color) !default;
 $style-selected-normal-stroke-color: var(--style-selected-normal-stroke-color) !default;
-$style-selected-normal-border-width: var(--style-selected-normal-border-width) !default;
+$style-selected-normal-border-width: $border-width !default;
 
 $style-selected-focused-fill-color: var(--style-selected-focused-fill-color) !default;
 $style-selected-focused-stroke-color: var(--style-selected-focused-stroke-color) !default;
-$style-selected-focused-border-width: var(--style-selected-focused-border-width) !default;
+$style-selected-focused-border-width: $border-width-focused !default;
 
 $style-selected-outlined-fill-color: var(--style-selected-outlined-fill-color) !default;
 $style-selected-outlined-stroke-color: var(--style-selected-outlined-stroke-color) !default;
-$style-selected-outlined-border-width: var(--style-selected-outlined-border-width) !default;
+$style-selected-outlined-border-width: $border-width !default;
 
 // flat style
 $style-flat-hover-fill-color: var(--style-flat-hover-fill-color) !default;
 $style-flat-hover-stroke-color: var(--style-flat-hover-stroke-color) !default;
-$style-flat-hover-border-width: var(--style-flat-hover-border-width) !default;
+$style-flat-hover-border-width: $border-width !default;
 
 $style-flat-pressed-fill-color: var(--style-flat-pressed-fill-color) !default;
 $style-flat-pressed-stroke-color: var(--style-flat-pressed-stroke-color) !default;
-$style-flat-pressed-border-width: var(--style-flat-pressed-border-width) !default;
+$style-flat-pressed-border-width: $border-width !default;
 
 $style-flat-normal-fill-color: var(--style-flat-normal-fill-color) !default;
 $style-flat-normal-stroke-color: var(--style-flat-normal-stroke-color) !default;
-$style-flat-normal-border-width: var(--style-flat-normal-border-width) !default;
+$style-flat-normal-border-width: $border-width !default;
 
 $style-flat-focused-fill-color: var(--style-flat-focused-fill-color) !default;
 $style-flat-focused-stroke-color: var(--style-flat-focused-stroke-color) !default;
-$style-flat-focused-border-width: .5 * $base-size !default;
+$style-flat-focused-border-width: $border-width-focused !default;
 
 $style-flat-disabled-fill-color: var(--style-flat-disabled-fill-color) !default;
 $style-flat-disabled-stroke-color: var(--style-flat-disabled-stroke-color) !default;
-$style-flat-disabled-border-width: var(--style-flat-disabled-border-width) !default;
+$style-flat-disabled-border-width: $border-width !default;
 
 // thumb style
 $style-thumb-normal-fill-color: var(--style-thumb-normal-fill-color) !default;
 $style-thumb-normal-stroke-color: var(--style-thumb-normal-stroke-color) !default;
-$style-thumb-normal-border-width: var(--style-thumb-normal-border-width) !default;
+$style-thumb-normal-border-width: $border-width !default;
 
 $style-thumb-hover-fill-color: var(--style-thumb-hover-fill-color) !default;
 $style-thumb-hover-stroke-color: var(--style-thumb-hover-stroke-color) !default;
-$style-thumb-hover-border-width: var(--style-thumb-hover-border-width) !default;
+$style-thumb-hover-border-width: $border-width !default;
 
 $style-thumb-pressed-fill-color: var(--style-thumb-pressed-fill-color) !default;
 $style-thumb-pressed-stroke-color: var(--style-thumb-pressed-stroke-color) !default;
-$style-thumb-pressed-border-width: var(--style-thumb-pressed-border-width) !default;
+$style-thumb-pressed-border-width: $border-width !default;
 
 $style-thumb-focused-fill-color: var(--style-thumb-focused-fill-color) !default;
 $style-thumb-focused-stroke-color: var(--style-thumb-focused-stroke-color) !default;
-$style-thumb-focused-border-width: var(--style-thumb-focused-border-width) !default;
+$style-thumb-focused-border-width: $border-width-focused !default;
 
 $style-thumb-disabled-fill-color: var(--style-thumb-disabled-fill-color) !default;
 $style-thumb-disabled-stroke-color: var(--style-thumb-disabled-stroke-color) !default;
-$style-thumb-disabled-border-width: var(--style-thumb-disabled-border-width) !default;
+$style-thumb-disabled-border-width: $border-width !default;
 
 // alert style
 $style-alert-running-fill-color: var(--style-alert-running-fill-color) !default;
 $style-alert-running-stroke-color: var(--style-alert-running-stroke-color) !default;
-$style-alert-running-border-width: var(--style-alert-running-border-width) !default;
+$style-alert-running-border-width: $border-width !default;
 
 // Colors
 $ui-element-active-color: var(--ui-element-active-color) !default;
@@ -277,7 +268,6 @@ $surface-section-color: var(--surface-section-color) !default;
 $surface-global-color: var(--surface-global-color) !default;
 $border-divider-color: var(--border-divider-color) !default;
 $border-outline-color: var(--border-outline-color) !default;
-$on-background-active-color: var(--on-background-active-color) !default;
 $on-background-unfocused-color: var(--on-background-unfocused-color) !default;
 $on-background-raised-color: var(--on-background-raised-color) !default;
 $on-background-disabled-color: var(--on-background-disabled-color) !default;
