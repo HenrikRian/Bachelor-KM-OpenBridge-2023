@@ -16,14 +16,13 @@ test:
     - npm test
 build:
   script:
-    - npm run build:lib
+    - npm run css
   artifacts:
     paths:
       - "dist/"
 pages:
   stage: deploy
   script:
-    - npm run css
     - npm run build-storybook
   artifacts:
     paths:
