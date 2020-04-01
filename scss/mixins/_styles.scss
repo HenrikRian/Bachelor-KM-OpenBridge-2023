@@ -46,20 +46,22 @@
     color: $ui-element-disabled-color;
     background-color: $style-normal-disabled-fill-color;
     border-color: $style-normal-disabled-stroke-color;
+    border-width: $style-normal-disabled-border-width;
   }
 }
 
 
 @mixin style-normal-selected {
   color: $on-background-disabled-color;
-  background-color: $style-normal-disabled-fill-color;
-  border-color: $style-normal-disabled-stroke-color;
+  background-color: $style-normal-selected-fill-color;
+  border-color: $style-normal-selected-stroke-color;
+  border-width: $style-normal-selected-border-width;
 }
 
 @mixin style-raised($focus-ring-radius: $border-radius-large) {
   color: $ui-element-active-inverted-color;
 
-  background-color: $style-raised-normal-fill-color;
+  background-color: $style-raised-enabled-fill-color;
   border-color: $style-raised-normal-stroke-color;
   border-style: solid;
   border-width: $style-raised-normal-border-width;
@@ -90,6 +92,7 @@
     color: $ui-element-disabled-color;
     background-color: $style-raised-disabled-fill-color;
     border-color: $style-raised-disabled-stroke-color;
+    border-width: $style-raised-disabled-border-width;
   }
 }
 
@@ -128,6 +131,7 @@
     color: $ui-element-disabled-color;
     background-color: $style-selected-disabled-fill-color;
     border-color: $style-selected-disabled-stroke-color;
+    border-width: $style-selected-disabled-border-width;
   }
 }
 
@@ -165,6 +169,7 @@
     color: $ui-element-disabled-color;
     background-color: $style-indent-disabled-fill-color;
     border-color: $style-indent-disabled-stroke-color;
+    border-width: $style-indent-disabled-border-width;
   }
 }
 
@@ -201,6 +206,7 @@
     color: $ui-element-disabled-color;
     background-color: $style-flat-disabled-fill-color;
     border-color: $style-flat-disabled-stroke-color;
+    border-width: $style-flat-disabled-border-width;
   }
 }
 
@@ -223,7 +229,7 @@
 
   &:focus-within {
     background-color: $style-thumb-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-thumb-focused-border-width, $style-thumb-focused-border-width);
+    @include focus-ring($focus-ring-radius, $style-thumb-focused-stroke-color, $style-thumb-focused-border-width);
 
     &:active {
       background-color: $style-thumb-pressed-fill-color;
@@ -237,6 +243,7 @@
     color: $ui-element-disabled-color;
     background-color: $style-thumb-disabled-fill-color;
     border-color: $style-thumb-disabled-stroke-color;
+    border-width: $style-thumb-disabled-border-width;
   }
 }
 

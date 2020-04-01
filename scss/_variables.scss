@@ -104,7 +104,7 @@ $focus-ring-color: var(--focus-ring-color) !default;
 
 // GENERATED
 // raised style
-$style-raised-normal-fill-color: var(--style-raised-normal-fill-color) !default;
+$style-raised-enabled-fill-color: var(--style-raised-normal-fill-color) !default;
 $style-raised-normal-stroke-color: var(--style-raised-normal-stroke-color) !default;
 $style-raised-normal-border-width: $border-width !default;
 
@@ -147,7 +147,7 @@ $style-normal-focused-border-width: $border-width-focused !default;
 
 $style-normal-selected-fill-color: var(--style-normal-selected-fill-color) !default;
 $style-normal-selected-stroke-color: var(--style-normal-selected-stroke-color) !default;
-$style-normal-selected-border-width: $border-width !default;
+$style-normal-selected-border-width: $border-width-active !default;
 
 // indent style
 $style-indent-normal-fill-color: var(--style-indent-normal-fill-color) !default;
@@ -190,10 +190,6 @@ $style-selected-normal-border-width: $border-width !default;
 $style-selected-focused-fill-color: var(--style-selected-focused-fill-color) !default;
 $style-selected-focused-stroke-color: var(--style-selected-focused-stroke-color) !default;
 $style-selected-focused-border-width: $border-width-focused !default;
-
-$style-selected-outlined-fill-color: var(--style-selected-outlined-fill-color) !default;
-$style-selected-outlined-stroke-color: var(--style-selected-outlined-stroke-color) !default;
-$style-selected-outlined-border-width: $border-width !default;
 
 // flat style
 $style-flat-hover-fill-color: var(--style-flat-hover-fill-color) !default;
