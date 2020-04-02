@@ -7,8 +7,8 @@
   height: $nav-top-bar-height;
 
   font-family: $font-default;
-  background-color: $ui-container-global-color;
-  border-bottom: solid $ui-border-outline-color $nav-top-bar-border-bottom-width;
+  background-color: $container-global-color;
+  border-bottom: solid $border-outline-color $nav-top-bar-border-bottom-width;
 
   .ob-menu-container {
     display: flex;
@@ -34,8 +34,8 @@
 
       &.ob-active {
         @include text-selected-body;
-        color: $ui-element-active-inverted-color;
-        background: $ui-element-active-color;
+        color: $element-active-inverted-color;
+        background: $element-active-color;
       }
     }
 
@@ -50,7 +50,7 @@
       width: $nav-divider-width;
       height: $nav-divider-height;
 
-      background-color: $ui-border-divider-color;
+      background-color: $border-divider-color;
     }
 
     .ob-title {
@@ -77,9 +77,9 @@
 
   font-family: $font-default;
   font-size: $nav-menu-font-size;
-  background-color: $ui-container-global-color;
+  background-color: $container-global-color;
 
-  border-top: $ui-element-active-color solid $nav-menu-top-border-thickness;
+  border-top: $element-active-color solid $nav-menu-top-border-thickness;
 
   &.ob-active {
     display: block;
@@ -94,7 +94,7 @@
     height: $nav-menu-item-height;
     padding: 0 $nav-menu-item-margin-x;
 
-    color: $ui-element-active-color;
+    color: $element-active-color;
     cursor: pointer;
 
     .ob-nav-expand-icon {
@@ -109,8 +109,8 @@
 
     &.ob-active {
       @include text-selected-body();
-      color: $ui-element-active-inverted-color;
-      background-color: $ui-element-active-color;
+      color: $element-active-inverted-color;
+      background-color: $element-active-color;
     }
 
     &::after {
@@ -120,7 +120,7 @@
       left: $nav-menu-item-margin-x;
       height: 0;
       content: "";
-      border-bottom: $nav-menu-item-divider-thickness solid $ui-border-outline-color;
+      border-bottom: $nav-menu-item-divider-thickness solid $border-outline-color;
     }
   }
 
@@ -151,8 +151,8 @@
     bottom: 0;
     width: 100%;
 
-    background-color: $ui-container-section-color;
-    border-top: $nav-menu-footer-divider-thickness solid $ui-border-outline-color;
+    background-color: $container-section-color;
+    border-top: $nav-menu-footer-divider-thickness solid $border-outline-color;
 
     .ob-nav-footer-logo {
       max-width: 70%;

@@ -40,9 +40,9 @@
 .ob-button-group {
   display: inline-block;
   height: $btn-height-normal;
-  background-color: $ui-container-backdrop-color;
-  border-color: $style-indent-normal-stroke-color;
-  border-width: $style-indent-normal-border-width;
+  background-color: $container-backdrop-color;
+  border-color: $indent-enabled-border-color;
+  border-width: $indent-enabled-border-width;
   border-radius: $btn-height-normal;
 }
 

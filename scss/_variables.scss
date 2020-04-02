@@ -87,194 +87,181 @@ $nav-title-spacing-x: 2 * $base-size !default;
 $z-index-hover: 1 !default;
 $z-index-focus: 2 !default;
 
-$on-background-active-color: var(--on-background-active-color) !default;
-$on-background-raised-color: var(--on-background-raised-color) !default;
-$on-background-disabled-color: var(--on-background-disabled-color) !default;
-$on-background-hinted-color: var(--on-background-hinted-color) !default;
-
-$on-primary-active-color: var(--on-primary-active-color) !default;
-$on-primary-disabled-color: var(--on-primary-disabled-color) !default;
-
-$on-background-active-color: var(--on-background-active-color) !default;
-$on-background-focused-color: var(--on-background-focused-color) !default;
-$on-background-unfocused-color: var(--on-background-unfocused-color) !default;
-
-// focus ring
-$focus-ring-color: var(--focus-ring-color) !default;
-
-// GENERATED
 // raised style
-$style-raised-enabled-fill-color: var(--style-raised-normal-fill-color) !default;
-$style-raised-normal-stroke-color: var(--style-raised-normal-stroke-color) !default;
-$style-raised-normal-border-width: $border-width !default;
-
-$style-raised-hover-fill-color: var(--style-raised-hover-fill-color) !default;
-$style-raised-hover-stroke-color: var(--style-raised-hover-stroke-color) !default;
-$style-raised-hover-border-width: $border-width !default;
-
-$style-raised-pressed-fill-color: var(--style-raised-pressed-fill-color) !default;
-$style-raised-pressed-stroke-color: var(--style-raised-pressed-stroke-color) !default;
-$style-raised-pressed-border-width: $border-width !default;
-
-$style-raised-focused-fill-color: var(--style-raised-focused-fill-color) !default;
-$style-raised-focused-stroke-color: var(--style-raised-focused-stroke-color) !default;
-$style-raised-focused-border-width: $border-width-focused !default;
-
-$style-raised-disabled-fill-color: var(--style-raised-disabled-fill-color) !default;
-$style-raised-disabled-stroke-color: var(--style-raised-disabled-stroke-color) !default;
-$style-raised-disabled-border-width: $border-width !default;
-
-// normal style
-$style-normal-normal-fill-color: var(--style-normal-normal-fill-color) !default;
-$style-normal-normal-stroke-color: var(--style-normal-normal-stroke-color) !default;
-$style-normal-normal-border-width: $border-width !default;
-
-$style-normal-hover-fill-color: var(--style-normal-hover-fill-color) !default;
-$style-normal-hover-stroke-color: var(--style-normal-hover-stroke-color) !default;
-$style-normal-hover-border-width: $border-width !default;
-
-$style-normal-pressed-fill-color: var(--style-normal-pressed-fill-color) !default;
-$style-normal-pressed-stroke-color: var(--style-normal-pressed-stroke-color) !default;
-$style-normal-pressed-border-width: $border-width !default;
-
-$style-normal-disabled-fill-color: var(--style-normal-disabled-fill-color) !default;
-$style-normal-disabled-stroke-color: var(--style-normal-disabled-stroke-color) !default;
-$style-normal-disabled-border-width: $border-width !default;
-
-$style-normal-focused-fill-color: var(--style-normal-focused-fill-color) !default;
-$style-normal-focused-stroke-color: var(--style-normal-focused-stroke-color) !default;
-$style-normal-focused-border-width: $border-width-focused !default;
-
-$style-normal-selected-fill-color: var(--style-normal-selected-fill-color) !default;
-$style-normal-selected-stroke-color: var(--style-normal-selected-stroke-color) !default;
-$style-normal-selected-border-width: $border-width-active !default;
-
-// indent style
-$style-indent-normal-fill-color: var(--style-indent-normal-fill-color) !default;
-$style-indent-normal-stroke-color: var(--style-indent-normal-stroke-color) !default;
-$style-indent-normal-border-width: $border-width !default;
-
-$style-indent-hover-fill-color: var(--style-indent-hover-fill-color) !default;
-$style-indent-hover-stroke-color: var(--style-indent-hover-stroke-color) !default;
-$style-indent-hover-border-width: $border-width !default;
-
-$style-indent-pressed-fill-color: var(--style-indent-pressed-fill-color) !default;
-$style-indent-pressed-stroke-color: var(--style-indent-pressed-stroke-color) !default;
-$style-indent-pressed-border-width: $border-width !default;
-
-$style-indent-focused-fill-color: var(--style-indent-focused-fill-color) !default;
-$style-indent-focused-stroke-color: var(--style-indent-focused-stroke-color) !default;
-$style-indent-focused-border-width: $border-width-focused !default;
-
-$style-indent-disabled-fill-color: var(--style-indent-disabled-fill-color) !default;
-$style-indent-disabled-stroke-color: var(--style-indent-disabled-stroke-color) !default;
-$style-indent-disabled-border-width: $border-width !default;
-
-// selected style
-$style-selected-hover-fill-color: var(--style-selected-hover-fill-color) !default;
-$style-selected-hover-stroke-color: var(--style-selected-hover-stroke-color) !default;
-$style-selected-hover-border-width: $border-width !default;
-
-$style-selected-pressed-fill-color: var(--style-selected-pressed-fill-color) !default;
-$style-selected-pressed-stroke-color: var(--style-selected-pressed-stroke-color) !default;
-$style-selected-pressed-border-width: $border-width !default;
-
-$style-selected-disabled-fill-color: var(--style-selected-disabled-fill-color) !default;
-$style-selected-disabled-stroke-color: var(--style-selected-disabled-stroke-color) !default;
-$style-selected-disabled-border-width: $border-width !default;
-
-$style-selected-normal-fill-color: var(--style-selected-normal-fill-color) !default;
-$style-selected-normal-stroke-color: var(--style-selected-normal-stroke-color) !default;
-$style-selected-normal-border-width: $border-width !default;
-
-$style-selected-focused-fill-color: var(--style-selected-focused-fill-color) !default;
-$style-selected-focused-stroke-color: var(--style-selected-focused-stroke-color) !default;
-$style-selected-focused-border-width: $border-width-focused !default;
-
-// flat style
-$style-flat-hover-fill-color: var(--style-flat-hover-fill-color) !default;
-$style-flat-hover-stroke-color: var(--style-flat-hover-stroke-color) !default;
-$style-flat-hover-border-width: $border-width !default;
-
-$style-flat-pressed-fill-color: var(--style-flat-pressed-fill-color) !default;
-$style-flat-pressed-stroke-color: var(--style-flat-pressed-stroke-color) !default;
-$style-flat-pressed-border-width: $border-width !default;
-
-$style-flat-normal-fill-color: var(--style-flat-normal-fill-color) !default;
-$style-flat-normal-stroke-color: var(--style-flat-normal-stroke-color) !default;
-$style-flat-normal-border-width: $border-width !default;
-
-$style-flat-focused-fill-color: var(--style-flat-focused-fill-color) !default;
-$style-flat-focused-stroke-color: var(--style-flat-focused-stroke-color) !default;
-$style-flat-focused-border-width: $border-width-focused !default;
-
-$style-flat-disabled-fill-color: var(--style-flat-disabled-fill-color) !default;
-$style-flat-disabled-stroke-color: var(--style-flat-disabled-stroke-color) !default;
-$style-flat-disabled-border-width: $border-width !default;
-
-// thumb style
-$style-thumb-normal-fill-color: var(--style-thumb-normal-fill-color) !default;
-$style-thumb-normal-stroke-color: var(--style-thumb-normal-stroke-color) !default;
-$style-thumb-normal-border-width: $border-width !default;
-
-$style-thumb-hover-fill-color: var(--style-thumb-hover-fill-color) !default;
-$style-thumb-hover-stroke-color: var(--style-thumb-hover-stroke-color) !default;
-$style-thumb-hover-border-width: $border-width !default;
-
-$style-thumb-pressed-fill-color: var(--style-thumb-pressed-fill-color) !default;
-$style-thumb-pressed-stroke-color: var(--style-thumb-pressed-stroke-color) !default;
-$style-thumb-pressed-border-width: $border-width !default;
-
-$style-thumb-focused-fill-color: var(--style-thumb-focused-fill-color) !default;
-$style-thumb-focused-stroke-color: var(--style-thumb-focused-stroke-color) !default;
-$style-thumb-focused-border-width: $border-width-focused !default;
-
-$style-thumb-disabled-fill-color: var(--style-thumb-disabled-fill-color) !default;
-$style-thumb-disabled-stroke-color: var(--style-thumb-disabled-stroke-color) !default;
-$style-thumb-disabled-border-width: $border-width !default;
-
-// alert style
-$style-alert-running-fill-color: var(--style-alert-running-fill-color) !default;
-$style-alert-running-stroke-color: var(--style-alert-running-stroke-color) !default;
-$style-alert-running-border-width: $border-width !default;
-
-// Colors
-$ui-element-active-color: var(--ui-element-active-color) !default;
-$ui-element-active-inverted-color: var(--ui-element-active-inverted-color) !default;
-$ui-element-neutral-color: var(--ui-element-neutral-color) !default;
-$ui-element-neutral-inverted-color: var(--ui-element-neutral-inverted-color) !default;
-$ui-element-disabled-color: var(--ui-element-disabled-color) !default;
-$ui-element-disabled-inverted-color: var(--ui-element-disabled-inverted-color) !default;
-$ui-container-backdrop-color: var(--ui-container-backdrop-color) !default;
-$ui-container-background-color: var(--ui-container-background-color) !default;
-$ui-container-section-color: var(--ui-container-section-color) !default;
-$ui-container-global-color: var(--ui-container-global-color) !default;
-$ui-container-instrument-color: var(--ui-container-instrument-color) !default;
-$ui-border-divider-color: var(--ui-border-divider-color) !default;
-$ui-border-outline-color: var(--ui-border-outline-color) !default;
-$ui-primary-color: var(--ui-primary-color) !default;
-$ui-input-color: var(--ui-input-color) !default;
-$alert-running-color: var(--alert-running-color) !default;
-$alert-caution-color: var(--alert-caution-color) !default;
-$alert-warning-color: var(--alert-warning-color) !default;
-$alert-alarm-color: var(--alert-alarm-color) !default;
-$surface-backdrop-color: var(--surface-backdrop-color) !default;
-$surface-background-color: var(--surface-background-color) !default;
-$surface-section-color: var(--surface-section-color) !default;
-$surface-global-color: var(--surface-global-color) !default;
-$border-divider-color: var(--border-divider-color) !default;
-$border-outline-color: var(--border-outline-color) !default;
-$on-background-unfocused-color: var(--on-background-unfocused-color) !default;
-$on-background-raised-color: var(--on-background-raised-color) !default;
-$on-background-disabled-color: var(--on-background-disabled-color) !default;
-$on-background-indent-color: var(--on-background-indent-color) !default;
-$on-background-hinted-color: var(--on-background-hinted-color) !default;
-$on-primary-active-color: var(--on-primary-active-color) !default;
-$on-primary-normal-color: var(--on-primary-normal-color) !default;
-$on-primary-disabled-color: var(--on-primary-disabled-color) !default;
-$instrument-static-color: var(--instrument-static-color) !default;
-$instrument-dynamic-color: var(--instrument-dynamic-color) !default;
-$instrument-input-color: var(--instrument-input-color) !default;
-// STOP GENERATED
+$raised-enabled-border-width: $border-width !default;
+$raised-hover-border-width: $border-width !default;
+$raised-pressed-border-width: $border-width !default;
+$raised-focused-border-width: $border-width-focused !default;
+$raised-disabled-border-width: $border-width !default;
+$normal-enabled-border-width: $border-width !default;
+$normal-hover-border-width: $border-width !default;
+$normal-pressed-border-width: $border-width !default;
+$normal-disabled-border-width: $border-width !default;
+$normal-focused-border-width: $border-width-focused !default;
+$normal-selected-border-width: $border-width-active !default;
+$indent-enabled-border-width: $border-width !default;
+$indent-hover-border-width: $border-width !default;
+$indent-pressed-border-width: $border-width !default;
+$indent-focused-border-width: $border-width-focused !default;
+$indent-disabled-border-width: $border-width !default;
+$selected-hover-border-width: $border-width !default;
+$selected-pressed-border-width: $border-width !default;
+$selected-disabled-border-width: 0 !default;
+$selected-enabled-border-width: 0 !default;
+$selected-focused-border-width: $border-width-focused !default;
+$flat-hover-border-width: 0 !default;
+$flat-pressed-border-width: 0 !default;
+$flat-enabled-border-width: 0 !default;
+$flat-focused-border-width: $border-width-focused !default;
+$flat-disabled-border-width: 0 !default;
+$thumb-enabled-border-width: 0 !default;
+$thumb-hover-border-width: $border-width !default;
+$thumb-pressed-border-width: $border-width !default;
+$thumb-focused-border-width: $border-width-focused !default;
+$thumb-disabled-border-width: 0 !default;
+$running-enabled-border-width: $border-width !default;
+$running-hover-border-width: $border-width !default;
+$running-pressed-border-width: $border-width !default;
+$running-focused-border-width: $border-width-focused !default;
+$running-disabled-border-width: $border-width !default;
 
 
+
+$element-active-color: rgba(0, 0, 0, .900);
+$element-neutral-color: rgba(0, 0, 0, .600);
+$element-disabled-color: rgba(0, 0, 0, .300);
+$element-active-inverted-color: rgba(255, 255, 255, 1);
+$element-neutral-inverted-color: rgba(255, 255, 255, .600);
+$element-disabled-inverted-color: rgba(255, 255, 255, .300);
+$container-backdrop-color: rgba(204, 204, 204, 1);
+$container-background-color: rgba(255, 255, 255, 1);
+$container-section-color: rgba(240, 240, 240, 1);
+$container-global-color: rgba(220, 220, 220, 1);
+$border-divider-color: rgba(0, 0, 0, .120);
+$border-outline-color: rgba(0, 0, 0, .200);
+$normal-enabled-background-color: rgba(255, 255, 255, 1);
+$normal-enabled-border-color: rgba(0, 0, 0, .600);
+$normal-hover-background-color: rgba(204, 204, 204, 1);
+$normal-hover-border-color: rgba(0, 0, 0, .600);
+$normal-pressed-background-color: rgba(153, 153, 153, 1);
+$normal-pressed-border-color: rgba(0, 0, 0, .900);
+$normal-focused-background-color: rgba(255, 255, 255, 1);
+$normal-focused-border-color: rgba(255, 197, 0, 1);
+$normal-disabled-background-color: rgba(255, 255, 255, .000);
+$normal-disabled-border-color: rgba(0, 0, 0, .300);
+$raised-enabled-background-color: rgba(0, 0, 0, .600);
+$raised-enabled-border-color: rgba(0, 0, 0, .120);
+$raised-hover-background-color: rgba(0, 0, 0, .700);
+$raised-hover-border-color: rgba(0, 0, 0, .120);
+$raised-pressed-background-color: rgba(0, 0, 0, .800);
+$raised-pressed-border-color: rgba(0, 0, 0, .400);
+$raised-focused-background-color: rgba(0, 0, 0, .600);
+$raised-focused-border-color: rgba(255, 197, 0, 1);
+$raised-disabled-background-color: rgba(0, 0, 0, .000);
+$raised-disabled-border-color: rgba(0, 0, 0, .300);
+$indent-enabled-background-color: rgba(0, 0, 0, .200);
+$indent-enabled-border-color: rgba(0, 0, 0, .200);
+$indent-hover-background-color: rgba(0, 0, 0, .400);
+$indent-hover-border-color: rgba(0, 0, 0, .200);
+$indent-pressed-background-color: rgba(0, 0, 0, .600);
+$indent-pressed-border-color: rgba(0, 0, 0, .600);
+$indent-focused-background-color: rgba(0, 0, 0, .200);
+$indent-focused-border-color: rgba(255, 197, 0, 1);
+$indent-disabled-background-color: rgba(0, 0, 0, .000);
+$indent-disabled-border-color: rgba(0, 0, 0, .300);
+$flat-enabled-background-color: rgba(0, 0, 0, .000);
+$flat-hover-background-color: rgba(0, 0, 0, .200);
+$flat-pressed-background-color: rgba(0, 0, 0, .400);
+$flat-focused-background-color: rgba(0, 0, 0, .000);
+$flat-focused-border-color: rgba(255, 197, 0, 1);
+$flat-disabled-background-color: rgba(0, 0, 0, .000);
+$selected-enabled-background-color: rgba(0, 0, 0, 1);
+$selected-hover-background-color: rgba(0, 0, 0, .800);
+$selected-hover-border-color: rgba(0, 0, 0, .800);
+$selected-pressed-background-color: rgba(0, 0, 0, .600);
+$selected-pressed-border-color: rgba(0, 0, 0, .600);
+$selected-focused-background-color: rgba(0, 0, 0, 1);
+$selected-focused-border-color: rgba(255, 197, 0, 1);
+$selected-disabled-background-color: rgba(0, 0, 0, .300);
+$selected-disabled-border-color: rgba(0, 0, 0, .300);
+$thumb-enabled-background-color: rgba(255, 255, 255, 1);
+$thumb-enabled-border-color: rgba(0, 0, 0, .600);
+$thumb-hover-background-color: rgba(204, 204, 204, 1);
+$thumb-hover-border-color: rgba(0, 0, 0, .600);
+$thumb-pressed-background-color: rgba(153, 153, 153, 1);
+$thumb-pressed-border-color: rgba(0, 0, 0, .600);
+$thumb-focused-background-color: rgba(255, 255, 255, 1);
+$thumb-focused-border-color: rgba(255, 197, 0, 1);
+$thumb-disabled-background-color: rgba(0, 0, 0, .300);
+$instrument-dynamic-color: rgba(0, 0, 255, 1);
+$instrument-static-color: rgba(0, 0, 0, .900);
+$instrument-input-color: rgba(255, 197, 0, 1);
+$alert-alarm-color: rgba(255, 40, 0, 1);
+$alert-warning-color: rgba(255, 144, 0, 1);
+$alert-caution-color: rgba(255, 213, 0, 1);
+$alert-running-color: rgba(0, 200, 0, 1);
+$running-enabled-background-color: rgba(0, 204, 0, 1);
+$running-enabled-border-color: rgba(0, 0, 0, .120);
+$running-hover-background-color: rgba(0, 153, 0, 1);
+$running-hover-border-color: rgba(0, 0, 0, .120);
+$running-pressed-background-color: rgba(0, 102, 0, 1);
+$running-pressed-border-color: rgba(0, 0, 0, .300);
+$running-focused-background-color: rgba(0, 204, 0, 1);
+$running-focused-border-color: rgba(255, 197, 0, 1);
+$running-disabled-background-color: rgba(0, 204, 0, 0);
+$running-disabled-border-color: rgba(0, 204, 0, 1);
+@mixin font-ui-title {
+  font-size: 24px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  line-height: 32px;
+}
+
+@mixin font-ui-subtitle {
+  font-size: 24px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-regular;
+  line-height: 32px;
+}
+
+@mixin font-ui-overline {
+  font-size: 12px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-semi-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-button {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-semi-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-body-active {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-body {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-regular;
+  line-height: 24px;
+}
+
+@mixin font-ui-label-active {
+  font-size: 12px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-label {
+  font-size: 12px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-regular;
+  line-height: 24px;
+}

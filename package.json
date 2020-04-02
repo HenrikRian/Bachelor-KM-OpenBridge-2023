@@ -14,7 +14,7 @@
     "css-compile-night": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/variables-night.scss dist/css/openbridge-night.css",
     "css-lint": "npm-run-all --parallel css-lint-*",
     "css-lint-main": "stylelint \"scss/**/*.scss\" --fix",
-    "css-lint-vars": "fusv scss",
+    "xcss-lint-vars": "fusv scss",
     "css-minify": "npm-run-all --parallel css-minify-*",
     "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/openbridge.min.css dist/css/openbridge.css",
     "css-minify-bright": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/openbridge-bright.min.css dist/css/openbridge-bright.css",

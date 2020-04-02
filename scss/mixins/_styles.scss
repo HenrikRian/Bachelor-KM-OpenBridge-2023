@@ -16,267 +16,254 @@
 }
 
 @mixin style-normal($focus-ring-radius: $border-radius-large) {
-  background-color: $style-normal-normal-fill-color;
-  border-color: $style-normal-normal-stroke-color;
+  color: $element-active-color; // TODO verify
+
+  background-color: $normal-enabled-background-color;
+  border-color: $normal-enabled-border-color;
   border-style: solid;
-  border-width: $style-normal-normal-border-width;
+  border-width: $normal-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
-    background-color: $style-normal-hover-fill-color;
-    border-color: $style-normal-hover-stroke-color;
-    border-width: $style-normal-hover-border-width;
+    background-color: $normal-hover-background-color;
+    border-color: $normal-hover-border-color;
+    border-width: $normal-hover-border-width;
   }
 
   &:focus-within {
-    background-color: $style-normal-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-normal-focused-stroke-color, $style-normal-focused-border-width);
+    background-color: $normal-focused-background-color;
+    @include focus-ring($focus-ring-radius, $normal-focused-border-color, $normal-focused-border-width);
 
 
     &:active {
-      background-color: $style-normal-pressed-fill-color;
-      border-color: $style-normal-pressed-stroke-color;
-      border-width: $style-normal-pressed-border-width;
+      background-color: $normal-pressed-background-color;
+      border-color: $normal-pressed-border-color;
+      border-width: $normal-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    color: $ui-element-disabled-color;
-    background-color: $style-normal-disabled-fill-color;
-    border-color: $style-normal-disabled-stroke-color;
-    border-width: $style-normal-disabled-border-width;
+    color: $element-disabled-color;
+    background-color: $normal-disabled-background-color;
+    border-color: $normal-disabled-border-color;
+    border-width: $normal-disabled-border-width;
   }
-}
-
-
-@mixin style-normal-selected {
-  color: $on-background-disabled-color;
-  background-color: $style-normal-selected-fill-color;
-  border-color: $style-normal-selected-stroke-color;
-  border-width: $style-normal-selected-border-width;
 }
 
 @mixin style-raised($focus-ring-radius: $border-radius-large) {
-  color: $ui-element-active-inverted-color;
+  color: $element-active-inverted-color;
 
-  background-color: $style-raised-enabled-fill-color;
-  border-color: $style-raised-normal-stroke-color;
+  background-color: $raised-enabled-background-color;
+  border-color: $raised-enabled-border-color;
   border-style: solid;
-  border-width: $style-raised-normal-border-width;
+  border-width: $raised-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
-    background-color: $style-raised-hover-fill-color;
-    border-color: $style-raised-hover-stroke-color;
-    border-width: $style-raised-hover-border-width;
+    background-color: $raised-hover-background-color;
+    border-color: $raised-hover-border-color;
+    border-width: $raised-hover-border-width;
 
   }
 
   &:focus-within {
-    background-color: $style-raised-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-raised-focused-stroke-color, $style-raised-focused-border-width);
+    background-color: $raised-focused-background-color;
+    @include focus-ring($focus-ring-radius, $raised-focused-border-color, $raised-focused-border-width);
 
 
     &:active {
-      background-color: $style-raised-pressed-fill-color;
-      border-color: $style-raised-pressed-stroke-color;
-      border-width: $style-raised-pressed-border-width;
+      background-color: $raised-pressed-background-color;
+      border-color: $raised-pressed-border-color;
+      border-width: $raised-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    color: $ui-element-disabled-color;
-    background-color: $style-raised-disabled-fill-color;
-    border-color: $style-raised-disabled-stroke-color;
-    border-width: $style-raised-disabled-border-width;
+    color: $element-disabled-color;
+    background-color: $raised-disabled-background-color;
+    border-color: $raised-disabled-border-color;
+    border-width: $raised-disabled-border-width;
   }
 }
 
 @mixin style-selected($focus-ring-radius: $border-radius-large) {
   color: $on-background-active-color;
 
-  background-color: $style-selected-normal-fill-color;
-  border-color: $style-selected-normal-stroke-color;
+  background-color: $selected-enabled-background-color;
   border-style: solid;
-  border-width: $style-selected-normal-border-width;
+  border-width: $selected-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
     color: $on-background-focused-color;
 
-    background-color: $style-selected-hover-fill-color;
-    border-color: $style-selected-hover-stroke-color;
-    border-width: $style-selected-hover-border-width;
+    background-color: $selected-hover-background-color;
+    border-color: $selected-hover-border-color;
+    border-width: $selected-hover-border-width;
 
   }
 
   &:focus-within {
-    background-color: $style-selected-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-selected-focused-stroke-color, $style-selected-focused-border-width);
+    background-color: $selected-focused-background-color;
+    @include focus-ring($focus-ring-radius, $selected-focused-border-color, $selected-focused-border-width);
 
 
     &:active {
-      background-color: $style-selected-pressed-fill-color;
-      border-color: $style-selected-pressed-stroke-color;
-      border-width: $style-selected-pressed-border-width;
+      background-color: $selected-pressed-background-color;
+      border-color: $selected-pressed-border-color;
+      border-width: $selected-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    color: $ui-element-disabled-color;
-    background-color: $style-selected-disabled-fill-color;
-    border-color: $style-selected-disabled-stroke-color;
-    border-width: $style-selected-disabled-border-width;
+    color: $element-disabled-color;
+    background-color: $selected-disabled-background-color;
+    border-color: $selected-disabled-border-color;
+    border-width: $selected-disabled-border-width;
   }
 }
 
 @mixin style-indent($focus-ring-radius: $border-radius-large) {
   color: $on-background-active-color;
 
-  background-color: $style-indent-normal-fill-color;
-  border-color: $style-indent-normal-stroke-color;
+  background-color: $indent-enabled-background-color;
+  border-color: $indent-enabled-border-color;
   border-style: solid;
-  border-width: $style-indent-normal-border-width;
+  border-width: $indent-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
     color: $on-background-focused-color;
 
-    background-color: $style-indent-hover-fill-color;
-    border-color: $style-indent-hover-stroke-color;
-    border-width: $style-indent-hover-border-width;
+    background-color: $indent-hover-background-color;
+    border-color: $indent-hover-border-color;
+    border-width: $indent-hover-border-width;
 
   }
 
   &:focus-within {
-    background-color: $style-indent-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-indent-focused-stroke-color, $style-indent-focused-border-width);
+    background-color: $indent-focused-background-color;
+    @include focus-ring($focus-ring-radius, $indent-focused-border-color, $indent-focused-border-width);
 
     &:active {
-      background-color: $style-indent-pressed-fill-color;
-      border-color: $style-indent-pressed-stroke-color;
-      border-width: $style-indent-pressed-border-width;
+      background-color: $indent-pressed-background-color;
+      border-color: $indent-pressed-border-color;
+      border-width: $indent-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    color: $ui-element-disabled-color;
-    background-color: $style-indent-disabled-fill-color;
-    border-color: $style-indent-disabled-stroke-color;
-    border-width: $style-indent-disabled-border-width;
+    color: $element-disabled-color;
+    background-color: $indent-disabled-background-color;
+    border-color: $indent-disabled-border-color;
+    border-width: $indent-disabled-border-width;
   }
 }
 
 @mixin style-flat($focus-ring-radius: $border-radius-large) {
-  color: $ui-element-neutral-color;
+  color: $element-neutral-color;
 
-  background-color: $style-flat-normal-fill-color;
-  border-color: $style-flat-normal-stroke-color;
+  background-color: $flat-enabled-background-color;
   border-style: solid;
-  border-width: $style-flat-normal-border-width;
+  border-width: $flat-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
-    background-color: $style-flat-hover-fill-color;
-    border-color: $style-flat-hover-stroke-color;
-    border-width: $style-flat-hover-border-width;
+    background-color: $flat-hover-background-color;
+    border-width: $flat-hover-border-width;
 
   }
 
   &:focus-within {
-    background-color: $style-flat-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-flat-focused-stroke-color, $style-flat-focused-border-width);
+    background-color: $flat-focused-background-color;
+    @include focus-ring($focus-ring-radius, $flat-focused-border-color, $flat-focused-border-width);
 
     &:active {
-      background-color: $style-flat-pressed-fill-color;
-      border-color: $style-flat-pressed-stroke-color;
-      border-width: $style-flat-pressed-border-width;
+      background-color: $flat-pressed-background-color;
+      border-width: $flat-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    color: $ui-element-disabled-color;
-    background-color: $style-flat-disabled-fill-color;
-    border-color: $style-flat-disabled-stroke-color;
-    border-width: $style-flat-disabled-border-width;
+    color: $element-disabled-color;
+    background-color: $flat-disabled-background-color;
+    border-width: $flat-disabled-border-width;
   }
 }
 
 @mixin style-thumb($focus-ring-radius: $border-radius-large) {
-  color: $on-background-active-color;
+  color: $element-active-color; // TODO verify
 
-  background-color: $style-thumb-normal-fill-color;
-  border-color: $style-thumb-normal-stroke-color;
+  background-color: $thumb-enabled-background-color;
+  border-color: $thumb-enabled-border-color;
   border-style: solid;
-  border-width: $style-thumb-normal-border-width;
+  border-width: $thumb-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
-    color: $on-background-focused-color;
 
-    background-color: $style-thumb-hover-fill-color;
-    border-color: $style-thumb-hover-stroke-color;
-    border-width: $style-thumb-hover-border-width;
+    background-color: $thumb-hover-background-color;
+    border-color: $thumb-hover-border-color;
+    border-width: $thumb-hover-border-width;
   }
 
   &:focus-within {
-    background-color: $style-thumb-focused-fill-color;
-    @include focus-ring($focus-ring-radius, $style-thumb-focused-stroke-color, $style-thumb-focused-border-width);
+    background-color: $thumb-focused-background-color;
+    @include focus-ring($focus-ring-radius, $thumb-focused-border-color, $thumb-focused-border-width);
 
     &:active {
-      background-color: $style-thumb-pressed-fill-color;
-      border-color: $style-thumb-pressed-stroke-color;
-      border-width: $style-thumb-pressed-border-width;
+      background-color: $thumb-pressed-background-color;
+      border-color: $thumb-pressed-border-color;
+      border-width: $thumb-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    color: $ui-element-disabled-color;
-    background-color: $style-thumb-disabled-fill-color;
-    border-color: $style-thumb-disabled-stroke-color;
-    border-width: $style-thumb-disabled-border-width;
+    color: $element-disabled-color;
+    background-color: $thumb-disabled-background-color;
+    border-width: $thumb-disabled-border-width;
   }
 }
 
-@mixin style-alert-running($focus-ring-radius: $border-radius-large) {
-  background-color: $style-alert-running-fill-color;
-  border-color: $style-alert-running-stroke-color;
+@mixin style-running($focus-ring-radius: $border-radius-large) {
+  background-color: $running-enabled-background-color;
+  border-color: $running-enabled-border-color;
   border-style: solid;
-  border-width: $style-alert-running-border-width;
+  border-width: $running-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
 
-    background-color: $style-alert-running-fill-color; // TODO insert correct variable
-    border-color: $style-alert-running-stroke-color; // TODO insert correct variable
-    border-width: $style-alert-running-border-width; // TODO insert correct variable
+    background-color: $running-hover-background-color;
+    border-color: $running-hover-border-color;
+    border-width: $running-hover-border-width;
 
   }
 
   &:focus-within {
-    background-color: $style-alert-running-fill-color;
-    @include focus-ring($focus-ring-radius, $style-alert-running-border-width, $border-width-focused); // TODO insert correct variable
+    background-color: $running-focused-background-color;
+    @include focus-ring($focus-ring-radius, $running-focused-border-color, $running-focused-border-width);
 
     &:active {
-      background-color: $style-alert-running-fill-color; // TODO insert correct variable
-      border-color: $style-alert-running-stroke-color; // TODO insert correct variable
-      border-width: $style-alert-running-border-width; // TODO insert correct variable
+      background-color: $running-pressed-background-color;
+      border-color: $running-pressed-border-color;
+      border-width: $running-pressed-border-width;
     }
   }
 
   &:disabled,
   &.ob-disabled {
-    background-color: $style-alert-running-fill-color; // TODO insert correct variable
-    border-color: $style-alert-running-stroke-color; // TODO insert correct variable
-    border-width: $style-alert-running-border-width; // TODO insert correct variable
+    background-color: $running-disabled-background-color;
+    border-color: $running-disabled-border-color;
+    border-width: $running-disabled-border-width;
   }
 }

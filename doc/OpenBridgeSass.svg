@@ -66,8 +66,8 @@
 			<v:textRect cx="126.797" cy="892.894" width="253.6" height="121.401"/>
 			<rect x="0" y="832.193" width="253.593" height="121.401" class="st5"/>
 			<text x="4" y="846.99" class="st6" v:langID="1044"><v:paragraph/><v:tabList/>@mixin style-raised {<v:newlineChar/><tspan
-						x="4" dy="1.2em" class="st4">  </tspan>background: $style-raised-normal-fill-color;<v:newlineChar/><tspan
-						x="4" dy="1.2em" class="st4">  </tspan>border-color: $style-raised-normal-stroke-color;<v:newlineChar/><v:newlineChar/><tspan
+						x="4" dy="1.2em" class="st4">  </tspan>background: $raised-enabled-background-color;<v:newlineChar/><tspan
+						x="4" dy="1.2em" class="st4">  </tspan>border-color: $raised-enabled-border-color;<v:newlineChar/><v:newlineChar/><tspan
 						x="4" dy="2.4em" class="st4">  </tspan>&#38;:hover {<v:newlineChar/><tspan x="4" dy="1.2em" class="st4">  </tspan>...<v:newlineChar/><tspan
 						x="4" dy="1.2em" class="st4">  </tspan>}<v:newlineChar/><tspan x="4" dy="1.2em" class="st4">}</tspan></text>		</g>
 		<g id="shape1017-20" v:mID="1017" v:groupContext="shape" transform="translate(32.0001,-181.019)">
