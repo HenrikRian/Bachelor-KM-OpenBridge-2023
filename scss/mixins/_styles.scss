@@ -129,7 +129,7 @@
 }
 
 @mixin style-indent($focus-ring-radius: $border-radius-large) {
-  color: $on-background-active-color;
+  color: $element-active-color;
 
   background-color: $indent-enabled-background-color;
   border-color: $indent-enabled-border-color;
@@ -138,7 +138,6 @@
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
-    color: $on-background-focused-color;
 
     background-color: $indent-hover-background-color;
     border-color: $indent-hover-border-color;
@@ -167,7 +166,7 @@
 }
 
 @mixin style-flat($focus-ring-radius: $border-radius-large) {
-  color: $element-neutral-color;
+  color: $element-active-color;
 
   background-color: $flat-enabled-background-color;
   border-style: solid;

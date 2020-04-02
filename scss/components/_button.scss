@@ -1,11 +1,10 @@
 @import "../reset";
 @import "../variables";
 @import "../mixins/styles";
-@import "../mixins/text_category";
 @import "../mixins/utilities";
 
 .ob-button {
-  @include text-button();
+  @include font-ui-button();
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -52,7 +51,7 @@
   height: $btn-height-normal;
 
   & > .ob-text-under {
-    @include text-button();
+    @include font-ui-button();
     position: absolute;
     left: 0;
     width: 100%;
@@ -95,7 +94,7 @@
     cursor: pointer;
   }
 
-  & > .ob-thumb {
+  & > .ob-slide-toggle__thumb {
     @include thumb();
     @include style-thumb();
     margin: $space-x;
@@ -103,8 +102,8 @@
     transition: margin-left $transition-time;
   }
 
-  &.ob-selected {
-    @include style-alert-running($btn-height-small);
+  &.ob-slide-toggle__thumb--selected {
+    @include style-running($btn-height-small);
     border-radius: $btn-height-small;
 
     & .ob-thumb {

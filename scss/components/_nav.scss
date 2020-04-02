@@ -18,7 +18,7 @@
     .ob-nav-item {
       height: 100%;
       padding: 0 ($nav-top-bar-height - $nav-btn-height) / 2;
-      @include text-body();
+      @include font-ui-body();
 
       & > * {
         margin: 0 ($nav-top-bar-spacing / 2);
@@ -33,7 +33,7 @@
       }
 
       &.ob-active {
-        @include text-selected-body;
+        @include font-ui-body-active;
         color: $element-active-inverted-color;
         background: $element-active-color;
       }
@@ -54,12 +54,12 @@
     }
 
     .ob-title {
-      @include text-title();
+      @include font-ui-title();
       margin-left: $nav-title-spacing-x;
     }
 
     .ob-sub-title {
-      @include text-subtitle();
+      @include font-ui-subtitle;
       margin-left: $nav-title-spacing-x;
     }
 
@@ -86,7 +86,7 @@
   }
 
   .ob-nav-item {
-    @include text-body();
+    @include font-ui-body();
     position: relative;
     display: flex;
     align-items: center;
@@ -108,7 +108,7 @@
     }
 
     &.ob-active {
-      @include text-selected-body();
+      @include font-ui-body-active();
       color: $element-active-inverted-color;
       background-color: $element-active-color;
     }
