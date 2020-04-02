@@ -30,7 +30,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o public/storybook"
   },
-  "private": true,
+  "license" : "SEE LICENSE IN license.txt",
   "dependencies": {},
   "peerDependencies": {
     "@types/node": "^8.10.54",
