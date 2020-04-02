@@ -31,7 +31,7 @@
   }
 
   .ob-label {
-    @include text-label;
+    @include font-ui-label;
     display: inline;
     width: $app-btn-large-label-width;
     height: $app-btn-large-label-height;

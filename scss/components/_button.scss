@@ -1,5 +1,10 @@
-.ob-btn {
-  @include text-button();
+@import "../reset";
+@import "../variables";
+@import "../mixins/styles";
+@import "../mixins/utilities";
+
+.ob-button {
+  @include font-ui-button();
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -16,19 +21,12 @@
 
   @include pointer-on-hover-not-disabled();
 
-  &.ob-normal {
-    @include btn-normal-style();
+  &.ob-button--normal {
+    @include style-normal();
   }
 
-  &.ob-raised {
-    @include btn-raised-style();
-  }
-
-  & > .ob-text-under {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    transform: translateY($btn-height-normal / 2 + $button-font-size / 2 + $btn-text-under-spacing);
+  &.ob-button--raised {
+    @include style-raised();
   }
 
   .ob-icon {
@@ -38,23 +36,42 @@
   }
 }
 
-.ob-btn-group {
+.ob-button-group {
   display: inline-block;
   height: $btn-height-normal;
-  background-color: $style-indent-normal-fill-color;
-  border-color: $style-indent-normal-stroke-color;
-  border-width: $style-indent-normal-border-width;
+  background-color: $container-backdrop-color;
+  border-color: $indent-enabled-border-color;
+  border-width: $indent-enabled-border-width;
   border-radius: $btn-height-normal;
 }
 
-.ob-btn-group .ob-btn {
-  border-radius: $btn-height-normal;
-  @include style-flat($btn-height-small);
+.ob-button-group__item {
+  position: relative;
+  display: inline-flex;
+  height: $btn-height-normal;
 
-  &.ob-selected {
-    @include style-normal($btn-height-small);
+  & > .ob-text-under {
+    @include font-ui-button();
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+
+    transform: translateY($btn-height-normal + $btn-text-under-spacing);
   }
 }
+
+
+.ob-button-group__button {
+  border-radius: $btn-height-normal;
+  @include style-flat($btn-height-small);
+}
+
+.ob-button-group__item--selected > .ob-button-group__button {
+  @include style-normal($btn-height-small);
+}
+
 
 .ob-slide-toggle {
   @include style-indent($btn-height-small);
@@ -77,7 +94,7 @@
     cursor: pointer;
   }
 
-  & > .ob-thumb {
+  & > .ob-slide-toggle__thumb {
     @include thumb();
     @include style-thumb();
     margin: $space-x;
@@ -85,8 +102,8 @@
     transition: margin-left $transition-time;
   }
 
-  &.ob-selected {
-    @include style-alert-running($btn-height-small);
+  &.ob-slide-toggle__thumb--selected {
+    @include style-running($btn-height-small);
     border-radius: $btn-height-small;
 
     & .ob-thumb {

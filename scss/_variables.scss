@@ -39,7 +39,8 @@ $label-font-size: 1.5 * $base-size !default;
 $label-lineheight: 3 * $base-size !default;
 
 $border-width: .125 * $base-size !default;
-$border-width-focus: .5 * $base-size !default;
+$border-width-focused: .5 * $base-size !default;
+$border-width-active: .25 * $base-size !default;
 
 //$border-radius-normal: .5 * $base-size !default;
 $border-radius-large: .75 * $base-size !default;
@@ -85,3 +86,182 @@ $nav-title-spacing-x: 2 * $base-size !default;
 
 $z-index-hover: 1 !default;
 $z-index-focus: 2 !default;
+
+// raised style
+$raised-enabled-border-width: $border-width !default;
+$raised-hover-border-width: $border-width !default;
+$raised-pressed-border-width: $border-width !default;
+$raised-focused-border-width: $border-width-focused !default;
+$raised-disabled-border-width: $border-width !default;
+$normal-enabled-border-width: $border-width !default;
+$normal-hover-border-width: $border-width !default;
+$normal-pressed-border-width: $border-width !default;
+$normal-disabled-border-width: $border-width !default;
+$normal-focused-border-width: $border-width-focused !default;
+$normal-selected-border-width: $border-width-active !default;
+$indent-enabled-border-width: $border-width !default;
+$indent-hover-border-width: $border-width !default;
+$indent-pressed-border-width: $border-width !default;
+$indent-focused-border-width: $border-width-focused !default;
+$indent-disabled-border-width: $border-width !default;
+$selected-hover-border-width: $border-width !default;
+$selected-pressed-border-width: $border-width !default;
+$selected-disabled-border-width: 0 !default;
+$selected-enabled-border-width: 0 !default;
+$selected-focused-border-width: $border-width-focused !default;
+$flat-hover-border-width: 0 !default;
+$flat-pressed-border-width: 0 !default;
+$flat-enabled-border-width: 0 !default;
+$flat-focused-border-width: $border-width-focused !default;
+$flat-disabled-border-width: 0 !default;
+$thumb-enabled-border-width: 0 !default;
+$thumb-hover-border-width: $border-width !default;
+$thumb-pressed-border-width: $border-width !default;
+$thumb-focused-border-width: $border-width-focused !default;
+$thumb-disabled-border-width: 0 !default;
+$running-enabled-border-width: $border-width !default;
+$running-hover-border-width: $border-width !default;
+$running-pressed-border-width: $border-width !default;
+$running-focused-border-width: $border-width-focused !default;
+$running-disabled-border-width: $border-width !default;
+
+
+
+$element-active-color: rgba(0, 0, 0, .900);
+$element-neutral-color: rgba(0, 0, 0, .600);
+$element-disabled-color: rgba(0, 0, 0, .300);
+$element-active-inverted-color: rgba(255, 255, 255, 1);
+$element-neutral-inverted-color: rgba(255, 255, 255, .600);
+$element-disabled-inverted-color: rgba(255, 255, 255, .300);
+$container-backdrop-color: rgba(204, 204, 204, 1);
+$container-background-color: rgba(255, 255, 255, 1);
+$container-section-color: rgba(240, 240, 240, 1);
+$container-global-color: rgba(220, 220, 220, 1);
+$border-divider-color: rgba(0, 0, 0, .120);
+$border-outline-color: rgba(0, 0, 0, .200);
+$normal-enabled-background-color: rgba(255, 255, 255, 1);
+$normal-enabled-border-color: rgba(0, 0, 0, .600);
+$normal-hover-background-color: rgba(204, 204, 204, 1);
+$normal-hover-border-color: rgba(0, 0, 0, .600);
+$normal-pressed-background-color: rgba(153, 153, 153, 1);
+$normal-pressed-border-color: rgba(0, 0, 0, .900);
+$normal-focused-background-color: rgba(255, 255, 255, 1);
+$normal-focused-border-color: rgba(255, 197, 0, 1);
+$normal-disabled-background-color: rgba(255, 255, 255, .000);
+$normal-disabled-border-color: rgba(0, 0, 0, .300);
+$raised-enabled-background-color: rgba(0, 0, 0, .600);
+$raised-enabled-border-color: rgba(0, 0, 0, .120);
+$raised-hover-background-color: rgba(0, 0, 0, .700);
+$raised-hover-border-color: rgba(0, 0, 0, .120);
+$raised-pressed-background-color: rgba(0, 0, 0, .800);
+$raised-pressed-border-color: rgba(0, 0, 0, .400);
+$raised-focused-background-color: rgba(0, 0, 0, .600);
+$raised-focused-border-color: rgba(255, 197, 0, 1);
+$raised-disabled-background-color: rgba(0, 0, 0, .000);
+$raised-disabled-border-color: rgba(0, 0, 0, .300);
+$indent-enabled-background-color: rgba(0, 0, 0, .200);
+$indent-enabled-border-color: rgba(0, 0, 0, .200);
+$indent-hover-background-color: rgba(0, 0, 0, .400);
+$indent-hover-border-color: rgba(0, 0, 0, .200);
+$indent-pressed-background-color: rgba(0, 0, 0, .600);
+$indent-pressed-border-color: rgba(0, 0, 0, .600);
+$indent-focused-background-color: rgba(0, 0, 0, .200);
+$indent-focused-border-color: rgba(255, 197, 0, 1);
+$indent-disabled-background-color: rgba(0, 0, 0, .000);
+$indent-disabled-border-color: rgba(0, 0, 0, .300);
+$flat-enabled-background-color: rgba(0, 0, 0, .000);
+$flat-hover-background-color: rgba(0, 0, 0, .200);
+$flat-pressed-background-color: rgba(0, 0, 0, .400);
+$flat-focused-background-color: rgba(0, 0, 0, .000);
+$flat-focused-border-color: rgba(255, 197, 0, 1);
+$flat-disabled-background-color: rgba(0, 0, 0, .000);
+$selected-enabled-background-color: rgba(0, 0, 0, 1);
+$selected-hover-background-color: rgba(0, 0, 0, .800);
+$selected-hover-border-color: rgba(0, 0, 0, .800);
+$selected-pressed-background-color: rgba(0, 0, 0, .600);
+$selected-pressed-border-color: rgba(0, 0, 0, .600);
+$selected-focused-background-color: rgba(0, 0, 0, 1);
+$selected-focused-border-color: rgba(255, 197, 0, 1);
+$selected-disabled-background-color: rgba(0, 0, 0, .300);
+$selected-disabled-border-color: rgba(0, 0, 0, .300);
+$thumb-enabled-background-color: rgba(255, 255, 255, 1);
+$thumb-enabled-border-color: rgba(0, 0, 0, .600);
+$thumb-hover-background-color: rgba(204, 204, 204, 1);
+$thumb-hover-border-color: rgba(0, 0, 0, .600);
+$thumb-pressed-background-color: rgba(153, 153, 153, 1);
+$thumb-pressed-border-color: rgba(0, 0, 0, .600);
+$thumb-focused-background-color: rgba(255, 255, 255, 1);
+$thumb-focused-border-color: rgba(255, 197, 0, 1);
+$thumb-disabled-background-color: rgba(0, 0, 0, .300);
+$instrument-dynamic-color: rgba(0, 0, 255, 1);
+$instrument-static-color: rgba(0, 0, 0, .900);
+$instrument-input-color: rgba(255, 197, 0, 1);
+$alert-alarm-color: rgba(255, 40, 0, 1);
+$alert-warning-color: rgba(255, 144, 0, 1);
+$alert-caution-color: rgba(255, 213, 0, 1);
+$alert-running-color: rgba(0, 200, 0, 1);
+$running-enabled-background-color: rgba(0, 204, 0, 1);
+$running-enabled-border-color: rgba(0, 0, 0, .120);
+$running-hover-background-color: rgba(0, 153, 0, 1);
+$running-hover-border-color: rgba(0, 0, 0, .120);
+$running-pressed-background-color: rgba(0, 102, 0, 1);
+$running-pressed-border-color: rgba(0, 0, 0, .300);
+$running-focused-background-color: rgba(0, 204, 0, 1);
+$running-focused-border-color: rgba(255, 197, 0, 1);
+$running-disabled-background-color: rgba(0, 204, 0, 0);
+$running-disabled-border-color: rgba(0, 204, 0, 1);
+@mixin font-ui-title {
+  font-size: 24px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  line-height: 32px;
+}
+
+@mixin font-ui-subtitle {
+  font-size: 24px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-regular;
+  line-height: 32px;
+}
+
+@mixin font-ui-overline {
+  font-size: 12px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-semi-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-button {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-semi-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-body-active {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-body {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-regular;
+  line-height: 24px;
+}
+
+@mixin font-ui-label-active {
+  font-size: 12px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-bold;
+  line-height: 24px;
+}
+
+@mixin font-ui-label {
+  font-size: 12px;
+  font-family: "Open Sans";
+  font-weight: $font-weight-regular;
+  line-height: 24px;
+}

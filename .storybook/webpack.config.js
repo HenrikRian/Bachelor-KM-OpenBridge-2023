@@ -1,36 +1,34 @@
+const path = require('path');
+// Export a function. Accept the base config as the only param.
 module.exports = async ({config, mode}) => {
-  let scssLoader = config.module.rules.find(i => !!'a.scss'.match(i.test));
-  scssLoader.use = [
-    'to-string-loader',
+  // `mode` has a value of 'DEVELOPMENT' or 'PRODUCTION'
+  // You can change the configuration based on that.
+  // 'PRODUCTION' is used when building the static version of storybook.
+
+  // Make whatever fine-grained changes you need
+  const extraRules = [
     {
-      loader: 'css-loader',
-      options: {
-        sourceMap: true
-      }
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
     },
     {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true
-      }
+      test: /\.scss$/,
+      use: [{
+        loader: "style-loader" // creates style nodes from JS strings
+      }, {
+        loader: "css-loader" // translates CSS into CommonJS
+      }, {
+        loader: "sass-loader", // compiles Sass to CSS
+      }]
+    },
+    {
+      test: /\.stories\.jsx?$/,
+      loaders: [require.resolve('@storybook/source-loader')],
+      enforce: 'pre',
     }
   ];
-  let htmlLoader = config.module.rules.find(i => !!'a.html'.match(i.test));
-  htmlLoader.loader = 'html-loader';
+  config.module.rules.push(...extraRules);
 
-
-
-  config.module.rules.push({
-    test: /\.stories\.ts?$/,
-    use: [
-      require.resolve('@storybook/source-loader')],
-    enforce: 'pre',
-  });
-
-
+  // Return the altered config
   return config;
 };
-
-
-
-
