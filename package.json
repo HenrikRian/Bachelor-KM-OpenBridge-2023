@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "npm run storybook",
-    "test": "npm-run-all css-main lint bundlesize",
+    "test": "npm-run-all css lint bundlesize",
     "bundlesize": "bundlesize",
     "css": "npm-run-all css-lint css-compile css-minify",
     "css-compile": "npm-run-all --parallel css-compile-*",
