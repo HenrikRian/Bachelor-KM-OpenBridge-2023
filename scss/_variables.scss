@@ -3,40 +3,12 @@ $base-size: 1rem !default; // when converting from px in style guide assume base
 $icon-normal-height: 3rem !default; // material design icon height
 $icon-large-height: 5rem !default;
 
-$font-default: "Open Sans", sans-serif !default;
-
 //$font-weight-lighter: lighter !default;
 //$font-weight-light: 300 !default;
 $font-weight-regular: 400 !default;
 $font-weight-semi-bold: 600 !default;
 $font-weight-bold: 800 !default;
 //$font-weight-bolder: bolder !default;
-
-$title-font-weight: $font-weight-semi-bold !default;
-$title-font-size: 3 * $base-size !default;
-
-$subtitle-font-weight: $font-weight-regular !default;
-$subtitle-font-size: 3 * $base-size !default;
-
-$overline-font-weight: $font-weight-semi-bold !default;
-$overline-font-size: 2 * $base-size !default;
-$overline-font-spacing: 1.2 !default;
-
-$button-font-weight: $font-weight-semi-bold !default;
-$button-font-size: 2 * $base-size !default;
-
-$selected-body-font-weight: $font-weight-semi-bold !default;
-$selected-body-font-size: 2 * $base-size !default;
-
-$body-font-weight: $font-weight-regular !default;
-$body-font-size: 2 * $base-size !default;
-
-$selected-label-font-weight: $font-weight-semi-bold !default;
-$selected-label-font-size: 2 * $base-size !default;
-
-$label-font-weight: $font-weight-regular !default;
-$label-font-size: 1.5 * $base-size !default;
-$label-lineheight: 3 * $base-size !default;
 
 $border-width: .125 * $base-size !default;
 $border-width-focused: .5 * $base-size !default;
@@ -54,8 +26,8 @@ $btn-border-radius: $border-radius-large !default;
 $btn-width-min: 12 * $base-size !default;
 $btn-width-toggle: 2 * $btn-height-small !default;
 $btn-diameter-thumb: $btn-height-small - 1.25 * $base-size !default;
-$btn-padding-x: 3 * $base-size !default;
-$btn-icon-padding-x: 1.5 * $base-size !default;
+$btn-padding-x: 2 * $base-size !default;
+$btn-icon-padding-x: 1 * $base-size !default;
 $btn-text-under-spacing: .5 * $base-size !default;
 
 $app-btn-diameter-normal: 5 * $base-size !default;
@@ -241,56 +213,56 @@ $alert-running-color: var(--alert-running-color);
 
 @mixin font-ui-title {
   font-size: 24px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   line-height: 32px;
 }
 
 @mixin font-ui-subtitle {
   font-size: 24px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-regular;
   line-height: 32px;
 }
 
 @mixin font-ui-overline {
   font-size: 12px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-semi-bold;
   line-height: 24px;
 }
 
 @mixin font-ui-button {
   font-size: 16px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-semi-bold;
   line-height: 24px;
 }
 
 @mixin font-ui-body-active {
   font-size: 16px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-bold;
   line-height: 24px;
 }
 
 @mixin font-ui-body {
   font-size: 16px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-regular;
   line-height: 24px;
 }
 
 @mixin font-ui-label-active {
   font-size: 12px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-bold;
   line-height: 24px;
 }
 
 @mixin font-ui-label {
   font-size: 12px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: $font-weight-regular;
   line-height: 24px;
 }

@@ -20,7 +20,7 @@
   }
 
   .ob-btn-icon {
-    @include style-raised(50%);
+    @include style-raised($app-btn-diameter-normal);
     @include pointer-on-hover-not-disabled();
     position: relative;
     display: inline-flex;
