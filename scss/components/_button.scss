@@ -21,12 +21,28 @@
 
   @include pointer-on-hover-not-disabled();
 
+  & .ob-button__icon {
+    @include font-ui-label();
+    margin-left: $btn-icon-padding-x - $btn-padding-x;
+    margin-right: $btn-icon-padding-x;
+  }
+
   &.ob-button--normal {
+    @include color-normal-active();
     @include style-normal();
+
+    & .ob-button__icon {
+      @include color-normal-neutral();
+    }
   }
 
   &.ob-button--raised {
+    @include color-raised-active();
     @include style-raised();
+
+    & .ob-button__icon {
+      @include color-raised-neutral();
+    }
   }
 
   .ob-icon {

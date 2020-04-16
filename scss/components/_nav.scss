@@ -6,7 +6,6 @@
   width: $nav-top-bar-width;
   height: $nav-top-bar-height;
 
-  font-family: $font-default;
   background-color: $container-global-color;
   border-bottom: solid $border-outline-color $nav-top-bar-border-bottom-width;
 
@@ -67,16 +66,14 @@
 }
 
 .ob-nav-menu {
+  @include font-ui-body();
   position: absolute;
   top: $nav-top-bar-height - $nav-menu-top-border-thickness;
   bottom: 0;
   left: 0;
   display: none;
-
   width: $nav-menu-width;
 
-  font-family: $font-default;
-  font-size: $nav-menu-font-size;
   background-color: $container-global-color;
 
   border-top: $element-active-color solid $nav-menu-top-border-thickness;

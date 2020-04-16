@@ -1,6 +1,6 @@
 {
   "name": "openbridge-components",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "npm run storybook",
     "test": "npm-run-all css lint bundlesize",
@@ -84,7 +84,7 @@
     },
     {
       "path": "./dist/css/openbridge.min.css",
-      "maxSize": "2 kB"
+      "maxSize": "3 kB"
     }
   ]
 }
