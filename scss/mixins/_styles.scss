@@ -16,8 +16,6 @@
 }
 
 @mixin style-normal($focus-ring-radius: $border-radius-large) {
-  color: $element-active-color; // TODO verify
-
   background-color: $normal-enabled-background-color;
   border-color: $normal-enabled-border-color;
   border-style: solid;
@@ -45,16 +43,29 @@
 
   &:disabled,
   &.ob-disabled {
-    color: $element-disabled-color;
     background-color: $normal-disabled-background-color;
     border-color: $normal-disabled-border-color;
     border-width: $normal-disabled-border-width;
   }
 }
 
-@mixin style-raised($focus-ring-radius: $border-radius-large) {
-  color: $element-active-inverted-color;
+@mixin color-normal-active() {
+  color: $normal-active-color;
 
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $normal-disabled-color;
+  }
+}
+
+@mixin color-normal-neutral() {
+  color: $normal-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $normal-disabled-color;
+  }
+}
+
+@mixin style-raised($focus-ring-radius: $border-radius-large) {
   background-color: $raised-enabled-background-color;
   border-color: $raised-enabled-border-color;
   border-style: solid;
@@ -83,23 +94,35 @@
 
   &:disabled,
   &.ob-disabled {
-    color: $element-disabled-color;
     background-color: $raised-disabled-background-color;
     border-color: $raised-disabled-border-color;
     border-width: $raised-disabled-border-width;
   }
 }
 
-@mixin style-selected($focus-ring-radius: $border-radius-large) {
-  color: $on-background-active-color;
+@mixin color-raised-active() {
+  color: $raised-active-color;
 
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $raised-disabled-color;
+  }
+}
+
+@mixin color-raised-neutral() {
+  color: $raised-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $raised-disabled-color;
+  }
+}
+
+@mixin style-selected($focus-ring-radius: $border-radius-large) {
   background-color: $selected-enabled-background-color;
   border-style: solid;
   border-width: $selected-enabled-border-width;
 
   &:hover:not(:disabled):not(.ob-disabled) {
     z-index: $z-index-hover;
-    color: $on-background-focused-color;
 
     background-color: $selected-hover-background-color;
     border-color: $selected-hover-border-color;
@@ -121,16 +144,29 @@
 
   &:disabled,
   &.ob-disabled {
-    color: $element-disabled-color;
     background-color: $selected-disabled-background-color;
     border-color: $selected-disabled-border-color;
     border-width: $selected-disabled-border-width;
   }
 }
 
-@mixin style-indent($focus-ring-radius: $border-radius-large) {
-  color: $element-active-color;
+@mixin color-selected-active() {
+  color: $selected-active-color;
 
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $selected-disabled-color;
+  }
+}
+
+@mixin color-selected-neutral() {
+  color: $selected-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $selected-disabled-color;
+  }
+}
+
+@mixin style-indent($focus-ring-radius: $border-radius-large) {
   background-color: $indent-enabled-background-color;
   border-color: $indent-enabled-border-color;
   border-style: solid;
@@ -158,16 +194,29 @@
 
   &:disabled,
   &.ob-disabled {
-    color: $element-disabled-color;
     background-color: $indent-disabled-background-color;
     border-color: $indent-disabled-border-color;
     border-width: $indent-disabled-border-width;
   }
 }
 
-@mixin style-flat($focus-ring-radius: $border-radius-large) {
-  color: $element-active-color;
+@mixin color-indent-active() {
+  color: $indent-active-color;
 
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $indent-disabled-color;
+  }
+}
+
+@mixin color-indent-neutral() {
+  color: $indent-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $indent-disabled-color;
+  }
+}
+
+@mixin style-flat($focus-ring-radius: $border-radius-large) {
   background-color: $flat-enabled-background-color;
   border-style: solid;
   border-width: $flat-enabled-border-width;
@@ -192,15 +241,28 @@
 
   &:disabled,
   &.ob-disabled {
-    color: $element-disabled-color;
     background-color: $flat-disabled-background-color;
     border-width: $flat-disabled-border-width;
   }
 }
 
-@mixin style-thumb($focus-ring-radius: $border-radius-large) {
-  color: $element-active-color; // TODO verify
+@mixin color-flat-active() {
+  color: $flat-active-color;
 
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $flat-disabled-color;
+  }
+}
+
+@mixin color-flat-neutral() {
+  color: $flat-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $flat-disabled-color;
+  }
+}
+
+@mixin style-thumb($focus-ring-radius: $border-radius-large) {
   background-color: $thumb-enabled-background-color;
   border-color: $thumb-enabled-border-color;
   border-style: solid;
@@ -227,9 +289,24 @@
 
   &:disabled,
   &.ob-disabled {
-    color: $element-disabled-color;
     background-color: $thumb-disabled-background-color;
     border-width: $thumb-disabled-border-width;
+  }
+}
+
+@mixin color-thumb-active() {
+  color: $thumb-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $thumb-disabled-color;
+  }
+}
+
+@mixin color-thumb-neutral() {
+  color: $thumb-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $thumb-disabled-color;
   }
 }
 
@@ -264,5 +341,21 @@
     background-color: $running-disabled-background-color;
     border-color: $running-disabled-border-color;
     border-width: $running-disabled-border-width;
+  }
+}
+
+@mixin color-running-active() {
+  color: $running-active-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $running-disabled-color;
+  }
+}
+
+@mixin color-running-neutral() {
+  color: $running-neutral-color;
+
+  &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
+    color: $running-disabled-color;
   }
 }
