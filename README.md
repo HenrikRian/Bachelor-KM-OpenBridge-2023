@@ -2,8 +2,8 @@
 
 SASS implementation of OpenBridge Design System.  
 
-[Storybook](https://openbridge.gitlab.io/openbridge-angular/storybook)
-[![pipeline status](https://gitlab.com/openbridge/openbridge-angular/badges/master/pipeline.svg)](https://gitlab.com/openbridge/openbridge-angular/commits/master)
+[Storybook](https://openbridge.gitlab.io/openbridge-components/storybook)
+[![pipeline status](https://gitlab.com/openbridge/openbridge-components/badges/master/pipeline.svg)](https://gitlab.com/openbridge/openbridge-components/commits/master)
 
 ## Development server
 
