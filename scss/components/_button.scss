@@ -67,7 +67,8 @@
   height: $btn-height-normal;
 
   & > .ob-text-under {
-    @include font-ui-button();
+    @include font-ui-label();
+    @include color-flat-neutral;
     position: absolute;
     left: 0;
     width: 100%;
@@ -78,14 +79,21 @@
   }
 }
 
+.ob-button-group__item--selected > .ob-text-under {
+    @include font-ui-label-active();
+    @include color-flat-active;
+  }
+
 
 .ob-button-group__button {
   border-radius: $btn-height-normal;
   @include style-flat($btn-height-small);
+  @include color-flat-neutral;
 }
 
 .ob-button-group__item--selected > .ob-button-group__button {
   @include style-normal($btn-height-small);
+  @include color-normal-active;
 }
 
 

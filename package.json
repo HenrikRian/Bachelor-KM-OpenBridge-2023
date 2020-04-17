@@ -30,8 +30,10 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o public/storybook"
   },
-  "license" : "SEE LICENSE IN license.txt",
-  "dependencies": {},
+  "license": "SEE LICENSE IN license.txt",
+  "dependencies": {
+    "@storybook/addon-backgrounds": "^5.3.18"
+  },
   "peerDependencies": {
     "@types/node": "^8.10.54",
     "nodemon": "^1.19.1"

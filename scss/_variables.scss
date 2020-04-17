@@ -212,57 +212,57 @@ $alert-caution-color: var(--alert-caution-color);
 $alert-running-color: var(--alert-running-color);
 
 @mixin font-ui-title {
-  font-size: 24px;
+  font-size: var(--font-ui-title-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: bold;
-  line-height: 32px;
+  font-weight: var(--font-ui-title-weight);
+  line-height: var(--font-ui-title-line-height);
 }
 
 @mixin font-ui-subtitle {
-  font-size: 24px;
+  font-size: var(--font-ui-subtitle-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-regular;
-  line-height: 32px;
+  font-weight: var(--font-ui-subtitle-weight);
+  line-height: var(--font-ui-subtitle-line-height);
 }
 
 @mixin font-ui-overline {
-  font-size: 12px;
+  font-size: var(--font-ui-overline-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-semi-bold;
-  line-height: 24px;
+  font-weight: var(--font-ui-overline-weight);
+  line-height: var(--font-ui-overline-line-height);
 }
 
 @mixin font-ui-button {
-  font-size: 16px;
+  font-size: var(--font-ui-button-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-semi-bold;
-  line-height: 24px;
+  font-weight: var(--font-ui-button-weight);
+  line-height: var(--font-ui-button-line-height);
 }
 
 @mixin font-ui-body-active {
-  font-size: 16px;
+  font-size: var(--font-ui-body-active-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-bold;
-  line-height: 24px;
+  font-weight: var(--font-ui-body-active-weight);
+  line-height: var(--font-ui-body-active-line-height);
 }
 
 @mixin font-ui-body {
-  font-size: 16px;
+  font-size: var(--font-ui-body-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-regular;
-  line-height: 24px;
+  font-weight: var(--font-ui-body-weight);
+  line-height: var(--font-ui-body-line-height);
 }
 
 @mixin font-ui-label-active {
-  font-size: 12px;
+  font-size: var(--font-ui-label-active-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-bold;
-  line-height: 24px;
+  font-weight: var(--font-ui-label-active-weight);
+  line-height: var(--font-ui-label-active-line-height);
 }
 
 @mixin font-ui-label {
-  font-size: 12px;
+  font-size: var(--font-ui-label-size);
   font-family: "Open Sans", sans-serif;
-  font-weight: $font-weight-regular;
-  line-height: 24px;
+  font-weight: var(--font-ui-label-weight);
+  line-height: var(--font-ui-label-line-height);
 }
