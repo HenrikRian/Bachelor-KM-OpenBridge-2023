@@ -50,18 +50,18 @@
 }
 
 @mixin color-normal-active() {
-  color: $normal-active-color;
+  color: $on-normal-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $normal-disabled-color;
+    color: $on-normal-disabled-color;
   }
 }
 
 @mixin color-normal-neutral() {
-  color: $normal-neutral-color;
+  color: $on-normal-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $normal-disabled-color;
+    color: $on-normal-disabled-color;
   }
 }
 
@@ -100,18 +100,18 @@
 }
 
 @mixin color-raised-active() {
-  color: $raised-active-color;
+  color: $on-raised-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $raised-disabled-color;
+    color: $on-raised-disabled-color;
   }
 }
 
 @mixin color-raised-neutral() {
-  color: $raised-neutral-color;
+  color: $on-raised-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $raised-disabled-color;
+    color: $on-raised-disabled-color;
   }
 }
 
@@ -148,18 +148,18 @@
 }
 
 @mixin color-selected-active() {
-  color: $selected-active-color;
+  color: $on-selected-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $selected-disabled-color;
+    color: $on-selected-disabled-color;
   }
 }
 
 @mixin color-selected-neutral() {
-  color: $selected-neutral-color;
+  color: $on-selected-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $selected-disabled-color;
+    color: $on-selected-disabled-color;
   }
 }
 
@@ -198,18 +198,18 @@
 }
 
 @mixin color-indent-active() {
-  color: $indent-active-color;
+  color: $on-indent-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $indent-disabled-color;
+    color: $on-indent-disabled-color;
   }
 }
 
 @mixin color-indent-neutral() {
-  color: $indent-neutral-color;
+  color: $on-indent-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $indent-disabled-color;
+    color: $on-indent-disabled-color;
   }
 }
 
@@ -244,18 +244,18 @@
 }
 
 @mixin color-flat-active() {
-  color: $flat-active-color;
+  color: $on-flat-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $flat-disabled-color;
+    color: $on-flat-disabled-color;
   }
 }
 
 @mixin color-flat-neutral() {
-  color: $flat-neutral-color;
+  color: $on-flat-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $flat-disabled-color;
+    color: $on-flat-disabled-color;
   }
 }
 
@@ -292,18 +292,18 @@
 }
 
 @mixin color-thumb-active() {
-  color: $thumb-active-color;
+  color: $on-thumb-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $thumb-disabled-color;
+    color: $on-thumb-disabled-color;
   }
 }
 
 @mixin color-thumb-neutral() {
-  color: $thumb-neutral-color;
+  color: $on-thumb-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $thumb-disabled-color;
+    color: $on-thumb-disabled-color;
   }
 }
 
@@ -342,17 +342,17 @@
 }
 
 @mixin color-running-active() {
-  color: $running-active-color;
+  color: $on-running-active-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $running-disabled-color;
+    color: $on-running-disabled-color;
   }
 }
 
 @mixin color-running-neutral() {
-  color: $running-neutral-color;
+  color: $on-running-neutral-color;
 
   &:disabled, &.ob-disabled, :disabled &, .ob-disabled & {
-    color: $running-disabled-color;
+    color: $on-running-disabled-color;
   }
 }

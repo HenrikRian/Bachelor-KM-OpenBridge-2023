@@ -33,8 +33,8 @@
 
       &.ob-active {
         @include font-ui-body-active;
-        color: $element-active-inverted-color;
-        background: $element-active-color;
+        @include style-selected();
+        @include color-selected-active;
       }
     }
 
@@ -76,7 +76,7 @@
 
   background-color: $container-global-color;
 
-  border-top: $element-active-color solid $nav-menu-top-border-thickness;
+  border-top: $border-outline-color solid $nav-menu-top-border-thickness;
 
   &.ob-active {
     display: block;
@@ -84,6 +84,8 @@
 
   .ob-nav-item {
     @include font-ui-body();
+    @include style-flat();
+    @include color-flat-neutral;
     position: relative;
     display: flex;
     align-items: center;
@@ -91,7 +93,6 @@
     height: $nav-menu-item-height;
     padding: 0 $nav-menu-item-margin-x;
 
-    color: $element-active-color;
     cursor: pointer;
 
     .ob-nav-expand-icon {
@@ -106,8 +107,8 @@
 
     &.ob-active {
       @include font-ui-body-active();
-      color: $element-active-inverted-color;
-      background-color: $element-active-color;
+      @include style-selected();
+      @include color-selected-active();
     }
 
     &::after {
