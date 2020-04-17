@@ -19,7 +19,7 @@ $border-radius-large: .75 * $base-size !default;
 
 $number-tag-diameter: 4 * $base-size !default;
 
-$btn-height-normal: 5 * $base-size !default; //Used for all clickable components exept checkbox, radiobutton and toggle switch
+$btn-height-normal: 5 * $base-size !default; //Used for all clickable components except checkbox, radiobutton and toggle switch
 $btn-height-small: 3 * $base-size !default; // Checkbox, Radiobutton & Toggle
 
 $btn-border-radius: $border-radius-large !default;
@@ -77,8 +77,8 @@ $indent-hover-border-width: $border-width !default;
 $indent-pressed-border-width: $border-width !default;
 $indent-focused-border-width: $border-width-focused !default;
 $indent-disabled-border-width: $border-width !default;
-$selected-hover-border-width: $border-width !default;
-$selected-pressed-border-width: $border-width !default;
+$selected-hover-border-width: 0 !default;
+$selected-pressed-border-width: 0 !default;
 $selected-disabled-border-width: 0 !default;
 $selected-enabled-border-width: 0 !default;
 $selected-focused-border-width: $border-width-focused !default;
@@ -87,23 +87,17 @@ $flat-pressed-border-width: 0 !default;
 $flat-enabled-border-width: 0 !default;
 $flat-focused-border-width: $border-width-focused !default;
 $flat-disabled-border-width: 0 !default;
-$thumb-enabled-border-width: 0 !default;
+$thumb-enabled-border-width: $border-width !default;
 $thumb-hover-border-width: $border-width !default;
 $thumb-pressed-border-width: $border-width !default;
 $thumb-focused-border-width: $border-width-focused !default;
-$thumb-disabled-border-width: 0 !default;
+$thumb-disabled-border-width: $border-width !default;
 $running-enabled-border-width: $border-width !default;
 $running-hover-border-width: $border-width !default;
 $running-pressed-border-width: $border-width !default;
 $running-focused-border-width: $border-width-focused !default;
 $running-disabled-border-width: $border-width !default;
 
-$element-active-color: var(--element-active-color);
-$element-neutral-color: var(--element-neutral-color);
-$element-disabled-color: var(--element-disabled-color);
-$element-active-inverted-color: var(--element-active-inverted-color);
-$element-neutral-inverted-color: var(--element-neutral-inverted-color);
-$element-disabled-inverted-color: var(--element-disabled-inverted-color);
 $container-backdrop-color: var(--container-backdrop-color);
 $container-background-color: var(--container-background-color);
 $container-section-color: var(--container-section-color);
@@ -111,9 +105,9 @@ $container-global-color: var(--container-global-color);
 $border-divider-color: var(--border-divider-color);
 $border-outline-color: var(--border-outline-color);
 
-$normal-active-color: var(--normal-active-color);
-$normal-neutral-color: var(--normal-neutral-color);
-$normal-disabled-color: var(--normal-disabled-color);
+$on-normal-active-color: var(--on-normal-active-color);
+$on-normal-neutral-color: var(--on-normal-neutral-color);
+$on-normal-disabled-color: var(--on-normal-disabled-color);
 $normal-enabled-background-color: var(--normal-enabled-background-color);
 $normal-enabled-border-color: var(--normal-enabled-border-color);
 $normal-hover-background-color: var(--normal-hover-background-color);
@@ -125,9 +119,9 @@ $normal-focused-border-color: var(--normal-focused-border-color);
 $normal-disabled-background-color: var(--normal-disabled-background-color);
 $normal-disabled-border-color: var(--normal-disabled-border-color);
 
-$raised-active-color: var(--raised-active-color);
-$raised-neutral-color: var(--raised-neutral-color);
-$raised-disabled-color: var(--raised-disabled-color);
+$on-raised-active-color: var(--on-raised-active-color);
+$on-raised-neutral-color: var(--on-raised-neutral-color);
+$on-raised-disabled-color: var(--on-raised-disabled-color);
 $raised-enabled-background-color: var(--raised-enabled-background-color);
 $raised-enabled-border-color: var(--raised-enabled-border-color);
 $raised-hover-background-color: var(--raised-hover-background-color);
@@ -139,9 +133,9 @@ $raised-focused-border-color: var(--raised-focused-border-color);
 $raised-disabled-background-color: var(--raised-disabled-background-color);
 $raised-disabled-border-color: var(--raised-disabled-border-color);
 
-$indent-active-color: var(--indent-active-color);
-$indent-neutral-color: var(--indent-neutral-color);
-$indent-disabled-color: var(--indent-disabled-color);
+$on-indent-active-color: var(--on-indent-active-color);
+$on-indent-neutral-color: var(--on-indent-neutral-color);
+$on-indent-disabled-color: var(--on-indent-disabled-color);
 $indent-enabled-background-color: var(--indent-enabled-background-color);
 $indent-enabled-border-color: var(--indent-enabled-border-color);
 $indent-hover-background-color: var(--indent-hover-background-color);
@@ -153,9 +147,9 @@ $indent-focused-border-color: var(--indent-focused-border-color);
 $indent-disabled-background-color: var(--indent-disabled-background-color);
 $indent-disabled-border-color: var(--indent-disabled-border-color);
 
-$flat-active-color: var(--flat-active-color);
-$flat-neutral-color: var(--flat-neutral-color);
-$flat-disabled-color: var(--flat-disabled-color);
+$on-flat-active-color: var(--on-flat-active-color);
+$on-flat-neutral-color: var(--on-flat-neutral-color);
+$on-flat-disabled-color: var(--on-flat-disabled-color);
 $flat-enabled-background-color: var(--flat-enabled-background-color);
 $flat-hover-background-color: var(--flat-hover-background-color);
 $flat-pressed-background-color: var(--flat-pressed-background-color);
@@ -163,9 +157,9 @@ $flat-focused-background-color: var(--flat-focused-background-color);
 $flat-focused-border-color: var(--flat-focused-border-color);
 $flat-disabled-background-color: var(--flat-disabled-background-color);
 
-$selected-active-color: var(--selected-active-color);
-$selected-neutral-color: var(--selected-neutral-color);
-$selected-disabled-color: var(--selected-disabled-color);
+$on-selected-active-color: var(--on-selected-active-color);
+$on-selected-neutral-color: var(--on-selected-neutral-color);
+$on-selected-disabled-color: var(--on-selected-disabled-color);
 $selected-enabled-background-color: var(--selected-enabled-background-color);
 $selected-hover-background-color: var(--selected-hover-background-color);
 $selected-hover-border-color: var(--selected-hover-border-color);
@@ -176,9 +170,9 @@ $selected-focused-border-color: var(--selected-focused-border-color);
 $selected-disabled-background-color: var(--selected-disabled-background-color);
 $selected-disabled-border-color: var(--selected-disabled-border-color);
 
-$thumb-active-color: var(--thumb-active-color);
-$thumb-neutral-color: var(--thumb-neutral-color);
-$thumb-disabled-color: var(--thumb-disabled-color);
+$on-thumb-active-color: var(--on-thumb-active-color);
+$on-thumb-neutral-color: var(--on-thumb-neutral-color);
+$on-thumb-disabled-color: var(--on-thumb-disabled-color);
 $thumb-enabled-background-color: var(--thumb-enabled-background-color);
 $thumb-enabled-border-color: var(--thumb-enabled-border-color);
 $thumb-hover-background-color: var(--thumb-hover-background-color);
@@ -189,9 +183,9 @@ $thumb-focused-background-color: var(--thumb-focused-background-color);
 $thumb-focused-border-color: var(--thumb-focused-border-color);
 $thumb-disabled-background-color: var(--thumb-disabled-background-color);
 
-$running-active-color: var(--running-active-color);
-$running-neutral-color: var(--running-neutral-color);
-$running-disabled-color: var(--running-disabled-color);
+$on-running-active-color: var(--on-running-active-color);
+$on-running-neutral-color: var(--on-running-neutral-color);
+$on-running-disabled-color: var(--on-running-disabled-color);
 $running-enabled-background-color: var(--running-enabled-background-color);
 $running-enabled-border-color: var(--running-enabled-border-color);
 $running-hover-background-color: var(--running-hover-background-color);

@@ -1,37 +1,6 @@
-$element-active-color: rgba(0, 0, 0, .900);
-$element-neutral-color: rgba(0, 0, 0, .600);
-$element-disabled-color: rgba(0, 0, 0, .300);
-$element-active-inverted-color: rgba(255, 255, 255, 1);
-$element-neutral-inverted-color: rgba(255, 255, 255, .600);
-$element-disabled-inverted-color: rgba(255, 255, 255, .300);
+
 
 :root {
-  --element-neutral-color: #{$element-neutral-color};
-  --element-disabled-color: #{$element-disabled-color};
-  --element-active-inverted-color: #{$element-active-inverted-color};
-  --element-neutral-inverted-color: #{$element-neutral-inverted-color};
-  --element-disabled-inverted-color: #{$element-disabled-inverted-color};
-
-  --normal-active-color: #{$element-active-color};
-  --normal-neutral-color: #{$element-neutral-color};
-  --normal-disabled-color: #{$element-disabled-color};
-
-  --raised-active-color: #{$element-active-inverted-color};
-  --raised-neutral-color: #{$element-neutral-inverted-color};
-  --raised-disabled-color: #{$element-disabled-inverted-color};
-
-  --indent-active-color: #{$element-active-color};
-  --indent-neutral-color: #{$element-neutral-color};
-  --indent-disabled-color: #{$element-disabled-color};
-
-  --flat-active-color: #{$element-active-color};
-  --flat-neutral-color: #{$element-neutral-color};
-  --flat-disabled-color: #{$element-disabled-color};
-
-  --selected-active-color: #{$element-active-inverted-color};
-  --selected-neutral-color: #{$element-neutral-inverted-color};
-  --selected-disabled-color: #{$element-disabled-inverted-color};
-
   --container-backdrop-color: rgba(204, 204, 204, 1);
   --container-background-color: rgba(255, 255, 255, 1);
   --container-section-color: rgba(240, 240, 240, 1);

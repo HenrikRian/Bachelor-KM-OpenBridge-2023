@@ -12,7 +12,7 @@
 
   min-width: $btn-width-min;
   height: $btn-height-normal;
-  padding: 0 $btn-padding-x;
+  padding: 0 ($btn-padding-x - $border-width);
 
   text-align: center;
   vertical-align: middle;
@@ -51,89 +51,4 @@
     height: 100%;
   }
 }
-
-.ob-button-group {
-  display: inline-block;
-  height: $btn-height-normal;
-  background-color: $container-backdrop-color;
-  border-color: $indent-enabled-border-color;
-  border-width: $indent-enabled-border-width;
-  border-radius: $btn-height-normal;
-}
-
-.ob-button-group__item {
-  position: relative;
-  display: inline-flex;
-  height: $btn-height-normal;
-
-  & > .ob-text-under {
-    @include font-ui-label();
-    @include color-flat-neutral;
-    position: absolute;
-    left: 0;
-    width: 100%;
-
-    text-align: center;
-
-    transform: translateY($btn-height-normal + $btn-text-under-spacing);
-  }
-}
-
-.ob-button-group__item--selected > .ob-text-under {
-    @include font-ui-label-active();
-    @include color-flat-active;
-  }
-
-
-.ob-button-group__button {
-  border-radius: $btn-height-normal;
-  @include style-flat($btn-height-small);
-  @include color-flat-neutral;
-}
-
-.ob-button-group__item--selected > .ob-button-group__button {
-  @include style-normal($btn-height-small);
-  @include color-normal-active;
-}
-
-
-.ob-slide-toggle {
-  @include style-indent($btn-height-small);
-
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  width: $btn-width-toggle;
-  height: $btn-height-small;
-
-  border-radius: $btn-height-small;
-
-  $space-x: ($btn-height-small - $btn-diameter-thumb) / 2;
-
-  $transition-time: .3s;
-
-  &:hover:not(:disabled):not(.ob-disabled) {
-    cursor: pointer;
-  }
-
-  & > .ob-slide-toggle__thumb {
-    @include thumb();
-    @include style-thumb();
-    margin: $space-x;
-    content: "";
-    transition: margin-left $transition-time;
-  }
-
-  &.ob-slide-toggle__thumb--selected {
-    @include style-running($btn-height-small);
-    border-radius: $btn-height-small;
-
-    & .ob-thumb {
-      margin-left: $btn-width-toggle - $space-x - $btn-diameter-thumb - 2 * $border-width;
-    }
-  }
-}
-
 

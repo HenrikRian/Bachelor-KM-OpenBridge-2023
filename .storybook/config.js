@@ -16,6 +16,7 @@ let theme = {
 if (isBright) {
   theme = {
     ...theme,
+    base: 'light',
     colorPrimary: 'black',
     colorSecondary: 'rgba(0, 0, 0, 0.9)', /*color-ui-element-active*/
     appBg: 'rgba(234, 234, 234, 1)', /* color-ui-container-section*/
