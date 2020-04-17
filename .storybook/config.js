@@ -1,13 +1,12 @@
 import '!style-loader!css-loader!sass-loader!../scss/openbridge.scss';
-//import '!style-loader!css-loader!sass-loader!../scss/variables-bright.scss';
-import '!style-loader!css-loader!sass-loader!../scss/variables-dusk.scss';
-
-const isBright = false;
-const isDusk = true;
-
-import {addParameters} from "@storybook/html";
+import variables_bright from '!css-loader!sass-loader!../scss/variables-bright.scss';
+import variables_dusk from '!css-loader!sass-loader!../scss/variables-dusk.scss';
+import {addDecorator, addParameters} from "@storybook/html";
 import {create} from '@storybook/theming/create';
+import {withCssResources} from "@storybook/addon-cssresources";
 
+const isBright = true;
+const isDusk = false;
 let theme = {
   brandTitle: 'OpenBridge Components',
   brandUrl: 'https://gitlab.com/openbridge/openbridge-component',
@@ -51,4 +50,22 @@ addParameters({
   options: {
     theme: storyBookTheme,
   },
+});
+
+addDecorator(withCssResources);
+addParameters({
+  cssresources: [
+    {
+      id: `bright`,
+      code: `<style>` + variables_bright.toString() + `</style>`,
+      picked: true,
+      hideCode: true,
+    },
+    {
+      id: `dusk`,
+      code: `<style>` + variables_dusk.toString() + `</style>`,
+      picked: false,
+      hideCode: true,
+    },
+  ],
 });
