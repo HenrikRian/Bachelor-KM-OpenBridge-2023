@@ -32,7 +32,8 @@
   },
   "license": "SEE LICENSE IN license.txt",
   "dependencies": {
-    "@storybook/addon-backgrounds": "^5.3.18"
+    "@storybook/addon-backgrounds": "^5.3.18",
+    "@storybook/addon-cssresources": "6.0.0-alpha.37"
   },
   "peerDependencies": {
     "@types/node": "^8.10.54",
