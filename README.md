@@ -4,7 +4,7 @@ SASS implementation of OpenBridge Design System.
 
 [Storybook](https://openbridge.gitlab.io/openbridge-components/storybook)
 [![pipeline status](https://gitlab.com/openbridge/openbridge-components/badges/master/pipeline.svg)](https://gitlab.com/openbridge/openbridge-components/commits/master)
-
+[Compiled CSS](https://gitlab.com/openbridge/openbridge-components/-/jobs/artifacts/master/browse/dist/css?job=build)
 ## Development server
 
 Run `npm run start` for a storybook server. The components are rendered there and automatically recompiled if the scss changes.
