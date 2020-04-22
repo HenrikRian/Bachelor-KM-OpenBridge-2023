@@ -1,3 +1,4 @@
+/*
 export default {title: 'Button group'};
 
 export const normal = () => `
@@ -19,3 +20,4 @@ export const normal = () => `
   <span class="ob-text-under">Item 2</span>
   </div>
 </div>`;
+*/
