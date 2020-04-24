@@ -35,6 +35,21 @@ These are the main files in the sass project:
 - `mixins/_styles.scss` mixins of styles and states.
 - `components/` folder with definition of components.
 
+# How to contribute
+We welcome all contributions to the project! There are multiple ways of contributing:
+
+- **Use the project.** By using the project you can give us helpful feedback. 
+If you have any feedback contact us by [filing an issue](https://gitlab.com/openbridge/openbridge-components/-/issues/new).
+This could be for instance be bugs or lack of documentation.
+- **Implement a component.** Start implement a component by following the guide here. 
+   1. Find the description of the component in [the design guide](https://openbridge-ds.webflow.io/)(registration required).
+   2. Clone the project to your.
+   3. Develop the component in your own branch.
+   4. File a pull request when you're satisfied with the code.
+   5. We will then review your code, both to check the code and that the visual design is implemented correctly.
+        The code will then be merged into our master branch.
+ 
+
 # Development
 The sass files are compiled to css by using `npm run css` or `npm run watch-css` to compile each time a sass file has changed.
 This will also run tests to verify that all variables are used, linting (with autofix) and check of the bundlesize.
