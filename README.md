@@ -42,8 +42,8 @@ We welcome all contributions to the project! There are multiple ways of contribu
 If you have any feedback contact us by [filing an issue](https://gitlab.com/openbridge/openbridge-components/-/issues/new).
 This could be for instance be bugs or lack of documentation.
 - **Implement a component.** Start implement a component by following the guide here. 
-   1. Find the description of the component in [the design guide](https://openbridge-ds.webflow.io/)(registration required).
-   2. Clone the project to your.
+   1. Find the description of the component in [the design guide](https://openbridge-ds.webflow.io/) (registration required).
+   2. Clone the project.
    3. Develop the component in your own branch.
    4. File a pull request when you're satisfied with the code.
    5. We will then review your code, both to check the code and that the visual design is implemented correctly.
