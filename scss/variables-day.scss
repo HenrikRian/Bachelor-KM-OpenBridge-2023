@@ -1,29 +1,28 @@
-
 :root {
-  --element-active-color: rgba(0, 0, 0, 1);
+  --element-active-color: rgba(0, 0, 0, .900);
   --element-neutral-color: rgba(0, 0, 0, .600);
   --element-disabled-color: rgba(0, 0, 0, .300);
   --element-active-inverted-color: rgba(255, 255, 255, 1);
   --element-neutral-inverted-color: rgba(255, 255, 255, .600);
   --element-disabled-inverted-color: rgba(255, 255, 255, .300);
-  --container-backdrop-color: rgba(204, 204, 204, 1);
-  --container-background-color: rgba(255, 255, 255, 1);
-  --container-section-color: rgba(240, 240, 240, 1);
-  --container-global-color: rgba(220, 220, 220, 1);
+  --container-backdrop-color: rgba(200, 200, 200, 1);
+  --container-background-color: rgba(234, 234, 234, 1);
+  --container-section-color: rgba(221, 221, 221, 1);
+  --container-global-color: rgba(200, 200, 200, 1);
   --border-divider-color: rgba(0, 0, 0, .120);
   --border-outline-color: rgba(0, 0, 0, .200);
   --normal-enabled-background-color: rgba(255, 255, 255, 1);
   --normal-enabled-border-color: rgba(0, 0, 0, .600);
-  --normal-hover-background-color: rgba(204, 204, 204, 1);
+  --normal-hover-background-color: rgba(229, 229, 229, 1);
   --normal-hover-border-color: rgba(0, 0, 0, .600);
-  --normal-pressed-background-color: rgba(153, 153, 153, 1);
+  --normal-pressed-background-color: rgba(204, 204, 204, 1);
   --normal-pressed-border-color: rgba(0, 0, 0, .900);
   --normal-focused-background-color: rgba(255, 255, 255, 1);
   --normal-focused-border-color: rgba(255, 197, 0, 1);
   --normal-disabled-background-color: rgba(255, 255, 255, .000);
   --normal-disabled-border-color: rgba(0, 0, 0, .300);
-  --on-normal-active-color: rgba(0, 0, 0, 1);
-  --on-normal-neutral-color: rgba(0, 0, 0, .700);
+  --on-normal-active-color: rgba(0, 0, 0, .900);
+  --on-normal-neutral-color: rgba(0, 0, 0, .600);
   --on-normal-disabled-color: rgba(0, 0, 0, .300);
   --raised-enabled-background-color: rgba(0, 0, 0, .600);
   --raised-enabled-border-color: rgba(0, 0, 0, .120);
@@ -38,31 +37,31 @@
   --on-raised-active-color: rgba(255, 255, 255, 1);
   --on-raised-neutral-color: rgba(255, 255, 255, .700);
   --on-raised-disabled-color: rgba(0, 0, 0, .300);
-  --indent-enabled-background-color: rgba(0, 0, 0, .200);
-  --indent-enabled-border-color: rgba(0, 0, 0, .200);
-  --indent-hover-background-color: rgba(0, 0, 0, .400);
-  --indent-hover-border-color: rgba(0, 0, 0, .200);
-  --indent-pressed-background-color: rgba(0, 0, 0, .600);
-  --indent-pressed-border-color: rgba(0, 0, 0, .600);
-  --indent-focused-background-color: rgba(0, 0, 0, .200);
+  --indent-enabled-background-color: rgba(0, 0, 0, .120);
+  --indent-enabled-border-color: rgba(0, 0, 0, .120);
+  --indent-hover-background-color: rgba(0, 0, 0, .240);
+  --indent-hover-border-color: rgba(0, 0, 0, .120);
+  --indent-pressed-background-color: rgba(0, 0, 0, .360);
+  --indent-pressed-border-color: rgba(0, 0, 0, .240);
+  --indent-focused-background-color: rgba(0, 0, 0, .120);
   --indent-focused-border-color: rgba(255, 197, 0, 1);
   --indent-disabled-background-color: rgba(0, 0, 0, .000);
   --indent-disabled-border-color: rgba(0, 0, 0, .300);
-  --on-indent-active-color: rgba(0, 0, 0, 1);
-  --on-indent-neutral-color: rgba(0, 0, 0, .700);
+  --on-indent-active-color: rgba(0, 0, 0, .900);
+  --on-indent-neutral-color: rgba(0, 0, 0, .600);
   --on-indent-disabled-color: rgba(0, 0, 0, .300);
   --flat-enabled-background-color: rgba(0, 0, 0, .000);
   --flat-enabled-border-color: rgba(0, 0, 0, .000);
-  --flat-hover-background-color: rgba(0, 0, 0, .200);
+  --flat-hover-background-color: rgba(0, 0, 0, .100);
   --flat-hover-border-color: rgba(0, 0, 0, .000);
-  --flat-pressed-background-color: rgba(0, 0, 0, .400);
+  --flat-pressed-background-color: rgba(0, 0, 0, .200);
   --flat-pressed-border-color: rgba(0, 0, 0, .000);
   --flat-focused-background-color: rgba(0, 0, 0, .000);
   --flat-focused-border-color: rgba(255, 197, 0, 1);
   --flat-disabled-background-color: rgba(0, 0, 0, .000);
   --flat-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-flat-active-color: rgba(0, 0, 0, 1);
-  --on-flat-neutral-color: rgba(0, 0, 0, .700);
+  --on-flat-active-color: rgba(0, 0, 0, .900);
+  --on-flat-neutral-color: rgba(0, 0, 0, .600);
   --on-flat-disabled-color: rgba(0, 0, 0, .300);
   --selected-enabled-background-color: rgba(0, 0, 0, 1);
   --selected-enabled-border-color: rgba(0, 0, 0, .000);
@@ -79,49 +78,49 @@
   --on-selected-disabled-color: rgba(0, 0, 0, .300);
   --thumb-enabled-background-color: rgba(255, 255, 255, 1);
   --thumb-enabled-border-color: rgba(0, 0, 0, .600);
-  --thumb-hover-background-color: rgba(204, 204, 204, 1);
+  --thumb-hover-background-color: rgba(229, 229, 229, 1);
   --thumb-hover-border-color: rgba(0, 0, 0, .600);
-  --thumb-pressed-background-color: rgba(153, 153, 153, 1);
+  --thumb-pressed-background-color: rgba(204, 204, 204, 1);
   --thumb-pressed-border-color: rgba(0, 0, 0, .600);
   --thumb-focused-background-color: rgba(255, 255, 255, 1);
   --thumb-focused-border-color: rgba(255, 197, 0, 1);
   --thumb-disabled-background-color: rgba(0, 0, 0, .300);
   --thumb-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-thumb-active-color: rgba(0, 0, 0, 1);
-  --on-thumb-neutral-color: rgba(0, 0, 0, .700);
+  --on-thumb-active-color: rgba(0, 0, 0, .900);
+  --on-thumb-neutral-color: rgba(0, 0, 0, .600);
   --on-thumb-disabled-color: rgba(0, 0, 0, .300);
   --amplified-enabled-background-color: rgba(255, 255, 255, 1);
   --amplified-enabled-border-color: rgba(0, 0, 0, .600);
-  --amplified-hover-background-color: rgba(204, 204, 204, 1);
+  --amplified-hover-background-color: rgba(229, 229, 229, 1);
   --amplified-hover-border-color: rgba(0, 0, 0, .600);
-  --amplified-pressed-background-color: rgba(153, 153, 153, 1);
+  --amplified-pressed-background-color: rgba(204, 204, 204, 1);
   --amplified-pressed-border-color: rgba(0, 0, 0, .600);
   --amplified-focused-background-color: rgba(255, 255, 255, 1);
   --amplified-focused-border-color: rgba(255, 197, 0, 1);
   --amplified-disabled-background-color: rgba(0, 0, 0, .300);
   --amplified-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-amplified-active-color: rgba(0, 0, 0, 1);
-  --on-amplified-neutral-color: rgba(0, 0, 0, .700);
+  --on-amplified-active-color: rgba(0, 0, 0, .900);
+  --on-amplified-neutral-color: rgba(0, 0, 0, .600);
   --on-amplified-disabled-color: rgba(0, 0, 0, .300);
-  --instrument-dynamic-color: rgba(0, 0, 255, 1);
-  --instrument-static-color: rgba(0, 0, 0, 1);
+  --instrument-dynamic-color: rgba(0, 97, 235, 1);
+  --instrument-static-color: rgba(0, 0, 0, .900);
   --instrument-input-color: rgba(255, 197, 0, 1);
-  --alert-running-color: rgba(0, 200, 0, 1);
+  --alert-running-color: rgba(0, 160, 0, 1);
   --alert-caution-color: rgba(255, 213, 0, 1);
-  --alert-warning-color: rgba(255, 138, 0, 1);
+  --alert-warning-color: rgba(255, 144, 0, 1);
   --alert-alarm-color: rgba(255, 40, 0, 1);
   --alert-critical-alarm-color: rgba(254, 0, 255, 1);
-  --running-enabled-background-color: rgba(0, 204, 0, 1);
+  --running-enabled-background-color: rgba(0, 160, 0, 1);
   --running-enabled-border-color: rgba(0, 0, 0, .120);
-  --running-hover-background-color: rgba(0, 153, 0, 1);
+  --running-hover-background-color: rgba(0, 128, 0, 1);
   --running-hover-border-color: rgba(0, 0, 0, .200);
   --running-pressed-background-color: rgba(0, 102, 0, 1);
   --running-pressed-border-color: rgba(0, 0, 0, .400);
-  --running-focused-background-color: rgba(0, 204, 0, 1);
+  --running-focused-background-color: rgba(0, 160, 0, 1);
   --running-focused-border-color: rgba(0, 0, 0, 1);
-  --running-disabled-background-color: rgba(0, 204, 0, 1);
+  --running-disabled-background-color: rgba(0, 160, 0, 1);
   --running-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-running-active-color: rgba(0, 0, 0, 1);
+  --on-running-active-color: rgba(0, 0, 0, .900);
   --on-running-neutral-color: rgba(0, 0, 0, .700);
   --on-running-disabled-color: rgba(0, 0, 0, .300);
   --caution-enabled-background-color: rgba(255, 213, 0, 1);
@@ -134,7 +133,7 @@
   --caution-focused-border-color: rgba(0, 0, 0, 1);
   --caution-disabled-background-color: rgba(255, 213, 0, 1);
   --caution-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-caution-active-color: rgba(0, 0, 0, 1);
+  --on-caution-active-color: rgba(0, 0, 0, .900);
   --on-caution-neutral-color: rgba(0, 0, 0, .700);
   --on-caution-disabled-color: rgba(0, 0, 0, .300);
   --warning-enabled-background-color: rgba(255, 160, 0, 1);
@@ -147,7 +146,7 @@
   --warning-focused-border-color: rgba(0, 0, 0, 1);
   --warning-disabled-background-color: rgba(255, 160, 0, 1);
   --warning-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-warning-active-color: rgba(0, 0, 0, 1);
+  --on-warning-active-color: rgba(0, 0, 0, .900);
   --on-warning-neutral-color: rgba(0, 0, 0, .700);
   --on-warning-disabled-color: rgba(0, 0, 0, .300);
   --alarm-enabled-background-color: rgba(255, 40, 0, 1);
@@ -160,7 +159,7 @@
   --alarm-focused-border-color: rgba(0, 0, 0, 1);
   --alarm-disabled-background-color: rgba(255, 40, 0, 1);
   --alarm-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-alarm-active-color: rgba(0, 0, 0, 1);
+  --on-alarm-active-color: rgba(0, 0, 0, .900);
   --on-alarm-neutral-color: rgba(0, 0, 0, .700);
   --on-alarm-disabled-color: rgba(0, 0, 0, .300);
   --critical-alarm-enabled-background-color: rgba(254, 0, 255, 1);
@@ -173,80 +172,81 @@
   --critical-alarm-focused-border-color: rgba(0, 0, 0, 1);
   --critical-alarm-disabled-background-color: rgba(254, 0, 255, 1);
   --critical-alarm-disabled-border-color: rgba(0, 0, 0, .000);
-  --on-critical-alarm-active-color: rgba(0, 0, 0, 1);
+  --on-critical-alarm-active-color: rgba(0, 0, 0, .900);
   --on-critical-alarm-neutral-color: rgba(0, 0, 0, .700);
   --on-critical-alarm-disabled-color: rgba(0, 0, 0, .300);
   --font-ui-title-size: 24px;
-  --font-ui-title-weight: bold;
-  --font-ui-title-line-height: 32px;
+ --font-ui-title-weight: bold;
+ --font-ui-title-line-height: 32px;
 
   --font-ui-subtitle-size: 24px;
-  --font-ui-subtitle-weight: normal;
-  --font-ui-subtitle-line-height: 32px;
+ --font-ui-subtitle-weight: normal;
+ --font-ui-subtitle-line-height: 32px;
 
   --font-ui-overline-size: 12px;
-  --font-ui-overline-weight: semibold;
-  --font-ui-overline-line-height: 24px;
+ --font-ui-overline-weight: semibold;
+ --font-ui-overline-line-height: 24px;
 
   --font-ui-button-size: 16px;
-  --font-ui-button-weight: semibold;
-  --font-ui-button-line-height: 24px;
+ --font-ui-button-weight: semibold;
+ --font-ui-button-line-height: 24px;
 
   --font-ui-body-active-size: 16px;
-  --font-ui-body-active-weight: bold;
-  --font-ui-body-active-line-height: 24px;
+ --font-ui-body-active-weight: bold;
+ --font-ui-body-active-line-height: 24px;
 
   --font-ui-body-size: 16px;
-  --font-ui-body-weight: normal;
-  --font-ui-body-line-height: 24px;
+ --font-ui-body-weight: normal;
+ --font-ui-body-line-height: 24px;
 
   --font-ui-label-active-size: 12px;
-  --font-ui-label-active-weight: bold;
-  --font-ui-label-active-line-height: 24px;
+ --font-ui-label-active-weight: bold;
+ --font-ui-label-active-line-height: 24px;
 
   --font-ui-label-size: 12px;
-  --font-ui-label-weight: normal;
-  --font-ui-label-line-height: 24px;
+ --font-ui-label-weight: normal;
+ --font-ui-label-line-height: 24px;
 
   --font-instrument-label-s-size: 16px;
-  --font-instrument-label-s-weight: normal;
+ --font-instrument-label-s-weight: normal;
 
   --font-instrument-label-m-size: 24px;
-  --font-instrument-label-m-weight: normal;
+ --font-instrument-label-m-weight: normal;
 
   --font-instrument-label-l-size: 32px;
-  --font-instrument-label-l-weight: normal;
+ --font-instrument-label-l-weight: normal;
 
   --font-instrument-value-s-size: 16px;
-  --font-instrument-value-s-weight: semibold;
+ --font-instrument-value-s-weight: semibold;
 
   --font-instrument-value-m-size: 32px;
-  --font-instrument-value-m-weight: semibold;
-  --font-instrument-value-m-line-height: 48px;
+ --font-instrument-value-m-weight: semibold;
+ --font-instrument-value-m-line-height: 48px;
 
   --font-instrument-value-l-size: 64px;
-  --font-instrument-value-l-weight: semibold;
-  --font-instrument-value-l-line-height: 88px;
+ --font-instrument-value-l-weight: semibold;
+ --font-instrument-value-l-line-height: 88px;
 
   --font-instrument-unit-s-size: 16px;
-  --font-instrument-unit-s-weight: normal;
+ --font-instrument-unit-s-weight: normal;
 
   --font-instrument-unit-m-size: 24px;
-  --font-instrument-unit-m-weight: normal;
-  --font-instrument-unit-m-line-height: 48px;
+ --font-instrument-unit-m-weight: normal;
+ --font-instrument-unit-m-line-height: 48px;
 
   --font-instrument-unit-l-size: 32px;
-  --font-instrument-unit-l-weight: normal;
-  --font-instrument-unit-l-line-height: 48px;
+ --font-instrument-unit-l-weight: normal;
+ --font-instrument-unit-l-line-height: 48px;
 
   --font-instrument-status-s-size: 16px;
-  --font-instrument-status-s-weight: normal;
+ --font-instrument-status-s-weight: normal;
 
   --font-instrument-status-m-size: 24px;
-  --font-instrument-status-m-weight: normal;
+ --font-instrument-status-m-weight: normal;
 
   --font-instrument-status-l-size: 32px;
-  --font-instrument-status-l-weight: normal;
+ --font-instrument-status-l-weight: normal;
+
 
 }
 
