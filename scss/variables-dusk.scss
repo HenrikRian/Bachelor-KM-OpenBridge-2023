@@ -1,38 +1,10 @@
-$element-active-color: rgba(255, 255, 255, 1);
-$element-neutral-color: rgba(255, 255, 255, .600);
-$element-disabled-color: rgba(255, 255, 255, .300);
-$element-active-inverted-color: rgba(0, 0, 0, 1);
-$element-neutral-inverted-color: rgba(0, 0, 0, .600);
-$element-disabled-inverted-color: rgba(0, 0, 0, .300);
-
 :root {
-  --element-neutral-color: #{$element-neutral-color};
-  --element-disabled-color: #{$element-disabled-color};
-  --element-active-inverted-color: #{$element-active-inverted-color};
-  --element-neutral-inverted-color: #{$element-neutral-inverted-color};
-  --element-disabled-inverted-color: #{$element-disabled-inverted-color};
-
-  --normal-active-color: #{$element-active-color};
-  --normal-neutral-color: #{$element-neutral-color};
-  --normal-disabled-color: #{$element-disabled-color};
-
-  --raised-active-color: #{$element-active-inverted-color};
-  --raised-neutral-color: #{$element-neutral-inverted-color};
-  --raised-disabled-color: #{$element-disabled-inverted-color};
-
-  --indent-active-color: #{$element-active-color};
-  --indent-neutral-color: #{$element-neutral-color};
-  --indent-disabled-color: #{$element-disabled-color};
-
-  --flat-active-color: #{$element-active-color};
-  --flat-neutral-color: #{$element-neutral-color};
-  --flat-disabled-color: #{$element-disabled-color};
-
-  --selected-active-color: #{$element-active-inverted-color};
-  --selected-neutral-color: #{$element-neutral-inverted-color};
-  --selected-disabled-color: #{$element-disabled-inverted-color};
-
-
+  --element-active-color: rgba(255, 255, 255, 1);
+  --element-neutral-color: rgba(255, 255, 255, .600);
+  --element-disabled-color: rgba(255, 255, 255, .300);
+  --element-active-inverted-color: rgba(0, 0, 0, 1);
+  --element-neutral-inverted-color: rgba(0, 0, 0, .600);
+  --element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --container-backdrop-color: rgba(30, 30, 30, 1);
   --container-background-color: rgba(46, 46, 46, 1);
   --container-section-color: rgba(54, 54, 54, 1);
@@ -79,23 +51,31 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --on-indent-neutral-color: rgba(255, 255, 255, .700);
   --on-indent-disabled-color: rgba(255, 255, 255, .300);
   --flat-enabled-background-color: rgba(0, 0, 0, .000);
+  --flat-enabled-border-color: rgba(255, 255, 255, .000);
   --flat-hover-background-color: rgba(255, 255, 255, .200);
+  --flat-hover-border-color: rgba(255, 255, 255, .000);
   --flat-pressed-background-color: rgba(255, 255, 255, .300);
+  --flat-pressed-border-color: rgba(255, 255, 255, .000);
   --flat-focused-background-color: rgba(0, 0, 0, .000);
   --flat-focused-border-color: rgba(255, 200, 0, 1);
   --flat-disabled-background-color: rgba(0, 0, 0, .000);
+  --flat-disabled-border-color: rgba(255, 255, 255, .000);
   --on-flat-active-color: rgba(255, 255, 255, 1);
   --on-flat-neutral-color: rgba(255, 255, 255, .700);
   --on-flat-disabled-color: rgba(255, 255, 255, .300);
   --selected-enabled-background-color: rgba(204, 204, 204, 1);
+  --selected-enabled-border-color: rgba(255, 255, 255, .000);
   --selected-hover-background-color: rgba(204, 204, 204, 1);
+  --selected-hover-border-color: rgba(255, 255, 255, .000);
   --selected-pressed-background-color: rgba(229, 229, 229, 1);
+  --selected-pressed-border-color: rgba(255, 255, 255, .000);
   --selected-focused-background-color: rgba(179, 179, 179, 1);
   --selected-focused-border-color: rgba(255, 197, 0, 1);
   --selected-disabled-background-color: rgba(255, 255, 255, .300);
+  --selected-disabled-border-color: rgba(255, 255, 255, .000);
   --on-selected-active-color: rgba(0, 0, 0, 1);
   --on-selected-neutral-color: rgba(0, 0, 0, .700);
-  --on-selected-disabled-color: rgba(0, 0, 0, .300);
+  --on-selected-disabled-color: rgba(255, 255, 255, .300);
   --thumb-enabled-background-color: rgba(229, 229, 229, 1);
   --thumb-enabled-border-color: rgba(0, 0, 0, .600);
   --thumb-hover-background-color: rgba(204, 204, 204, 1);
@@ -105,9 +85,10 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --thumb-focused-background-color: rgba(255, 255, 255, 1);
   --thumb-focused-border-color: rgba(255, 197, 0, 1);
   --thumb-disabled-background-color: rgba(0, 0, 0, .300);
+  --thumb-disabled-border-color: rgba(0, 0, 0, .000);
   --on-thumb-active-color: rgba(0, 0, 0, 1);
   --on-thumb-neutral-color: rgba(0, 0, 0, .700);
-  --on-thumb-disabled-color: rgba(0, 0, 0, .300);
+  --on-thumb-disabled-color: rgba(255, 255, 255, .300);
   --amplified-enabled-background-color: rgba(64, 64, 64, 1);
   --amplified-enabled-border-color: rgba(153, 153, 153, 1);
   --amplified-hover-background-color: rgba(82, 82, 82, 1);
@@ -126,7 +107,7 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --instrument-input-color: rgba(255, 200, 0, 1);
   --alert-running-color: rgba(0, 160, 0, 1);
   --alert-caution-color: rgba(255, 213, 0, 1);
-  --alert-warning-color: rgba(255, 116, 0, 1);
+  --alert-warning-color: rgba(255, 140, 0, 1);
   --alert-alarm-color: rgba(204, 0, 0, 1);
   --alert-critical-alarm-color: rgba(254, 0, 255, 1);
   --running-enabled-background-color: rgba(0, 153, 0, 1);
@@ -136,7 +117,7 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --running-pressed-background-color: rgba(0, 77, 0, 1);
   --running-pressed-border-color: rgba(0, 0, 0, .300);
   --running-focused-background-color: rgba(0, 160, 0, 1);
-  --running-focused-border-color: rgba(255, 197, 0, 1);
+  --running-focused-border-color: rgba(0, 0, 0, 1);
   --running-disabled-background-color: rgba(0, 204, 0, .000);
   --running-disabled-border-color: rgba(0, 204, 0, 1);
   --on-running-active-color: rgba(0, 0, 0, 1);
@@ -155,15 +136,15 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --on-caution-active-color: rgba(0, 0, 0, 1);
   --on-caution-neutral-color: rgba(0, 0, 0, .700);
   --on-caution-disabled-color: rgba(0, 0, 0, .300);
-  --warning-enabled-background-color: rgba(255, 138, 0, 1);
+  --warning-enabled-background-color: rgba(255, 140, 0, 1);
   --warning-enabled-border-color: rgba(0, 0, 0, .120);
-  --warning-hover-background-color: rgba(204, 110, 0, 1);
+  --warning-hover-background-color: rgba(204, 112, 0, 1);
   --warning-hover-border-color: rgba(0, 0, 0, .200);
-  --warning-pressed-background-color: rgba(153, 83, 0, 1);
+  --warning-pressed-background-color: rgba(153, 84, 0, 1);
   --warning-pressed-border-color: rgba(0, 0, 0, .400);
-  --warning-focused-background-color: rgba(255, 138, 0, 1);
+  --warning-focused-background-color: rgba(255, 140, 0, 1);
   --warning-focused-border-color: rgba(0, 0, 0, 1);
-  --warning-disabled-background-color: rgba(255, 138, 0, 1);
+  --warning-disabled-background-color: rgba(255, 140, 0, 1);
   --warning-disabled-border-color: rgba(0, 0, 0, .000);
   --on-warning-active-color: rgba(0, 0, 0, 1);
   --on-warning-neutral-color: rgba(0, 0, 0, .700);
@@ -194,7 +175,6 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --on-critical-alarm-active-color: rgba(0, 0, 0, 1);
   --on-critical-alarm-neutral-color: rgba(0, 0, 0, .700);
   --on-critical-alarm-disabled-color: rgba(0, 0, 0, .300);
-
   --font-ui-title-size: 24px;
   --font-ui-title-weight: bold;
   --font-ui-title-line-height: 32px;
@@ -204,11 +184,11 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --font-ui-subtitle-line-height: 32px;
 
   --font-ui-overline-size: 12px;
-  --font-ui-overline-weight: 600;
+  --font-ui-overline-weight: semibold;
   --font-ui-overline-line-height: 24px;
 
   --font-ui-button-size: 16px;
-  --font-ui-button-weight: 600;
+  --font-ui-button-weight: semibold;
   --font-ui-button-line-height: 24px;
 
   --font-ui-body-active-size: 16px;
@@ -227,6 +207,43 @@ $element-disabled-inverted-color: rgba(0, 0, 0, .300);
   --font-ui-label-weight: normal;
   --font-ui-label-line-height: 24px;
 
-}
+  --font-instrument-label-s-size: 16px;
+  --font-instrument-label-s-weight: normal;
 
-// STOP GENERATED
+  --font-instrument-label-m-size: 24px;
+  --font-instrument-label-m-weight: normal;
+
+  --font-instrument-label-l-size: 32px;
+  --font-instrument-label-l-weight: normal;
+
+  --font-instrument-value-s-size: 16px;
+  --font-instrument-value-s-weight: semibold;
+
+  --font-instrument-value-m-size: 32px;
+  --font-instrument-value-m-weight: semibold;
+  --font-instrument-value-m-line-height: 48px;
+
+  --font-instrument-value-l-size: 64px;
+  --font-instrument-value-l-weight: semibold;
+  --font-instrument-value-l-line-height: 88px;
+
+  --font-instrument-unit-s-size: 16px;
+  --font-instrument-unit-s-weight: normal;
+
+  --font-instrument-unit-m-size: 24px;
+  --font-instrument-unit-m-weight: normal;
+  --font-instrument-unit-m-line-height: 48px;
+
+  --font-instrument-unit-l-size: 32px;
+  --font-instrument-unit-l-weight: normal;
+  --font-instrument-unit-l-line-height: 48px;
+
+  --font-instrument-status-s-size: 16px;
+  --font-instrument-status-s-weight: normal;
+
+  --font-instrument-status-m-size: 24px;
+  --font-instrument-status-m-weight: normal;
+
+  --font-instrument-status-l-size: 32px;
+  --font-instrument-status-l-weight: normal;
+}
