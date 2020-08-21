@@ -2,12 +2,11 @@
   "name": "openbridge-exporter",
   "version": "1.0.0",
   "description": "Exports svgs fro openbridge",
-  "main": "index.js",
+  "main": "src/main.ts",
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/convert-svg.spec.js",
-    "start2": "ts-node ./src/convert-svg.spec.ts",
+    "start": "ts-node src/main.ts",
     "lint": "eslint . --ext .ts"
   },
   "author": "",
