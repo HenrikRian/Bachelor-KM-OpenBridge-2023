@@ -15,7 +15,7 @@ function makeFilename(name: string): string {
 
 const exportComponents: {[id: string]: { [id: string]: string[] }} = {
     HDG: {
-        Elements: ['#Arrow/ Large', '#Arrow/ Medium', '#Arrow/ Small', '#Watch face/ Large', '#Watch face/ Medium', '#Watch face/ Small']
+        Elements: ['Arrow/ Large', 'Arrow/ Medium', 'Arrow/ Small', 'Watch face/ Large', 'Watch face/ Medium', 'Watch face/ Small']
     },
     Rudder: {
         Elements: ['Rudder/ Large', 'Rudder/ Medium', 'Rudder/ Small', 'Watch face/ Large', 'Watch face/ Medium', 'Watch face/ Small']
@@ -23,7 +23,7 @@ const exportComponents: {[id: string]: { [id: string]: string[] }} = {
 }
 
 async function main() {
-    const mainFigmaFile = 'edkOpbWBkssAha1LO6I4Mp'
+    const mainFigmaFile = 'UNbup2BF6eR8omPSRzFSlV'
     const documentStyles = await getFigmaFile('XXHKjGJXg0acrBak97mFhP');
     const document = await getFigmaFile(mainFigmaFile);
     const genFolder = 'gen'
