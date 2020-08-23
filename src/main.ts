@@ -1,25 +1,42 @@
 import * as fs from 'fs';
 import {convertSvg} from "./convert-svg";
 import {getFigmaFile, getFigmaSvg} from "./figmaImport";
+import {FrameNode} from "./figma-types";
 
 function replaceAll(string: string, search: string, replace: string): string {
     return string.split(search).join(replace);
 }
 
 function makeFilename(name: string): string {
-    let out = replaceAll(name, '/','');
-    out = replaceAll(out, ' ','');
-    out = replaceAll(out, '#','');
+    let out = replaceAll(name, '/', '');
+    out = replaceAll(out, ' ', '');
+    out = replaceAll(out, '#', '');
     return out;
 }
 
-const exportComponents: {[id: string]: { [id: string]: string[] }} = {
-    HDG: {
-        Elements: ['Arrow/ Large', 'Arrow/ Medium', 'Arrow/ Small', 'Watch face/ Large', 'Watch face/ Medium', 'Watch face/ Small']
-    },
-    Rudder: {
-        Elements: ['Rudder/ Large', 'Rudder/ Medium', 'Rudder/ Small', 'Watch face/ Large', 'Watch face/ Medium', 'Watch face/ Small']
+const exportComponents: { path: string[], name: string }[] = [
+    {name: 'HdgArrowLarge', path: [ 'HDG', 'Elements', 'Arrow/ Large']},
+    {name: 'HdgArrowMedium', path: [ 'HDG', 'Elements', 'Arrow/ Medium']},
+    {name: 'HdgArrowSmall', path: [ 'HDG', 'Elements', 'Arrow/ Small']},
+    {name: 'HdgWatchFaceLarge', path: [ 'HDG', 'Elements', 'Watch face/ Large']},
+    {name: 'HdgWatchFaceMedium', path: [ 'HDG', 'Elements', 'Watch face/ Medium']},
+    {name: 'HdgWatchFaceSmall', path: [ 'HDG', 'Elements', 'Watch face/ Small']},
+]
+
+interface FigmaNode {
+    name: string
+    children: FigmaNode[]
+    id: string
+}
+
+function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
+    const name = path.shift();
+    if (name === undefined) {
+        return root;
     }
+    const ele = root.children.find(value => value.name === name)
+    if (ele === undefined) return null
+    return getElement(ele, path)
 }
 
 async function main() {
@@ -32,28 +49,19 @@ async function main() {
     }
     // @ts-ignore
     const styles = {...document.styles, ...documentStyles.styles}
-    // @ts-ignore
-    const pages = document.document.children;
-    for (const page of pages) {
-        if (!(page.name in exportComponents)) continue;
-        const getFrames = exportComponents[page.name];
-        for (const frame of page.children) {
-            if (!(frame.name in getFrames)) continue;
 
-            const getComponents = getFrames[frame.name];
-            for (const element of frame.children) {
-                if (getComponents.includes(element.name)) {
-                    console.log(`Exporting ${element.name}`)
-                    const svg = await getFigmaSvg(mainFigmaFile, element.id);
-                    const out = convertSvg(element, svg, styles, false);
-                    const filename = makeFilename(element.name as string)
-                    fs.writeFileSync(`${genFolder}/${filename}.svg`, out)
-                }
+    for (const component of exportComponents) {
 
-
-            }
+        console.log(`Exporting ${component.name}`)
+        // @ts-ignore
+        const element = getElement(document.document as FigmaNode, component.path);
+        if (element === null) {
+            console.error(`Could not find ${component.name}`)
+            continue
         }
-
+        const svg = await getFigmaSvg(mainFigmaFile, element.id);
+        const out = convertSvg(element as unknown as FrameNode, svg, styles, false);
+        fs.writeFileSync(`${genFolder}/${component.name}.svg`, out)
     }
 }
 
