@@ -2,6 +2,17 @@ import * as fs from 'fs';
 import {convertSvg} from "./convert-svg";
 import {getFigmaFile, getFigmaSvg} from "./figmaImport";
 
+function replaceAll(string: string, search: string, replace: string): string {
+    return string.split(search).join(replace);
+}
+
+function makeFilename(name: string): string {
+    let out = replaceAll(name, '/','');
+    out = replaceAll(out, ' ','');
+    out = replaceAll(out, '#','');
+    return out;
+}
+
 async function main() {
     const mainFigmaFile = 'edkOpbWBkssAha1LO6I4Mp'
     const documentStyles = await getFigmaFile('XXHKjGJXg0acrBak97mFhP');
@@ -17,7 +28,7 @@ async function main() {
                     console.log(`Exporting ${element.name}`)
                     const svg = await getFigmaSvg(mainFigmaFile, element.id);
                     const out = convertSvg(element, svg, styles, false);
-                    const filename = (element.name as string).replace('/','-').replace('#','')
+                    const filename = makeFilename(element.name as string)
                     fs.writeFileSync(`gen/${filename}.svg`, out)
                 }
 

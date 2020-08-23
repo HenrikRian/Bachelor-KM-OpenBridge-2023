@@ -56,7 +56,7 @@ function parseNode(figmaElments: readonly StyledNode[], svgElements: Element[], 
                 svgNode.setAttribute("class", styleName)
             }
         }
-
+        svgNode.removeAttribute("id")
         const childSvgs = childNodes2Elements(svgNode.childNodes);
         if (childSvgs.length > 0) {
             parseNode(figmaNode.children, childSvgs, styles, removeAttrs);
