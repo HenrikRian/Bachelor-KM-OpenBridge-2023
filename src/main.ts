@@ -13,6 +13,15 @@ function makeFilename(name: string): string {
     return out;
 }
 
+const exportComponents: {[id: string]: { [id: string]: string[] }} = {
+    HDG: {
+        Elements: ['#Arrow/ Large', '#Arrow/ Medium', '#Arrow/ Small', '#Watch face/ Large', '#Watch face/ Medium', '#Watch face/ Small']
+    },
+    Rudder: {
+        Elements: ['Rudder/ Large', 'Rudder/ Medium', 'Rudder/ Small', 'Watch face/ Large', 'Watch face/ Medium', 'Watch face/ Small']
+    }
+}
+
 async function main() {
     const mainFigmaFile = 'edkOpbWBkssAha1LO6I4Mp'
     const documentStyles = await getFigmaFile('XXHKjGJXg0acrBak97mFhP');
@@ -22,9 +31,14 @@ async function main() {
     // @ts-ignore
     const pages = document.document.children;
     for (const page of pages) {
+        if (!(page.name in exportComponents)) continue;
+        const getFrames = exportComponents[page.name];
         for (const frame of page.children) {
+            if (!(frame.name in getFrames)) continue;
+
+            const getComponents = getFrames[frame.name];
             for (const element of frame.children) {
-                if (element.name.charAt(0) === '#' && element.visible !== false) {
+                if (getComponents.includes(element.name)) {
                     console.log(`Exporting ${element.name}`)
                     const svg = await getFigmaSvg(mainFigmaFile, element.id);
                     const out = convertSvg(element, svg, styles, false);
