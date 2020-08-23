@@ -26,6 +26,10 @@ async function main() {
     const mainFigmaFile = 'edkOpbWBkssAha1LO6I4Mp'
     const documentStyles = await getFigmaFile('XXHKjGJXg0acrBak97mFhP');
     const document = await getFigmaFile(mainFigmaFile);
+    const genFolder = 'gen'
+    if (!fs.existsSync(genFolder)) {
+        fs.mkdirSync(genFolder)
+    }
     // @ts-ignore
     const styles = {...document.styles, ...documentStyles.styles}
     // @ts-ignore
@@ -43,7 +47,7 @@ async function main() {
                     const svg = await getFigmaSvg(mainFigmaFile, element.id);
                     const out = convertSvg(element, svg, styles, false);
                     const filename = makeFilename(element.name as string)
-                    fs.writeFileSync(`gen/${filename}.svg`, out)
+                    fs.writeFileSync(`${genFolder}/${filename}.svg`, out)
                 }
 
 
