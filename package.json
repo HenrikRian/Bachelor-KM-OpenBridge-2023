@@ -10,7 +10,7 @@
     "start-vue": "ts-node src/converter-vue.spec.ts",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o public/"
   },
   "author": "",
   "license": "ISC",

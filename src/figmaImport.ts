@@ -1,7 +1,8 @@
-import {figmaToken} from "./secret";
 import fetch from 'node-fetch';
 
 const baseUrl = 'https://api.figma.com'
+const figmaToken = process.env.FIGMA_TOKEN
+if (figmaToken === undefined) throw "Missing figma token in environment"
 const header = {headers: {'X-Figma-Token': figmaToken}}
 
 export async function getFigmaFile(fileId: string): Promise<unknown> {

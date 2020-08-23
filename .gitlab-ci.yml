@@ -1,0 +1,31 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: trion/ng-cli-karma:8.2.2
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+
+before_script:
+  - npm install
+
+build:
+  script:
+    - npm run start
+    - npm run start-vue
+  artifacts:
+    paths:
+      - "gen/"
+      - "gen-vue/"
+
+pages:
+  stage: deploy
+  script:
+    - npm run build-storybook
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
