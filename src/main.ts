@@ -15,6 +15,7 @@ function makeFilename(name: string): string {
 }
 
 const exportComponents: { path: string[], name: string }[] = [
+    {name: 'HdgCenterLarge', path: [ 'HDG', 'HDG component', 'Large', 'Ellipse 8']},
     {name: 'HdgArrowLarge', path: [ 'HDG', 'Elements', 'Arrow/ Large']},
     {name: 'HdgArrowMedium', path: [ 'HDG', 'Elements', 'Arrow/ Medium']},
     {name: 'HdgArrowSmall', path: [ 'HDG', 'Elements', 'Arrow/ Small']},

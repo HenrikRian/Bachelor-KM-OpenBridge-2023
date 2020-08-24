@@ -6,20 +6,21 @@ const components: ComponentDefinition[] =
         name: 'HdgLarge',
         components: [
             {file: 'HdgWatchFaceLarge', controlRotatePropName: null},
-            {file: 'ArrowLarge', controlRotatePropName: "heading"},
+            {file: 'HdgCenterLarge', controlRotatePropName: null},
+            {file: 'HdgArrowLarge', controlRotatePropName: "heading"},
         ]
     }, {
         name: 'HdgMedium',
         components: [
             {file: 'HdgWatchFaceMedium', controlRotatePropName: null},
-            {file: 'ArrowMedium', controlRotatePropName: "heading"},
+            {file: 'HdgArrowMedium', controlRotatePropName: "heading"},
         ]
     },
         {
             name: 'HdgSmall',
             components: [
                 {file: 'HdgWatchFaceSmall', controlRotatePropName: null},
-                {file: 'ArrowSmall', controlRotatePropName: "heading"},
+                {file: 'HdgArrowSmall', controlRotatePropName: "heading"},
             ]
         }
     ]
