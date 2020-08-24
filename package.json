@@ -7,7 +7,7 @@
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
     "start": "ts-node src/main.ts",
-    "start-vue": "ts-node src/converter-vue.spec.ts",
+    "start-vue": "ts-node src/main-vue.ts",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o public/"
