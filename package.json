@@ -30,9 +30,12 @@
     "react-is": "^16.13.1",
     "rimraf": "^3.0.2",
     "ts-node": "^8.10.2",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
   },
   "dependencies": {
+    "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#910bb506",
     "@types/xmldom": "^0.1.30",
     "fast-xml-parser": "^3.17.4",
     "fs": "0.0.1-security",
