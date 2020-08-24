@@ -10,10 +10,11 @@
     "start-vue": "ts-node src/main-vue.ts",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o public/"
+    "build-storybook": "build-storybook -o public/",
+    "prepare": "npm run start && npm run start-vue"
   },
   "author": "",
-  "license": "ISC",
+  "license": "SEE LICENSE IN license.txt",
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@storybook/addon-actions": "^6.0.16",
@@ -35,7 +36,7 @@
     "sass-loader": "^9.0.3"
   },
   "dependencies": {
-    "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#910bb506",
+    "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#02010d7f19418ccb54c6e63fada20e21c5f8669b",
     "@types/xmldom": "^0.1.30",
     "fast-xml-parser": "^3.17.4",
     "fs": "0.0.1-security",

@@ -12,7 +12,11 @@ function childNodes2Elements(nodes: NodeListOf<ChildNode>): Element[] {
     return data;
 }
 
-export function convertSvg(figmaElement: FrameNode, svgString: string, styles: StyleDict, removeAttrs: boolean): string {
+function replaceAll(string: string, search: string, replace: string): string {
+  return string.split(search).join(replace);
+}
+
+export function convertSvg(figmaElement: FrameNode, svgString: string, styles: StyleDict, removeAttrs: boolean, clipPrefix: string): string {
     const svgDoc = new DOMParser().parseFromString(svgString, 'text/svg')
     const root = svgDoc.firstChild;
     if (root === null) return ''
@@ -21,16 +25,16 @@ export function convertSvg(figmaElement: FrameNode, svgString: string, styles: S
         const svgId = nd.attributes.getNamedItem("id")?.value;
         const elementId = figmaElement.name;
         if (svgId !== elementId) throw "Wrong element id";
-        parseNode(figmaElement.children as unknown as StyledNode[], childNodes2Elements(nd.childNodes), styles, removeAttrs);
+        parseNode(figmaElement as unknown as StyledNode, nd, styles, removeAttrs);
     }
-    return new XMLSerializer().serializeToString(svgDoc);
+    let out = new XMLSerializer().serializeToString(svgDoc);
+    out = replaceAll(out, "url(#clip", `url(#${clipPrefix}clip`)
+    out = replaceAll(out, "clipPath id=\"clip", `clipPath id="${clipPrefix}clip`)
+    return out;
 }
 
-function parseNode(figmaElments: readonly StyledNode[], svgElements: Element[], styles: StyleDict, removeAttrs: boolean) {
-    //if (figmaElments.length !== svgElements.length) throw "Element node not equal"
-    for (let i = 0; i < svgElements.length; i++) {
-        const svgNode = svgElements[i];
-        const figmaNode = figmaElments[i];
+function parseNode(figmaElment: StyledNode, svgNode: Element, styles: StyleDict, removeAttrs: boolean) {
+
 
         const stroke = svgNode.getAttribute("stroke");
         if (stroke) {
@@ -38,7 +42,7 @@ function parseNode(figmaElments: readonly StyledNode[], svgElements: Element[], 
                 svgNode.removeAttribute("stroke")
                 svgNode.removeAttribute("stroke-opacity")
             }
-            const strokeStyleId = figmaNode.styles.stroke;
+            const strokeStyleId = figmaElment.styles.stroke;
             if (strokeStyleId !== undefined) {
                 const styleName = convertStyleName(styles[strokeStyleId].name, '-stroke');
                 svgNode.setAttribute("class", styleName)
@@ -50,7 +54,7 @@ function parseNode(figmaElments: readonly StyledNode[], svgElements: Element[], 
             if (removeAttrs) {
                 svgNode.removeAttribute("fill")
             }
-            const strokeStyleId = figmaNode.styles.fill;
+            const strokeStyleId = figmaElment.styles.fill;
             if (strokeStyleId !== undefined) {
                 const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
                 svgNode.setAttribute("class", styleName)
@@ -59,10 +63,14 @@ function parseNode(figmaElments: readonly StyledNode[], svgElements: Element[], 
         svgNode.removeAttribute("id")
         const childSvgs = childNodes2Elements(svgNode.childNodes);
         if (childSvgs.length > 0) {
-            parseNode(figmaNode.children, childSvgs, styles, removeAttrs);
+            for (let i = 0; i < childSvgs.length; i++) {
+                const svgNode = childSvgs[i];
+                const figmaNode = figmaElment.children[i];
+                parseNode(figmaNode, svgNode, styles, removeAttrs);
+            }
         }
 
-    }
+
 }
 
 function convertStyleName(str: string, suffix: string): string {

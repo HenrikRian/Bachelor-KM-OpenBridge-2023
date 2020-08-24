@@ -50,7 +50,7 @@ async function main() {
       continue
     }
     const svg = await getFigmaSvg(mainFigmaFile, element.id);
-    const out = convertSvg(element as unknown as FrameNode, svg, styles, false);
+    const out = convertSvg(element as unknown as FrameNode, svg, styles, true, component.name);
     fs.writeFileSync(`${ genFolder }/${ component.name }.svg`, out)
   }
 }
