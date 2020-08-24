@@ -12,6 +12,7 @@
   --container-global-color: rgba(220, 220, 220, 1);
   --border-divider-color: rgba(0, 0, 0, .120);
   --border-outline-color: rgba(0, 0, 0, .200);
+  --border-solid-color: rgb(0, 0, 0);
   --normal-enabled-background-color: rgba(255, 255, 255, 1);
   --normal-enabled-border-color: rgba(0, 0, 0, .600);
   --normal-hover-background-color: rgba(204, 204, 204, 1);
@@ -106,6 +107,10 @@
   --instrument-dynamic-color: rgba(0, 0, 255, 1);
   --instrument-static-color: rgba(0, 0, 0, 1);
   --instrument-input-color: rgba(255, 197, 0, 1);
+  --instrument-frame-color: #F0F0F0;
+  --instrument-track-color: #CCCCCC;
+  --instrument-tick-mark-primary-color: #000000;
+  --instrument-tick-mark-secondary-color: rgba(0, 0, 0, 0.3);
   --alert-running-color: rgba(0, 200, 0, 1);
   --alert-caution-color: rgba(255, 213, 0, 1);
   --alert-warning-color: rgba(255, 138, 0, 1);
