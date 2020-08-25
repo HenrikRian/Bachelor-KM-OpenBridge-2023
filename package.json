@@ -1,6 +1,6 @@
 {
   "name": "openbridge-exporter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Exports svgs fro openbridge",
   "main": "src/main.ts",
   "repository": {
@@ -47,6 +47,5 @@
     "vue-template-compiler": "^2.6.12",
     "xmldom": "^0.3.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
