@@ -36,9 +36,7 @@
     "ts-node": "^8.10.2",
     "typescript": "^4.0.2",
     "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.3"
-  },
-  "dependencies": {
+    "sass-loader": "^9.0.3",
     "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#02010d7f19418ccb54c6e63fada20e21c5f8669b",
     "@types/xmldom": "^0.1.30",
     "fast-xml-parser": "^3.17.4",
@@ -48,5 +46,7 @@
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
     "xmldom": "^0.3.0"
+  },
+  "dependencies": {
   }
 }
