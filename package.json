@@ -1,7 +1,7 @@
 {
   "name": "openbridge-exporter",
-  "version": "0.0.2",
-  "description": "Exports svgs fro openbridge",
+  "version": "0.0.3",
+  "description": "Exports svgs for openbridge",
   "main": "src/main.ts",
   "repository": {
     "url": "https://gitlab.com/openbridge/openbridge-exporter"
