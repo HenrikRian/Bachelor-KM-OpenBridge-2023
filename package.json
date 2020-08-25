@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Exports svgs fro openbridge",
   "main": "src/main.ts",
+  "repository": {
+    "url": "https://gitlab.com/openbridge/openbridge-exporter"
+  },
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
