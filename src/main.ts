@@ -52,7 +52,8 @@ async function main() {
       (element as unknown) as FrameNode,
       svg,
       styles,
-      false
+      false,
+      element.name
     );
 
     const outputFolder = component.outputFolder
@@ -66,4 +67,4 @@ async function main() {
   }
 }
 
-main();
+main()
