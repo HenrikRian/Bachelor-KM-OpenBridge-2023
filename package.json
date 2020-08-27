@@ -1,6 +1,6 @@
 {
   "name": "openbridge-exporter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Exports svgs for openbridge",
   "main": "src/main.ts",
   "repository": {
