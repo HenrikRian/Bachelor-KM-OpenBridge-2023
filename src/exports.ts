@@ -4,14 +4,24 @@ export interface ExportDef {
   outputFolder?: string; // sub folder of ./gen
 }
 
-export const exportComponents: ExportDef[] = [
-  /* this component does fail
+const staticExportComponents: ExportDef[] = [
   {
     name: 'ShipAbove',
     path: ['Ship above', 'Ship above', 'Ship above (large)'],
-    outputFolder: 'ShipAbove'
+    outputFolder: 'ShipAbove',
   },
-*/
+
+  {
+    name: 'InnerCircle',
+    path: ['Azimuth', 'Elements', 'Watch face/ Large', 'Inner circle'],
+    outputFolder: 'Azimuth',
+  },
+  {
+    name: 'OuterCircle',
+    path: ['Azimuth', 'Elements', 'Watch face/ Large', 'Yttersirkel'],
+    outputFolder: 'Azimuth',
+  },
+
   {
     name: 'Calm',
     path: ['Wind symbols', 'Wind symbols', 'Wind medium 1'],
@@ -25,7 +35,7 @@ export const exportComponents: ExportDef[] = [
   },
 
   {
-    name: 'WindLightBreeze',
+    name: 'LightBreeze',
     path: ['Wind symbols', 'Wind symbols', 'Wind medium 3'],
     outputFolder: 'Wind',
   },
@@ -85,7 +95,7 @@ export const exportComponents: ExportDef[] = [
   },
 
   {
-    name: 'WindHurricane',
+    name: 'Hurricane',
     path: ['Wind symbols', 'Wind symbols', 'Wind medium 13'],
     outputFolder: 'Wind',
   },
@@ -111,3 +121,19 @@ export const exportComponents: ExportDef[] = [
     outputFolder: 'Current',
   },
 ];
+const circleDegrees = ['1°', '5°', '10°', '30°', '45°', '90°'];
+const circleLengths = ['8px', '16px', '24px'];
+const circleTickMarks: ExportDef[] = [];
+
+for (const degree of circleDegrees) {
+  for (const length of circleLengths) {
+    const def: ExportDef = {
+      name: `Tick_${degree}_${length}`,
+      path: ['Circle tick marks', 'Tick marks', `${degree}/ ${length}`],
+      outputFolder: 'Azimuth',
+    };
+    circleTickMarks.push(def);
+  }
+}
+
+export const exportComponents = [...staticExportComponents, ...circleTickMarks];
