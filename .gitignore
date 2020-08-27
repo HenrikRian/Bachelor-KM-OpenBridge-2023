@@ -5,3 +5,5 @@
 /gen/
 /gen-vue/
 /public/
+
+.env
