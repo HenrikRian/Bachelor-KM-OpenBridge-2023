@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "ts-node --files src/main.ts",
+    "start": "rimraf ./gen && ts-node --files src/main.ts",
     "start-vue": "ts-node --files src/main-vue.ts",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",

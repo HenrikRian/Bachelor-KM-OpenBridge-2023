@@ -29,6 +29,7 @@ async function main() {
   const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE); // 'XXHKjGJXg0acrBak97mFhP'
   const document: any = await getFigmaFile(mainFigmaFile);
   const genFolder = 'gen';
+
   if (!fs.existsSync(genFolder)) {
     fs.mkdirSync(genFolder);
   }
@@ -53,7 +54,15 @@ async function main() {
       styles,
       false
     );
-    fs.writeFileSync(`${genFolder}/${component.name}.svg`, out);
+
+    const outputFolder = component.outputFolder
+      ? `${genFolder}/${component.outputFolder}`
+      : genFolder;
+
+    if (!fs.existsSync(outputFolder)) {
+      fs.mkdirSync(outputFolder);
+    }
+    fs.writeFileSync(`${outputFolder}/${component.name}.svg`, out);
   }
 }
 
