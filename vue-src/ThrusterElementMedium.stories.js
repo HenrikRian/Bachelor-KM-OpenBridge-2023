@@ -6,7 +6,7 @@ export default {
   component: ThrusterElementMedium,
   argTypes: {
     target: { control: {type: 'range', min: -100, max: 100} },
-    value: { control: {type: 'range', min: -100, max: 100} },
+    value: { control: {type: 'range', min: -100, max: 100} }
   },
 };
 

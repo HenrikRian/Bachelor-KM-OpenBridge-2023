@@ -1,10 +1,10 @@
 <template>
-  <svg viewBox="-16 -20 182 40">
-    <ThrusterTrackMedium y="-12"/>
-    <ThrusterTickmarksMedium y="-19"/>
-    <FrontArrowMedium y="-20" x="-16" />
-    <PointerMedium y="-.5" x="158" />
-    <ThrusterCenterLineMedium x="78" y="-20"/>
+  <svg viewBox="-95 -20 182 40">
+    <ThrusterTickmarksMedium y="-19" x="-79"/>
+    <ThrusterTrackMedium y="-12" x="-79"/>
+    <FrontArrowMedium y="-20" x="-95" />
+    <PointerMedium y="-.5" x="79" />
+    <ThrusterCenterLineMedium x="-1" y="-20"/>
     <rect id="Bar" :x="xValue" y="-12" :width="widthValue" height="24" fill="#0080FF" class="ob-instrument-dynamic-color-fill"/>
     <ThrusterPowerInputMedium :x="xTarget" y="-20"/>
   </svg>
@@ -42,13 +42,13 @@ export default {
   },
   computed: {
     xTarget: function () {
-      return value2width(this.target) + (width/2) - 2;
+      return value2width(this.target) - 2;
     },
     xValue: function () {
       if (this.value > 0) {
-        return value2width(this.value) + width / 2
+        return value2width(this.value);
       } else {
-        return width / 2;
+        return 0;
       }
     },
     widthValue: function () {

@@ -5,6 +5,11 @@ export interface ExportDef {
 }
 
 const staticExportComponents: ExportDef[] = [
+    {
+    name: 'AzimuthWatchFaceMedium',
+    path: ['Thrusters & Propulsion', '01 Azimuth thruster', 'Medium', 'Medium'],
+    outputFolder: 'Thruster'
+  },
   {
     name: 'PointerMedium',
     path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'Pointer'],
