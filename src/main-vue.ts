@@ -5,20 +5,20 @@ const components: ComponentDefinition[] =
     [{
         name: 'HdgLarge',
         components: [
-            {file: 'generated-with-style/HdgCircular/WatchFaceLarge', controlRotatePropName: null},
+            {file: 'generated-with-style/HdgCircular/WatchFaceLarge'},
             {file: 'generated-with-style/HdgCircular/HeadingLarge', controlRotatePropName: 'heading'},
             {file: 'generated-with-style/HdgCircular/CogLarge', controlRotatePropName: "cog"},
         ]
     }, {
         name: 'HdgMedium',
         components: [
-            {file: 'generated-with-style/HdgCircular/WatchFaceMedium', controlRotatePropName: null},
+            {file: 'generated-with-style/HdgCircular/WatchFaceMedium'},
             {file: 'generated-with-style/HdgCircular/HeadingMedium', controlRotatePropName: "heading"},
         ]
     }, {
             name: 'HdgSmall',
             components: [
-                {file: 'generated-with-style/HdgCircular/WatchFaceSmall', controlRotatePropName: null},
+                {file: 'generated-with-style/HdgCircular/WatchFaceSmall'},
                 {file: 'generated-with-style/HdgCircular/HeadingSmall', controlRotatePropName: "heading"},
             ]
         }
