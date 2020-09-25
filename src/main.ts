@@ -86,10 +86,8 @@ let option;
 
 if (argv.clean) {
   option = { outFolder: 'generated-without-style', removeAttributes: true }
-  console.debug('Cleaning styles');
 } else {
   option = { outFolder: 'generated-with-style', removeAttributes: false }
-  console.debug('Not cleaning styles');
 }
 main(option)
   .then(() => console.log('Completed autogenerate'))

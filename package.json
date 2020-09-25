@@ -9,7 +9,7 @@
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "rimraf ./generated-* && node run autogen-with-styles && node run autogen-without-styles",
+    "start": "rimraf ./generated-* && npm run autogen-with-styles && npm run autogen-without-styles",
     "autogen-with-styles": "ts-node --files src/main.ts",
     "autogen-without-styles": "ts-node --files src/main.ts -c",
     "start-vue": "rimraf ./gen-vue && ts-node --files src/main-vue.ts",
