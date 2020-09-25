@@ -1,10 +1,11 @@
 import HdgLarge from '../gen-vue/HdgLarge.vue';
 
 export default {
-  title: 'INSTRUMENT/Heading',
+  title: 'INSTRUMENT/Heading/Large',
   component: HdgLarge,
   argTypes: {
     heading: { control: {type: 'range', min: 0, max: 360} },
+    cog: { control: {type: 'range', min: 0, max: 360} },
   },
 };
 
@@ -16,5 +17,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Large = Template.bind({});
 Large.args = {
-  heading: 60
+  heading: 60,
+  cog: 30
 };

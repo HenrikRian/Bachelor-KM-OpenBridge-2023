@@ -2,7 +2,7 @@ import HdgMedium from "../gen-vue/HdgMedium";
 import HdgSmall from "../gen-vue/HdgSmall";
 
 export default {
-  title: 'INSTRUMENT/Heading',
+  title: 'INSTRUMENT/Heading/Small',
   component: HdgSmall,
   argTypes: {
     heading: { control: {type: 'range', min: 0, max: 360} },

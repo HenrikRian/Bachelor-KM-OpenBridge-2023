@@ -13,7 +13,14 @@ function childNodes2Elements(nodes: NodeListOf<ChildNode>): Element[] {
 }
 
 function getSvgId(svgNode: Element): string {
-  return (svgNode.getAttribute('id') as string).replace('Â°', '°');
+  let svgId = (svgNode.getAttribute('id') as string).replace('Â°', '°')
+  const reDeg = /Â°/gi;
+  svgId = svgId.replace(reDeg, "°");
+  const re = new RegExp('_[0-9]+$');
+  if (svgId.match(re)) {
+    svgId = svgId.replace(re, '')
+  }
+  return svgId;
 }
 
 function replaceAll(string: string, search: string, replace: string): string {
@@ -39,22 +46,52 @@ export function convertSvg(figmaElement: FrameNode, svgString: string, styles: S
   return out;
 }
 
-function findFigmaNode(figmaElements: readonly StyledNode[], svgNode: Element): StyledNode | undefined {
-  let svgId = getSvgId(svgNode)
-  let figmaNode = figmaElements.find(f => f.name == svgId);
-
-  if (figmaNode === undefined) {
-    const re = new RegExp('_[0-9]+$');
-    if (svgId.match(re)) {
-      svgId = svgId.replace(re, '')
-      figmaNode = figmaElements.find(f => f.name == svgId);
-    }
-  }
-  return figmaNode
+function findFigmaNode(figmaElement: StyledNode, svgNode: Element): StyledNode | undefined {
+  const path = getSvgPath(svgNode)
+  path.shift();
+  return searchFigmaNode(figmaElement, path)
 }
 
-function parseNode(figmaNode: StyledNode, svgNode: Element, styles: StyleDict, removeAttrs: boolean) {
+/** Searching for figma node matching the svg id path.
+ *
+ * Supports figma nodes having same name.
+ * @param figmaElement
+ * @param svgIds
+ */
+function searchFigmaNode(figmaElement: StyledNode, svgIds: string[]): StyledNode | undefined {
+  if (svgIds.length === 0) return figmaElement;
+  if (figmaElement.children === undefined) return undefined;
 
+  const currentId = svgIds.shift();
+  const figmaNodes = figmaElement.children
+    .filter(f => f.name === currentId)
+    .map(f=> {
+      const ids = [...svgIds];
+      return searchFigmaNode(f, ids);
+    })
+    .filter(value => value !== undefined) as StyledNode[];
+  if (figmaNodes.length > 0)
+    return figmaNodes[0];
+  else
+    return undefined;
+
+}
+
+function getSvgPath(svgNode: Element): string[] {
+    const svgId = getSvgId(svgNode);
+    if (svgId.length === 0) return []
+
+    const ids = getSvgPath(svgNode.parentNode as Element);
+    ids.push(svgId);
+    return ids;
+}
+
+function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, removeAttrs: boolean) {
+  const figmaNode = findFigmaNode(figmaRoot, svgNode);
+  if (figmaNode === undefined) {
+    console.warn(`Missing figma node: ${ svgNode.getAttribute('id') }. Skipping subnodes.`)
+    return;
+  }
 
   const cssClasses = []
   if (figmaNode.styles && figmaNode.styles.stroke !== undefined) {
@@ -84,23 +121,10 @@ function parseNode(figmaNode: StyledNode, svgNode: Element, styles: StyleDict, r
   }
   const childSvgs = childNodes2Elements(svgNode.childNodes);
   if (childSvgs.length > 0) {
-    if (figmaNode.children === undefined || figmaNode.children.length == 0) {
-      console.warn(`Missing figma node on ${ svgNode.getAttribute('id') }.`)
-      return
-    }
-
     for (let i = 0; i < childSvgs.length; i++) {
-      for (let i = 0; i < childSvgs.length; i++) {
-        const svgNode = childSvgs[i];
-        const figmaSubNode = findFigmaNode(figmaNode.children, svgNode);
-        if (figmaSubNode === undefined) {
-          console.warn(`Missing figma node: ${ svgNode.getAttribute('id') }. Skipping subnodes.`)
-        } else {
-          parseNode(figmaSubNode, svgNode, styles, removeAttrs);
-        }
-      }
+      const svgNode = childSvgs[i];
+      parseNode(figmaRoot, svgNode, styles, removeAttrs);
     }
-
   }
 
 }

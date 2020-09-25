@@ -9,8 +9,10 @@
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "rimraf ./gen && ts-node --files src/main.ts",
-    "start-vue": "ts-node --files src/main-vue.ts",
+    "start": "rimraf ./generated-* && node run autogen-with-styles && node run autogen-without-styles",
+    "autogen-with-styles": "ts-node --files src/main.ts",
+    "autogen-without-styles": "ts-node --files src/main.ts -c",
+    "start-vue": "rimraf ./gen-vue && ts-node --files src/main-vue.ts",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o public/",
@@ -46,7 +48,7 @@
     "vue": "^2.6.12",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
-    "xmldom": "^0.3.0"
-  },
-  "dependencies": {}
+    "xmldom": "^0.3.0",
+    "yargs": "^16.0.3"
+  }
 }

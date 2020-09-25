@@ -2,9 +2,11 @@ import * as fs from 'fs';
 import { convertSvg } from './convert-svg';
 import { getFigmaFile, getFigmaSvg } from './figmaImport';
 import { FrameNode } from './figma-types';
+import yargs from 'yargs';
 
 import { exportComponents } from './exports';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 interface FigmaNode {
@@ -19,16 +21,19 @@ function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
     return root;
   }
   const ele = root.children.find((value) => value.name === name);
-  if (ele === undefined) return null;
+  if (ele === undefined) {
+    console.error(`Did not find ${ name }, available names are:`, root.children.map(v => v.name))
+    return null;
+  }
   return getElement(ele, path);
 }
 
-async function main() {
+async function main(option: { outFolder: string, removeAttributes: boolean }) {
   const mainFigmaFile = process.env.FIGMA_MAINFILE; // 'UNbup2BF6eR8omPSRzFSlV';
 
   const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE); // 'XXHKjGJXg0acrBak97mFhP'
   const document: any = await getFigmaFile(mainFigmaFile);
-  const genFolder = 'gen';
+  const genFolder = option.outFolder;
 
   if (!fs.existsSync(genFolder)) {
     fs.mkdirSync(genFolder);
@@ -36,35 +41,56 @@ async function main() {
 
   const styles = {
     ...document.styles,
-    ...documentStyles.styles,
+    ...documentStyles.styles
   };
 
   for (const component of exportComponents) {
-    console.log(`Exporting ${component.name}`);
+    console.log(`Exporting ${ component.name }`);
 
     const element = getElement(document.document as FigmaNode, component.path);
     if (element === null) {
-      console.error(`Could not find ${component.name}`);
+      console.error(`Could not find ${ component.name }`);
       continue;
     }
-    const svg = await getFigmaSvg(mainFigmaFile, element.id);
+    const svg = await getFigmaSvg(mainFigmaFile, element.id, 3);
     const out = convertSvg(
       (element as unknown) as FrameNode,
       svg,
       styles,
-      false,
+      option.removeAttributes,
       element.name
     );
 
     const outputFolder = component.outputFolder
-      ? `${genFolder}/${component.outputFolder}`
+      ? `${ genFolder }/${ component.outputFolder }`
       : genFolder;
 
     if (!fs.existsSync(outputFolder)) {
       fs.mkdirSync(outputFolder);
     }
-    fs.writeFileSync(`${outputFolder}/${component.name}.svg`, out);
+    fs.writeFileSync(`${ outputFolder }/${ component.name }.svg`, out);
   }
 }
 
-main()
+const argv = yargs
+  .option('clean', {
+    alias: '-c',
+    description: 'Remove hard coded styles.',
+    type: 'boolean'
+  })
+  .help()
+  .alias('help', 'h')
+  .argv;
+
+let option;
+
+if (argv.clean) {
+  option = { outFolder: 'generated-without-style', removeAttributes: true }
+  console.debug('Cleaning styles');
+} else {
+  option = { outFolder: 'generated-with-style', removeAttributes: false }
+  console.debug('Not cleaning styles');
+}
+main(option)
+  .then(() => console.log('Completed autogenerate'))
+  .catch(e => console.error('Failed autogenerate \nError:\n', e))
