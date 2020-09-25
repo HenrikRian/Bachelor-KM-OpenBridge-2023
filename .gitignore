@@ -2,6 +2,9 @@
 /build/
 /.idea/
 /node_modules/
-/gen/
+/generated-with-style/
+/generated-without-style/
 /gen-vue/
 /public/
+
+.env

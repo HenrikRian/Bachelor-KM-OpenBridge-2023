@@ -1,7 +1,7 @@
 import HdgMedium from "../gen-vue/HdgMedium";
 
 export default {
-  title: 'INSTRUMENT/Heading',
+  title: 'INSTRUMENT/Heading/Medium',
   component: HdgMedium,
   argTypes: {
     heading: { control: {type: 'range', min: 0, max: 360} },

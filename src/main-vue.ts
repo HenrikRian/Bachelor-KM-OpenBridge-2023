@@ -5,22 +5,21 @@ const components: ComponentDefinition[] =
     [{
         name: 'HdgLarge',
         components: [
-            {file: 'HdgWatchFaceLarge', controlRotatePropName: null},
-            {file: 'HdgCenterLarge', controlRotatePropName: null},
-            {file: 'HdgArrowLarge', controlRotatePropName: "heading"},
+            {file: 'generated-with-style/HdgCircular/WatchFaceLarge', controlRotatePropName: null},
+            {file: 'generated-with-style/HdgCircular/HeadingLarge', controlRotatePropName: 'heading'},
+            {file: 'generated-with-style/HdgCircular/CogLarge', controlRotatePropName: "cog"},
         ]
     }, {
         name: 'HdgMedium',
         components: [
-            {file: 'HdgWatchFaceMedium', controlRotatePropName: null},
-            {file: 'HdgArrowMedium', controlRotatePropName: "heading"},
+            {file: 'generated-with-style/HdgCircular/WatchFaceMedium', controlRotatePropName: null},
+            {file: 'generated-with-style/HdgCircular/HeadingMedium', controlRotatePropName: "heading"},
         ]
-    },
-        {
+    }, {
             name: 'HdgSmall',
             components: [
-                {file: 'HdgWatchFaceSmall', controlRotatePropName: null},
-                {file: 'HdgArrowSmall', controlRotatePropName: "heading"},
+                {file: 'generated-with-style/HdgCircular/WatchFaceSmall', controlRotatePropName: null},
+                {file: 'generated-with-style/HdgCircular/HeadingSmall', controlRotatePropName: "heading"},
             ]
         }
     ]

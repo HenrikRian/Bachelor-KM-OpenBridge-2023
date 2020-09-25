@@ -21,7 +21,7 @@ interface AutoGenParts {
 
 export async function convert2vue(definition: ComponentDefinition) {
     for (const sub of definition.components) {
-        const svgString = await fs.readFileSync(`gen/${sub.file}.svg`, 'utf-8');
+        const svgString = await fs.readFileSync(`${sub.file}.svg`, 'utf-8');
         const svgDoc = new DOMParser().parseFromString(svgString, 'text/svg')
         const svg = svgDoc.firstChild as Element;
         const widthS = svg.getAttribute("width");
@@ -45,13 +45,15 @@ export async function convert2vue(definition: ComponentDefinition) {
         let computed: string | undefined = undefined;
         const props = [];
         if (sub.controlRotatePropName) {
-            const rotateFunctionName = `rotate${sub.file}`
+            let tagName = replaceAll(sub.file, '-','_')
+            tagName = replaceAll(tagName, '/','_')
+            const rotateFunctionName = `rotate_${tagName}`
             const prop = sub.controlRotatePropName
             props.push(prop)
             extraGArgs = `:transform="${rotateFunctionName}"`
             computed = `${rotateFunctionName}: function () { return \`rotate(\${this.${prop}} ${maxWidth / 2} ${maxHeight / 2})\`}`
         }
-        let svg = await fs.readFileSync(`gen/${sub.file}.svg`, 'utf-8');
+        let svg = await fs.readFileSync(`${sub.file}.svg`, 'utf-8');
         svg = [svg.slice(0, 5), `x="${x}" y="${y}" `, svg.slice(5)].join('');
         parts.push({
             template: `<g ${extraGArgs}>${svg}</g>`,
@@ -67,10 +69,12 @@ export async function convert2vue(definition: ComponentDefinition) {
     </svg>
 </template>`
 
-    let props = ""
-    for (const p of parts) {
-        if (p.props.length === 0) continue;
-        props += "'" + p.props.join("','") + "'"
+    const propsElements = parts.map(p => p.props).flat();
+    let props;
+    if (propsElements.length === 0) {
+        props = '';
+    } else {
+        props = "'" + propsElements.join("','") + "'"
     }
 
     const script = `<script>
@@ -84,4 +88,8 @@ export default {
     const res = `${template}\n\n${script}`
     fs.writeFileSync(`gen-vue/${definition.name}.vue`, res)
 
+}
+
+function replaceAll(string: string, search: string, replace: string): string {
+  return string.split(search).join(replace);
 }

@@ -1,8 +1,10 @@
 // Figma Plugin API version 1, update 14
 
   export interface StyledNode {
-    children: StyledNode[]
-    styles: {
+    name: string
+    id: string
+    children?: StyledNode[]
+    styles?: {
       stroke?: string
       fill?: string
       text?: string
