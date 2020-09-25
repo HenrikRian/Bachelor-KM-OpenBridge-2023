@@ -6,6 +6,36 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
   {
+    name: 'PointerMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'Pointer'],
+    outputFolder: 'Thruster'
+  },
+  {
+    name: 'FrontArrowMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'FrontArrow'],
+    outputFolder: 'Thruster'
+  }, {
+    name: 'ThrusterPowerInputMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'PowerInput'],
+    outputFolder: 'Thruster'
+  }, {
+    name: 'ThrusterPowerMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Power'],
+    outputFolder: 'Thruster'
+  }, {
+    name: 'ThrusterCenterLineMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'CenterLine'],
+    outputFolder: 'Thruster'
+  },{
+    name: 'ThrusterTrackMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Track'],
+    outputFolder: 'Thruster'
+  },{
+    name: 'ThrusterTickmarksMedium',
+    path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Tickmarks'],
+    outputFolder: 'Thruster'
+  },
+  {
     name: 'WatchFaceLarge',
     path: ['HDG & COG', 'Circular HDG', 'Large', 'Watch face'],
     outputFolder: 'HdgCircular'

@@ -3,7 +3,7 @@ import {DOMParser} from "xmldom";
 
 export interface SubComponentDefinition {
     file: string,
-    controlRotatePropName: null | string,
+    controlRotatePropName?: string,
     width?: number
     height?: number
 }
@@ -44,7 +44,7 @@ export async function convert2vue(definition: ComponentDefinition) {
         let extraGArgs = ""
         let computed: string | undefined = undefined;
         const props = [];
-        if (sub.controlRotatePropName) {
+        if (sub.controlRotatePropName !== undefined) {
             let tagName = replaceAll(sub.file, '-','_')
             tagName = replaceAll(tagName, '/','_')
             const rotateFunctionName = `rotate_${tagName}`
