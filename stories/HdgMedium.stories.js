@@ -1,7 +1,7 @@
 import HdgMedium from "../gen-vue/HdgMedium";
 
 export default {
-  title: 'INSTRUMENT/Heading/Medium',
+  title: 'INSTRUMENT/HDG & COG/Circular HDG',
   component: HdgMedium,
   argTypes: {
     heading: { control: {type: 'range', min: 0, max: 360} },
@@ -11,7 +11,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { HdgMedium },
-  template: '<HdgMedium style="height: 100vh" v-bind="$props"/>',
+  template: '<HdgMedium style="height: 256px" v-bind="$props"/>',
 });
 
 export const Medium = Template.bind({});

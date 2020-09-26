@@ -2,7 +2,7 @@ import ThrusterElementMedium from "./ThrusterElementMedium";
 
 
 export default {
-  title: 'INSTRUMENT/Thruster/Medium',
+  title: 'INSTRUMENT/Thruster & Propulsion/Thruster Element',
   component: ThrusterElementMedium,
   argTypes: {
     target: { control: {type: 'range', min: -100, max: 100} },
@@ -13,7 +13,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ThrusterElementMedium },
-  template: '<ThrusterElementMedium style="width: 5cm;" v-bind="$props"/>',
+  template: '<ThrusterElementMedium style="width: 256px;" v-bind="$props"/>',
 });
 
 export const Medium = Template.bind({});

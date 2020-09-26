@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AzimuthWatchFaceMedium from '../generated-with-style/Thruster/AzimuthWatchFaceMedium.svg'
+import AzimuthWatchFaceMedium from '../../generated-with-style/Thruster/AzimuthWatchFaceMedium.svg'
 import ThrusterElementMedium from "./ThrusterElementMedium";
 
 const width = 158;

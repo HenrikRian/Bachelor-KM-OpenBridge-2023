@@ -2,7 +2,7 @@ import AzimuthMedium from "./AzimuthMedium";
 
 
 export default {
-  title: 'INSTRUMENT/Azimuth/Medium',
+  title: 'INSTRUMENT/Thruster & Propulsion/01 Azimuth thruster',
   component: AzimuthMedium,
   argTypes: {
     target: { control: {type: 'range', min: -100, max: 100} },
@@ -14,7 +14,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { AzimuthMedium },
-  template: '<AzimuthMedium style="width: 5cm;" v-bind="$props"/>',
+  template: '<AzimuthMedium style="width: 256px;" v-bind="$props"/>',
 });
 
 export const Medium = Template.bind({});
