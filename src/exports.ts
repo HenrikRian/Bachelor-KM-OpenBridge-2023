@@ -152,20 +152,43 @@ const staticExportComponents: ExportDef[] = [
         path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Tickmarks'],
         outputFolder: 'Thruster'
     },
-
     {
-        name: 'InnerCircleRegularMedium',
-        path: ['Watch face', '04 Inner circle', 'Medium/ 01 Regular'],
+        name: 'PrimaryTickmarks90Medium',
+        path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'
-    },
-    {
+    },{
         name: 'PrimaryTickmarks45Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 2 per 90 - 45°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarks30Medium',
+        path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 3 per 90° - 30°'],
         outputFolder: 'WatchFace'
     },
     {
         name: 'SecondaryTickmarks5Medium',
         path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 18 per 90° - 5°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'SecondaryTickmarks9Medium',
+        path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 10 per 90° - 09°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'SecondaryTickmarks10Medium',
+        path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 09 per 90° - 10°'],
+        outputFolder: 'WatchFace'
+    },
+    {
+        name: 'InnerCircleRegularMedium',
+        path: ['Watch face', '04 Inner circle', 'Medium/ 01 Regular'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCirclePortStarboardMedium',
+        path: ['Watch face', '04 Inner circle', 'Medium/ 02 PORT STBD'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCirclePositiveNegativeMedium',
+        path: ['Watch face', '04 Inner circle', 'Medium/ 03 Positive Negative'],
         outputFolder: 'WatchFace'
     },
     {
