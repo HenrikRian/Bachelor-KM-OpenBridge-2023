@@ -52,6 +52,22 @@ const staticExportComponents: ExportDef[] = [
         name: 'AzimuthWatchFaceMedium',
         path: ['Thrusters & Propulsion', '01 Azimuth thruster', 'Medium', 'Medium'],
         outputFolder: 'Thruster'
+    },{
+        name: 'CircleBorderInsideMedium',
+        path: ['ROT', '01 Circle', 'Medium', 'border-inside'],
+        outputFolder: 'ROT'
+    },{
+        name: 'CircleBorderOutsideMedium',
+        path: ['ROT', '01 Circle', 'Medium', 'border-outisde'],
+        outputFolder: 'ROT'
+    },{
+        name: 'CircleTrackMedium',
+        path: ['ROT', '01 Circle', 'Medium', 'track'],
+        outputFolder: 'ROT'
+    },{
+        name: 'CircleDotsMedium',
+        path: ['ROT', '01 Circle', 'Medium', 'rot-dots'],
+        outputFolder: 'ROT'
     },
     {
         name: 'FlatBarMedium',
@@ -106,6 +122,34 @@ const staticExportComponents: ExportDef[] = [
     }, {
         name: 'ThrusterTickmarksMedium',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Tickmarks'],
+        outputFolder: 'Thruster'
+    },{
+        name: 'PointerLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'EndPointer'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'FrontArrowLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'FrontArrow'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterPowerInputLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'PowerInput'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterPowerLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Power'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterCenterLineLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'CenterLine'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterTrackLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Track'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterTickmarksLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Tickmarks'],
         outputFolder: 'Thruster'
     },
 

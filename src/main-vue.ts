@@ -27,6 +27,14 @@ const components: ComponentDefinition[] =
             {file: 'generated-with-style/SOG_STW/WatchFaceMedium'},
             {file: 'generated-with-style/SOG_STW/SpeedNeedleMedium', controlRotatePropName: "angle"},
         ]
+    }, {
+        name: 'RotCircleMediumRaw',
+        components: [
+            {file: 'generated-with-style/ROT/CircleBorderInsideMedium'},
+            {file: 'generated-with-style/ROT/CircleBorderOutsideMedium'},
+            {file: 'generated-with-style/ROT/CircleTrackMedium'},
+            {file: 'generated-with-style/ROT/CircleDotsMedium', controlRotatePropName: "angle"},
+        ]
     }
     ]
 
