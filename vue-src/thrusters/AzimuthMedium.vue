@@ -1,8 +1,8 @@
 <template>
-  <svg viewBox="0 0 256 256">
-    <AzimuthWatchFaceMedium/>
+  <svg viewBox="-128 -128 256 256">
+    <AzimuthWatchFaceMedium width="256" height="256" x="-128" y="-128"/>
     <g :transform="rotate">
-      <ThrusterElementMedium :target="target" :value="value" width="182" height="40" x="34" y="108"/>
+      <ThrusterElementMedium :target="target" :value="value" width="256" height="40" x="-128" y="-20"/>
     </g>
   </svg>
 </template>
@@ -43,7 +43,7 @@ export default {
       return Math.abs(value2width(this.value));
     },
     rotate: function () {
-      return `rotate(${this.angle + 90} 128 128)`;
+      return `rotate(${this.angle + 90} 0 0)`;
     }
   }
 }

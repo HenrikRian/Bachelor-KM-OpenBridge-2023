@@ -1,8 +1,8 @@
 <template>
   <svg viewBox="-20 -128 40 256">
-    <MainEngineArrowMedium y="-88" x="-20"/>
+    <MainEngineArrowMedium y="-89" x="-20" width="40" height="9"/>
     <g transform="rotate(90)">
-      <ThrusterElementMedium x="-95" y="-20" width="182" height="40" :show-arrow="false" :value="value" :target="target"/>
+      <ThrusterElementMedium x="-128" y="-20" width="256" height="40" :show-arrow="false" :value="value" :target="target"/>
     </g>
   </svg>
 </template>

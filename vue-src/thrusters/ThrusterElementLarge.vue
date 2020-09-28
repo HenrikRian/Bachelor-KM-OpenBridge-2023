@@ -1,10 +1,8 @@
 <template>
   <svg viewBox="-256 -40 512 80">
-    <ThrusterTickmarksLarge y="-39" x="-159"/>
-    <ThrusterTrackLarge y="-24" x="-159"/>
-    <FrontArrowLarge y="-40" x="-191" v-if="showArrow"/>
-    <PointerLarge y="-1" x="159" v-if="showArrow"/>
-    <ThrusterCenterLineLarge x="-2" y="-40"/>
+    <ThrusterStaticLarge y="-40" x="-160"/>
+    <FrontArrowLarge y="-40" x="-192" v-if="showArrow"/>
+    <PointerLarge y="-1" x="160" v-if="showArrow"/>
     <rect id="Bar" :x="xValue" y="-24" :width="widthValue" height="48" fill="#0080FF"
           class="ob-instrument-dynamic-color-fill"/>
     <rect id="EndLine" width="2" height="64" y="-32" :x="xBar" fill="#0080FF"
@@ -14,15 +12,13 @@
 </template>
 
 <script>
-import ThrusterTrackLarge from '../../generated-with-style/Thruster/ThrusterTrackLarge.svg'
-import ThrusterCenterLineLarge from '../../generated-with-style/Thruster/ThrusterCenterLineLarge.svg'
-import ThrusterTickmarksLarge from '../../generated-with-style/Thruster/ThrusterTickmarksLarge.svg'
+import ThrusterStaticLarge from '../../generated-with-style/Thruster/ThrusterStaticLarge.svg'
 import ThrusterPowerInputLarge from '../../generated-with-style/Thruster/ThrusterPowerInputLarge.svg'
 import ThrusterPowerLarge from '../../generated-with-style/Thruster/ThrusterPowerLarge.svg'
 import FrontArrowLarge from '../../generated-with-style/Thruster/FrontArrowLarge.svg'
 import PointerLarge from '../../generated-with-style/Thruster/PointerLarge.svg'
 
-const width = 318;
+const width = 319;
 
 function value2width(value) {
   return -value * width / 200;
@@ -31,9 +27,7 @@ function value2width(value) {
 export default {
   name: "ThrusterElementLarge",
   components: {
-    ThrusterTrackLarge,
-    ThrusterCenterLineLarge,
-    ThrusterTickmarksLarge,
+    ThrusterStaticLarge,
     ThrusterPowerInputLarge,
     ThrusterPowerLarge,
     FrontArrowLarge,

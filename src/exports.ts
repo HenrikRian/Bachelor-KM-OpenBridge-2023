@@ -91,7 +91,7 @@ const staticExportComponents: ExportDef[] = [
     },
     {
         name: 'PointerMedium',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'Pointer'],
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'EndPointer'],
         outputFolder: 'Thruster'
     },
     {
@@ -105,25 +105,17 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'Thruster'
     }, {
         name: 'ThrusterPowerInputMedium',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'PowerInput'],
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'PowerInput'],
         outputFolder: 'Thruster'
     }, {
         name: 'ThrusterPowerMedium',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Power'],
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'Power'],
         outputFolder: 'Thruster'
     }, {
-        name: 'ThrusterCenterLineMedium',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'CenterLine'],
+        name: 'ThrusterStaticMedium',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement'],
         outputFolder: 'Thruster'
     }, {
-        name: 'ThrusterTrackMedium',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Track'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterTickmarksMedium',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement', 'Tickmarks'],
-        outputFolder: 'Thruster'
-    },{
         name: 'PointerLarge',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'EndPointer'],
         outputFolder: 'Thruster'
@@ -133,26 +125,17 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'Thruster'
     }, {
         name: 'ThrusterPowerInputLarge',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'PowerInput'],
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'PowerInput'],
         outputFolder: 'Thruster'
     }, {
         name: 'ThrusterPowerLarge',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Power'],
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'Power'],
         outputFolder: 'Thruster'
     }, {
-        name: 'ThrusterCenterLineLarge',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'CenterLine'],
+        name: 'ThrusterStaticLarge',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement'],
         outputFolder: 'Thruster'
     }, {
-        name: 'ThrusterTrackLarge',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Track'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterTickmarksLarge',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement', 'Tickmarks'],
-        outputFolder: 'Thruster'
-    },
-    {
         name: 'PrimaryTickmarks90Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'

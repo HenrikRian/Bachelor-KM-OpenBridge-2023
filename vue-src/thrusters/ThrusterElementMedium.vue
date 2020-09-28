@@ -1,10 +1,8 @@
 <template>
-  <svg viewBox="-95 -20 182 40">
-      <ThrusterTickmarksMedium y="-19" x="-79"/>
-      <ThrusterTrackMedium y="-12" x="-79"/>
-      <FrontArrowMedium y="-20" x="-95" v-if="showArrow"/>
-      <PointerMedium y="-.5" x="79" v-if="showArrow"/>
-      <ThrusterCenterLineMedium x="-1" y="-20"/>
+  <svg viewBox="-128 -20 256 40">
+      <ThrusterStaticMedium y="-20" x="-80"/>
+      <FrontArrowMedium y="-20" x="-96" v-if="showArrow"/>
+      <PointerMedium y="-.5" x="80" v-if="showArrow"/>
       <rect id="Bar" :x="xValue" y="-12" :width="widthValue" height="24" fill="#0080FF"
             class="ob-instrument-dynamic-color-fill"/>
       <ThrusterPowerInputMedium :x="xTarget" y="-20"/>
@@ -12,9 +10,7 @@
 </template>
 
 <script>
-import ThrusterTrackMedium from '../../generated-with-style/Thruster/ThrusterTrackMedium.svg'
-import ThrusterCenterLineMedium from '../../generated-with-style/Thruster/ThrusterCenterLineMedium.svg'
-import ThrusterTickmarksMedium from '../../generated-with-style/Thruster/ThrusterTickmarksMedium.svg'
+import ThrusterStaticMedium from '../../generated-with-style/Thruster/ThrusterStaticMedium.svg'
 import ThrusterPowerInputMedium from '../../generated-with-style/Thruster/ThrusterPowerInputMedium.svg'
 import ThrusterPowerMedium from '../../generated-with-style/Thruster/ThrusterPowerMedium.svg'
 import FrontArrowMedium from '../../generated-with-style/Thruster/FrontArrowMedium.svg'
@@ -30,9 +26,7 @@ function value2width(value) {
 export default {
   name: "ThrusterElementMedium",
   components: {
-    ThrusterTrackMedium,
-    ThrusterCenterLineMedium,
-    ThrusterTickmarksMedium,
+    ThrusterStaticMedium,
     ThrusterPowerInputMedium,
     ThrusterPowerMedium,
     FrontArrowMedium,
