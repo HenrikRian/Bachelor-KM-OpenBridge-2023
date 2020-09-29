@@ -147,6 +147,10 @@ const staticExportComponents: ExportDef[] = [
         name: 'PrimaryTickmarks30Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 3 per 90° - 30°'],
         outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarksMedium',
+        path: ['Watch face', '01 Primary Tickmarks', 'Medium/ Angle Master'],
+        outputFolder: 'WatchFace'
     },
     {
         name: 'SecondaryTickmarks5Medium',
