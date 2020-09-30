@@ -19,11 +19,11 @@
 .ob-container-backdrop-color-stroke { stroke: var(--container-backdrop-color);}
 .ob-container-backdrop-color-fill { fill: var(--container-backdrop-color);}
 
-.ob-container-background-color-stroke { stroke: var(--container-background-color);}
-.ob-container-background-color-fill { fill: var(--container-background-color);}
-
 .ob-container-section-color-stroke { stroke: var(--container-section-color);}
 .ob-container-section-color-fill { fill: var(--container-section-color);}
+
+.ob-container-background-color-stroke { stroke: var(--container-background-color);}
+.ob-container-background-color-fill { fill: var(--container-background-color);}
 
 .ob-container-global-color-stroke { stroke: var(--container-global-color);}
 .ob-container-global-color-fill { fill: var(--container-global-color);}
@@ -36,6 +36,51 @@
 
 .ob-border-solid-color-stroke { stroke: var(--border-solid-color);}
 .ob-border-solid-color-fill { fill: var(--border-solid-color);}
+
+.ob-instrument-dynamic-color-stroke { stroke: var(--instrument-dynamic-color);}
+.ob-instrument-dynamic-color-fill { fill: var(--instrument-dynamic-color);}
+
+.ob-instrument-static-color-stroke { stroke: var(--instrument-static-color);}
+.ob-instrument-static-color-fill { fill: var(--instrument-static-color);}
+
+.ob-instrument-input-color-stroke { stroke: var(--instrument-input-color);}
+.ob-instrument-input-color-fill { fill: var(--instrument-input-color);}
+
+.ob-instrument-port-color-stroke { stroke: var(--instrument-port-color);}
+.ob-instrument-port-color-fill { fill: var(--instrument-port-color);}
+
+.ob-instrument-starboard-color-stroke { stroke: var(--instrument-starboard-color);}
+.ob-instrument-starboard-color-fill { fill: var(--instrument-starboard-color);}
+
+.ob-instrument-frame-color-stroke { stroke: var(--instrument-frame-color);}
+.ob-instrument-frame-color-fill { fill: var(--instrument-frame-color);}
+
+.ob-instrument-track-color-stroke { stroke: var(--instrument-track-color);}
+.ob-instrument-track-color-fill { fill: var(--instrument-track-color);}
+
+.ob-instrument-tick-mark-primary-color-stroke { stroke: var(--instrument-tick-mark-primary-color);}
+.ob-instrument-tick-mark-primary-color-fill { fill: var(--instrument-tick-mark-primary-color);}
+
+.ob-instrument-tick-mark-secondary-color-stroke { stroke: var(--instrument-tick-mark-secondary-color);}
+.ob-instrument-tick-mark-secondary-color-fill { fill: var(--instrument-tick-mark-secondary-color);}
+
+.ob-instrument-tick-mark-tertiary-color-stroke { stroke: var(--instrument-tick-mark-tertiary-color);}
+.ob-instrument-tick-mark-tertiary-color-fill { fill: var(--instrument-tick-mark-tertiary-color);}
+
+.ob-alert-running-color-stroke { stroke: var(--alert-running-color);}
+.ob-alert-running-color-fill { fill: var(--alert-running-color);}
+
+.ob-alert-caution-color-stroke { stroke: var(--alert-caution-color);}
+.ob-alert-caution-color-fill { fill: var(--alert-caution-color);}
+
+.ob-alert-warning-color-stroke { stroke: var(--alert-warning-color);}
+.ob-alert-warning-color-fill { fill: var(--alert-warning-color);}
+
+.ob-alert-alarm-color-stroke { stroke: var(--alert-alarm-color);}
+.ob-alert-alarm-color-fill { fill: var(--alert-alarm-color);}
+
+.ob-alert-critical-alarm-color-stroke { stroke: var(--alert-critical-alarm-color);}
+.ob-alert-critical-alarm-color-fill { fill: var(--alert-critical-alarm-color);}
 
 .ob-normal-enabled-background-color-stroke { stroke: var(--normal-enabled-background-color);}
 .ob-normal-enabled-background-color-fill { fill: var(--normal-enabled-background-color);}
@@ -310,45 +355,6 @@
 .ob-on-amplified-disabled-color-stroke { stroke: var(--on-amplified-disabled-color);}
 .ob-on-amplified-disabled-color-fill { fill: var(--on-amplified-disabled-color);}
 
-.ob-instrument-dynamic-color-stroke { stroke: var(--instrument-dynamic-color);}
-.ob-instrument-dynamic-color-fill { fill: var(--instrument-dynamic-color);}
-
-.ob-instrument-static-color-stroke { stroke: var(--instrument-static-color);}
-.ob-instrument-static-color-fill { fill: var(--instrument-static-color);}
-
-.ob-instrument-input-color-stroke { stroke: var(--instrument-input-color);}
-.ob-instrument-input-color-fill { fill: var(--instrument-input-color);}
-
-.ob-instrument-frame-color-stroke { stroke: var(--instrument-frame-color);}
-.ob-instrument-frame-color-fill { fill: var(--instrument-frame-color);}
-
-.ob-instrument-track-color-stroke { stroke: var(--instrument-track-color);}
-.ob-instrument-track-color-fill { fill: var(--instrument-track-color);}
-
-.ob-instrument-tick-mark-primary-color-stroke { stroke: var(--instrument-tick-mark-primary-color);}
-.ob-instrument-tick-mark-primary-color-fill { fill: var(--instrument-tick-mark-primary-color);}
-
-.ob-instrument-tick-mark-secondary-color-stroke { stroke: var(--instrument-tick-mark-secondary-color);}
-.ob-instrument-tick-mark-secondary-color-fill { fill: var(--instrument-tick-mark-secondary-color);}
-
-.ob-instrument-tick-mark-tertiery-color-stroke { stroke: var(--instrument-tick-mark-tertiery-color);}
-.ob-instrument-tick-mark-tertiery-color-fill { fill: var(--instrument-tick-mark-tertiery-color);}
-
-.ob-alert-running-color-stroke { stroke: var(--alert-running-color);}
-.ob-alert-running-color-fill { fill: var(--alert-running-color);}
-
-.ob-alert-caution-color-stroke { stroke: var(--alert-caution-color);}
-.ob-alert-caution-color-fill { fill: var(--alert-caution-color);}
-
-.ob-alert-warning-color-stroke { stroke: var(--alert-warning-color);}
-.ob-alert-warning-color-fill { fill: var(--alert-warning-color);}
-
-.ob-alert-alarm-color-stroke { stroke: var(--alert-alarm-color);}
-.ob-alert-alarm-color-fill { fill: var(--alert-alarm-color);}
-
-.ob-alert-critical-alarm-color-stroke { stroke: var(--alert-critical-alarm-color);}
-.ob-alert-critical-alarm-color-fill { fill: var(--alert-critical-alarm-color);}
-
 .ob-running-enabled-background-color-stroke { stroke: var(--running-enabled-background-color);}
 .ob-running-enabled-background-color-fill { fill: var(--running-enabled-background-color);}
 
@@ -372,6 +378,9 @@
 
 .ob-running-focused-border-color-stroke { stroke: var(--running-focused-border-color);}
 .ob-running-focused-border-color-fill { fill: var(--running-focused-border-color);}
+
+.ob-running-disabled-background-color-stroke { stroke: var(--running-disabled-background-color);}
+.ob-running-disabled-background-color-fill { fill: var(--running-disabled-background-color);}
 
 .ob-running-disabled-background-color-stroke { stroke: var(--running-disabled-background-color);}
 .ob-running-disabled-background-color-fill { fill: var(--running-disabled-background-color);}
