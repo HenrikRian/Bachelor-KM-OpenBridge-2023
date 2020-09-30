@@ -4,6 +4,7 @@
   "scripts": {
     "start": "npm run storybook",
     "test": "npm-run-all css lint bundlesize",
+    "prepare": "npm run css",
     "bundlesize": "bundlesize",
     "css": "npm-run-all css-lint css-compile css-minify",
     "css-compile": "npm-run-all --parallel css-compile-*",
