@@ -1,8 +1,8 @@
 import '!style-loader!css-loader!sass-loader!../scss/openbridge.scss';
-import variables_bright from '!css-loader!sass-loader!../scss/variables-bright.scss';
-import variables_day from '!css-loader!sass-loader!../scss/variables-day.scss';
-import variables_dusk from '!css-loader!sass-loader!../scss/variables-dusk.scss';
-import variables_night from '!css-loader!sass-loader!../scss/variables-night.scss';
+import variables_bright from '!css-loader!sass-loader!../scss/_variables-bright.scss';
+import variables_day from '!css-loader!sass-loader!../scss/_variables-day.scss';
+import variables_dusk from '!css-loader!sass-loader!../scss/_variables-dusk.scss';
+import variables_night from '!css-loader!sass-loader!../scss/_variables-night.scss';
 import {addDecorator, addParameters} from "@storybook/html";
 import {create} from '@storybook/theming/create';
 import {withCssResources} from "@storybook/addon-cssresources";
