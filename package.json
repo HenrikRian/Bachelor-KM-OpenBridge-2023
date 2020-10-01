@@ -8,6 +8,7 @@
     "bundlesize": "bundlesize",
     "css": "npm-run-all css-lint css-compile css-minify",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/openbridge.scss dist/css/openbridge.css",
+    "lint": "npm-run-all --parallel css-lint",
     "css-lint": "npm-run-all --parallel css-lint-*",
     "css-lint-main": "stylelint \"scss/**/*.scss\" --fix",
     "xcss-lint-vars": "fusv scss",
