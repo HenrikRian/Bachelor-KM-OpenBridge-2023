@@ -79,7 +79,7 @@
     },
     {
       "path": "./dist/css/openbridge.min.css",
-      "maxSize": "5 kB"
+      "maxSize": "8 kB"
     }
   ]
 }
