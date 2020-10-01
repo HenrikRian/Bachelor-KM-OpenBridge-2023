@@ -9,15 +9,16 @@ SASS implementation of OpenBridge Design System.
 
 Run `npm run start` for a storybook server. The components are rendered there and automatically recompiled if the scss changes.
 
-The pallet can be changed by changing the pallet file in `.storybook/config.js`
+The pallet can be changed by changing the pallet file in `.storybook/preview.js`
 
 ## Stylesheets
 The OpenBridge style sheets are implemented in the `scss/` directory. It can be build by running `npm run css` or with watch functionality `npm run watch-css`.
 See [scss/readme.md](scss/readme.md) for more information.
 
-To use the compiled sheet import:
-- `openbridge.css` this is the compiled version of the entire library.
-- `openbridge-bright.css` this is the parameters corresponding to the `bright` pallet. Swap this file to change pallet.
+To use the compiled sheet:
+- import `openbridge.css` this is the compiled version of the entire library.
+- Set the theme variable. For instance `<body theme="day">`
+
 
 # Development of OpenBridge components
 When developing components:
@@ -29,7 +30,7 @@ When developing components:
 ## Files
 These are the main files in the sass project:
 - `openbridge` root file, to get the main css files.
-- `variables-*.scss` pallet files with pallet dependent variables.
+- `_variables-*.scss` pallet files with pallet dependent variables.
 - `_variables.scss` pallet independent variables and pallet dependent variables defined as css custom parameters
 - `mixins/` folder with mixins
 - `mixins/_styles.scss` mixins of styles and states.

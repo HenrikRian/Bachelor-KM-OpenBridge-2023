@@ -1,11 +1,6 @@
 import '!style-loader!css-loader!sass-loader!../scss/openbridge.scss';
-import variables_bright from '!css-loader!sass-loader!../scss/_variables-bright.scss';
-import variables_day from '!css-loader!sass-loader!../scss/_variables-day.scss';
-import variables_dusk from '!css-loader!sass-loader!../scss/_variables-dusk.scss';
-import variables_night from '!css-loader!sass-loader!../scss/_variables-night.scss';
-import {addDecorator, addParameters} from "@storybook/html";
+import {addParameters} from "@storybook/html";
 import {create} from '@storybook/theming/create';
-import {withCssResources} from "@storybook/addon-cssresources";
 
 const isBright = true;
 const isDusk = false;
@@ -54,33 +49,20 @@ addParameters({
         theme: storyBookTheme,
     },
 });
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Theme color',
+    defaultValue: 'bright',
+    toolbar: {
+      icon: 'globe',
+      items: ['bright', 'day', 'dusk', 'night'],
+    },
+  },
+};
 
-addDecorator(withCssResources);
-addParameters({
-    cssresources: [
-        {
-            id: `bright`,
-            code: `<style>` + variables_bright.toString() + `</style>`,
-            picked: true,
-            hideCode: true,
-        },
-        {
-            id: `day`,
-            code: `<style>` + variables_day.toString() + `</style>`,
-            picked: false,
-            hideCode: true,
-        },
-        {
-            id: `dusk`,
-            code: `<style>` + variables_dusk.toString() + `</style>`,
-            picked: false,
-            hideCode: true,
-        },
-        {
-            id: `night`,
-            code: `<style>` + variables_night.toString() + `</style>`,
-            picked: false,
-            hideCode: true,
-        },
-    ],
-});
+const withThemeProvider = (Story, context) => {
+  document.documentElement.setAttribute('theme', context.globals.theme); // Did not get vue stuff to work
+    return Story();
+};
+export const decorators = [withThemeProvider];
