@@ -7,7 +7,7 @@ export interface ExportDef {
 const staticExportComponents: ExportDef[] = [
     {
         name: 'Test',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement'],
+        path: ['HDG & COG', 'Elements', 'Circle compass arrow/ COG - Large'],
         outputFolder: 'Test'
     },
     {

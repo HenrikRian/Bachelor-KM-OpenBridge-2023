@@ -97,54 +97,70 @@ function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, r
   }
 
   const cssClasses = []
-  if (figmaNode.styles && figmaNode.styles.stroke !== undefined) {
-    if (removeAttrs) {
-      svgNode.removeAttribute('stroke')
-      svgNode.removeAttribute('stroke-opacity')
+  if (svgNode.hasAttribute('id')) {
+    if (svgNode.hasAttribute('id') && figmaNode.styles && figmaNode.styles.stroke && svgNode.hasAttribute('stroke')) {
+      if (removeAttrs) {
+        svgNode.removeAttribute('stroke')
+        svgNode.removeAttribute('stroke-opacity')
+      }
+      const strokeStyleId = figmaNode.styles.stroke;
+      if (strokeStyleId !== undefined) {
+        const styleName = convertStyleName(styles[strokeStyleId].name, '-stroke');
+        cssClasses.push(styleName)
+      }
     }
-    const strokeStyleId = figmaNode.styles.stroke;
-    if (strokeStyleId !== undefined) {
-      const styleName = convertStyleName(styles[strokeStyleId].name, '-stroke');
-      cssClasses.push(styleName)
-    }
-  }
 
-  if (figmaNode.styles && (figmaNode.styles.fill)) {
-    if (removeAttrs) {
-      svgNode.removeAttribute('fill')
+    if (svgNode.hasAttribute('id') && figmaNode.styles && (figmaNode.styles.fill) && svgNode.hasAttribute('fill')) {
+      if (removeAttrs) {
+        svgNode.removeAttribute('fill')
+      }
+      const strokeStyleId = figmaNode.styles.fill;
+      if (strokeStyleId !== undefined) {
+        const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
+        cssClasses.push(styleName)
+      }
     }
-    const strokeStyleId = figmaNode.styles.fill;
-    if (strokeStyleId !== undefined) {
-      const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
-      cssClasses.push(styleName)
-    }
-  }
+  } else if (figmaNode.styles) {
+    const hasBackground = figmaNode.background && figmaNode.background.length === 1;
+    const svgHasFill = svgNode.hasAttribute('fill');
+    const hasStrokeInside = figmaNode.strokeAlign && figmaNode.strokeAlign === 'INSIDE';
+    const mask = svgNode.getAttribute('mask')
+    const hasMaskInside = mask && mask.match(/inside/);
+    if (svgHasFill && !hasMaskInside && ((hasBackground && figmaNode.styles.fills) || figmaNode.styles.fill) ) {
+      // Special case for background fill for frame
+      if (removeAttrs) {
+        svgNode.removeAttribute('fill')
+      }
 
-  if (!svgNode.hasAttribute('id') && figmaNode.background && figmaNode.background.length === 1 &&
-    figmaNode.styles && figmaNode.styles.fills && svgNode.hasAttribute('fill')
-  ) {
-    // Special case for background fill for frame
-    if (removeAttrs) {
-      svgNode.removeAttribute('fill')
+      const strokeStyleId = figmaNode.styles.fills || figmaNode.styles.fill;
+      if (strokeStyleId !== undefined) {
+        const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
+        cssClasses.push(styleName)
+      }
     }
-    const strokeStyleId = figmaNode.styles.fills;
-    if (strokeStyleId !== undefined) {
-      const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
-      cssClasses.push(styleName)
-    }
-  }
 
-  if (!svgNode.hasAttribute('id') && figmaNode.strokes && figmaNode.strokes.length === 1 &&
-    figmaNode.styles && figmaNode.styles.strokes && svgNode.hasAttribute('stroke')
-  ) {
-    // Special case for stroke on frame
-    if (removeAttrs) {
-      svgNode.removeAttribute('stroke')
+    if (hasStrokeInside && hasMaskInside && svgHasFill && figmaNode.styles && figmaNode.styles.stroke) {
+      if (removeAttrs) {
+        svgNode.removeAttribute('fill')
+      }
+      const strokeStyleId = figmaNode.styles.stroke;
+      if (strokeStyleId !== undefined) {
+        const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
+        cssClasses.push(styleName)
+      }
     }
-    const strokeStyleId = figmaNode.styles.strokes;
-    if (strokeStyleId !== undefined) {
-      const styleName = convertStyleName(styles[strokeStyleId].name, '-stroke');
-      cssClasses.push(styleName)
+
+    const hasStroke = figmaNode.strokes && figmaNode.strokes.length === 1
+    if (hasStroke && svgNode.hasAttribute('stroke') && figmaNode.styles && figmaNode.styles.strokes) {
+      // Special case for stroke on frame
+      if (removeAttrs) {
+        svgNode.removeAttribute('stroke')
+      }
+      const strokeStyleId = figmaNode.styles.strokes;
+      if (strokeStyleId !== undefined) {
+        const styleName = convertStyleName(styles[strokeStyleId].name, '-stroke');
+        cssClasses.push(styleName)
+      }
     }
   }
 

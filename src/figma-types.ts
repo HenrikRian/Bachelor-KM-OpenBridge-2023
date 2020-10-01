@@ -5,7 +5,7 @@
     id: string
     children?: StyledNode[]
     styles?: {
-      stroke?: string
+      stroke?: string,
       strokes?: string
       fill?: string
       fills?: string
@@ -13,6 +13,7 @@
     },
     background?: any[],
     strokes?: any[]
+    strokeAlign?: string
   }
 
   export interface Style {

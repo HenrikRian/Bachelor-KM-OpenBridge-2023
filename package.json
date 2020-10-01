@@ -7,7 +7,6 @@
     "url": "https://gitlab.com/openbridge/openbridge-exporter"
   },
   "scripts": {
-    "start:dev": "nodemon",
     "start": "rimraf ./generated-* && npm run autogen-with-styles && npm run autogen-without-styles",
     "autogen-with-styles": "ts-node --files src/main.ts",
     "autogen-without-styles": "ts-node --files src/main.ts -c",
