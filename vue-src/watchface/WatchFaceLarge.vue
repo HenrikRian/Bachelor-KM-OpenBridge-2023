@@ -9,6 +9,9 @@
         <inner-circle-positive-negative-large v-if="innerCircle==='positiveNegative'" width="512"
                                                heigh="512" x="-256"
                                                y="-256"/>
+        <tertiary-tickmarks-large width="512" heigh="512"
+                                      x="-256"
+                                      y="-256"/>
         <secondary-tickmarks5-large v-if="secondaryTickmarks===5" width="512" heigh="512" x="-256"
                                      y="-256"/>
         <secondary-tickmarks9-large v-if="secondaryTickmarks===9" width="512" heigh="512" x="-256"
@@ -16,6 +19,7 @@
         <secondary-tickmarks10-large v-if="secondaryTickmarks===10" width="512" heigh="512"
                                       x="-256"
                                       y="-256"/>
+
         <cross-regular-large v-if="cross" width="512" heigh="512" x="-256" y="-256"/>
       </g>
       <primary-ticks-large :rotate="rotate" :show-labels="showLabels"
@@ -41,6 +45,8 @@ import SecondaryTickmarks9Large
   from '../../generated-with-style/WatchFace/SecondaryTickmarks9Large.svg'
 import SecondaryTickmarks10Large
   from '../../generated-with-style/WatchFace/SecondaryTickmarks10Large.svg'
+import TertiaryTickmarksLarge
+  from '../../generated-with-style/WatchFace/TertiaryTickmarksLarge.svg'
 import InnerCircleRegularLarge
   from '../../generated-with-style/WatchFace/InnerCircleRegularLarge.svg'
 import InnerCirclePortStarboardLarge
@@ -83,6 +89,7 @@ export default {
     SecondaryTickmarks5Large,
     SecondaryTickmarks9Large,
     SecondaryTickmarks10Large,
+    TertiaryTickmarksLarge,
     InnerCircleRegularLarge,
     InnerCirclePortStarboardLarge,
     InnerCirclePositiveNegativeLarge,
