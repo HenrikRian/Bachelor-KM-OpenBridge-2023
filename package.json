@@ -39,7 +39,7 @@
     "node-fetch": "^2.6.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
-    "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#02010d7f19418ccb54c6e63fada20e21c5f8669b",
+    "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#9ec48a610",
     "react-is": "^16.13.1",
     "rimraf": "^3.0.2",
     "sass-loader": "^9.0.3",

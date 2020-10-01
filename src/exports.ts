@@ -6,6 +6,11 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
     {
+        name: 'Test',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'ThrusterElement'],
+        outputFolder: 'Test'
+    },
+    {
         name: 'CircleCompassArrowHdgMedium',
         path: ['HDG & COG', 'Elements', 'Circle compass arrow/ HDG - Medium'],
         outputFolder: 'HDG_COG'

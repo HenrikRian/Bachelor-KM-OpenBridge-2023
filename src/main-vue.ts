@@ -5,9 +5,9 @@ const components: ComponentDefinition[] =
     [{
         name: 'HdgLarge',
         components: [
-            {file: 'generated-with-style/HDG_COG/WatchFaceLarge'},
-            {file: 'generated-with-style/HDG_COG/HeadingLarge', controlRotatePropName: 'heading'},
-            {file: 'generated-with-style/HDG_COG/CogLarge', controlRotatePropName: "cog"},
+            {file: 'generated-without-style/HDG_COG/WatchFaceLarge'},
+            {file: 'generated-without-style/HDG_COG/HeadingLarge', controlRotatePropName: 'heading'},
+            {file: 'generated-without-style/HDG_COG/CogLarge', controlRotatePropName: "cog"},
         ]
     }, {
         name: 'HdgMedium',

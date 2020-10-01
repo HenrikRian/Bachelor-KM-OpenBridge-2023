@@ -8192,9 +8192,9 @@ open@^7.0.2, open@^7.0.3:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
 
-"openbridge-components@git+https://gitlab.com/openbridge/openbridge-components.git#02010d7f19418ccb54c6e63fada20e21c5f8669b":
-  version "0.1.0"
-  resolved "git+https://gitlab.com/openbridge/openbridge-components.git#02010d7f19418ccb54c6e63fada20e21c5f8669b"
+"openbridge-components@git+https://gitlab.com/openbridge/openbridge-components.git#2054aa3b1b7b0c":
+  version "0.0.1"
+  resolved "git+https://gitlab.com/openbridge/openbridge-components.git#2054aa3b1b7b0c17c70b709ab6ba27d045db4050"
   dependencies:
     "@storybook/addon-backgrounds" "^5.3.18"
     "@storybook/addon-cssresources" "6.0.0-alpha.37"

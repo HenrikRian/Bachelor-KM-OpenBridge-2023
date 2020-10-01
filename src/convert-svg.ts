@@ -15,7 +15,7 @@ function childNodes2Elements(nodes: NodeListOf<ChildNode>): Element[] {
 function getSvgId(svgNode: Element): string {
   let svgId = (svgNode.getAttribute('id') as string).replace('Â°', '°')
   const reDeg = /Â°/gi;
-  svgId = svgId.replace(reDeg, "°");
+  svgId = svgId.replace(reDeg, '°');
   const re = new RegExp('_[0-9]+$');
   if (svgId.match(re)) {
     svgId = svgId.replace(re, '')
@@ -65,7 +65,7 @@ function searchFigmaNode(figmaElement: StyledNode, svgIds: string[]): StyledNode
   const currentId = svgIds.shift();
   const figmaNodes = figmaElement.children
     .filter(f => f.name === currentId)
-    .map(f=> {
+    .map(f => {
       const ids = [...svgIds];
       return searchFigmaNode(f, ids);
     })
@@ -78,12 +78,15 @@ function searchFigmaNode(figmaElement: StyledNode, svgIds: string[]): StyledNode
 }
 
 function getSvgPath(svgNode: Element): string[] {
-    const svgId = getSvgId(svgNode);
-    if (svgId.length === 0) return []
+  if (svgNode.parentNode === null)
+    return []
+  const svgId = getSvgId(svgNode);
 
-    const ids = getSvgPath(svgNode.parentNode as Element);
+  const ids = getSvgPath(svgNode.parentNode as Element);
+  if (svgId.length !== 0) {
     ids.push(svgId);
-    return ids;
+  }
+  return ids;
 }
 
 function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, removeAttrs: boolean) {
@@ -106,7 +109,7 @@ function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, r
     }
   }
 
-  if (figmaNode.styles && figmaNode.styles.fill) {
+  if (figmaNode.styles && (figmaNode.styles.fill)) {
     if (removeAttrs) {
       svgNode.removeAttribute('fill')
     }
@@ -116,6 +119,35 @@ function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, r
       cssClasses.push(styleName)
     }
   }
+
+  if (!svgNode.hasAttribute('id') && figmaNode.background && figmaNode.background.length === 1 &&
+    figmaNode.styles && figmaNode.styles.fills && svgNode.hasAttribute('fill')
+  ) {
+    // Special case for background fill for frame
+    if (removeAttrs) {
+      svgNode.removeAttribute('fill')
+    }
+    const strokeStyleId = figmaNode.styles.fills;
+    if (strokeStyleId !== undefined) {
+      const styleName = convertStyleName(styles[strokeStyleId].name, '-fill');
+      cssClasses.push(styleName)
+    }
+  }
+
+  if (!svgNode.hasAttribute('id') && figmaNode.strokes && figmaNode.strokes.length === 1 &&
+    figmaNode.styles && figmaNode.styles.strokes && svgNode.hasAttribute('stroke')
+  ) {
+    // Special case for stroke on frame
+    if (removeAttrs) {
+      svgNode.removeAttribute('stroke')
+    }
+    const strokeStyleId = figmaNode.styles.strokes;
+    if (strokeStyleId !== undefined) {
+      const styleName = convertStyleName(styles[strokeStyleId].name, '-stroke');
+      cssClasses.push(styleName)
+    }
+  }
+
   if (cssClasses.length > 0) {
     svgNode.setAttribute('class', cssClasses.join(' '))
   }

@@ -6,9 +6,13 @@
     children?: StyledNode[]
     styles?: {
       stroke?: string
+      strokes?: string
       fill?: string
+      fills?: string
       text?: string
-    }
+    },
+    background?: any[],
+    strokes?: any[]
   }
 
   export interface Style {
