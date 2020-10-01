@@ -1,9 +1,9 @@
-import WatchFaceMedium from "./WatchFaceMedium";
+import WatchFaceSmall from "./WatchFaceSmall";
 
 
 export default {
     title: 'INSTRUMENT/WatchFace',
-    component: WatchFaceMedium,
+    component: WatchFaceSmall,
     argTypes: {
         innerCircle: {
             control: {
@@ -18,12 +18,6 @@ export default {
                 options: [30, 45, 90]
             }
         },
-        secondaryTickmarks: {
-            control: {
-                type: 'inline-radio',
-                options: [5, 9, 10]
-            }
-        },
         startClipDeg: { control: {type: 'range', min: -360, max: 360} },
         endClipDeg: { control: {type: 'range', min: 0, max: 360} },
     }
@@ -31,16 +25,15 @@ export default {
 
 const Template = (args, {argTypes}) => ({
     props: Object.keys(argTypes),
-    components: {WatchFaceMedium},
-    template: '<WatchFaceMedium style="width:  256px;" v-bind="$props"/>',
+    components: {WatchFaceSmall},
+    template: '<WatchFaceSmall style="width: 128px;" v-bind="$props"/>',
 });
 
-export const Medium = Template.bind({});
-Medium.args = {
+export const Small = Template.bind({});
+Small.args = {
     innerCircle: 'regular',
     rotate: 0,
     primaryTickmarks: 45,
-    secondaryTickmarks: 5,
     cross: false,
     startClipDeg: 0,
     endClipDeg: 0,

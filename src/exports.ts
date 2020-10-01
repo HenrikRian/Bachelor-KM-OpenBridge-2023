@@ -6,11 +6,6 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
     {
-        name: 'Test',
-        path: ['HDG & COG', 'Elements', 'Circle compass arrow/ COG - Large'],
-        outputFolder: 'Test'
-    },
-    {
         name: 'CircleCompassArrowHdgMedium',
         path: ['HDG & COG', 'Elements', 'Circle compass arrow/ HDG - Medium'],
         outputFolder: 'HDG_COG'
@@ -140,6 +135,56 @@ const staticExportComponents: ExportDef[] = [
         name: 'ThrusterStaticLarge',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement'],
         outputFolder: 'Thruster'
+    },{
+        name: 'PrimaryTickmarks90Large',
+        path: ['Watch face', '01 Primary Tickmarks', 'Large/ 1 per 90° - 90°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarks45Large',
+        path: ['Watch face', '01 Primary Tickmarks', 'Large/ 2 per 90 - 45°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarks30Large',
+        path: ['Watch face', '01 Primary Tickmarks', 'Large/ 3 per 90° - 30°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarksLarge',
+        path: ['Watch face', '01 Primary Tickmarks', 'Large/ Angle Master'],
+        outputFolder: 'WatchFace'
+    },
+    {
+        name: 'SecondaryTickmarks5Large',
+        path: ['Watch face', '02 Secondary Tickmarks', 'Large/ 18 per 90° - 5°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'SecondaryTickmarks9Large',
+        path: ['Watch face', '02 Secondary Tickmarks', 'Large/ 10 per 90° - 09°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'SecondaryTickmarks10Large',
+        path: ['Watch face', '02 Secondary Tickmarks', 'Large/ 09 per 90° - 10°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'TertiaryTickmarksLarge',
+        path: ['Watch face', '03 Tertiary Tickmarks', 'Large/ 90 per 90° - 1°'],
+        outputFolder: 'WatchFace'
+    },
+    {
+        name: 'InnerCircleRegularLarge',
+        path: ['Watch face', '04 Inner circle', 'Large/ 01 Regular'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCirclePortStarboardLarge',
+        path: ['Watch face', '04 Inner circle', 'Large/ 02 PORT STBD'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCirclePositiveNegativeLarge',
+        path: ['Watch face', '04 Inner circle', 'Large/ 03 Positive Negative'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'CrossRegularLarge',
+        path: ['Watch face', '05 Cross', 'Large'],
+        outputFolder: 'WatchFace'
     }, {
         name: 'PrimaryTickmarks90Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 1 per 90° - 90°'],
@@ -169,8 +214,7 @@ const staticExportComponents: ExportDef[] = [
         name: 'SecondaryTickmarks10Medium',
         path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 09 per 90° - 10°'],
         outputFolder: 'WatchFace'
-    },
-    {
+    }, {
         name: 'InnerCircleRegularMedium',
         path: ['Watch face', '04 Inner circle', 'Medium/ 01 Regular'],
         outputFolder: 'WatchFace'
@@ -182,10 +226,43 @@ const staticExportComponents: ExportDef[] = [
         name: 'InnerCirclePositiveNegativeMedium',
         path: ['Watch face', '04 Inner circle', 'Medium/ 03 Positive Negative'],
         outputFolder: 'WatchFace'
-    },
-    {
+    }, {
         name: 'CrossRegularMedium',
         path: ['Watch face', '05 Cross', 'Medium'],
+        outputFolder: 'WatchFace'
+    },
+    {
+        name: 'PrimaryTickmarks90Small',
+        path: ['Watch face', '01 Primary Tickmarks', 'Small/ 1 per 90° - 90°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarks45Small',
+        path: ['Watch face', '01 Primary Tickmarks', 'Small/ 2 per 90 - 45°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarks30Small',
+        path: ['Watch face', '01 Primary Tickmarks', 'Small/ 3 per 90° - 30°'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'PrimaryTickmarksSmall',
+        path: ['Watch face', '01 Primary Tickmarks', 'Small/ Angle Master'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCircleRegularSmall',
+        path: ['Watch face', '04 Inner circle', 'Small/ 01 Regular'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCirclePortStarboardSmall',
+        path: ['Watch face', '04 Inner circle', 'Small/ 02 PORT STBD'],
+        outputFolder: 'WatchFace'
+    },{
+        name: 'InnerCirclePositiveNegativeSmall',
+        path: ['Watch face', '04 Inner circle', 'Small/ 03 Positive Negative'],
+        outputFolder: 'WatchFace'
+    },
+    {
+        name: 'CrossRegularSmall',
+        path: ['Watch face', '05 Cross', 'Small'],
         outputFolder: 'WatchFace'
     },
     {

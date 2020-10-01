@@ -1,9 +1,9 @@
-import WatchFaceMedium from "./WatchFaceMedium";
+import WatchFaceLarge from "./WatchFaceLarge";
 
 
 export default {
     title: 'INSTRUMENT/WatchFace',
-    component: WatchFaceMedium,
+    component: WatchFaceLarge,
     argTypes: {
         innerCircle: {
             control: {
@@ -31,12 +31,12 @@ export default {
 
 const Template = (args, {argTypes}) => ({
     props: Object.keys(argTypes),
-    components: {WatchFaceMedium},
-    template: '<WatchFaceMedium style="width:  256px;" v-bind="$props"/>',
+    components: {WatchFaceLarge},
+    template: '<WatchFaceLarge style="width: 512px;" v-bind="$props"/>',
 });
 
-export const Medium = Template.bind({});
-Medium.args = {
+export const Large = Template.bind({});
+Large.args = {
     innerCircle: 'regular',
     rotate: 0,
     primaryTickmarks: 45,
