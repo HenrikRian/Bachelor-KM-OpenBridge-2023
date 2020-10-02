@@ -7,13 +7,13 @@
     "url": "https://gitlab.com/openbridge/openbridge-exporter"
   },
   "scripts": {
-    "start": "rimraf ./generated-* && npm run autogen-with-styles && npm run autogen-without-styles",
+    "start": "rimraf ./generated-* && npm-run-all --parallel autogen-*",
     "autogen-with-styles": "ts-node --files src/main.ts",
     "autogen-without-styles": "ts-node --files src/main.ts -c",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
     "build": "build-storybook -o public/",
-    "prepare": "npm run start && npm run start-vue"
+    "prepare": "npm run start"
   },
   "author": "",
   "license": "SEE LICENSE IN license.txt",
@@ -36,6 +36,7 @@
     "node-fetch": "^2.6.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
     "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#d2da09708f01718d29ac88b2a93383d45c45fbcc",
     "react-is": "^16.13.1",
     "rimraf": "^3.0.2",

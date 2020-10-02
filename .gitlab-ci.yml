@@ -13,7 +13,7 @@ before_script:
 
 build:
   script:
-    - yarn run start
+    - echo 0
   artifacts:
     paths:
       - "generated-with-style/"
