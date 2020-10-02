@@ -56,7 +56,7 @@
                   class="ob-instrument-tick-mark-primary-color-stroke"/>
           </g>
         </g>
-        <g id="90Â°">
+        <g id="90Â°"  v-if="showDeg===30 || showDeg===45 || showDeg===90">
           <g id="Thick 16px_4">
             <path id="Vector 3_4"
                   v-if="show(0)"
@@ -98,7 +98,7 @@
                   fill="#333333" class="ob-element-active-color-fill"/>
           </g>
         </g>
-        <g id="90Â°_2">
+        <g id="90Â°_2" v-if="showDeg===30 || showDeg===45 || showDeg===90">
           <g id="LabelFrame_5" :transform="transformRotate(0)">
             <path id="N"
                   d="M185.307 70.2053H182.992L179.256 63.7076H179.203C179.277 64.8552 179.315 65.6737 179.315 66.1633V70.2053H177.687V61.6161H179.984L183.715 68.0492H183.756C183.697 66.9329 183.668 66.1437 183.668 65.6816V61.6161H185.307V70.2053Z"

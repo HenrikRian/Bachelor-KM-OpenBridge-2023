@@ -10,7 +10,6 @@
     "start": "rimraf ./generated-* && npm run autogen-with-styles && npm run autogen-without-styles",
     "autogen-with-styles": "ts-node --files src/main.ts",
     "autogen-without-styles": "ts-node --files src/main.ts -c",
-    "start-vue": "rimraf ./gen-vue && ts-node --files src/main-vue.ts",
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
     "build": "build-storybook -o public/",

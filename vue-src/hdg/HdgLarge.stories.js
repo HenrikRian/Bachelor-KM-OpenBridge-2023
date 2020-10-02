@@ -1,4 +1,4 @@
-import HdgLarge from '../gen-vue/HdgLarge.vue';
+import HdgLarge from './HdgLarge';
 
 export default {
   title: 'INSTRUMENT/HDG & COG/Circular HDG',
@@ -18,5 +18,6 @@ const Template = (args, { argTypes }) => ({
 export const Large = Template.bind({});
 Large.args = {
   heading: 60,
-  cog: 30
+  cog: 30,
+  northUp: false
 };

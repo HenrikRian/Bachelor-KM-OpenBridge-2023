@@ -1,4 +1,4 @@
-import HdgSmall from "../gen-vue/HdgSmall";
+import HdgSmall from "./HdgSmall";
 
 export default {
   title: 'INSTRUMENT/HDG & COG/Circular HDG',
@@ -16,5 +16,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Small = Template.bind({});
 Small.args = {
-  heading: 60
+  heading: 60,
+  northUp: true
 };

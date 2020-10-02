@@ -1,12 +1,22 @@
 <template>
   <svg viewBox="-128 -128 256 256">
-    <RotCircleMediumRaw x="-104" y="-104" width="208" height="208" :angle="angle"/>
+    <CircleTrackMedium x="-104" y="-104" width="208" height="208"/>
+    <CircleBorderInsideMedium x="-88" y="-88" width="176" height="176"/>
+    <CircleBorderOutsideMedium x="-104" y="-104" width="208" height="208"/>
+    <g :transform="rotate">
+      <circle-dots-medium x="-100" y="-100" width="200" height="200"/>
+    </g>
   </svg>
 
 </template>
 
 <script>
-import RotCircleMediumRaw from '../../gen-vue/RotCircleMediumRaw'
+import CircleDotsMedium from '../../generated-without-style/ROT/CircleDotsMedium.svg'
+import CircleBorderInsideMedium
+  from '../../generated-without-style/ROT/CircleBorderInsideMedium.svg'
+import CircleBorderOutsideMedium
+  from '../../generated-without-style/ROT/CircleBorderOutsideMedium.svg'
+import CircleTrackMedium from '../../generated-with-style/ROT/CircleTrackMedium.svg'
 
 export default {
   name: "RotCircleMedium",
@@ -20,7 +30,7 @@ export default {
     }
   },
   components: {
-    RotCircleMediumRaw
+    CircleDotsMedium, CircleBorderInsideMedium, CircleBorderOutsideMedium, CircleTrackMedium
   },
   mounted() {
     const dt = 1000 / 60;
@@ -32,6 +42,11 @@ export default {
     if (this.intervalHandler !== null) {
       clearInterval(this.intervalHandler);
       this.intervalHandler = null;
+    }
+  },
+  computed: {
+    rotate() {
+      return `rotate(${this.angle})`
     }
   }
 }

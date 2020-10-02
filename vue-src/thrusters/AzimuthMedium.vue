@@ -1,6 +1,11 @@
 <template>
   <svg viewBox="-128 -128 256 256">
-    <AzimuthWatchFaceMedium width="256" height="256" x="-128" y="-128"/>
+    <WatchFaceMedium width="256" height="256" x="-128" y="-128"
+                     inner-circle="regular"
+                     :primary-tickmarks="90"
+                     :secondary-tickmarks="10"
+                     :show-labels="false"
+    />
     <g :transform="rotate">
       <ThrusterElementMedium :target="target" :value="value" width="256" height="40" x="-128" y="-20"/>
     </g>
@@ -10,6 +15,7 @@
 <script>
 import AzimuthWatchFaceMedium from '../../generated-with-style/Thruster/AzimuthWatchFaceMedium.svg'
 import ThrusterElementMedium from "./ThrusterElementMedium";
+import WatchFaceMedium from "../watchface/WatchFaceMedium";
 
 const width = 158;
 
@@ -20,6 +26,7 @@ function value2width(value) {
 export default {
   name: "AzimuthMedium",
   components: {
+    WatchFaceMedium,
     ThrusterElementMedium,
     AzimuthWatchFaceMedium
   },

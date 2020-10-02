@@ -1,4 +1,5 @@
-import HdgMedium from "../gen-vue/HdgMedium";
+import HdgMedium from "./HdgMedium";
+
 
 export default {
   title: 'INSTRUMENT/HDG & COG/Circular HDG',
@@ -16,5 +17,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Medium = Template.bind({});
 Medium.args = {
-  heading: 60
+  heading: 60,
+  northUp: true
 };
