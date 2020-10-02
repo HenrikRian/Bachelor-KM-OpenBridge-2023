@@ -14,12 +14,10 @@ before_script:
 build:
   script:
     - yarn run start
-    - yarn run start-vue
   artifacts:
     paths:
       - "generated-with-style/"
       - "generated-without-style/"
-      - "gen-vue/"
 
 pages:
   stage: deploy
