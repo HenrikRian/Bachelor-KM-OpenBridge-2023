@@ -19,9 +19,7 @@ export const globalTypes = {
 
 const withThemeProvider = (Story, context) => {
   document.documentElement.setAttribute('theme', context.globals.theme); // Did not get vue stuff to work
-
-  return {
-    template: `<story/>`,
-  };
+  return Story();
 };
 export const decorators = [withThemeProvider];
+
