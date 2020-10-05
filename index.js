@@ -1,2 +1,1 @@
-import './view/main-view.ts'
-import './view/rot.ts'
+import './view/watchface/watchface-small'
