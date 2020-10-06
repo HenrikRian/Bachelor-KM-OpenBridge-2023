@@ -1,14 +1,13 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devServer: {
         historyApiFallback: true
     },
     mode: 'development',
-    entry: './index.js',
+    entry: './index.ts',
     output: {
-        filename: 'main.js',
+        filename: 'main.ts',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -43,11 +42,5 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
             },
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            chunksSortMode: 'none',
-            template: 'index.html'
-        }),
-    ],
+    }
 };
