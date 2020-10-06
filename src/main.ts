@@ -5,7 +5,7 @@ import { FrameNode } from './figma-types';
 import yargs from 'yargs';
 
 import { exportComponents } from './exports';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -29,9 +29,9 @@ function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
 }
 
 async function main(option: { outFolder: string, removeAttributes: boolean }) {
-  const mainFigmaFile = process.env.FIGMA_MAINFILE; // 'UNbup2BF6eR8omPSRzFSlV';
+  const mainFigmaFile = process.env.FIGMA_MAINFILE as string; // 'UNbup2BF6eR8omPSRzFSlV';
 
-  const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE); // 'XXHKjGJXg0acrBak97mFhP'
+  const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string); // 'XXHKjGJXg0acrBak97mFhP'
   const document: any = await getFigmaFile(mainFigmaFile);
   const genFolder = option.outFolder;
 
