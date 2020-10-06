@@ -1,15 +1,15 @@
-import "./rot-flat-bar-medium";
+import "./rot-flat-medium";
 import React from "react";
 
 
 export default {
-  title: 'INSTRUMENT/ROT/Flat bar',
+  title: 'INSTRUMENT/ROT/Flat',
   argTypes: {
     rateOfTurn: { control: {type: 'range', min: -40, max: 40} }
   },
 };
 
-const Template = (args) => <ob-rot-flat-bar-medium style={{width: 256, height: 56}} {...args}/>
+const Template = (args) => <ob-rot-flat-medium style={{width: 256, height: 56}} {...args}/>
 
 export const Medium = Template.bind({});
 Medium.args = {
