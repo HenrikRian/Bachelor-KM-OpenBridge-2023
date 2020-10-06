@@ -1,27 +1,19 @@
-module.exports = {
-  "stories": [
-    "../**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials"
-  ],
-  webpackFinal: async (config, { configType }) => {
-    let rule = config.module.rules.find(r =>
-        // it can be another rule with file loader
-        // we should get only svg related
-        r.test && r.test.toString().includes('svg') &&
-        // file-loader might be resolved to js file path so "endsWith" is not reliable enough
-        r.loader && r.loader.includes('file-loader')
-    );
-    rule.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+// your app's webpack.config.js
+const custom = require('../webpack.config.js');
 
-    config.module.rules.push(
-        {
-            test: /\.svg$/,
-            use: ['vue-svg-loader']
-        }
-    )
-    return config;
-  }
+module.exports = {
+    "stories": [
+        "../view/**/*.stories.@(js|jsx|ts|tsx)"
+    ],
+    "addons": [
+        "@storybook/addon-links",
+        "@storybook/addon-essentials"
+    ],
+    webpackFinal: async (config, {configType}) => {
+        const rules = config.module.rules.filter(v => !v.test.toString().match(/svg/))
+        rules.push(...custom.module.rules)
+        config.module.rules = rules
+        return config
+    },
 }
+

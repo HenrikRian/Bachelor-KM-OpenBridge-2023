@@ -1,0 +1,103 @@
+import {svg, customElement, property} from 'lit-element'
+import {primaryTickmarksSmall} from "./primary-tickmarks/primary-tickmarks-small";
+import InnerCircleRegularSmall
+    from '../../generated-with-style/WatchFace/InnerCircleRegularSmall.svg'
+import InnerCirclePortStarboardSmall
+    from '../../generated-with-style/WatchFace/InnerCirclePortStarboardSmall.svg'
+import InnerCirclePositiveNegativeSmall
+    from '../../generated-with-style/WatchFace/InnerCirclePositiveNegativeSmall.svg'
+import CrossRegularSmall from '../../generated-with-style/WatchFace/CrossRegularSmall.svg'
+
+import {ObElement} from "../obElement";
+
+function startClipDegMap(startClipDeg: number) {
+    const deg = startClipDeg % 360
+    if (deg < 0)
+        return deg + 360;
+    else
+        return deg
+}
+
+function endClipDegMap(startClipDegMapped: number, endClipDeg: number) {
+    let deg = endClipDeg % 360
+    while (deg < startClipDegMapped) {
+        deg += 360
+    }
+    return deg
+}
+
+function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): string {
+    const radius = 40;
+    const startClipRad = startClipDegMapped / 180 * Math.PI;
+    const endClipRad = endClipDegMapped / 180 * Math.PI;
+    const x0 = radius * Math.sin(startClipRad);
+    const y0 = -radius * Math.cos(startClipRad);
+    const x1 = radius * Math.sin(endClipRad);
+    const y1 = -radius * Math.cos(endClipRad);
+    const largeArcFlag = (endClipRad - startClipRad) <= Math.PI ? 0 : 1;
+    return `M0 0 ${x0} ${y0} A${radius} ${radius} 0 ${largeArcFlag} 1 ${x1} ${y1}Z`
+}
+
+export function watchFaceSmallRender(option: {
+    innerCircle: string, primaryTickMarks: number, rotate: number,
+    startClipDeg: number, endClipDeg: number, showArrow: boolean, cross: boolean
+}) {
+    const startClipDegMapped = startClipDegMap(option.startClipDeg);
+    const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
+    const clipPath = clipPathGen(startClipDegMapped, endClipDegMapped);
+
+
+    let innerCircleSvg = InnerCircleRegularSmall;
+    if (option.innerCircle === 'portStarboard') {
+        innerCircleSvg = InnerCirclePortStarboardSmall;
+    } else if (option.innerCircle === 'positiveNegative') {
+        innerCircleSvg = InnerCirclePositiveNegativeSmall;
+    }
+
+    return svg`
+  <svg viewBox="-32 -32 64 64">
+    <g transform="rotate(${option.rotate})">
+      <g mask="url(#clipPathWatchFaceSmall)">
+        <svg width="64" height="64" x="-32" y="-32">
+             ${innerCircleSvg}          
+        </svg>
+        <svg width="56" height="56" x="-28" y="-28">
+            ${option.cross ? CrossRegularSmall : null}
+        </svg>
+      </g>
+      <svg width="91" height="91" x="-45.5" y="-45.5">
+      ${primaryTickmarksSmall(option.primaryTickMarks, startClipDegMapped, endClipDegMapped, option.showArrow)}
+      </svg>
+    </g>
+
+    <mask id="clipPathWatchFaceSmall">
+      <rect height="128" width="128" x="-64" y="-64" fill="white"></rect>
+      <path d="${clipPath}" fill="black"/>
+    </mask>
+  </svg>
+    `
+}
+
+@customElement('ob-watchface-small')
+export class HeadingMedium extends ObElement {
+    @property({type: String}) innerCircle = "regular";
+    @property({type: String}) cross = 'false';
+    @property({type: String}) showArrow = 'false';
+    @property({type: Number}) rotate = 0;
+    @property({type: Number}) primaryTickmarks = 45;
+    @property({type: Number}) startClipDeg = 0;
+    @property({type: Number}) endClipDeg = 0;
+
+
+    render() {
+        return watchFaceSmallRender({
+            innerCircle: this.innerCircle,
+            primaryTickMarks: this.primaryTickmarks,
+            rotate: this.rotate,
+            startClipDeg: this.startClipDeg,
+            endClipDeg: this.endClipDeg,
+            showArrow: this.showArrow === 'true',
+            cross: this.cross === 'true'
+        })
+    }
+}
