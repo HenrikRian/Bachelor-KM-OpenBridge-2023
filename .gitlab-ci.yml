@@ -22,7 +22,7 @@ build:
 pages:
   stage: deploy
   script:
-    - yarn run build
+    - yarn run build:storybook
   artifacts:
     paths:
       - public
