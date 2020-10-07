@@ -6,6 +6,134 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
     {
+        name: 'BarHorizontal100ActiveBarSmall',
+        path: ['Bars', 'Horizontal +/-100', 'Small', 'Small', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100BarSmall',
+        path: ['Bars', 'Horizontal +/-100', 'Small', 'Small', 'bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100LabelsMedium',
+        path: ['Bars', 'Horizontal +/-100', 'Medium', 'Labels'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100ActiveBarMedium',
+        path: ['Bars', 'Horizontal +/-100', 'Medium', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100BarMedium',
+        path: ['Bars', 'Horizontal +/-100', 'Medium', 'bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100Large',
+        path: ['Bars', 'Horizontal +/-100', 'Large'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100LabelsLarge',
+        path: ['Bars', 'Horizontal +/-100', 'Large', 'Labels'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100ActiveBarLarge',
+        path: ['Bars', 'Horizontal +/-100', 'Large', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarHorizontal100BarLarge',
+        path: ['Bars', 'Horizontal +/-100', 'Large', 'bar'],
+        outputFolder: 'BARS'
+    },
+
+    {
+        name: 'BarVerticalPositive100ActiveBarSmall',
+        path: ['Bars', 'Vertical +100', 'Small', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100BarSmall',
+        path: ['Bars', 'Vertical +100', 'Small', 'bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100LabelsMedium',
+        path: ['Bars', 'Vertical +100', 'Medium', 'labels'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100ActiveBarMedium',
+        path: ['Bars', 'Vertical +100', 'Medium', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100BarMedium',
+        path: ['Bars', 'Vertical +100', 'Medium', 'bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100LabelsLarge',
+        path: ['Bars', 'Vertical +100', 'Large', 'labels'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100ActiveBarLarge',
+        path: ['Bars', 'Vertical +100', 'Large', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVerticalPositive100BarLarge',
+        path: ['Bars', 'Vertical +100', 'Large', 'bar'],
+        outputFolder: 'BARS'
+    },
+
+    {
+        name: 'BarVertical100ActiveBarSmall',
+        path: ['Bars', 'Vertical +/-100', 'Small', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100BarSmall',
+        path: ['Bars', 'Vertical +/-100', 'Small', 'bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100LabelsMedium',
+        path: ['Bars', 'Vertical +/-100', 'Medium', 'Labels'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100ActiveBarMedium',
+        path: ['Bars', 'Vertical +/-100', 'Medium', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100BarMedium',
+        path: ['Bars', 'Vertical +/-100', 'Medium', 'bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100LabelsLarge',
+        path: ['Bars', 'Vertical +/-100', 'Large', 'Labels'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100ActiveBarLarge',
+        path: ['Bars', 'Vertical +/-100', 'Large', 'active-bar'],
+        outputFolder: 'BARS'
+    },
+    {
+        name: 'BarVertical100BarLarge',
+        path: ['Bars', 'Vertical +/-100', 'Large', 'bar'],
+        outputFolder: 'BARS'
+    },
+
+    {
         name: 'CircleCompassArrowHdgMedium',
         path: ['HDG & COG', 'Elements', 'Circle compass arrow/ HDG - Medium'],
         outputFolder: 'HDG_COG'
@@ -52,19 +180,19 @@ const staticExportComponents: ExportDef[] = [
         name: 'AzimuthWatchFaceMedium',
         path: ['Thrusters & Propulsion', '01 Azimuth thruster', 'Medium', 'Medium'],
         outputFolder: 'Thruster'
-    },{
+    }, {
         name: 'CircleBorderInsideMedium',
         path: ['ROT', '01 Circle', 'Medium', 'border-inside'],
         outputFolder: 'ROT'
-    },{
+    }, {
         name: 'CircleBorderOutsideMedium',
         path: ['ROT', '01 Circle', 'Medium', 'border-outisde'],
         outputFolder: 'ROT'
-    },{
+    }, {
         name: 'CircleTrackMedium',
         path: ['ROT', '01 Circle', 'Medium', 'track'],
         outputFolder: 'ROT'
-    },{
+    }, {
         name: 'CircleDotsMedium',
         path: ['ROT', '01 Circle', 'Medium', 'rot-dots'],
         outputFolder: 'ROT'
@@ -135,19 +263,19 @@ const staticExportComponents: ExportDef[] = [
         name: 'ThrusterStaticLarge',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement'],
         outputFolder: 'Thruster'
-    },{
+    }, {
         name: 'PrimaryTickmarks90Large',
         path: ['Watch face', '01 Primary Tickmarks', 'Large/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarks45Large',
         path: ['Watch face', '01 Primary Tickmarks', 'Large/ 2 per 90 - 45°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarks30Large',
         path: ['Watch face', '01 Primary Tickmarks', 'Large/ 3 per 90° - 30°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarksLarge',
         path: ['Watch face', '01 Primary Tickmarks', 'Large/ Angle Master'],
         outputFolder: 'WatchFace'
@@ -156,15 +284,15 @@ const staticExportComponents: ExportDef[] = [
         name: 'SecondaryTickmarks5Large',
         path: ['Watch face', '02 Secondary Tickmarks', 'Large/ 18 per 90° - 5°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'SecondaryTickmarks9Large',
         path: ['Watch face', '02 Secondary Tickmarks', 'Large/ 10 per 90° - 09°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'SecondaryTickmarks10Large',
         path: ['Watch face', '02 Secondary Tickmarks', 'Large/ 09 per 90° - 10°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'TertiaryTickmarksLarge',
         path: ['Watch face', '03 Tertiary Tickmarks', 'Large/ 90 per 90° - 1°'],
         outputFolder: 'WatchFace'
@@ -173,15 +301,15 @@ const staticExportComponents: ExportDef[] = [
         name: 'InnerCircleRegularLarge',
         path: ['Watch face', '04 Inner circle', 'Large/ 01 Regular'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCirclePortStarboardLarge',
         path: ['Watch face', '04 Inner circle', 'Large/ 02 PORT STBD'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCirclePositiveNegativeLarge',
         path: ['Watch face', '04 Inner circle', 'Large/ 03 Positive Negative'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'CrossRegularLarge',
         path: ['Watch face', '05 Cross', 'Large'],
         outputFolder: 'WatchFace'
@@ -189,15 +317,15 @@ const staticExportComponents: ExportDef[] = [
         name: 'PrimaryTickmarks90Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarks45Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 2 per 90 - 45°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarks30Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 3 per 90° - 30°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarksMedium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ Angle Master'],
         outputFolder: 'WatchFace'
@@ -206,11 +334,11 @@ const staticExportComponents: ExportDef[] = [
         name: 'SecondaryTickmarks5Medium',
         path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 18 per 90° - 5°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'SecondaryTickmarks9Medium',
         path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 10 per 90° - 09°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'SecondaryTickmarks10Medium',
         path: ['Watch face', '02 Secondary Tickmarks', 'Medium/ 09 per 90° - 10°'],
         outputFolder: 'WatchFace'
@@ -218,11 +346,11 @@ const staticExportComponents: ExportDef[] = [
         name: 'InnerCircleRegularMedium',
         path: ['Watch face', '04 Inner circle', 'Medium/ 01 Regular'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCirclePortStarboardMedium',
         path: ['Watch face', '04 Inner circle', 'Medium/ 02 PORT STBD'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCirclePositiveNegativeMedium',
         path: ['Watch face', '04 Inner circle', 'Medium/ 03 Positive Negative'],
         outputFolder: 'WatchFace'
@@ -235,27 +363,27 @@ const staticExportComponents: ExportDef[] = [
         name: 'PrimaryTickmarks90Small',
         path: ['Watch face', '01 Primary Tickmarks', 'Small/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarks45Small',
         path: ['Watch face', '01 Primary Tickmarks', 'Small/ 2 per 90 - 45°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarks30Small',
         path: ['Watch face', '01 Primary Tickmarks', 'Small/ 3 per 90° - 30°'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'PrimaryTickmarksSmall',
         path: ['Watch face', '01 Primary Tickmarks', 'Small/ Angle Master'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCircleRegularSmall',
         path: ['Watch face', '04 Inner circle', 'Small/ 01 Regular'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCirclePortStarboardSmall',
         path: ['Watch face', '04 Inner circle', 'Small/ 02 PORT STBD'],
         outputFolder: 'WatchFace'
-    },{
+    }, {
         name: 'InnerCirclePositiveNegativeSmall',
         path: ['Watch face', '04 Inner circle', 'Small/ 03 Positive Negative'],
         outputFolder: 'WatchFace'
