@@ -19,7 +19,7 @@ export function primaryTickmarksMedium(showDeg: number, startClipDeg: number, en
     <g id="Medium/ Angle Master">
       <g id="Tickmarks">
         ${ showDeg===30 ? svg`
-        <g id="30Â°" v-if="showDeg===30">
+        <g id="30Â°">
           <g id="Thin 16px">
             <g id="Thick 16px" clip-path="url(#Medium/ Angle Masterclip0)">
               ${show(300) ? svg`<path id="Vector 3" d="M91.1942 129.362L105.087 137.383" stroke="#333333" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 

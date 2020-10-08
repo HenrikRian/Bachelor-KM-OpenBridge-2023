@@ -48,7 +48,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 
 export function watchFaceLargeRender(option: {
     innerCircle: string, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
-    startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean
+    startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean, tertiaryTickMarks?: boolean
 }) {
     const startClipDegMapped = startClipDegMap(option.startClipDeg);
     const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
@@ -77,7 +77,7 @@ export function watchFaceLargeRender(option: {
             ${innerCircleSvg}
             ${option.cross ? CrossRegularLarge : null}
             ${secondaryTickmarksSvg}
-            ${TertiaryTickmarksLarge}
+            ${option.tertiaryTickMarks !== false ? TertiaryTickmarksLarge : null}
         </svg>
       </g>
       <svg width="725" height="725" x="-362.5" y="-362.5">

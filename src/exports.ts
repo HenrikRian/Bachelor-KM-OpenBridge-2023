@@ -6,6 +6,47 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
     {
+        name: 'PitchPointerSmall',
+        path: ['Pitch & Roll', '01 Pitch', 'Small', 'pitch'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchShipSmall',
+        path: ['Pitch & Roll', '01 Pitch', 'Small', 'Small'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchPointerMedium',
+        path: ['Pitch & Roll', '01 Pitch', 'Medium', 'pointer'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchWatchFaceMedium',
+        path: ['Pitch & Roll', '01 Pitch', 'Medium', 'watch-face'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchShipMedium',
+        path: ['Pitch & Roll', '01 Pitch', 'Medium', 'ship'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchPointerLarge',
+        path: ['Pitch & Roll', '01 Pitch', 'Large', 'pitch'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchWatchFaceLarge',
+        path: ['Pitch & Roll', '01 Pitch', 'Large', 'watch-face'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'PitchShipLarge',
+        path: ['Pitch & Roll', '01 Pitch', 'Large', 'ship'],
+        outputFolder: 'PitchRoll'
+    },
+
+    {
         name: 'BarHorizontal100ActiveBarSmall',
         path: ['Bars', 'Horizontal +/-100', 'Small', 'Small', 'active-bar'],
         outputFolder: 'BARS'
