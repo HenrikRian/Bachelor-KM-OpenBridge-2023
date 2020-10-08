@@ -47,6 +47,47 @@ const staticExportComponents: ExportDef[] = [
     },
 
     {
+        name: 'RollPointerSmall',
+        path: ['Pitch & Roll', '02 Roll', 'Small', 'pitch'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollShipSmall',
+        path: ['Pitch & Roll', '02 Roll', 'Small', 'Small'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollPointerMedium',
+        path: ['Pitch & Roll', '02 Roll', 'Medium', 'pointer'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollWatchFaceMedium',
+        path: ['Pitch & Roll', '02 Roll', 'Medium', 'watch-face'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollShipMedium',
+        path: ['Pitch & Roll', '02 Roll', 'Medium', 'Medium'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollPointerLarge',
+        path: ['Pitch & Roll', '02 Roll', 'Large', 'pitch'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollWatchFaceLarge',
+        path: ['Pitch & Roll', '02 Roll', 'Large', 'watch-face'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'RollShipLarge',
+        path: ['Pitch & Roll', '02 Roll', 'Large', 'Large'],
+        outputFolder: 'PitchRoll'
+    },
+
+    {
         name: 'BarHorizontal100ActiveBarSmall',
         path: ['Bars', 'Horizontal +/-100', 'Small', 'Small', 'active-bar'],
         outputFolder: 'BARS'

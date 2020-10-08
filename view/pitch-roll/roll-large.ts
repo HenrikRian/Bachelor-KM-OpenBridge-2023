@@ -1,15 +1,15 @@
 import {svg, customElement, property, css} from 'lit-element'
 import {ObElement} from "../obElement";
-import Ship from "../../generated-without-style/PitchRoll/PitchShipLarge.svg";
-import Pointer from "../../generated-without-style/PitchRoll/PitchPointerLarge.svg";
+import Ship from "../../generated-without-style/PitchRoll/RollShipLarge.svg";
+import Pointer from "../../generated-without-style/PitchRoll/RollPointerLarge.svg";
 import {watchFaceLargeRender} from "../watchface/watchface-large";
 import {renderBlueArch} from "../watchface/blue-arch";
 
-@customElement('ob-pitch-large')
-export class PitchLarge extends ObElement {
-    @property({type: Number}) pitch = 0;
-    @property({type: Number}) lowerPitch = -2;
-    @property({type: Number}) upperPitch = 3;
+@customElement('ob-roll-large')
+export class RollLarge extends ObElement {
+    @property({type: Number}) roll = 0;
+    @property({type: Number}) lowerRoll = -2;
+    @property({type: Number}) upperRoll = 3;
     @property({type: Number}) scale = 5;
 
     static get styles() {
@@ -34,8 +34,8 @@ export class PitchLarge extends ObElement {
 
 
     protected render() {
-        const yLabel6 = 232 * Math.cos(300 * Math.PI / 180);
-        const xLabel6 = 232 * Math.sin(300 * Math.PI / 180);
+        const yLabel6 = 232 * Math.cos(30 * Math.PI / 180);
+        const xLabel6 = 232 * Math.sin(30 * Math.PI / 180);
         return svg`
 <svg viewBox="-256 -256 512 512">
 <svg x="-256" y="-256">
@@ -43,22 +43,22 @@ ${watchFaceLargeRender({
             cross: false,
             rotate: 0,
             showLabels: false,
-            startClipDeg: 300,
-            endClipDeg: 240,
+            startClipDeg: 210,
+            endClipDeg: 150,
             primaryTickMarks: 30,
             secondaryTickMarks: 5,
             innerCircle: "regular",
             tertiaryTickMarks: false
         })}
 </svg>
-${renderBlueArch(178, this.lowerPitch * this.scale + 270, this.upperPitch * this.scale + 270, 4)}
-    <g transform="rotate(${this.pitch * this.scale})">
-      <svg x="-96" y="-32" width="192" height="64">${Ship}</svg>
-      <svg x="-256" y="-24" width="512" height="48">${Pointer}</svg>
+${renderBlueArch(178, -this.upperRoll * this.scale + 180, -this.lowerRoll * this.scale + 180, 4)}
+    <g transform="rotate(${-this.roll * this.scale})">
+      <svg x="-32" y="-32" width="64" height="64">${Ship}</svg>
+      <svg x="-24" y="-256" width="48" height="512">${Pointer}</svg>
     </g>
-    <text x="-232" y="0" class="ob-font-ui-body-active ob-center-label">0°</text>
-    <text x="${xLabel6}" y="${yLabel6}" class="ob-font-ui-body ob-center-label">-6°</text>
-    <text x="${xLabel6}" y="${-yLabel6}" class="ob-font-ui-body ob-center-label">6°</text>
+    <text x="0" y="232" class="ob-font-ui-body-active ob-center-label">0°</text>
+    <text x="${-xLabel6}" y="${yLabel6}" class="ob-font-ui-body ob-center-label">-${30/this.scale}°</text>
+    <text x="${xLabel6}" y="${yLabel6}" class="ob-font-ui-body ob-center-label">${30/this.scale}°</text>
   </svg>`;
     }
 }
