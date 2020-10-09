@@ -6,6 +6,16 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
   {
+        name: 'FlatArrowHdgSmall',
+        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Small'],
+        outputFolder: 'HDG_COG'
+    },
+  {
+        name: 'FlatArrowHdgLarge',
+        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Large'],
+        outputFolder: 'HDG_COG'
+    },
+  {
         name: 'TicBarSmall',
         path: ['ROT', 'Elements', 'Tick bar/ Small'],
         outputFolder: 'ROT'

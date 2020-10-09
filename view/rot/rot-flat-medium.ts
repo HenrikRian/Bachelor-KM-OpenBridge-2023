@@ -1,7 +1,7 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
-import TicBarMedium from '../../generated-with-style/ROT/TicBarMedium.svg'
-import FlatArrowHdgMedium from '../../generated-with-style/HDG_COG/FlatArrowHdgMedium.svg'
+import TicBarMedium from '../../generated-without-style/ROT/TicBarMedium.svg'
+import FlatArrowHdgMedium from '../../generated-without-style/HDG_COG/FlatArrowHdgMedium.svg'
 
 @customElement('ob-rot-flat-medium')
 export class RotFlatMedium extends ObElement {
