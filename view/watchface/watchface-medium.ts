@@ -80,10 +80,16 @@ export function watchFaceMediumRender(option: {
         <svg width="256" height="256" x="-128" y="-128">
             ${secondaryTickmarksSvg}
         </svg>
+        <svg width="363" height="363" x="-181.5" y="-181.5">
+            ${primaryTickmarksMedium(option.primaryTickMarks, option.showLabels, option.rotate)}
+        </svg>
       </g>
-      <svg width="363" height="363" x="-181.5" y="-181.5">
-      ${primaryTickmarksMedium(option.primaryTickMarks, startClipDegMapped, endClipDegMapped, option.showLabels, option.rotate)}
-      </svg>
+      <g transform="rotate(${option.startClipDeg})">
+        <path id="Vector 3_4" d="M0 -104.2761L0 -88.2337" class="ob-instrument-tick-mark-primary-color-stroke"/>
+      </g>
+      <g transform="rotate(${option.endClipDeg})">
+        <path id="Vector 3_4" d="M0 -104.2761L0 -88.2337" class="ob-instrument-tick-mark-primary-color-stroke"/>
+      </g>
     </g>
 
     <mask id="clipPathWatchFaceMedium${option.uuid}">

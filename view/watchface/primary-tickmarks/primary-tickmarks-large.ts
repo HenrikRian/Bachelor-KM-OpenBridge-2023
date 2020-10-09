@@ -1,10 +1,6 @@
 import {svg} from 'lit-element'
 
-export function primaryTickmarksLarge(showDeg: number, startClipDeg: number, endClipDeg: number, showLabel: boolean, rotate: number) {
-    function show(deg: number): boolean {
-        return !(endClipDeg > deg + 360 || (startClipDeg < deg && endClipDeg > deg));
-    }
-
+export function primaryTickmarksLarge(showDeg: number, showLabel: boolean, rotate: number) {
     function rotateLabel(deg: number) {
         const rad = deg / 180 * Math.PI;
         const r = 232;
@@ -21,31 +17,31 @@ export function primaryTickmarksLarge(showDeg: number, startClipDeg: number, end
       ${ showDeg===30 ? 
         svg`<g id="30Â°">
           <g id="60Â°" clip-path="url(#Large/ Angle Masterclip0)">
-            ${show(300) ? svg`<path id="Vector 3" d="M182.137 258.368L209.885 274.388" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-            ${show(120) ? svg`<path id="Vector 4" d="M515.115 450.612L542.863 466.633" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-            ${show(210) ? svg`<path id="Vector 5" d="M258.367 542.863L274.388 515.115" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-            ${show(30) ? svg`<path id="Vector 6" d="M450.612 209.885L466.633 182.137" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
+            <path id="Vector 3" d="M182.137 258.368L209.885 274.388" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 4" d="M515.115 450.612L542.863 466.633" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 5" d="M258.367 542.863L274.388 515.115" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 6" d="M450.612 209.885L466.633 182.137" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
           </g>
           <g id="30Â°_2" clip-path="url(#Large/ Angle Masterclip1)">
-            ${show(330) ? svg`<path id="Vector 3_2" d="M258.367 182.137L274.388 209.885" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-            ${show(150) ? svg`<path id="Vector 4_2" d="M450.612 515.115L466.633 542.863" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-            ${show(240) ? svg`<path id="Vector 5_2" d="M182.137 466.633L209.885 450.612" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-            ${show(60) ? svg`<path id="Vector 6_2" d="M515.115 274.388L542.863 258.367" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
+            <path id="Vector 3_2" d="M258.367 182.137L274.388 209.885" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 4_2" d="M450.612 515.115L466.633 542.863" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 5_2" d="M182.137 466.633L209.885 450.612" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 6_2" d="M515.115 274.388L542.863 258.367" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
           </g>
         </g>`: null }
        ${ showDeg===45 ? 
         svg`
         <g id="45Â°" clip-path="url(#Large/ Angle Masterclip2)">
-          ${show(315) ? svg`<path id="Vector 3_3" d="M215.234 215.234L237.891 237.891" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-          ${show(135) ? svg`<path id="Vector 4_3" d="M487.109 487.109L509.766 509.766" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-          ${show(225) ? svg`<path id="Vector 5_3" d="M215.234 509.766L237.891 487.109" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-          ${show(45) ? svg`<path id="Vector 6_3" d="M487.109 237.891L509.766 215.234" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
+          <path id="Vector 3_3" d="M215.234 215.234L237.891 237.891" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 4_3" d="M487.109 487.109L509.766 509.766" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 5_3" d="M215.234 509.766L237.891 487.109" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 6_3" d="M487.109 237.891L509.766 215.234" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
         </g>`: null }
         <g id="90Â°">
-          ${show(0) ? svg`<path id="Vector 3_4" d="M362.5 154.235L362.5 186.276" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-          ${show(180) ? svg`<path id="Vector 4_4" d="M362.5 538.724L362.5 570.765" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-          ${show(270) ? svg`<path id="Vector 5_4" d="M154.235 362.5L186.276 362.5" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
-          ${show(90) ? svg`<path id="Vector 6_4" d="M538.724 362.5L570.765 362.5" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>` : null} 
+          <path id="Vector 3_4" d="M362.5 154.235L362.5 186.276" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 4_4" d="M362.5 538.724L362.5 570.765" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 5_4" d="M154.235 362.5L186.276 362.5" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
+          <path id="Vector 6_4" d="M538.724 362.5L570.765 362.5" stroke="#333333" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
         </g>
       </g>
       ${ showLabel ? 

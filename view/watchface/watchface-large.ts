@@ -81,10 +81,19 @@ export function watchFaceLargeRender(option: {
             ${secondaryTickmarksSvg}
             ${option.tertiaryTickMarks !== false ? TertiaryTickmarksLarge : null}
         </svg>
+        <svg width="725" height="725" x="-362.5" y="-362.5">
+            ${primaryTickmarksLarge(option.primaryTickMarks, option.showLabels, option.rotate)}
+        </svg>
       </g>
-      <svg width="725" height="725" x="-362.5" y="-362.5">
-      ${primaryTickmarksLarge(option.primaryTickMarks, startClipDegMapped, endClipDegMapped, option.showLabels, option.rotate)}
-      </svg>
+      
+      <g transform="rotate(${option.startClipDeg})">
+          <path id="Vector 3_4" d="M0 -208.265L0 -176.225" stroke-width="2" 
+          class="ob-instrument-tick-mark-primary-color-stroke"/>
+      </g>
+      <g transform="rotate(${option.endClipDeg})">
+          <path id="Vector 3_4" d="M0 -208.265L0 -176.225" stroke-width="2" 
+          class="ob-instrument-tick-mark-primary-color-stroke"/>
+      </g>
     </g>
 
     <mask id="clip${option.uuid}">

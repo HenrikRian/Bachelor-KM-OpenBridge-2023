@@ -6,6 +6,31 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
     {
+        name: 'AngleMedium',
+        path: ['Set point', 'Angle','Medium'],
+        outputFolder: 'SetPoint'
+    },
+  {
+        name: 'AngleLarge',
+        path: ['Set point', 'Angle','Large'],
+        outputFolder: 'SetPoint'
+    },
+    {
+        name: 'RudderSmall',
+        path: ['Rudder', 'Elements','Rudder/ Small'],
+        outputFolder: 'Rudder'
+    },
+    {
+        name: 'RudderMedium',
+        path: ['Rudder', 'Elements','Rudder/ Medium'],
+        outputFolder: 'Rudder'
+    },
+    {
+        name: 'RudderLarge',
+        path: ['Rudder', 'Elements','Rudder/ Large'],
+        outputFolder: 'Rudder'
+    },
+    {
         name: 'CombinedRollShipSmall',
         path: ['Pitch & Roll', '03 Combined','Small', 'roll', 'Small'],
         outputFolder: 'PitchRoll'
