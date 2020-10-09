@@ -18,14 +18,10 @@ export async function getFigmaFile(fileId: string): Promise<unknown> {
 
 export async function getFigmaSvg(
   fileId: string,
-  elementId: string,
-  retry: number
-): Promise<string> {
-  if (retry < 0) {
-    throw Error(`Something failed when downloading SVG.`)
-  }
+  elementIds: string
+): Promise<{ [id: string]: string }> {
   const imageUrlData = await fetch(
-    `${baseUrl}/v1/images/${fileId}?ids=${elementId}&format=svg&svg_include_id=true`,
+    `${baseUrl}/v1/images/${fileId}?ids=${elementIds}&format=svg&svg_include_id=true`,
     header
   );
   if (imageUrlData.status !== 200) {
@@ -33,13 +29,5 @@ export async function getFigmaSvg(
     throw Error(`Something failed when downloading SVG: ${responseText}`)
   }
   const imageUrls = await imageUrlData.json();
-  const imageData = await fetch(imageUrls.images[elementId])
-    if (imageData.status !== 200) {
-    const responseText = await imageUrlData.text();
-    throw Error(`Something failed when downloading SVG: ${responseText}`)
-  }
-  const svg = await imageData.text()
-  if (svg.length === 0)
-    return getFigmaSvg(fileId, elementId, retry - 1)
-  return svg;
+  return imageUrls.images
 }

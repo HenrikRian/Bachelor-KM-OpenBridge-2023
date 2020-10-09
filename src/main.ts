@@ -3,8 +3,9 @@ import { convertSvg } from './convert-svg';
 import { getFigmaFile, getFigmaSvg } from './figmaImport';
 import { FrameNode } from './figma-types';
 import yargs from 'yargs';
+import fetch from 'node-fetch';
 
-import { exportComponents } from './exports';
+import { exportComponents, ExportDef } from './exports';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -43,16 +44,27 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
     ...document.styles,
     ...documentStyles.styles
   };
+  const elements = exportComponents.map(component => {
+    const element = getElement(document.document as FigmaNode, component.path);
+    return {component: component, element: element}
+  }).filter(value => value.element !== null) as {component: ExportDef, element: FigmaNode}[];
 
-  for (const component of exportComponents) {
+  const figmaIds = elements.map(v => v.element.id);
+  const urlSvgs = await getFigmaSvg(mainFigmaFile, figmaIds.join(','))
+  const promises = [];
+  for (const ele of elements) {
+    // eslint-disable-next-line no-async-promise-executor
+    promises.push(new Promise( async (resolve, reject) => {
+      const element = ele.element;
+    const component = ele.component;
     console.log(`Exporting ${ component.name }`);
 
-    const element = getElement(document.document as FigmaNode, component.path);
     if (element === null) {
       console.error(`Could not find ${ component.name }`);
-      continue;
+      reject();
     }
-    const svg = await getFigmaSvg(mainFigmaFile, element.id, 3);
+    const imageData = await fetch(urlSvgs[element.id])
+    const svg = await imageData.text()
     const out = convertSvg(
       (element as unknown) as FrameNode,
       svg,
@@ -69,7 +81,9 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
       fs.mkdirSync(outputFolder);
     }
     fs.writeFileSync(`${ outputFolder }/${ component.name }.svg`, out);
+    }))
   }
+  Promise.all(promises).then(()=>console.log("Done"))
 }
 
 const argv = yargs
