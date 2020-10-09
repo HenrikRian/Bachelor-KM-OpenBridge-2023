@@ -6,6 +6,15 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
   {
+        name: 'TicBarSmall',
+        path: ['ROT', 'Elements', 'Tick bar/ Small'],
+        outputFolder: 'ROT'
+    },{
+        name: 'TicBarLarge',
+        path: ['ROT', 'Elements', 'Tick bar/ Large'],
+        outputFolder: 'ROT'
+    },
+  {
         name: 'CircleBorderInsideSmall',
         path: ['ROT', '01 Circle', 'Small', 'Inner circle'],
         outputFolder: 'ROT'
