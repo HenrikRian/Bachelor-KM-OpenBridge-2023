@@ -5,6 +5,36 @@ export interface ExportDef {
 }
 
 const staticExportComponents: ExportDef[] = [
+  {
+        name: 'CircleBorderInsideSmall',
+        path: ['ROT', '01 Circle', 'Small', 'Inner circle'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleBorderOutsideSmall',
+        path: ['ROT', '01 Circle', 'Small', 'Outer circle'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleDotsSmall',
+        path: ['ROT', '01 Circle', 'Small', 'rot-dots'],
+        outputFolder: 'ROT'
+    },
+  {
+        name: 'CircleBorderInsideLarge',
+        path: ['ROT', '01 Circle', 'Large', 'border-inside'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleBorderOutsideLarge',
+        path: ['ROT', '01 Circle', 'Large', 'border-outside'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleTrackLarge',
+        path: ['ROT', '01 Circle', 'Large', 'track'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleDotsLarge',
+        path: ['ROT', '01 Circle', 'Large', 'rot-dots'],
+        outputFolder: 'ROT'
+    },
     {
         name: 'AngleMedium',
         path: ['Set point', 'Angle','Medium'],
