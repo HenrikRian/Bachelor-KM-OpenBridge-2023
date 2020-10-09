@@ -7,7 +7,7 @@
     "url": "https://gitlab.com/openbridge/openbridge-exporter"
   },
   "scripts": {
-    "start": "rimraf ./generated-* && npm-run-all --parallel autogen-*",
+    "start": "rimraf ./generated-* && npm-run-all autogen-*",
     "autogen-with-styles": "ts-node --files src/main.ts",
     "autogen-without-styles": "ts-node --files src/main.ts -c",
     "lint": "eslint . --ext .ts",
