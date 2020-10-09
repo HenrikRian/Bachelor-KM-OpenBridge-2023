@@ -3,7 +3,7 @@ import React from "react";
 
 
 export default {
-    title: 'INSTRUMENT/WatchFace',
+    title: 'INSTRUMENT/WatchFace/Medium',
     argTypes: {
         innerCircle: {
             control: {
@@ -31,8 +31,8 @@ export default {
 
 const Template = (args) => <ob-watchface-medium style={{width: 256}} {...args}/>;
 
-export const Medium = Template.bind({});
-Medium.args = {
+export const Default = Template.bind({});
+Default.args = {
     innerCircle: 'regular',
     rotate: 0,
     primaryTickmarks: 45,

@@ -4,7 +4,7 @@ import React from "react";
 
 
 export default {
-    title: 'INSTRUMENT/WatchFace',
+    title: 'INSTRUMENT/WatchFace/Small',
     argTypes: {
         innerCircle: {
             control: {
@@ -26,8 +26,8 @@ export default {
 
 const Template = (args) => <ob-watchface-small style={{width: 128}} {...args}/>;
 
-export const Small = Template.bind({});
-Small.args = {
+export const Default = Template.bind({});
+Default.args = {
     innerCircle: 'regular',
     rotate: 0,
     primaryTickmarks: 45,
