@@ -20,7 +20,8 @@ export class AzimuthMedium extends ObElement {
                 rotate: 0,
                 cross: false,
                 startClipDeg: 0,
-                endClipDeg: 0
+                endClipDeg: 0,
+                uuid: this.uuid
             })}
     </svg>
     <g transform="rotate(${this.angle + 90})">

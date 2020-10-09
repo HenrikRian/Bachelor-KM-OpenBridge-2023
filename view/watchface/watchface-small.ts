@@ -40,7 +40,8 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 
 export function watchFaceSmallRender(option: {
     innerCircle: string, primaryTickMarks: number, rotate: number,
-    startClipDeg: number, endClipDeg: number, showArrow: boolean, cross: boolean
+    startClipDeg: number, endClipDeg: number, showArrow: boolean, cross: boolean,
+    uuid: string
 }) {
     const startClipDegMapped = startClipDegMap(option.startClipDeg);
     const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
@@ -57,7 +58,7 @@ export function watchFaceSmallRender(option: {
     return svg`
   <svg viewBox="-32 -32 64 64">
     <g transform="rotate(${option.rotate})">
-      <g mask="url(#clipPathWatchFaceSmall)">
+      <g mask="url(#clipPathWatchFaceSmall${option.uuid})">
         <svg width="64" height="64" x="-32" y="-32">
              ${innerCircleSvg}          
         </svg>
@@ -70,7 +71,7 @@ export function watchFaceSmallRender(option: {
       </svg>
     </g>
 
-    <mask id="clipPathWatchFaceSmall">
+    <mask id="clipPathWatchFaceSmall${option.uuid}">
       <rect height="128" width="128" x="-64" y="-64" fill="white"></rect>
       <path d="${clipPath}" fill="black"/>
     </mask>
@@ -97,7 +98,8 @@ export class HeadingMedium extends ObElement {
             startClipDeg: this.startClipDeg,
             endClipDeg: this.endClipDeg,
             showArrow: this.showArrow === 'true',
-            cross: this.cross === 'true'
+            cross: this.cross === 'true',
+            uuid: this.uuid
         })
     }
 }

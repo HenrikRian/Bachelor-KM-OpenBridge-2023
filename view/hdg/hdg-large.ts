@@ -27,7 +27,8 @@ ${watchFaceLargeRender({
             endClipDeg: 0,
             primaryTickMarks: 45,
             secondaryTickMarks: 5,
-            innerCircle: "regular"
+            innerCircle: "regular",
+            uuid: this.uuid
         })}
 </svg>
     <g transform="rotate(${rotateCog})">

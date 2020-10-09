@@ -4,6 +4,7 @@ import Ship from "../../generated-without-style/PitchRoll/PitchShipMedium.svg";
 import Pointer from "../../generated-without-style/PitchRoll/PitchPointerMedium.svg";
 import {watchFaceMediumRender} from "../watchface/watchface-medium";
 import {renderBlueArch} from "../watchface/blue-arch";
+import { renderPitchLarge } from './pitch-large';
 
 @customElement('ob-pitch-medium')
 export class PitchMedium extends ObElement {
@@ -12,21 +13,21 @@ export class PitchMedium extends ObElement {
     @property({type: Number}) upperPitch = 3;
     @property({type: Number}) scale = 5;
 
-    static get styles() {
-        return [
-            super.styles,
-            css`
-        .label {
-            text-anchor: middle;
-            dominant-baseline: middle;
-            font-size: var(--font-ui-label-active-size);
-            font-family: "Open Sans", sans-serif;
-            font-weight: var(--font-ui-label-active-weight);
-            line-height: var(--font-ui-label-active-line-height);
-        }`]
-    }
-
     protected render() {
+        return renderPitchLarge({
+      pitch: this.pitch,
+      lowerPitch: this.lowerPitch,
+      upperPitch: this.upperPitch,
+      scale: this.scale,
+      uuid: this.uuid
+    });
+    }
+}
+
+export function renderPitchMedium(cfg: {
+  pitch: number, lowerPitch: number, upperPitch: number,
+  scale: number, uuid: string
+}) {
         return svg`
 <svg viewBox="-128 -128 256 256">
 <svg x="-128" y="-128">
@@ -38,15 +39,15 @@ ${watchFaceMediumRender({
             endClipDeg: 240,
             primaryTickMarks: 30,
             secondaryTickMarks: 5,
-            innerCircle: "regular"
+            innerCircle: "regular",
+            uuid: cfg.uuid
         })}
 </svg>
-${renderBlueArch(89, this.lowerPitch * this.scale + 270, this.upperPitch * this.scale + 270, 2)}
-    <g transform="rotate(${this.pitch * this.scale})">
+${renderBlueArch(89, cfg.lowerPitch * cfg.scale + 270, cfg.upperPitch * cfg.scale + 270, 2)}
+    <g transform="rotate(${cfg.pitch * cfg.scale})">
       <svg x="-48" y="-16" width="96" height="32">${Ship}</svg>
       <svg x="-128" y="-24" width="256" height="48">${Pointer}</svg>
     </g>
-    <text x="-114" y="0" class="label">0</text>
+    <text x="-114" y="0" class="ob-font-ui-label-active ob-center-label">0</text>
   </svg>`;
     }
-}

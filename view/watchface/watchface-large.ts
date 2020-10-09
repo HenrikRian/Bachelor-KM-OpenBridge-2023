@@ -17,6 +17,7 @@ import TertiaryTickmarksLarge
     from '../../generated-with-style/WatchFace/TertiaryTickmarksLarge.svg'
 
 import {ObElement} from "../obElement";
+import { uuidv4 } from '../utils/uuid';
 
 function startClipDegMap(startClipDeg: number) {
     const deg = startClipDeg % 360
@@ -49,6 +50,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 export function watchFaceLargeRender(option: {
     innerCircle: string, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
     startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean, tertiaryTickMarks?: boolean
+    uuid: string
 }) {
     const startClipDegMapped = startClipDegMap(option.startClipDeg);
     const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
@@ -72,7 +74,7 @@ export function watchFaceLargeRender(option: {
     return svg`
   <svg viewBox="-256 -256 512 512">
     <g transform="rotate(${option.rotate})">
-      <g mask="url(#clipPathWatchFaceLarge)">
+      <g mask="url(#clip${option.uuid})">
         <svg width="512" height="512" x="-256" y="-256">
             ${innerCircleSvg}
             ${option.cross ? CrossRegularLarge : null}
@@ -85,7 +87,7 @@ export function watchFaceLargeRender(option: {
       </svg>
     </g>
 
-    <mask id="clipPathWatchFaceLarge">
+    <mask id="clip${option.uuid}">
       <rect height="512" width="512" x="-256" y="-256" fill="white"></rect>
       <path d='${clipPath}' fill="black"/>
     </mask>
@@ -114,7 +116,10 @@ export class WatchfaceLarge extends ObElement {
             startClipDeg: this.startClipDeg,
             endClipDeg: this.endClipDeg,
             showLabels: this.showLabels === 'true',
-            cross: this.cross === 'true'
+            cross: this.cross === 'true',
+            uuid: this.uuid
         })
     }
 }
+
+

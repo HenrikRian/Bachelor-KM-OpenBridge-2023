@@ -46,7 +46,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 
 export function watchFaceMediumRender(option: {
     innerCircle: string, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
-    startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean
+    startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean, uuid: string
 }) {
     const startClipDegMapped = startClipDegMap(option.startClipDeg);
     const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
@@ -70,7 +70,7 @@ export function watchFaceMediumRender(option: {
     return svg`
   <svg viewBox="-128 -128 256 256">
     <g transform="rotate(${option.rotate})">
-      <g mask="url(#clipPathWatchFaceMedium)">
+      <g mask="url(#clipPathWatchFaceMedium${option.uuid})">
         <svg width="256" height="256" x="-128" y="-128">
              ${innerCircleSvg}          
         </svg>
@@ -86,7 +86,7 @@ export function watchFaceMediumRender(option: {
       </svg>
     </g>
 
-    <mask id="clipPathWatchFaceMedium">
+    <mask id="clipPathWatchFaceMedium${option.uuid}">
       <rect height="256" width="256" x="-128" y="-128" fill="white"></rect>
       <path d='${clipPath}' fill="black"/>
     </mask>
@@ -115,7 +115,8 @@ export class WatchfaceMedium extends ObElement {
             startClipDeg: this.startClipDeg,
             endClipDeg: this.endClipDeg,
             showLabels: this.showLabels === 'true',
-            cross: this.cross === 'true'
+            cross: this.cross === 'true',
+            uuid: this.uuid
         })
     }
 }

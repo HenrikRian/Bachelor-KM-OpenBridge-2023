@@ -4,6 +4,7 @@
     name: string
     id: string
     children?: StyledNode[]
+    visible?: boolean
     styles?: {
       stroke?: string,
       strokes?: string

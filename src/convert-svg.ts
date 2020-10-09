@@ -64,7 +64,7 @@ function searchFigmaNode(figmaElement: StyledNode, svgIds: string[]): StyledNode
 
   const currentId = svgIds.shift();
   const figmaNodes = figmaElement.children
-    .filter(f => f.name === currentId)
+    .filter(f => (f.name === currentId && f.visible !== false))
     .map(f => {
       const ids = [...svgIds];
       return searchFigmaNode(f, ids);

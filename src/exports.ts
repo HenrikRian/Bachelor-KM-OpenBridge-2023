@@ -6,6 +6,21 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
     {
+        name: 'CombinedRollShipSmall',
+        path: ['Pitch & Roll', '03 Combined','Small', 'roll', 'Small'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'CombinedRollShipMedium',
+        path: ['Pitch & Roll', '03 Combined','Medium', 'roll', 'Medium'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'CombinedRollShipLarge',
+        path: ['Pitch & Roll', '03 Combined','Large', 'pitch', 'Large'],
+        outputFolder: 'PitchRoll'
+    },
+    {
         name: 'PitchPointerSmall',
         path: ['Pitch & Roll', '01 Pitch', 'Small', 'pitch'],
         outputFolder: 'PitchRoll'
