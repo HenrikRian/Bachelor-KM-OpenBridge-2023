@@ -1,0 +1,33 @@
+@import "variables";
+
+.ob-font-ui-title {
+   @include font-ui-title();
+}
+
+.ob-font-ui-subtitle {
+   @include font-ui-subtitle();
+}
+
+.ob-font-ui-overline {
+   @include font-ui-overline();
+}
+
+.ob-font-ui-button {
+   @include font-ui-button();
+}
+
+.ob-font-ui-body-active {
+   @include font-ui-body-active();
+}
+
+.ob-font-ui-body {
+   @include font-ui-body();
+}
+
+.ob-font-ui-label-active {
+   @include font-ui-label-active();
+}
+
+.ob-font-ui-label {
+   @include font-ui-label();
+}
