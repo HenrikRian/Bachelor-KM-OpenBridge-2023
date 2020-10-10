@@ -3,8 +3,8 @@ import {ObElement} from "../obElement";
 import BarSvg from "../../generated-without-style/BARS/BarVerticalPositive100BarSmall.svg";
 import {renderVerticalActiveBarSmall} from "./bars";
 
-@customElement('ob-bar-vertical-positive-100-small')
-export class BarVerticalPositive100Small extends ObElement {
+@customElement('ob-bar-vertical-positive-small')
+export class BarVerticalPositiveSmall extends ObElement {
     @property({type: Number}) value = 0
 
     protected render(): unknown {

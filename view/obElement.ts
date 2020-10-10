@@ -20,6 +20,11 @@ export class ObElement extends LitElement {
          text-anchor: middle;
          dominant-baseline: middle;
       }
+      
+      .ob-right-label {
+         text-anchor: end;
+         dominant-baseline: middle;
+      }
     `];
     }
 }
