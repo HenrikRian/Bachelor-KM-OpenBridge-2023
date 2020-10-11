@@ -62,8 +62,16 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
     if (element === null) {
       console.error(`Could not find ${ component.name }`);
       reject();
+      return;
     }
-    const imageData = await fetch(urlSvgs[element.id])
+    let imageData
+    try {
+      imageData = await fetch(urlSvgs[element.id])
+    } catch (e) {
+      console.error(`Could not download SVG for ${ component.name }`,e);
+      reject(e);
+      return;
+    }
     const svg = await imageData.text()
     const out = convertSvg(
       (element as unknown) as FrameNode,
