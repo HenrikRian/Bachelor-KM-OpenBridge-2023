@@ -3,6 +3,7 @@ import {ObElement} from "../obElement";
 import Rudder from "../../generated-without-style/Rudder/RudderMedium.svg";
 import SetPoint from "../../generated-without-style/SetPoint/AngleMedium.svg";
 import {watchFaceMediumRender} from "../watchface/watchface-medium";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-rudder-medium')
 export class RudderMedium extends ObElement {
@@ -24,7 +25,7 @@ ${watchFaceMediumRender({
             endClipDeg: 180 - this.clipAngle,
             primaryTickMarks: 90,
             secondaryTickMarks: 5,
-            innerCircle: this.showPortStarboard === "true" ? "portStarboard" : "regular",
+            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>

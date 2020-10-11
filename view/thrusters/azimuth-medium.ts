@@ -3,6 +3,7 @@ import {ObElement} from "../obElement";
 import {renderThrusterElementMedium} from "./thruster-element-medium";
 import {watchFaceMediumRender} from "../watchface/watchface-medium";
 import SetPoint from "../../generated-without-style/SetPoint/AngleMedium.svg";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-azimuth-medium')
 export class AzimuthMedium extends ObElement {
@@ -10,12 +11,13 @@ export class AzimuthMedium extends ObElement {
     @property({type: Number}) value = 0;
     @property({type: Number}) angle = 0;
     @property({type: Number}) targetAngle = 0;
+    @property({type: String}) showPortStarboard = "false";
 
     render() {
         return svg`<svg viewBox="-128 -128 256 256">
     <svg width="256" height="256" x="-128" y="-128">
         ${watchFaceMediumRender({
-                innerCircle: "regular",
+                innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
                 primaryTickMarks: 90,
                 secondaryTickMarks: 10,
                 showLabels: false,

@@ -19,5 +19,6 @@ Default.args = {
     target: 60,
     value: 40,
     angle: 45,
-    targetAngle: 20
+    targetAngle: 20,
+    showPortStarboard: false
 };

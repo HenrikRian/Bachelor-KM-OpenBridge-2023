@@ -15,5 +15,6 @@ const Template = (args) => <ob-azimuth-small style={{width: 64, height: 64}} {..
 export const Default = Template.bind({});
 Default.args = {
     value: 40,
-    angle: 45
+    angle: 45,
+    showPortStarboard: false
 };

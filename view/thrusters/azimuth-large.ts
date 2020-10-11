@@ -1,8 +1,10 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
-import {renderThrusterElementLarge, WidthSize} from "./thruster-element-large";
+import {renderThrusterElementLarge} from "./thruster-element-large";
+import {WidthSize} from "../models";
 import {watchFaceLargeRender} from "../watchface/watchface-large";
 import SetPoint from "../../generated-without-style/SetPoint/AngleLarge.svg";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-azimuth-large')
 export class AzimuthLarge extends ObElement {
@@ -11,12 +13,13 @@ export class AzimuthLarge extends ObElement {
     @property({type: Number}) angle = 0;
     @property({type: Number}) targetAngle = 0;
     @property({type: String}) thrusterWidth = WidthSize.REGULAR;
+    @property({type: String}) showPortStarboard = "false";
 
     render() {
         return svg`<svg viewBox="-256 -256 512 512">
     <svg width="512" height="512" x="-256" y="-256">
         ${watchFaceLargeRender({
-            innerCircle: "regular",
+            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             primaryTickMarks: 180,
             secondaryTickMarks: 10,
             tertiaryTickMarks: true,

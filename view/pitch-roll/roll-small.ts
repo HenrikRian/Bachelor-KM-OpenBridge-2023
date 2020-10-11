@@ -4,6 +4,7 @@ import Ship from "../../generated-without-style/PitchRoll/RollShipSmall.svg";
 import Pointer from "../../generated-without-style/PitchRoll/RollPointerSmall.svg";
 import {watchFaceSmallRender} from "../watchface/watchface-small";
 import {renderBlueArch} from "../watchface/blue-arch";
+import {InnerWatchFaceType} from "../models";
 
 export function renderRollSmall(cfg: {
   roll: number, lowerRoll: number, upperRoll: number,
@@ -19,7 +20,7 @@ ${watchFaceSmallRender({
             startClipDeg: 210,
             endClipDeg: 150,
             primaryTickMarks: 30,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             uuid: cfg.uuid
         })}
 </svg>

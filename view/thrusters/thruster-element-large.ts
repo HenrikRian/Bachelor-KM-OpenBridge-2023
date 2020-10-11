@@ -14,13 +14,9 @@ import ThrusterStaticLargeMinWidth from '../../generated-without-style/Thruster/
 import ThrusterPowerInputLargeMinWidth from '../../generated-without-style/Thruster/ThrusterPowerInputLargeMinWidth.svg'
 import FrontArrowLargeMinWidth from '../../generated-without-style/Thruster/FrontArrowLargeMinWidth.svg'
 import PointerLargeMinWidth from '../../generated-without-style/Thruster/PointerLargeMinWidth.svg'
+import {WidthSize, WidthSizeStrings} from "../models";
 
-export enum WidthSize {
-    MIN = "MIN",
-    REGULAR  = "REGULAR",
-    MAX = "MAX"
-}
-type WidthSizeStrings = keyof typeof WidthSize;
+
 
 function value2width(value: number): number {
     const width = 319;

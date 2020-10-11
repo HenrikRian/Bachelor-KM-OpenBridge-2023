@@ -1,5 +1,6 @@
 import "./watchface-medium";
 import React from "react";
+import {InnerWatchFaceType} from "../models";
 
 
 export default {
@@ -8,7 +9,7 @@ export default {
         innerCircle: {
             control: {
                 type: 'inline-radio',
-                options: ['regular', 'portStarboard', 'positiveNegative']
+                options: [InnerWatchFaceType.REGULAR, InnerWatchFaceType.PORT_STARBOARD, InnerWatchFaceType.POSITIVE_NEGATIVE]
             }
         },
         rotate: { control: {type: 'range', min: 0, max: 360} },
@@ -33,7 +34,7 @@ const Template = (args) => <ob-watchface-medium style={{width: 256}} {...args}/>
 
 export const Default = Template.bind({});
 Default.args = {
-    innerCircle: 'regular',
+    innerCircle: InnerWatchFaceType.REGULAR,
     rotate: 0,
     primaryTickmarks: 45,
     secondaryTickmarks: 10,

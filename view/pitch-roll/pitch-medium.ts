@@ -5,6 +5,7 @@ import Pointer from "../../generated-without-style/PitchRoll/PitchPointerMedium.
 import {watchFaceMediumRender} from "../watchface/watchface-medium";
 import {renderBlueArch} from "../watchface/blue-arch";
 import { renderPitchLarge } from './pitch-large';
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-pitch-medium')
 export class PitchMedium extends ObElement {
@@ -39,7 +40,7 @@ ${watchFaceMediumRender({
             endClipDeg: 240,
             primaryTickMarks: 30,
             secondaryTickMarks: 5,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             uuid: cfg.uuid
         })}
 </svg>

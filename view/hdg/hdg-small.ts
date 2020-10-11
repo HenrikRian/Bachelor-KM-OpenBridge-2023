@@ -2,6 +2,7 @@ import {svg, customElement, property} from 'lit-element'
 import {ObElement} from "../obElement";
 import HeadingSmall from "../../generated-without-style/HDG_COG/HeadingSmall.svg";
 import {watchFaceSmallRender} from "../watchface/watchface-small";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-hdg-small')
 export class HdgSmall extends ObElement{
@@ -23,7 +24,7 @@ ${watchFaceSmallRender({
             startClipDeg: 0,
             endClipDeg: 0,
             primaryTickMarks: 45,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>

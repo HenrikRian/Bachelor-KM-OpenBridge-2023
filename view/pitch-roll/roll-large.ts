@@ -4,6 +4,7 @@ import Ship from "../../generated-without-style/PitchRoll/RollShipLarge.svg";
 import Pointer from "../../generated-without-style/PitchRoll/RollPointerLarge.svg";
 import {watchFaceLargeRender} from "../watchface/watchface-large";
 import {renderBlueArch} from "../watchface/blue-arch";
+import {InnerWatchFaceType} from "../models";
 
 export function renderRollLarge(cfg: {
   roll: number, lowerRoll: number, upperRoll: number,
@@ -22,7 +23,7 @@ ${watchFaceLargeRender({
             endClipDeg: 150,
             primaryTickMarks: 30,
             secondaryTickMarks: 5,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             tertiaryTickMarks: false,
             uuid: cfg.uuid
         })}

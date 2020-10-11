@@ -2,6 +2,7 @@ import {svg, customElement, property} from 'lit-element'
 import {ObElement} from "../obElement";
 import Rudder from "../../generated-without-style/Rudder/RudderSmall.svg";
 import {watchFaceSmallRender} from "../watchface/watchface-small";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-rudder-small')
 export class RudderSmall extends ObElement {
@@ -21,7 +22,7 @@ ${watchFaceSmallRender({
             startClipDeg: 180 + this.clipAngle,
             endClipDeg: 180 - this.clipAngle,
             primaryTickMarks: 90,
-            innerCircle: this.showPortStarboard === "true" ? "portStarboard" : "regular",
+            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>

@@ -1,6 +1,6 @@
 import "./azimuth-large";
 import React from "react";
-import {WidthSize} from "./thruster-element-large";
+import {WidthSize} from "../models";
 
 
 export default {
@@ -27,5 +27,6 @@ Default.args = {
     value: 40,
     angle: 45,
     targetAngle: 20,
-    thrusterWidth: WidthSize.REGULAR
+    thrusterWidth: WidthSize.REGULAR,
+    showPortStarboard: false
 };

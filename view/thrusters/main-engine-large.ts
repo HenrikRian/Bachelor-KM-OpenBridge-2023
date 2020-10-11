@@ -1,7 +1,8 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
 import MainEngineArrowLarge from '../../generated-without-style/Thruster/MainEngineArrowLarge.svg'
-import {renderThrusterElementLarge, WidthSize} from "./thruster-element-large";
+import {renderThrusterElementLarge} from "./thruster-element-large";
+import {WidthSize} from "../models";
 
 @customElement('ob-main-engine-large')
 export class MainEngineLarge extends ObElement {

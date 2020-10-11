@@ -1,8 +1,9 @@
-import {svg, customElement, property} from 'lit-element'
+import {customElement, property, svg} from 'lit-element'
 import {ObElement} from "../obElement";
 import Rudder from "../../generated-without-style/Rudder/RudderLarge.svg";
 import SetPoint from "../../generated-without-style/SetPoint/AngleLarge.svg";
 import {watchFaceLargeRender} from "../watchface/watchface-large";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-rudder-large')
 export class RudderLarge extends ObElement {
@@ -24,11 +25,11 @@ ${watchFaceLargeRender({
             endClipDeg: 180 - this.clipAngle,
             primaryTickMarks: 90,
             secondaryTickMarks: 5,
-            innerCircle: this.showPortStarboard === "true" ? "portStarboard" : "regular",
+            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>
-    <g transform="rotate(${180-this.rudderSetPointAngle})">
+    <g transform="rotate(${180 - this.rudderSetPointAngle})">
       <svg x="-24" y="-256" width="48" height="512">
         ${SetPoint}
       </svg>

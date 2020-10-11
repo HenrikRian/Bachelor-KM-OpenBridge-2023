@@ -3,6 +3,7 @@ import {ObElement} from "../obElement";
 import HeadingLarge from "../../generated-without-style/HDG_COG/HeadingLarge.svg";
 import CogLarge from "../../generated-without-style/HDG_COG/CogLarge.svg";
 import {watchFaceLargeRender} from "../watchface/watchface-large";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-hdg-large')
 export class HdgLarge extends ObElement {
@@ -27,7 +28,7 @@ ${watchFaceLargeRender({
             endClipDeg: 0,
             primaryTickMarks: 45,
             secondaryTickMarks: 5,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>

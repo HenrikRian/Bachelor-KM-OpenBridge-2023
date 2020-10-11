@@ -1,6 +1,7 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
-import {renderThrusterElementLarge, WidthSize} from "./thruster-element-large";
+import {renderThrusterElementLarge} from "./thruster-element-large";
+import {WidthSize} from "../models";
 
 @customElement('ob-tunnel-thruster-large')
 export class AzimuthLarge extends ObElement {

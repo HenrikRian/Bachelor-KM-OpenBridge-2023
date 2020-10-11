@@ -4,6 +4,7 @@ import Ship from '../../generated-without-style/PitchRoll/PitchShipLarge.svg';
 import Pointer from '../../generated-without-style/PitchRoll/PitchPointerLarge.svg';
 import { watchFaceLargeRender } from '../watchface/watchface-large';
 import { renderBlueArch } from '../watchface/blue-arch';
+import {InnerWatchFaceType} from "../models";
 
 
 export function renderPitchLarge(cfg: {
@@ -23,7 +24,7 @@ ${ watchFaceLargeRender({
     endClipDeg: 240,
     primaryTickMarks: 30,
     secondaryTickMarks: 5,
-    innerCircle: 'regular',
+    innerCircle: InnerWatchFaceType.REGULAR,
     tertiaryTickMarks: false,
     uuid: cfg.uuid
   }) }
