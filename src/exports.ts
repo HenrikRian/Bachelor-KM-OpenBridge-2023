@@ -434,7 +434,53 @@ const staticExportComponents: ExportDef[] = [
         name: 'ThrusterStaticLarge',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement'],
         outputFolder: 'Thruster'
+    },
+    {
+        name: 'PointerLargeMaxWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large - max width', 'Large', 'EndPointer'],
+        outputFolder: 'Thruster'
     }, {
+        name: 'FrontArrowLargeMaxWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'FrontArrow'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterPowerInputLargeMaxWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'PowerInput'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterPowerLargeMaxWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'Power'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterStaticLargeMaxWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'ThrusterElement'],
+        outputFolder: 'Thruster'
+    },
+
+        {
+        name: 'PointerLargeMinWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element', 'Large - min width', 'Large', 'EndPointer'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'FrontArrowLargeMinWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'FrontArrow'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterPowerInputLargeMinWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'PowerInput'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterPowerLargeMinWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'Power'],
+        outputFolder: 'Thruster'
+    }, {
+        name: 'ThrusterStaticLargeMinWidth',
+        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'ThrusterElement'],
+        outputFolder: 'Thruster'
+    },
+
+
+    {
         name: 'PrimaryTickmarks90Large',
         path: ['Watch face', '01 Primary Tickmarks', 'Large/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'

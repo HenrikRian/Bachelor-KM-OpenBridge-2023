@@ -8,6 +8,7 @@ export default {
         target: {control: {type: 'range', min: -100, max: 100}},
         value: {control: {type: 'range', min: -100, max: 100}},
         angle: {control: {type: 'range', min: 0, max: 360}},
+        targetAngle: {control: {type: 'range', min: 0, max: 360}},
     },
 };
 
@@ -17,5 +18,6 @@ export const Default = Template.bind({});
 Default.args = {
     target: 60,
     value: 40,
-    angle: 45
+    angle: 45,
+    targetAngle: 20
 };
