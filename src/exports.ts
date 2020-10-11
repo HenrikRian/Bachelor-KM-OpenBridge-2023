@@ -394,8 +394,18 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'Thruster'
     },
     {
+        name: 'MainEngineArrowSmall',
+        path: ['Thrusters & Propulsion', '03 Main Engine', 'Small', 'Small', 'FrontArrow'],
+        outputFolder: 'Thruster'
+    },
+    {
         name: 'MainEngineArrowMedium',
         path: ['Thrusters & Propulsion', '03 Main Engine', 'Medium', 'Medium', 'FrontArrow'],
+        outputFolder: 'Thruster'
+    },
+    {
+        name: 'MainEngineArrowLarge',
+        path: ['Thrusters & Propulsion', '03 Main Engine', 'Large', 'Large - Regular', 'FrontArrow'],
         outputFolder: 'Thruster'
     },
     {
