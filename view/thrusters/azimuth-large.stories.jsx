@@ -28,5 +28,7 @@ Default.args = {
     angle: 45,
     targetAngle: 20,
     thrusterWidth: WidthSize.REGULAR,
-    showPortStarboard: false
+    showPortStarboard: false,
+    showSetPointValue: true,
+    showSetPointAngle: true
 };

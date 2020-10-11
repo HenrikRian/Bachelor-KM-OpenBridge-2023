@@ -11,6 +11,7 @@ export class RudderMedium extends ObElement {
     @property({type: Number}) rudderSetPointAngle = 0
     @property({type: Number}) clipAngle = 90
     @property({type: String}) showPortStarboard = "true"
+    @property({type: String}) showSetPoint = "true"
 
     protected render(): unknown {
 
@@ -29,11 +30,12 @@ ${watchFaceMediumRender({
             uuid: this.uuid
         })}
 </svg>
+${this.showSetPoint ? svg`
     <g transform="rotate(${180-this.rudderSetPointAngle})">
       <svg x="-12" y="-128" width="24" height="256">
         ${SetPoint}
       </svg>
-    </g>
+    </g>`: undefined}
     <g transform="rotate(${-this.rudderAngle})">
       <svg x="-24" y="-128" width="48" height="256">
         ${Rudder}

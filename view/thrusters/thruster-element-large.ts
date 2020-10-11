@@ -17,13 +17,15 @@ import PointerLargeMinWidth from '../../generated-without-style/Thruster/Pointer
 import {WidthSize, WidthSizeStrings} from "../models";
 
 
-
 function value2width(value: number): number {
     const width = 319;
     return -value * width / 200;
 }
 
-export function renderThrusterElementLarge(option: { target: number, value: number, showArrow: boolean, width: WidthSizeStrings }) {
+export function renderThrusterElementLarge(option: {
+    target: number, value: number, showArrow: boolean,
+    width: WidthSizeStrings, showSetPoint: boolean
+}) {
     const xTarget = value2width(option.target) - 2;
     const xValue = option.value > 0 ? value2width(option.value) : 0;
     const xBar = value2width(option.value) - 1;
@@ -41,7 +43,8 @@ export function renderThrusterElementLarge(option: { target: number, value: numb
                           class="ob-instrument-dynamic-color-fill"/>
                     <rect id="EndLine" width="2" height="40" y="-20" x="${xBar}"
                           class="ob-instrument-dynamic-color-fill"/>
-                    <svg x="${xTarget}" y="-28">${ThrusterPowerInputLargeMinWidth}</svg>
+                    ${option.showSetPoint ? svg`
+                    <svg x="${xTarget}" y="-28">${ThrusterPowerInputLargeMinWidth}</svg>` : undefined}
                 </svg>`;
         case WidthSize.MAX:
             return svg`
@@ -54,7 +57,8 @@ export function renderThrusterElementLarge(option: { target: number, value: numb
                           class="ob-instrument-dynamic-color-fill"/>
                     <rect id="EndLine" width="2" height="88" y="-44" x="${xBar}"
                           class="ob-instrument-dynamic-color-fill"/>
-                    <svg x="${xTarget}" y="-52">${ThrusterPowerInputLargeMaxWidth}</svg>
+                    ${option.showSetPoint ? svg`
+                    <svg x="${xTarget}" y="-52">${ThrusterPowerInputLargeMaxWidth}</svg>` : undefined}
                 </svg>`;
         case WidthSize.REGULAR:
         default:
@@ -68,7 +72,8 @@ export function renderThrusterElementLarge(option: { target: number, value: numb
                           class="ob-instrument-dynamic-color-fill"/>
                     <rect id="EndLine" width="2" height="64" y="-32" x="${xBar}"
                           class="ob-instrument-dynamic-color-fill"/>
-                    <svg x="${xTarget}" y="-40">${ThrusterPowerInputLarge}</svg>
+                    ${option.showSetPoint ? svg`
+                    <svg x="${xTarget}" y="-40">${ThrusterPowerInputLarge}</svg>` : undefined}
                 </svg>`;
 
     }
@@ -91,6 +96,7 @@ export class ThrusterElementLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
     @property({type: String}) showArrow = "true";
+    @property({type: String}) showSetPoint = "true";
     @property({type: String}) width = WidthSize.REGULAR
 
     render() {
@@ -98,7 +104,8 @@ export class ThrusterElementLarge extends ObElement {
             target: this.target,
             value: this.value,
             showArrow: this.showArrow === "true",
-            width: this.width
+            width: this.width,
+            showSetPoint: this.showSetPoint === "true"
         });
     }
 }

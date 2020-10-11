@@ -11,6 +11,7 @@ export class RudderLarge extends ObElement {
     @property({type: Number}) rudderSetPointAngle = 0
     @property({type: Number}) clipAngle = 90
     @property({type: String}) showPortStarboard = "true"
+    @property({type: String}) showSetPoint = "true"
 
     protected render(): unknown {
 
@@ -29,11 +30,12 @@ ${watchFaceLargeRender({
             uuid: this.uuid
         })}
 </svg>
+${this.showSetPoint ? svg`
     <g transform="rotate(${180 - this.rudderSetPointAngle})">
       <svg x="-24" y="-256" width="48" height="512">
         ${SetPoint}
       </svg>
-    </g>
+    </g>` : null}
     <g transform="rotate(${-this.rudderAngle})">
       <svg x="-48" y="-256" width="96" height="512">
         ${Rudder}

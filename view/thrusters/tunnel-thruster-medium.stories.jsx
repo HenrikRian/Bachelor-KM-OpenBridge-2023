@@ -16,4 +16,5 @@ export const Default = Template.bind({});
 Default.args = {
   target: 60,
   value: 40,
+  showSetPoint: true
 };
