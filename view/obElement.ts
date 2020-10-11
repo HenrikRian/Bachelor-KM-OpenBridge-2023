@@ -25,6 +25,10 @@ export class ObElement extends LitElement {
          text-anchor: end;
          dominant-baseline: middle;
       }
+      
+      text {
+        fill: var(--element-active-color);
+      }
     `];
     }
 }
