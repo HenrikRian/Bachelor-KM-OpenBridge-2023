@@ -8,7 +8,7 @@ import {WidthSize} from "../models";
 export class MainEngineLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-
+    @property({type: String}) showSetPoint = "true";
 
     render() {
         const width = WidthSize.REGULAR;
@@ -16,7 +16,13 @@ export class MainEngineLarge extends ObElement {
     <svg y="-178" x="-40" width="80" height="18">${MainEngineArrowLarge}</svg>
     <g transform="rotate(90)">
       <svg x="-256" y="-52" width="512" height="104">
-      ${renderThrusterElementLarge({showArrow: false, value: this.value, target: this.target, width: width})}
+      ${renderThrusterElementLarge({
+            showArrow: false,
+            value: this.value,
+            target: this.target,
+            width: width,
+            showSetPoint: this.showSetPoint === "true"
+        })}
       </svg>
     </g>
   </svg>`

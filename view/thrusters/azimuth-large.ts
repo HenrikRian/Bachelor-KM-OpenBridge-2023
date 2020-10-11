@@ -14,6 +14,8 @@ export class AzimuthLarge extends ObElement {
     @property({type: Number}) targetAngle = 0;
     @property({type: String}) thrusterWidth = WidthSize.REGULAR;
     @property({type: String}) showPortStarboard = "false";
+    @property({type: String}) showSetPointValue = "true";
+    @property({type: String}) showSetPointAngle = "true";
 
     render() {
         return svg`<svg viewBox="-256 -256 512 512">
@@ -37,13 +39,14 @@ export class AzimuthLarge extends ObElement {
             target: this.target,
             value: this.value,
             showArrow: true,
-            width: this.thrusterWidth
+            width: this.thrusterWidth,
+            showSetPoint: this.showSetPointValue === "true"
         })}
       </svg>
     </g>
-    <g transform="rotate(${this.targetAngle})">
+    ${this.showSetPointAngle === "true" ? svg`<g transform="rotate(${this.targetAngle})">
         <svg x="-24" y="-256">${SetPoint}</svg>
-    </g>
+    </g>`: undefined }
   </svg>`
     }
 }

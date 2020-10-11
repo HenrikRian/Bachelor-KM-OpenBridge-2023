@@ -6,13 +6,15 @@ import FrontArrowMedium from '../../generated-with-style/Thruster/FrontArrowMedi
 import PointerMedium from '../../generated-with-style/Thruster/PointerMedium.svg'
 
 
-
 function value2width(value: number): number {
     const width = 158;
     return -value * width / 200;
 }
 
-export function renderThrusterElementMedium(option: { target: number, value: number, showArrow: boolean }) {
+export function renderThrusterElementMedium(option: {
+    target: number, value: number, showArrow: boolean,
+    showSetPoint: boolean
+}) {
     const xTarget = value2width(option.target) - 2;
     const xValue = option.value > 0 ? value2width(option.value) : 0;
     const widthValue = Math.abs(value2width(option.value));
@@ -24,7 +26,8 @@ export function renderThrusterElementMedium(option: { target: number, value: num
       <svg y="-.5" x="80">${PointerMedium}</svg>` : null}
       <rect id="Bar" x="${xValue}" y="-12" width="${widthValue}" height="24" fill="#0080FF"
             class="ob-instrument-dynamic-color-fill"/>
-      <svg x="${xTarget}" y="-20">${ThrusterPowerInputMedium}</svg>
+      ${option.showSetPoint ? svg`
+      <svg x="${xTarget}" y="-20">${ThrusterPowerInputMedium}</svg>` : undefined} 
   </svg>`
 }
 
@@ -33,12 +36,14 @@ export class ThrusterElementMedium extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
     @property({type: String}) showArrow = "true";
+    @property({type: String}) showSetPoint = "true";
 
     render() {
         return renderThrusterElementMedium({
             target: this.target,
             value: this.value,
-            showArrow: this.showArrow === "true"
+            showArrow: this.showArrow === "true",
+            showSetPoint: this.showSetPoint === "true"
         });
     }
 }

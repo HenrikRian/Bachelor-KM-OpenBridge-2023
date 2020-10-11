@@ -20,5 +20,7 @@ Default.args = {
     value: 40,
     angle: 45,
     targetAngle: 20,
-    showPortStarboard: false
+    showPortStarboard: false,
+    showSetPointValue: true,
+    showSetPointAngle: true
 };
