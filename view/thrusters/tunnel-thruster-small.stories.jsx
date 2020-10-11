@@ -1,16 +1,16 @@
-import "./tunnel-thruster-medium";
+import "./tunnel-thruster-small";
 import React from "react";
 
 
 export default {
-  title: 'INSTRUMENT/Thruster & Propulsion/02 Tunnel Thruster/Medium',
+  title: 'INSTRUMENT/Thruster & Propulsion/02 Tunnel Thruster/Small',
   argTypes: {
     target: { control: {type: 'range', min: -100, max: 100} },
     value: { control: {type: 'range', min: -100, max: 100} }
   },
 };
 
-const Template = (args) => <ob-tunnel-thruster-medium style={{width: 256, height: 256}} {...args}/>
+const Template = (args) => <ob-tunnel-thruster-small style={{width: 64, height: 64}} {...args}/>
 
 export const Default = Template.bind({});
 Default.args = {
