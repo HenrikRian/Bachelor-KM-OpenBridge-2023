@@ -389,6 +389,31 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'SOG_STW'
     },
     {
+        name: 'PointerLineTrueLarge',
+        path: ['SOG & STW', 'Elements', '05 True/ Large', 'speed-arrow', 'pointer-line'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'ArrowTrueLarge',
+        path: ['SOG & STW', 'Elements', '05 True/ Large', 'speed-arrow', 'speed-amount'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'PointerLineRelativeLarge',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Large', 'speed-arrow', 'pointer-line'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'ArrowRelativeLarge',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Large', 'speed-arrow', 'speed-amount'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'TopShipLarge',
+        path: ['Ship', 'Top view', 'Large'],
+        outputFolder: 'Ship'
+    },
+    {
         name: 'PointerMedium',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Medium', 'EndPointer'],
         outputFolder: 'Thruster'
