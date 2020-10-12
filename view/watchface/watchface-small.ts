@@ -9,6 +9,7 @@ import InnerCirclePositiveNegativeSmall
 import CrossRegularSmall from '../../generated-with-style/WatchFace/CrossRegularSmall.svg'
 
 import { ObElement } from '../obElement';
+import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";
 
 function startClipDegMap(startClipDeg: number) {
   const deg = startClipDeg % 360
@@ -39,7 +40,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 }
 
 export function watchFaceSmallRender(option: {
-  innerCircle: string, primaryTickMarks: number, rotate: number,
+  innerCircle: InnerWatchFaceTypeString, primaryTickMarks: number, rotate: number,
   startClipDeg: number, endClipDeg: number, showArrow: boolean, cross: boolean,
   uuid: string
 }) {
@@ -49,9 +50,9 @@ export function watchFaceSmallRender(option: {
 
 
   let innerCircleSvg = InnerCircleRegularSmall;
-  if (option.innerCircle === 'portStarboard') {
+  if (option.innerCircle === InnerWatchFaceType.PORT_STARBOARD) {
     innerCircleSvg = InnerCirclePortStarboardSmall;
-  } else if (option.innerCircle === 'positiveNegative') {
+  } else if (option.innerCircle === InnerWatchFaceType.POSITIVE_NEGATIVE) {
     innerCircleSvg = InnerCirclePositiveNegativeSmall;
   }
 
@@ -88,7 +89,7 @@ export function watchFaceSmallRender(option: {
 
 @customElement('ob-watchface-small')
 export class HeadingMedium extends ObElement {
-  @property({ type: String }) innerCircle = 'regular';
+  @property({ type: String }) innerCircle = InnerWatchFaceType.REGULAR;
   @property({ type: String }) cross = 'false';
   @property({ type: String }) showArrow = 'false';
   @property({ type: Number }) rotate = 0;

@@ -17,7 +17,7 @@ import TertiaryTickmarksLarge
     from '../../generated-with-style/WatchFace/TertiaryTickmarksLarge.svg'
 
 import {ObElement} from "../obElement";
-import { uuidv4 } from '../utils/uuid';
+import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";
 
 function startClipDegMap(startClipDeg: number) {
     const deg = startClipDeg % 360
@@ -48,7 +48,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 }
 
 export function watchFaceLargeRender(option: {
-    innerCircle: string, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
+    innerCircle: InnerWatchFaceTypeString, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
     startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean, tertiaryTickMarks?: boolean
     uuid: string
 }) {
@@ -57,9 +57,9 @@ export function watchFaceLargeRender(option: {
     const clipPath = clipPathGen(startClipDegMapped, endClipDegMapped);
 
     let innerCircleSvg = InnerCircleRegularLarge;
-    if (option.innerCircle === 'portStarboard') {
+    if (option.innerCircle === InnerWatchFaceType.PORT_STARBOARD) {
         innerCircleSvg = InnerCirclePortStarboardLarge;
-    } else if (option.innerCircle === 'positiveNegative') {
+    } else if (option.innerCircle === InnerWatchFaceType.POSITIVE_NEGATIVE) {
         innerCircleSvg = InnerCirclePositiveNegativeLarge;
     }
     let secondaryTickmarksSvg = null;
@@ -106,7 +106,7 @@ export function watchFaceLargeRender(option: {
 
 @customElement('ob-watchface-large')
 export class WatchfaceLarge extends ObElement {
-    @property({type: String}) innerCircle = "regular";
+    @property({type: String}) innerCircle = InnerWatchFaceType.REGULAR;
     @property({type: String}) cross = 'false';
     @property({type: String}) showLabels = 'false';
     @property({type: Number}) rotate = 0;

@@ -4,6 +4,7 @@ import Ship from '../../generated-without-style/PitchRoll/PitchShipSmall.svg';
 import Pointer from '../../generated-without-style/PitchRoll/PitchPointerSmall.svg';
 import { watchFaceSmallRender } from '../watchface/watchface-small';
 import { renderBlueArch } from '../watchface/blue-arch';
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-pitch-small')
 export class PitchSmall extends ObElement {
@@ -37,7 +38,7 @@ ${ watchFaceSmallRender({
     endClipDeg: 240,
     primaryTickMarks: 30,
     showArrow: false,
-    innerCircle: "regular",
+    innerCircle: InnerWatchFaceType.REGULAR,
     uuid: cfg.uuid
   }) }
 </svg>

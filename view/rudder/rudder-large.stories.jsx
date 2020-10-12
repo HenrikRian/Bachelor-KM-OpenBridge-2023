@@ -18,4 +18,5 @@ Default.args = {
   rudderSetPointAngle: 0,
   clipAngle: 90,
   showPortStarboard: true,
+  showSetPoint: true
 };

@@ -4,6 +4,7 @@ import Ship from "../../generated-without-style/PitchRoll/RollShipMedium.svg";
 import Pointer from "../../generated-without-style/PitchRoll/RollPointerMedium.svg";
 import {watchFaceMediumRender} from "../watchface/watchface-medium";
 import {renderBlueArch} from "../watchface/blue-arch";
+import {InnerWatchFaceType} from "../models";
 
 export function renderRollMedium(cfg: {
   roll: number, lowerRoll: number, upperRoll: number,
@@ -20,7 +21,7 @@ ${watchFaceMediumRender({
             endClipDeg: 150,
             primaryTickMarks: 30,
             secondaryTickMarks: 5,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             uuid: cfg.uuid
         })}
 </svg>

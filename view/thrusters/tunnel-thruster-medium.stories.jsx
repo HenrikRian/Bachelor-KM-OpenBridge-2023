@@ -10,10 +10,11 @@ export default {
   },
 };
 
-const Template = (args) => <ob-tunnel-thruster-medium style={{width: 256, height: 40}} {...args}/>;
+const Template = (args) => <ob-tunnel-thruster-medium style={{width: 256, height: 256}} {...args}/>
 
 export const Default = Template.bind({});
 Default.args = {
   target: 60,
-  value: 40
+  value: 40,
+  showSetPoint: true
 };

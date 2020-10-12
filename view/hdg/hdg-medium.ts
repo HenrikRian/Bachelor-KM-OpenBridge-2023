@@ -2,6 +2,7 @@ import {svg, customElement, property} from 'lit-element'
 import {ObElement} from "../obElement";
 import HeadingMedium from "../../generated-without-style/HDG_COG/HeadingMedium.svg";
 import {watchFaceMediumRender} from "../watchface/watchface-medium";
+import {InnerWatchFaceType} from "../models";
 
 @customElement('ob-hdg-medium')
 export class HdgMedium extends ObElement{
@@ -24,7 +25,7 @@ ${watchFaceMediumRender({
             endClipDeg: 0,
             primaryTickMarks: 45,
             secondaryTickMarks: 5,
-            innerCircle: "regular",
+            innerCircle: InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>
