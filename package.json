@@ -1,6 +1,6 @@
 {
   "name": "openbridge-exporter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "WebComponents of openbridge and svgs",
   "main": "dist/main.mjs",
   "repository": {
