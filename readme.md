@@ -18,7 +18,7 @@ The project can be used directly from npm.
 5. Set the theme in the html tag, for instance `<html theme="day">`
 6. Use the components, e.g.,:
 
-    `<ob-rudder-medium rudderAngle="5" rudderSetPointAngle="3" clipAngle="60" showPortStarboard="false" showSetPoint="true"/>`
+        `<ob-rudder-medium rudderAngle="5" rudderSetPointAngle="3" clipAngle="60" showPortStarboard="false" showSetPoint="true"/>`
 
 
 ## How to contribute ##
