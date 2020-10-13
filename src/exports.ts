@@ -6,6 +6,11 @@ export interface ExportDef {
 
 const staticExportComponents: ExportDef[] = [
   {
+        name: 'WatchFace360Large',
+        path: ['HDG & COG', '360 Flat watchface', 'Flat compass 360/ Large'],
+        outputFolder: 'HDG_COG'
+    },
+  {
         name: 'FlatArrowHdgSmall',
         path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Small'],
         outputFolder: 'HDG_COG'
@@ -328,7 +333,12 @@ const staticExportComponents: ExportDef[] = [
         name: 'CogLarge',
         path: ['HDG & COG', 'Elements', 'Circle compass arrow/ COG - Large'],
         outputFolder: 'HDG_COG'
-    }, {
+    },
+  {
+        name: 'CogFlatLarge',
+        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ COG - Large'],
+        outputFolder: 'HDG_COG'
+    },{
         name: 'WatchFaceMedium',
         path: ['HDG & COG', 'Circular HDG', 'Medium', 'Medium/ Compass 45°'],
         outputFolder: 'HDG_COG'
