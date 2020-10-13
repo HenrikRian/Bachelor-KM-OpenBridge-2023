@@ -6,5 +6,7 @@
 /generated-without-style/
 /gen-vue/
 /public/
+/dist
 
 .env
+*.tgz

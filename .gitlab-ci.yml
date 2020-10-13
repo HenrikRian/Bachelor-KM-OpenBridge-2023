@@ -14,10 +14,13 @@ before_script:
 build:
   script:
     - yarn run start
+    - yarn run build:lib
+    - yarn pack
   artifacts:
     paths:
       - "generated-with-style/"
       - "generated-without-style/"
+      - "openbridge-exporter-v*.tgz"
 
 pages:
   stage: deploy
