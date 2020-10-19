@@ -4,8 +4,8 @@ import {create} from '@storybook/theming/create';
 const isDay = true;
 const isDusk = !isDay;
 let theme = {
-    brandTitle: 'OpenBridge Components',
-    brandUrl: 'https://gitlab.com/openbridge/openbridge-component',
+    brandTitle: 'OpenBridge Web Components',
+    brandUrl: 'https://gitlab.com/openbridge/openbridge-web-components',
     brandImage: 'http://www.openbridge.no/images/OpenBridge_Logo2-p-500.png',
 };
 

@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!openbridge-components/dist/css/openbridge.css';
+import '!style-loader!css-loader!openbridge-css/dist/css/openbridge.css';
 
 export const globalTypes = {
     theme: {

@@ -12,7 +12,7 @@ A storybook demo is available [here](https://openbridge.gitlab.io/openbridge-exp
 # How to use the components.
 The project can be used directly from npm.
 1. Install the package by: `npm install openbridge-exporter`
-2. Install openbridge components: `npm install git+https://gitlab.com/openbridge/openbridge-components.git`
+2. Install openbridge-css: `npm install git+https://gitlab.com/openbridge/openbridge-components.git`
 3. Include the package in you javascript code (vue/react/angular) `import "openbridge-exporter";`
 4. Include the openbridge css in your project `openbridge-components/dist/css/openbridge.css`
 5. Set the theme in the html tag, for instance `<html theme="day">`
