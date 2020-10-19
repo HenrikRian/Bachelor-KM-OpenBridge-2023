@@ -1,12 +1,13 @@
 import {addons} from "@storybook/addons";
 import {create} from '@storybook/theming/create';
+import logo from './OpenBridgeLogo.png';
 
 const isDay = true;
 const isDusk = !isDay;
 let theme = {
     brandTitle: 'OpenBridge Web Components',
     brandUrl: 'https://gitlab.com/openbridge/openbridge-web-components',
-    brandImage: 'http://www.openbridge.no/images/OpenBridge_Logo2-p-500.png',
+    brandImage: logo,
 };
 
 if (isDay) {
