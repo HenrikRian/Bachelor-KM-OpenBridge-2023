@@ -1,5 +1,5 @@
 {
-  "name": "openbridge-components",
+  "name": "openbridge-css",
   "version": "0.2.0",
   "scripts": {
     "start": "npm run storybook",
