@@ -46,7 +46,7 @@
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
-    "openbridge-css": "^0.2.0",
+    "openbridge-css": "^0.2.1",
     "react": "^16.13.1",
     "react-is": "^16.13.1",
     "rimraf": "^3.0.2",
@@ -61,6 +61,6 @@
     "yargs": "^16.0.3"
   },
   "peerDependencies": {
-    "openbridge-css": "^0.2.0"
+    "openbridge-css": "^0.2.1"
   }
 }

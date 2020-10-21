@@ -1,5 +1,6 @@
 import "./speedlog-large";
 import React from "react";
+import {CurrentSpeed, WindSpeed} from "../models";
 
 
 export default {
@@ -10,6 +11,20 @@ export default {
         speedRelative: {control: {type: 'range', min: 0, max: 100}},
         courseRelative: {control: {type: 'range', min: 0, max: 360}},
         heading: {control: {type: 'range', min: 0, max: 360}},
+        windFromDirection: {control: {type: 'range', min: 0, max: 360}},
+        windSpeed: {
+            control: {
+                type: 'inline-radio',
+                options: Object.values(WindSpeed)
+            }
+        },
+        currentFromDirection: {control: {type: 'range', min: 0, max: 360}},
+        currentSpeed: {
+            control: {
+                type: 'inline-radio',
+                options: Object.values(CurrentSpeed)
+            }
+        }
     },
 };
 
@@ -21,5 +36,9 @@ Default.args = {
     courseTrue: 300,
     speedRelative: 40,
     courseRelative: 270,
-    heading: 310
+    heading: 310,
+    windSpeed: WindSpeed.LIGHT_AIR_1,
+    windFromDirection: 20,
+    currentSpeed: CurrentSpeed.GENTLE,
+    currentFromDirection: 50
 };
