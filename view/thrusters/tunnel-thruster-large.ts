@@ -8,14 +8,14 @@ export class AzimuthLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
     @property({type: String}) width = WidthSize.REGULAR;
-    @property({type: String}) showSetPoint = "true";
+    @property({type: Boolean}) showSetPoint = true;
 
     render() {
         return svg`<svg viewBox="-256 -40 512 80">
     <svg x="-256" y="-40" width="512" height="80">
     ${renderThrusterElementLarge({
             value: this.value, target: this.target, showArrow: false, width: this.width,
-            showSetPoint: this.showSetPoint === "true"
+            showSetPoint: this.showSetPoint
         })}
     </svg>
   </svg>`;

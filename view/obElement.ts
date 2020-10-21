@@ -1,6 +1,6 @@
 import {LitElement, css, unsafeCSS, CSSResult, CSSResultArray} from 'lit-element'
-import style from '!css-loader!sass-loader!openbridge-components/scss/_svg-variables.scss';
-import styleText from '!css-loader!sass-loader!openbridge-components/scss/_fonts.scss';
+import style from '!css-loader!sass-loader!openbridge-css/scss/_svg-variables.scss';
+import styleText from '!css-loader!sass-loader!openbridge-css/scss/_fonts.scss';
 import { uuidv4 } from './utils/uuid';
 
 export class ObElement extends LitElement {

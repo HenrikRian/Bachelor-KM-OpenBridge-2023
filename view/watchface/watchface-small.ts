@@ -90,8 +90,8 @@ export function watchFaceSmallRender(option: {
 @customElement('ob-watchface-small')
 export class HeadingMedium extends ObElement {
   @property({ type: String }) innerCircle = InnerWatchFaceType.REGULAR;
-  @property({ type: String }) cross = 'false';
-  @property({ type: String }) showArrow = 'false';
+  @property({ type: Boolean }) cross = false;
+  @property({ type: Boolean }) showArrow = false;
   @property({ type: Number }) rotate = 0;
   @property({ type: Number }) primaryTickmarks = 45;
   @property({ type: Number }) startClipDeg = 0;
@@ -105,8 +105,8 @@ export class HeadingMedium extends ObElement {
       rotate: this.rotate,
       startClipDeg: this.startClipDeg,
       endClipDeg: this.endClipDeg,
-      showArrow: this.showArrow === 'true',
-      cross: this.cross === 'true',
+      showArrow: this.showArrow,
+      cross: this.cross,
       uuid: this.uuid
     })
   }

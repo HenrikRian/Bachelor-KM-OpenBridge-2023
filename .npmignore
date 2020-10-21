@@ -1,2 +1,8 @@
 node_modules/
 build/
+.storybook
+public/
+tools/
+view/
+.env
+src/

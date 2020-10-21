@@ -104,8 +104,8 @@ export function watchFaceMediumRender(option: {
 @customElement('ob-watchface-medium')
 export class WatchfaceMedium extends ObElement {
     @property({type: String}) innerCircle = InnerWatchFaceType.REGULAR;
-    @property({type: String}) cross = 'false';
-    @property({type: String}) showLabels = 'false';
+    @property({type: Boolean}) cross = false;
+    @property({type: Boolean}) showLabels = false;
     @property({type: Number}) rotate = 0;
     @property({type: Number}) primaryTickmarks = 45;
     @property({type: Number}) secondaryTickmarks = 10;
@@ -121,8 +121,8 @@ export class WatchfaceMedium extends ObElement {
             rotate: this.rotate,
             startClipDeg: this.startClipDeg,
             endClipDeg: this.endClipDeg,
-            showLabels: this.showLabels === 'true',
-            cross: this.cross === 'true',
+            showLabels: this.showLabels,
+            cross: this.cross,
             uuid: this.uuid
         })
     }

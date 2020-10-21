@@ -13,15 +13,15 @@ export class AzimuthLarge extends ObElement {
     @property({type: Number}) angle = 0;
     @property({type: Number}) targetAngle = 0;
     @property({type: String}) thrusterWidth = WidthSize.REGULAR;
-    @property({type: String}) showPortStarboard = "false";
-    @property({type: String}) showSetPointValue = "true";
-    @property({type: String}) showSetPointAngle = "true";
+    @property({type: Boolean}) showPortStarboard = false;
+    @property({type: Boolean}) showSetPointValue = true;
+    @property({type: Boolean}) showSetPointAngle = true;
 
     render() {
         return svg`<svg viewBox="-256 -256 512 512">
     <svg width="512" height="512" x="-256" y="-256">
         ${watchFaceLargeRender({
-            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
+            innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             primaryTickMarks: 180,
             secondaryTickMarks: 10,
             tertiaryTickMarks: true,
@@ -40,11 +40,11 @@ export class AzimuthLarge extends ObElement {
             value: this.value,
             showArrow: true,
             width: this.thrusterWidth,
-            showSetPoint: this.showSetPointValue === "true"
+            showSetPoint: this.showSetPointValue
         })}
       </svg>
     </g>
-    ${this.showSetPointAngle === "true" ? svg`<g transform="rotate(${this.targetAngle})">
+    ${this.showSetPointAngle ? svg`<g transform="rotate(${this.targetAngle})">
         <svg x="-24" y="-256">${SetPoint}</svg>
     </g>`: undefined }
   </svg>`

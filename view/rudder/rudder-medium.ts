@@ -10,8 +10,8 @@ export class RudderMedium extends ObElement {
     @property({type: Number}) rudderAngle = 0
     @property({type: Number}) rudderSetPointAngle = 0
     @property({type: Number}) clipAngle = 90
-    @property({type: String}) showPortStarboard = "true"
-    @property({type: String}) showSetPoint = "true"
+    @property({type: Boolean}) showPortStarboard = true
+    @property({type: Boolean}) showSetPoint = true
 
     protected render(): unknown {
 
@@ -26,7 +26,7 @@ ${watchFaceMediumRender({
             endClipDeg: 180 - this.clipAngle,
             primaryTickMarks: 90,
             secondaryTickMarks: 5,
-            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
+            innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>
