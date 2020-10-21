@@ -1,6 +1,6 @@
 {
   "name": "openbridge-web-components",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "WebComponents of openbridge and svgs",
   "main": "dist/main.mjs",
   "repository": {
