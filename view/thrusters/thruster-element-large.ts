@@ -95,17 +95,17 @@ export function renderThrusterElementLarge(option: {
 export class ThrusterElementLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-    @property({type: String}) showArrow = "true";
-    @property({type: String}) showSetPoint = "true";
+    @property({type: Boolean}) showArrow = true;
+    @property({type: Boolean}) showSetPoint = true;
     @property({type: String}) width = WidthSize.REGULAR
 
     render() {
         return renderThrusterElementLarge({
             target: this.target,
             value: this.value,
-            showArrow: this.showArrow === "true",
+            showArrow: this.showArrow,
             width: this.width,
-            showSetPoint: this.showSetPoint === "true"
+            showSetPoint: this.showSetPoint
         });
     }
 }

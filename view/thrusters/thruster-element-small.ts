@@ -26,12 +26,12 @@ export function renderThrusterElementSmall(option: { value: number, showArrow: b
 @customElement('ob-thruster-element-small')
 export class ThrusterElementSmall extends ObElement {
     @property({type: Number}) value = 0;
-    @property({type: String}) showArrow = "true";
+    @property({type: Boolean}) showArrow = true;
 
     render() {
         return renderThrusterElementSmall({
             value: this.value,
-            showArrow: this.showArrow === "true"
+            showArrow: this.showArrow
         });
     }
 }

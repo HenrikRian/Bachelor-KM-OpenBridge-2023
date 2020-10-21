@@ -35,15 +35,15 @@ export function renderThrusterElementMedium(option: {
 export class ThrusterElementMedium extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-    @property({type: String}) showArrow = "true";
-    @property({type: String}) showSetPoint = "true";
+    @property({type: Boolean}) showArrow = true;
+    @property({type: Boolean}) showSetPoint = true;
 
     render() {
         return renderThrusterElementMedium({
             target: this.target,
             value: this.value,
-            showArrow: this.showArrow === "true",
-            showSetPoint: this.showSetPoint === "true"
+            showArrow: this.showArrow,
+            showSetPoint: this.showSetPoint
         });
     }
 }

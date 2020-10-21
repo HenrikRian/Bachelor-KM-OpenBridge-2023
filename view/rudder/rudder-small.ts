@@ -8,7 +8,7 @@ import {InnerWatchFaceType} from "../models";
 export class RudderSmall extends ObElement {
     @property({type: Number}) rudderAngle = 0
     @property({type: Number}) clipAngle = 90
-    @property({type: String}) showPortStarboard = "true"
+    @property({type: Boolean}) showPortStarboard = true
 
     protected render(): unknown {
 
@@ -22,7 +22,7 @@ ${watchFaceSmallRender({
             startClipDeg: 180 + this.clipAngle,
             endClipDeg: 180 - this.clipAngle,
             primaryTickMarks: 90,
-            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
+            innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}
 </svg>

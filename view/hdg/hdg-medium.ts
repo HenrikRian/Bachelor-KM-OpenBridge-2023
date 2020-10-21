@@ -7,10 +7,10 @@ import {InnerWatchFaceType} from "../models";
 @customElement('ob-hdg-medium')
 export class HdgMedium extends ObElement{
     @property({type: Number}) heading = 0
-    @property({type: String}) northUp = "false"
+    @property({type: Boolean}) northUp = false
 
     protected render(): unknown {
-        const northUp = this.northUp==="true"
+        const northUp = this.northUp;
         const watchFaceAngle =  northUp ? 0 : -this.heading;
         const rotate = northUp ? this.heading : 0;
 
