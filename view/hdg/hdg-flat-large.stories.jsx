@@ -6,6 +6,7 @@ export default {
   argTypes: {
     heading: { control: {type: 'range', min: 0, max: 360} },
     courseOverGround: { control: {type: 'range', min: 0, max: 360} },
+    watchFaceResolution: {control: {type: 'inline-radio', options: [30, 45]}}
   },
 };
 
@@ -15,5 +16,6 @@ export const Default = Template.bind({});
 Default.args = {
   heading: 60,
   courseOverGround: 55,
-  northUp: true
+  northUp: true,
+  watchFaceResolution: 45
 };
