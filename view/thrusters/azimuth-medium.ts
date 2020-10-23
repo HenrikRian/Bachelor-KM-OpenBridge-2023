@@ -11,15 +11,15 @@ export class AzimuthMedium extends ObElement {
     @property({type: Number}) value = 0;
     @property({type: Number}) angle = 0;
     @property({type: Number}) targetAngle = 0;
-    @property({type: String}) showPortStarboard = "false";
-    @property({type: String}) showSetPointValue = "true";
-    @property({type: String}) showSetPointAngle = "true";
+    @property({type: Boolean}) showPortStarboard = false;
+    @property({type: Boolean}) showSetPointValue = true;
+    @property({type: Boolean}) showSetPointAngle = true;
 
     render() {
         return svg`<svg viewBox="-128 -128 256 256">
     <svg width="256" height="256" x="-128" y="-128">
         ${watchFaceMediumRender({
-            innerCircle: this.showPortStarboard === "true" ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
+            innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             primaryTickMarks: 90,
             secondaryTickMarks: 10,
             showLabels: false,
@@ -36,11 +36,11 @@ export class AzimuthMedium extends ObElement {
             target: this.target,
             value: this.value,
             showArrow: true,
-            showSetPoint: this.showSetPointValue === "true"
+            showSetPoint: this.showSetPointValue
         })}
       </svg>
     </g>
-    ${this.showSetPointAngle === "true" ? svg`
+    ${this.showSetPointAngle ? svg`
     <g transform="rotate(${this.targetAngle})">
         <svg x="-12" y="-128">${SetPoint}</svg>
     </g>` : undefined }

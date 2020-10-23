@@ -5,9 +5,9 @@ module.exports = {
         historyApiFallback: true
     },
     mode: 'development',
-    entry: './index.ts',
+    entry: './view/index.ts',
     output: {
-        filename: 'main.js',
+        filename: 'main.mjs',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {

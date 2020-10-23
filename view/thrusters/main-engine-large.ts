@@ -8,7 +8,7 @@ import {WidthSize} from "../models";
 export class MainEngineLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-    @property({type: String}) showSetPoint = "true";
+    @property({type: Boolean}) showSetPoint = true;
 
     render() {
         const width = WidthSize.REGULAR;
@@ -21,7 +21,7 @@ export class MainEngineLarge extends ObElement {
             value: this.value,
             target: this.target,
             width: width,
-            showSetPoint: this.showSetPoint === "true"
+            showSetPoint: this.showSetPoint
         })}
       </svg>
     </g>

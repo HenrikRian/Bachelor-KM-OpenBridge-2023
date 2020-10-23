@@ -1,10 +1,10 @@
 {
-  "name": "openbridge-exporter",
-  "version": "0.1.0",
-  "description": "Exports svgs for openbridge",
-  "main": "src/main.ts",
+  "name": "openbridge-web-components",
+  "version": "0.2.1",
+  "description": "WebComponents of openbridge and svgs",
+  "main": "dist/main.mjs",
   "repository": {
-    "url": "https://gitlab.com/openbridge/openbridge-exporter"
+    "url": "https://gitlab.com/openbridge/openbridge-web-components"
   },
   "scripts": {
     "start": "rimraf ./generated-* && npm-run-all autogen-*",
@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .ts",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -o public/",
-    "build:lib": "webpack"
+    "build": "webpack"
   },
   "author": "",
   "license": "SEE LICENSE IN license.txt",
@@ -46,7 +46,7 @@
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
-    "openbridge-components": "git+https://gitlab.com/openbridge/openbridge-components.git#59424e7d",
+    "openbridge-css": "^0.2.0",
     "react": "^16.13.1",
     "react-is": "^16.13.1",
     "rimraf": "^3.0.2",
@@ -60,7 +60,7 @@
     "xmldom": "^0.3.0",
     "yargs": "^16.0.3"
   },
-  "dependencies": {
-
+  "peerDependencies": {
+    "openbridge-css": "^0.2.0"
   }
 }

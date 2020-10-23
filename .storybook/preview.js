@@ -1,4 +1,5 @@
-import '!style-loader!css-loader!openbridge-components/dist/css/openbridge.css';
+import '!style-loader!css-loader!openbridge-css/dist/css/openbridge.css';
+import {mapBooleanArgs} from "../view/utils/storybook-helpers";
 
 export const globalTypes = {
     theme: {
@@ -14,6 +15,7 @@ export const globalTypes = {
 
 const withThemeProvider = (Story, context) => {
     document.documentElement.setAttribute('theme', context.globals.theme);
+    context.args = mapBooleanArgs(context.args)
     return Story();
 };
 export const decorators = [withThemeProvider];

@@ -1,3 +1,5 @@
+import "./azimuth-small";
+import "./azimuth-medium";
 import "./azimuth-large";
 import React from "react";
 
@@ -54,7 +56,11 @@ class AzimuthDemo extends React.Component {
             showSetPointValue: value !== target,
         }
         return (
-            <ob-azimuth-large style={{width: 512, height: 512}} {...args}/>
+            <div style={{width: 768, height: 256}}>
+                    <ob-azimuth-small style={{position: 'absolute',width: 64, height: 64, top: 96, left: 96}} {...args}/>
+                    <ob-azimuth-medium style={{position: 'absolute',width: 256, height: 256, top: 256, left: 0}} {...args}/>
+                    <ob-azimuth-large style={{position: 'absolute', width: 512, height: 512, top: 0, left: 257}} {...args}/>
+            </div>
         );
     }
 }

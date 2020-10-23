@@ -5,6 +5,7 @@ export default {
   title: 'INSTRUMENT/HDG & COG/Circular HDG/Medium',
   argTypes: {
     heading: { control: {type: 'range', min: 0, max: 360} },
+    courseOverGround: { control: {type: 'range', min: 0, max: 360} },
   },
 };
 

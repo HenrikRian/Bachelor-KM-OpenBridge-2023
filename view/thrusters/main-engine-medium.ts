@@ -7,7 +7,7 @@ import {renderThrusterElementMedium} from "./thruster-element-medium";
 export class MainEngineMedium extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-    @property({type: String}) showSetPoint = "true";
+    @property({type: Boolean}) showSetPoint = true;
 
     render() {
         return svg`<svg viewBox="-20 -128 40 256">
@@ -16,7 +16,7 @@ export class MainEngineMedium extends ObElement {
       <svg x="-128" y="-20" width="256" height="40">
       ${renderThrusterElementMedium({
             showArrow: false, value: this.value, target: this.target,
-            showSetPoint: this.showSetPoint === "true"
+            showSetPoint: this.showSetPoint
         })}
       </svg>
     </g>

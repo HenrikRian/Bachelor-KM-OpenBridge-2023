@@ -6,13 +6,13 @@ import {renderThrusterElementMedium} from "./thruster-element-medium";
 export class AzimuthMedium extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-    @property({type: String}) showSetPoint = "true";
+    @property({type: Boolean}) showSetPoint = true;
 
     render() {
         return svg`<svg viewBox="-128 -20 256 40">
     <svg x="-128" y="-20" width="256" height="40">
     ${renderThrusterElementMedium({value: this.value, target: this.target, showArrow: false,
-            showSetPoint: this.showSetPoint === "true"})}
+            showSetPoint: this.showSetPoint})}
     </svg>
   </svg>`;
     }
