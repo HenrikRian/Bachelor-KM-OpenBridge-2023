@@ -15,6 +15,26 @@ const staticExportComponents: ExportDef[] = [
         path: ['HDG & COG', '360 Flat watchface', 'Large 30°'],
         outputFolder: 'HDG_COG'
     },
+    {
+        name: 'WatchFace45Medium',
+        path: ['HDG & COG', '360 Flat watchface', 'Medium 45°'],
+        outputFolder: 'HDG_COG'
+    },
+      {
+        name: 'WatchFace30Medium',
+        path: ['HDG & COG', '360 Flat watchface', 'Medium 30°'],
+        outputFolder: 'HDG_COG'
+    },
+    {
+        name: 'WatchFace45Small',
+        path: ['HDG & COG', '360 Flat watchface', 'Small 45°'],
+        outputFolder: 'HDG_COG'
+    },
+      {
+        name: 'WatchFace30Small',
+        path: ['HDG & COG', '360 Flat watchface', 'Small 30°'],
+        outputFolder: 'HDG_COG'
+    },
   {
         name: 'FlatArrowHdgSmall',
         path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Small'],
@@ -342,6 +362,14 @@ const staticExportComponents: ExportDef[] = [
   {
         name: 'CogFlatLarge',
         path: ['HDG & COG', 'Elements', 'Flat compass arrow/ COG - Large'],
+        outputFolder: 'HDG_COG'
+    },{
+        name: 'CogFlatMedium',
+        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ COG - Medium'],
+        outputFolder: 'HDG_COG'
+    },{
+        name: 'CogFlatSmall',
+        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ COG - Small'],
         outputFolder: 'HDG_COG'
     },{
         name: 'WatchFaceMedium',

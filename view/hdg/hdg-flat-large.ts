@@ -3,7 +3,7 @@ import { ObElement } from '../obElement';
 import HeadingLarge from '../../generated-without-style/HDG_COG/FlatArrowHdgLarge.svg';
 import WatchFace45 from '../../generated-without-style/HDG_COG/WatchFace45Large.svg';
 import WatchFace30 from '../../generated-without-style/HDG_COG/WatchFace30Large.svg';
-import Cog from '../../generated-with-style/HDG_COG/CogFlatLarge.svg';
+import Cog from '../../generated-without-style/HDG_COG/CogFlatLarge.svg';
 
 
 @customElement('ob-hdg-flat-large')
