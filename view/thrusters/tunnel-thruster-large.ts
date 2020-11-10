@@ -4,7 +4,7 @@ import {renderThrusterElementLarge} from "./thruster-element-large";
 import {WidthSize} from "../models";
 
 @customElement('ob-tunnel-thruster-large')
-export class AzimuthLarge extends ObElement {
+export class TunnelThrusterLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
     @property({type: String}) width = WidthSize.REGULAR;
@@ -24,6 +24,6 @@ export class AzimuthLarge extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-tunnel-thruster-large': AzimuthLarge
+        'ob-tunnel-thruster-large': TunnelThrusterLarge
     }
 }

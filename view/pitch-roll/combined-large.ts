@@ -5,7 +5,7 @@ import { renderRollLarge } from './roll-large';
 import Ship from '../../generated-without-style/PitchRoll/CombinedRollShipLarge.svg';
 
 @customElement('ob-pitch-roll-large')
-export class PitchLarge extends ObElement {
+export class PitchRollLarge extends ObElement {
   @property({ type: Number }) pitch = 0;
   @property({ type: Number }) lowerPitch = 0;
   @property({ type: Number }) upperPitch = 0;
@@ -39,6 +39,6 @@ export class PitchLarge extends ObElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-      'ob-pitch-roll-large': PitchLarge
+      'ob-pitch-roll-large': PitchRollLarge
   }
 }

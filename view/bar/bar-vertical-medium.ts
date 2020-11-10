@@ -3,7 +3,7 @@ import {ObElement} from "../obElement";
 import LabelsSvg from "../../generated-without-style/BARS/BarVertical100LabelsMedium.svg";
 import {renderVerticalBarMedium} from "./bars";
 
-@customElement('ob-bar-vertical-100-medium')
+@customElement('ob-bar-vertical-medium')
 export class BarVerticalMedium extends ObElement {
     @property({type: Number}) value = 0
     @property({type: Number}) range = 100
@@ -21,6 +21,6 @@ export class BarVerticalMedium extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-bar-vertical-100-medium': BarVerticalMedium
+        'ob-bar-vertical-medium': BarVerticalMedium
     }
 }

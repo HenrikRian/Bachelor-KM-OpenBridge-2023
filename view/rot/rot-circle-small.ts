@@ -7,7 +7,7 @@ import CircleBorderOutsideSmall
     from '../../generated-without-style/ROT/CircleBorderOutsideSmall.svg'
 
 @customElement('ob-rot-circle-small')
-export class HdgSmall extends ObElement {
+export class RotCircleSmall extends ObElement {
     @property({type: Number}) rateOfTurn = 0;
     @property({type: Number, attribute: false}) angle = 0;
     intervalHandler: NodeJS.Timeout | null = null
@@ -45,6 +45,6 @@ export class HdgSmall extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-rot-circle-small': HdgSmall
+        'ob-rot-circle-small': RotCircleSmall
     }
 }

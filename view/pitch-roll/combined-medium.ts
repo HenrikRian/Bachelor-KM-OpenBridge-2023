@@ -5,7 +5,7 @@ import { renderRollMedium } from './roll-medium';
 import Ship from '../../generated-without-style/PitchRoll/CombinedRollShipMedium.svg';
 
 @customElement('ob-pitch-roll-medium')
-export class PitchMedium extends ObElement {
+export class PitchRollMedium extends ObElement {
   @property({ type: Number }) pitch = 0;
   @property({ type: Number }) lowerPitch = 0;
   @property({ type: Number }) upperPitch = 0;
@@ -39,6 +39,6 @@ export class PitchMedium extends ObElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-      'ob-pitch-roll-medium': PitchMedium
+      'ob-pitch-roll-medium': PitchRollMedium
   }
 }

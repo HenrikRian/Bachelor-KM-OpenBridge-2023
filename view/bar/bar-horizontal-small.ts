@@ -3,7 +3,7 @@ import {ObElement} from "../obElement";
 import {renderBarVerticalSmall} from "./bar-vertical-small";
 
 @customElement('ob-bar-horizontal-small')
-export class BarHorizontal100Medium extends ObElement {
+export class BarHorizontalSmall extends ObElement {
     @property({type: Number}) value = 0
     @property({type: Number}) range = 100
 
@@ -19,6 +19,6 @@ export class BarHorizontal100Medium extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-bar-horizontal-small': BarHorizontal100Medium
+        'ob-bar-horizontal-small': BarHorizontalSmall
     }
 }

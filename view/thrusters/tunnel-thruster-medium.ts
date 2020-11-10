@@ -3,7 +3,7 @@ import {ObElement} from "../obElement";
 import {renderThrusterElementMedium} from "./thruster-element-medium";
 
 @customElement('ob-tunnel-thruster-medium')
-export class AzimuthMedium extends ObElement {
+export class TunnelThrusterMedium extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
     @property({type: Boolean}) showSetPoint = true;
@@ -20,6 +20,6 @@ export class AzimuthMedium extends ObElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-      'ob-tunnel-thruster-medium': AzimuthMedium
+      'ob-tunnel-thruster-medium': TunnelThrusterMedium
   }
 }

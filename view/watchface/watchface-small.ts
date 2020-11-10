@@ -88,7 +88,7 @@ export function watchFaceSmallRender(option: {
 }
 
 @customElement('ob-watchface-small')
-export class HeadingMedium extends ObElement {
+export class WatchfaceSmall extends ObElement {
   @property({ type: String }) innerCircle = InnerWatchFaceType.REGULAR;
   @property({ type: Boolean }) cross = false;
   @property({ type: Boolean }) showArrow = false;
@@ -114,6 +114,6 @@ export class HeadingMedium extends ObElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-      'ob-watchface-small': HeadingMedium
+      'ob-watchface-small': WatchfaceSmall
   }
 }

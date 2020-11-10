@@ -9,7 +9,7 @@ export default {
     },
 };
 
-const Template = (args) => <ob-bar-vertical-100-medium style={{height: 256, width: 72}} {...args}/>;
+const Template = (args) => <ob-bar-vertical-medium style={{height: 256, width: 72}} {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {

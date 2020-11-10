@@ -4,7 +4,7 @@ import {renderVerticalPositiveSmall} from "./bar-vertical-positive-small";
 
 
 @customElement('ob-bar-horizontal-positive-small')
-export class BarVerticalPositiveSmall extends ObElement {
+export class BarHorizontalPositiveSmall extends ObElement {
     @property({type: Number}) value = 0
 
     protected render(): unknown {
@@ -19,6 +19,6 @@ export class BarVerticalPositiveSmall extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-bar-horizontal-positive-small': BarVerticalPositiveSmall
+        'ob-bar-horizontal-positive-small': BarHorizontalPositiveSmall
     }
 }

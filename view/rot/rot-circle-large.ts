@@ -8,7 +8,7 @@ import CircleBorderOutsideLarge
 import CircleTrackLarge from '../../generated-without-style/ROT/CircleTrackLarge.svg'
 
 @customElement('ob-rot-circle-large')
-export class HdgLarge extends ObElement {
+export class RotCircleLarge extends ObElement {
     @property({type: Number}) rateOfTurn = 0;
     @property({type: Number, attribute: false}) angle = 0;
     intervalHandler: NodeJS.Timeout | null = null
@@ -49,6 +49,6 @@ export class HdgLarge extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-rot-circle-large': HdgLarge
+        'ob-rot-circle-large': RotCircleLarge
     }
 }

@@ -4,7 +4,7 @@ import BarSvg from "../../generated-without-style/BARS/BarVerticalPositive100Bar
 import {renderHorizontalActiveBarLarge} from "./bars";
 
 @customElement('ob-bar-horizontal-positive-large')
-export class BarHorizontalLarge extends ObElement {
+export class BarHorizontalPositiveLarge extends ObElement {
     @property({type: Number}) value = 0
     @property({type: Number}) range = 100
 
@@ -31,6 +31,6 @@ export class BarHorizontalLarge extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-bar-horizontal-positive-large': BarHorizontalLarge
+        'ob-bar-horizontal-positive-large': BarHorizontalPositiveLarge
     }
 }

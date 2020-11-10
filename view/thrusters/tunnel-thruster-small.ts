@@ -3,7 +3,7 @@ import {ObElement} from "../obElement";
 import {renderThrusterElementSmall} from "./thruster-element-small";
 
 @customElement('ob-tunnel-thruster-small')
-export class AzimuthSmall extends ObElement {
+export class TunnelThrusterSmall extends ObElement {
   @property({type: Number}) target = 0;
   @property({type: Number}) value = 0;
 
@@ -18,6 +18,6 @@ export class AzimuthSmall extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-tunnel-thruster-small': AzimuthSmall
+        'ob-tunnel-thruster-small': TunnelThrusterSmall
     }
 }

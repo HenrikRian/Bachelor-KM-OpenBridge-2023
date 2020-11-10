@@ -8,7 +8,7 @@ import CircleBorderOutsideMedium
 import CircleTrackMedium from '../../generated-with-style/ROT/CircleTrackMedium.svg'
 
 @customElement('ob-rot-circle-medium')
-export class HdgMedium extends ObElement {
+export class RotCircleMedium extends ObElement {
     @property({type: Number}) rateOfTurn = 0;
     @property({type: Number, attribute: false}) angle = 0;
     intervalHandler: NodeJS.Timeout | null = null
@@ -49,6 +49,6 @@ export class HdgMedium extends ObElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ob-rot-circle-medium': HdgMedium
+        'ob-rot-circle-medium': RotCircleMedium
     }
 }
