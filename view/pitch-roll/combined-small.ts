@@ -36,3 +36,9 @@ export class PitchSmall extends ObElement {
 </svg>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-pitch-roll-small': PitchSmall
+  }
+}

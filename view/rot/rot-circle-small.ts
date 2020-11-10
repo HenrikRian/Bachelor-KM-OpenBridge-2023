@@ -42,3 +42,9 @@ export class HdgSmall extends ObElement {
   </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-rot-circle-small': HdgSmall
+    }
+}

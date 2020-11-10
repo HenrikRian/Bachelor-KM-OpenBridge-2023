@@ -17,3 +17,8 @@ export class MainEngineSmall extends ObElement {
     }
 }
 
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-main-engine-small': MainEngineSmall
+  }
+}

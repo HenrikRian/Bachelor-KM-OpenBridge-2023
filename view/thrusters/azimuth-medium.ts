@@ -47,3 +47,9 @@ export class AzimuthMedium extends ObElement {
   </svg>`
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-azimuth-medium': AzimuthMedium
+    }
+}

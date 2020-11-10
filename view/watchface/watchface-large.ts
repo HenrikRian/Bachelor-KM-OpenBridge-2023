@@ -131,4 +131,8 @@ export class WatchfaceLarge extends ObElement {
     }
 }
 
-
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-watchface-large': WatchfaceLarge
+    }
+}

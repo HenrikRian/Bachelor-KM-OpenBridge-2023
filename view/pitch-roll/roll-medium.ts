@@ -52,3 +52,9 @@ export class RollMedium extends ObElement {
         });
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-roll-medium': RollMedium
+  }
+}

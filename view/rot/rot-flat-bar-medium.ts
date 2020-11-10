@@ -19,3 +19,9 @@ export class RotFlatBarMedium extends ObElement {
   </svg>`
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-rot-flat-bar-medium': RotFlatBarMedium
+  }
+}

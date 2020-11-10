@@ -24,6 +24,12 @@ export class PitchSmall extends ObElement {
     }
 }
 
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-pitch-small': PitchSmall
+  }
+}
+
 export function renderPitchSmall(cfg: {
   pitch: number, lowerPitch: number, upperPitch: number,
   scale: number, uuid: string

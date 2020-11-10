@@ -44,3 +44,9 @@ ${this.showSetPoint ? svg`
   </svg>`;
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-rudder-large': RudderLarge
+  }
+}

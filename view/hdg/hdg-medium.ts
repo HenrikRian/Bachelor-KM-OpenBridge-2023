@@ -37,3 +37,9 @@ ${watchFaceMediumRender({
   </svg>`;
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-hdg-medium': HdgMedium
+  }
+}

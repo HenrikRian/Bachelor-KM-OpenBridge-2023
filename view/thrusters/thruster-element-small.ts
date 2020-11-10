@@ -35,3 +35,9 @@ export class ThrusterElementSmall extends ObElement {
         });
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-thruster-element-small': ThrusterElementSmall
+    }
+}

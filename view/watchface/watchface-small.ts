@@ -111,3 +111,9 @@ export class HeadingMedium extends ObElement {
     })
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-watchface-small': HeadingMedium
+  }
+}

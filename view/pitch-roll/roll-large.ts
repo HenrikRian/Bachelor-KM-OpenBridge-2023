@@ -57,3 +57,9 @@ export class RollLarge extends ObElement {
         });
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-roll-large': RollLarge
+  }
+}

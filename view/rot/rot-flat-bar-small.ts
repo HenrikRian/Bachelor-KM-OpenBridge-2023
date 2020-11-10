@@ -18,3 +18,9 @@ export class RotFlatBarSmall extends ObElement {
   </svg>`
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-rot-flat-bar-small': RotFlatBarSmall
+    }
+}

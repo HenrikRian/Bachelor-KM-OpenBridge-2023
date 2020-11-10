@@ -20,3 +20,9 @@ export class BarVerticalLarge extends ObElement {
     </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-bar-vertical-large': BarVerticalLarge
+    }
+}

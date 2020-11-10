@@ -36,3 +36,9 @@ export class PitchMedium extends ObElement {
 </svg>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-pitch-roll-medium': PitchMedium
+  }
+}

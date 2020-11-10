@@ -36,3 +36,9 @@ ${watchFaceSmallRender({
   </svg>`;
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-hdg-small': HdgSmall
+  }
+}

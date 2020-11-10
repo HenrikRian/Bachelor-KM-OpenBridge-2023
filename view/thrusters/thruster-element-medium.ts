@@ -47,3 +47,9 @@ export class ThrusterElementMedium extends ObElement {
         });
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-thruster-element-medium': ThrusterElementMedium
+    }
+}

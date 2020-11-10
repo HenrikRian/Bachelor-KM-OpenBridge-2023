@@ -24,3 +24,8 @@ export class MainEngineMedium extends ObElement {
     }
 }
 
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-main-engine-medium': MainEngineMedium
+  }
+}

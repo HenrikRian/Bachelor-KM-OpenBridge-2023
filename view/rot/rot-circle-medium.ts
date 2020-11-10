@@ -46,3 +46,9 @@ export class HdgMedium extends ObElement {
   </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-rot-circle-medium': HdgMedium
+    }
+}

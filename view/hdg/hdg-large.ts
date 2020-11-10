@@ -45,3 +45,9 @@ ${watchFaceLargeRender({
   </svg>`;
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-hdg-large': HdgLarge
+  }
+}

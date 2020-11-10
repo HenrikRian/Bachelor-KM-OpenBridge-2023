@@ -18,3 +18,9 @@ export class SpeedometerMedium extends ObElement {
   </svg>`
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-speedometer-medium': SpeedometerMedium
+  }
+}

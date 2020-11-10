@@ -36,3 +36,9 @@ export class PitchLarge extends ObElement {
 </svg>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-pitch-roll-large': PitchLarge
+  }
+}

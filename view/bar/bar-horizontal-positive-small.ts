@@ -16,3 +16,9 @@ export class BarVerticalPositiveSmall extends ObElement {
     </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-bar-horizontal-positive-small': BarVerticalPositiveSmall
+    }
+}

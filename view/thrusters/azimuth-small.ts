@@ -32,3 +32,9 @@ export class AzimuthSmall extends ObElement {
   </svg>`
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-azimuth-small': AzimuthSmall
+  }
+}

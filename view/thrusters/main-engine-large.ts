@@ -29,3 +29,8 @@ export class MainEngineLarge extends ObElement {
     }
 }
 
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-main-engine-large': MainEngineLarge
+  }
+}

@@ -15,3 +15,9 @@ export class AzimuthSmall extends ObElement {
   </svg>`;
   }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-tunnel-thruster-small': AzimuthSmall
+    }
+}

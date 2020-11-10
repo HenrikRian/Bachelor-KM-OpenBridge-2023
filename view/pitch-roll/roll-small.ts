@@ -50,3 +50,9 @@ export class RollSmall extends ObElement {
         });
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-roll-small': RollSmall
+  }
+}

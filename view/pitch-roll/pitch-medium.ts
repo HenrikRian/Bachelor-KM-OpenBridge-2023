@@ -25,6 +25,12 @@ export class PitchMedium extends ObElement {
     }
 }
 
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-pitch-medium': PitchMedium
+  }
+}
+
 export function renderPitchMedium(cfg: {
   pitch: number, lowerPitch: number, upperPitch: number,
   scale: number, uuid: string

@@ -109,3 +109,9 @@ export class ThrusterElementLarge extends ObElement {
         });
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-thruster-element-large': ThrusterElementLarge
+    }
+}

@@ -18,3 +18,9 @@ export class BarVerticalMedium extends ObElement {
     </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-bar-vertical-100-medium': BarVerticalMedium
+    }
+}

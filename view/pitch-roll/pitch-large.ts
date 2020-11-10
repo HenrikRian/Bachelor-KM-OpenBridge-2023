@@ -57,3 +57,9 @@ export class PitchLarge extends ObElement {
     });
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-pitch-large': PitchLarge
+  }
+}

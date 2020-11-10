@@ -16,3 +16,9 @@ export class BarHorizontal100Medium extends ObElement {
     </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-bar-horizontal-small': BarHorizontal100Medium
+    }
+}

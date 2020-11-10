@@ -21,3 +21,9 @@ export class BarHorizontalPositiveMedium extends ObElement {
     </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-bar-horizontal-positive-medium': BarHorizontalPositiveMedium
+    }
+}

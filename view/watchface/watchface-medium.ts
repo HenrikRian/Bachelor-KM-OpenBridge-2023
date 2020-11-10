@@ -127,3 +127,9 @@ export class WatchfaceMedium extends ObElement {
         })
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-watchface-medium': WatchfaceMedium
+    }
+}

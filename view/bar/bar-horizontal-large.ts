@@ -21,3 +21,9 @@ export class BarHorizontalLarge extends ObElement {
     </svg>`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ob-bar-horizontal-large': BarHorizontalLarge
+    }
+}

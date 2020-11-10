@@ -34,3 +34,9 @@ ${watchFaceSmallRender({
   </svg>`;
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-rudder-small': RudderSmall
+  }
+}

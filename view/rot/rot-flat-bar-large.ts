@@ -19,3 +19,9 @@ export class RotFlatBarLarge extends ObElement {
   </svg>`
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-rot-flat-bar-large': RotFlatBarLarge
+  }
+}

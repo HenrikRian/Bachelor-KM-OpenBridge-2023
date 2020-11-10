@@ -17,3 +17,9 @@ export class AzimuthMedium extends ObElement {
   </svg>`;
     }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ob-tunnel-thruster-medium': AzimuthMedium
+  }
+}
