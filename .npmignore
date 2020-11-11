@@ -1,5 +1,6 @@
 node_modules/
-build/
+build/src/
+build/tools/
 .storybook
 public/
 tools/

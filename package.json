@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "WebComponents of openbridge and svgs",
   "main": "dist/main.mjs",
-  "types": "dist/view/index.d.ts",
+  "types": "build/view/index.d.ts",
   "repository": {
     "url": "https://gitlab.com/openbridge/openbridge-web-components"
   },
