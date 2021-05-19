@@ -18,6 +18,7 @@ export function renderRollLarge(cfg: {
 ${watchFaceLargeRender({
             cross: false,
             rotate: 0,
+            typeOfLabel: true,
             showLabels: false,
             startClipDeg: 210,
             endClipDeg: 150,

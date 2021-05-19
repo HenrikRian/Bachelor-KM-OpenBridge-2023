@@ -39,6 +39,7 @@ Default.args = {
     primaryTickmarks: 45,
     secondaryTickmarks: 10,
     cross: false,
+    typeOfLabel: true,
     showLabels: true,
     startClipDeg: 0,
     endClipDeg: 0,

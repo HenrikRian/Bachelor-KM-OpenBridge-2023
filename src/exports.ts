@@ -379,6 +379,16 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'ROT'
     },
     {
+        name: 'SpeedNeedleSmall',
+        path: ['SOG & STW', 'Elements', '01 Speed Needle/ Small'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'WatchFaceSmall',
+        path: ['SOG & STW', 'Elements', '02 Watch face/ Small'],
+        outputFolder: 'SOG_STW'
+    },
+    {
         name: 'SpeedNeedleMedium',
         path: ['SOG & STW', 'Elements', '01 Speed Needle/ Medium'],
         outputFolder: 'SOG_STW'
@@ -386,6 +396,16 @@ const staticExportComponents: ExportDef[] = [
     {
         name: 'WatchFaceMedium',
         path: ['SOG & STW', 'Elements', '02 Watch face/ Medium'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'SpeedNeedleLarge',
+        path: ['SOG & STW', 'Elements', '01 Speed Needle/ Large'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'WatchFaceLarge',
+        path: ['SOG & STW', 'Elements', '02 Watch face/ Large'],
         outputFolder: 'SOG_STW'
     },
     {
@@ -733,7 +753,296 @@ const staticExportComponents: ExportDef[] = [
         name: 'Strong',
         path: ['Wind symbols', 'Current symbol', 'Current arrow 4 (large)'],
         outputFolder: 'Current'
-    }
+    },
+    //large
+    {
+        name: 'CenterLarge',
+        path: ['SOG & STW', '03 True - Relative', 'Large', 'Center'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'HdgLarge',
+        path: ['SOG & STW', 'Elements', '05 True/ Large'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'CogLarge',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Large'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'CurrentLarge',
+        path: ['Wind & Current', 'Current', 'Large'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'WindLarge',
+        path: ['Wind & Current', 'Wind', 'Large'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'ShipLarge',
+        path: ['Ship', 'Top view', 'Large'],
+        outputFolder: 'Compass'
+    },
+    //medium
+    {
+        name: 'CenterMedium',
+        path: ['SOG & STW', '03 True - Relative', 'Medium', 'Center'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'HdgMedium',
+        path: ['SOG & STW', 'Elements', '05 True/ Medium'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'CogMedium',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Medium'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'CurrentMedium',
+        path: ['Wind & Current', 'Current', 'Medium'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'WindMedium',
+        path: ['Wind & Current', 'Wind', 'Medium'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'ShipMedium',
+        path: ['Ship', 'Top view', 'Medium'],
+        outputFolder: 'Compass'
+    },
+    //small
+    {
+        name: 'CenterSmall',
+        path: ['SOG & STW', '03 True - Relative', 'Small', 'center'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'HdgSmall',
+        path: ['SOG & STW', 'Elements', '05 True/ Small'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'CogSmall',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Small'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'CurrentSmall',
+        path: ['Wind & Current', 'Current', 'Small'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'WindSmall',
+        path: ['Wind & Current', 'Wind', 'Small'],
+        outputFolder: 'Compass'
+    },
+    {
+        name: 'ShipSmall',
+        path: ['Ship', 'Top view', 'Small'],
+        outputFolder: 'Compass'
+    },
+    //hdg large
+    {
+        name: 'TruePointerLineLarge',
+        path: ['SOG & STW', 'Elements', '05 True/ Large', 'speed-arrow', 'pointer-line'],
+        outputFolder: 'True'
+    },
+    {
+        name: 'TrueArrowLarge',
+        path: ['SOG & STW', 'Elements', '05 True/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: 'True'
+    },
+    {
+        name: 'TrueBarLarge',
+        path: ['SOG & STW', 'Elements', '05 True/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: 'True'
+    },
+    //hdg medium
+    {
+        name: 'TruePointerLineMedium',
+        path: ['SOG & STW', 'Elements', '05 True/ Medium', 'speed-arrow', 'pointer-line'],
+        outputFolder: 'True'
+    },
+    {
+        name: 'TrueArrowMedium',
+        path: ['SOG & STW', 'Elements', '05 True/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: 'True'
+    },
+    {
+        name: 'TrueBarMedium',
+        path: ['SOG & STW', 'Elements', '05 True/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: 'True'
+    },
+    //cog large
+    {
+        name: 'RelativePointerLineLarge',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Large', 'speed-arrow', 'pointer-line'],
+        outputFolder: 'Relative'
+    },
+    {
+        name: 'RelativeArrowLarge',
+        path: ['SOG & STW', '04 COG STW arrows', 'Group 374', 'Arrow'],
+        outputFolder: 'Relative'
+    },
+    {
+        name: 'RelativeBarLarge',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: 'Relative'
+    },
+    //cog medium
+    {
+        name: 'RelativePointerLineMedium',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Medium', 'speed-arrow', 'pointer-line'],
+        outputFolder: 'Relative'
+    },
+    {
+        name: 'RelativeArrowMedium',
+        path: ['SOG & STW', '04 COG STW arrows', 'Group 378', 'Arrow'],
+        outputFolder: 'Relative'
+    },
+    {
+        name: 'RelativeBarMedium',
+        path: ['SOG & STW', 'Elements', '06 Relative/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: 'Relative'
+    },
+    //02 A Long - Lat -> Large
+    {
+        name: 'LongLatShipLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', 'Large'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //longitudinal
+    {
+        name: 'LongLatLongitudinalLineLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '03 Longitudinal/ Large', 'speed-arrow', 'pointer-line', 'Line'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalDotLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '03 Longitudinal/ Large', 'Dot'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalDotActiveLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '03 Longitudinal/ Large', 'speed-arrow', 'pointer-line', 'Dot'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalArrowLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '03 Longitudinal/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalBarLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '03 Longitudinal/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //latitudinal left
+    {
+        name: 'LongLatLatitudinalLineLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '04 Latitudinal/ Large', 'speed-arrow', 'Frame 17', 'Line'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLatitudinalLeftArrowLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '04 Latitudinal/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLatitudinalBarLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', '04 Latitudinal/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //latitudinal right
+    {
+        name: 'LongLatLatitudinalRightArrowLarge',
+        path: ['SOG & STW', '02 A Long - Lat', 'Large', 'Latitudinal/ Large', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //02 A Long - Lat -> Medium
+    {
+        name: 'LongLatShipMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', 'ship'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //longitudinal
+    {
+        name: 'LongLatLongitudinalLineMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '03 Longitudinal/ Medium', 'pointer-line', 'Line'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalDotMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '03 Longitudinal/ Medium', 'pointer-line', 'Dot'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalDotActiveMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '03 Longitudinal/ Medium', 'pointer-line', 'Dot'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalArrowMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '03 Longitudinal/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLongitudinalBarMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '03 Longitudinal/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //latitudinal left
+    {
+        name: 'LongLatLatitudinalLineMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '04 Latitudinal/ Medium', 'Line', 'Line'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLatitudinalLeftArrowMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '04 Latitudinal/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: '02 A Long - Lat'
+    },
+    {
+        name: 'LongLatLatitudinalBarMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', '04 Latitudinal/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Bar'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //latitudinal right
+    {
+        name: 'LongLatLatitudinalRightArrowMedium',
+        path: ['SOG & STW', '02 A Long - Lat', 'Medium', 'Latitudinal/ Medium', 'speed-arrow', 'speed-amount', 'Union', 'Arrow'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //02 A Long - Lat -> Small
+    {
+        name: 'LongLatShipSmall',
+        path: ['SOG & STW', '02 A Long - Lat', 'Small', 'Small'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //longitudinal
+    {
+        name: 'LongLatLongitudinalArrowSmall',
+        path: ['SOG & STW', '02 A Long - Lat', 'Small', '03 Longitudinal/ Small', 'Union'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //latitudinal left
+    {
+        name: 'LongLatLatitudinalLeftArrowSmall',
+        path: ['SOG & STW', '02 A Long - Lat', 'Small', '04 Latitudinal/ Small', 'Union'],
+        outputFolder: '02 A Long - Lat'
+    },
+    //latitudinal right
+    {
+        name: 'LongLatLatitudinalRightArrowSmall',
+        path: ['SOG & STW', '02 A Long - Lat', 'Small', '04 Latitudinal/ Small', 'Union'],
+        outputFolder: '02 A Long - Lat'
+    },
 ];
 const circleDegrees = ['1°', '5°', '10°', '30°', '45°', '90°'];
 const circleLengths = ['8px', '16px', '24px'];

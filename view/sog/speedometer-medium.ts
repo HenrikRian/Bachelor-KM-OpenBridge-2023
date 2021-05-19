@@ -10,11 +10,12 @@ export class SpeedometerMedium extends ObElement {
   render() {
     const rotate = this.value * 90 / 10 - 90
     return svg`
-  <svg viewBox="-128 -128 256 256">
-    <svg x="-128.5" y="-128.5" width="257" height="257">${WatchFaceMedium}</svg>
-    <g transform="rotate(${rotate})">
-      <svg x="-12" y="-128" width="24" height="256">${SpeedNeedleMedium}</svg>
-    </g>
-  </svg>`
+      <svg viewBox="-128 -128 256 256">
+        <svg x="-128.5" y="-128.5" width="257" height="257">${WatchFaceMedium}</svg>
+        <g transform="rotate(${rotate})">
+          <svg x="-12" y="-128" width="24" height="256">${SpeedNeedleMedium}</svg>
+        </g>
+      </svg>
+    `
   }
 }

@@ -35,6 +35,7 @@ export function renderPitchMedium(cfg: {
 ${watchFaceMediumRender({
             cross: false,
             rotate: 0,
+            typeOfLabel: true,
             showLabels: false,
             startClipDeg: 300,
             endClipDeg: 240,

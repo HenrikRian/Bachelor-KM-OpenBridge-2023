@@ -25,6 +25,7 @@ export class AzimuthLarge extends ObElement {
             primaryTickMarks: 180,
             secondaryTickMarks: 10,
             tertiaryTickMarks: true,
+            typeOfLabel: true,
             showLabels: false,
             rotate: 0,
             cross: false,
