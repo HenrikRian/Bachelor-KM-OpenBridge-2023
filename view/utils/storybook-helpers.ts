@@ -1,5 +1,5 @@
 export function mapBooleanArgs(args: any): any {
-    const out = { ...args };
+    const out = args;
     Object.entries(args).forEach(
         (entry) => {
             const k = entry[0];

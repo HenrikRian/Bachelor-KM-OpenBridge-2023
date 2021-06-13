@@ -15,7 +15,7 @@ export const globalTypes = {
 
 const withThemeProvider = (Story, context) => {
     document.documentElement.setAttribute('theme', context.globals.theme);
-    context.args = mapBooleanArgs(context.args)
+    mapBooleanArgs(context.args);
     return Story();
 };
 export const decorators = [withThemeProvider];
