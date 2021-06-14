@@ -4,10 +4,10 @@ import React from "react";
 export default {
   title: 'INSTRUMENT/SOG & STW/02 A Long - Lat/Medium',
   argTypes: {
-    speedLongitudinal: { control: {type: 'range', min: 0, max: 49} },
-    speedLatitudinalBack: { control: {type: 'range', min: 0, max: 49} },
-    speedLatitudinalFront: { control: {type: 'range', min: 0, max: 49} },
-    speedLatitudinalMiddle: { control: {type: 'range', min: 0, max: 49} },
+    speedLongitudinal: { control: {type: 'range', min: -100, max: 100} },
+    speedLatitudinalBack: { control: {type: 'range', min: -100, max: 100} },
+    speedLatitudinalFront: { control: {type: 'range', min: -100, max: 100} },
+    speedLatitudinalMiddle: { control: {type: 'range', min: -100, max: 100} },
     positionOfSensor: {
       control: {
         type: 'inline-radio',
@@ -26,13 +26,5 @@ Default.args = {
   speedLatitudinalBack: 25,
   speedLatitudinalFront: 25,
   speedLatitudinalMiddle: 25,
-  showSpeedLongitudinal: true,
-  showSpeedLatitudinalBack: true,
-  showSpeedLatitudinalFront: true,
-  showSpeedLatitudinalMiddle: false,
-  showSpeedLongitudinalFront: true,
-  showSpeedLatitudinalBackLeft: true,
-  showSpeedLatitudinalFrontLeft: true,
-  showSpeedLatitudinalMiddleLeft: true,
   positionOfSensor: 'middle',
 };

@@ -57,30 +57,30 @@ export class LongLatLarge extends ObElement {
 
     protected render(): unknown {
         //longitudinal
-        if(!this.showSpeedLongitudinal)
+        if(this.speedLongitudinal == 0)
             this.hiddeSpeedLongitudinal = 'hidden';
         else
             this.hiddeSpeedLongitudinal = '';
         //latitudinal - back
-        if(!this.showSpeedLatitudinalBack)
+        if(this.speedLatitudinalBack == 0)
             this.hiddeSpeedLatitudinalBack = 'hidden';
         else
             this.hiddeSpeedLatitudinalBack = '';
 
         //latitudinal - front
-        if(!this.showSpeedLatitudinalFront)
+        if(this.speedLatitudinalFront == 0)
             this.hiddeSpeedLatitudinalFront = 'hidden';
         else
             this.hiddeSpeedLatitudinalFront = '';
 
         //latitudinal - middle
-        if(!this.showSpeedLatitudinalMiddle)
+        if(this.speedLatitudinalMiddle == 0)
             this.hiddeSpeedLatitudinalMiddle = 'hidden';
         else
             this.hiddeSpeedLatitudinalMiddle = '';   
 
         //longitudinalFront
-        if(!this.showSpeedLongitudinalFront) {
+        if(this.speedLongitudinal <= 0) {
             this.hiddeSpeedLongitudinalFront = 'hidden';
             this.hiddeSpeedLongitudinalBack = '';
         }
@@ -90,7 +90,7 @@ export class LongLatLarge extends ObElement {
         }
 
         //latitudinal-back - (left - right)
-        if(!this.showSpeedLatitudinalBackLeft) {
+        if(this.speedLatitudinalBack <= 0) {
             this.hiddeSpeedLatitudinalBackLeft = 'hidden';
             this.hiddeSpeedLatitudinalBackRight = '';
         }
@@ -100,7 +100,7 @@ export class LongLatLarge extends ObElement {
         }
 
         //latitudinal-front - (left - right)
-        if(!this.showSpeedLatitudinalFrontLeft) {
+        if(this.speedLatitudinalFront <= 0) {
             this.hiddeSpeedLatitudinalFrontLeft = 'hidden';
             this.hiddeSpeedLatitudinalFrontRight = '';
         }
@@ -110,7 +110,7 @@ export class LongLatLarge extends ObElement {
         }
 
         //latitudinal-middle - (left - right)
-        if(!this.showSpeedLatitudinalMiddleLeft) {
+        if(this.speedLatitudinalMiddle <= 0) {
             this.hiddeSpeedLatitudinalMiddleLeft = 'hidden';
             this.hiddeSpeedLatitudinalMiddleRight = '';
         }
@@ -151,7 +151,7 @@ export class LongLatLarge extends ObElement {
                         <svg x="-4" y="${-this.speedLongitudinal - 93}" width="8" height="${this.speedLongitudinal}">
                             ${LongitudinalBarLarge}
                         </svg>
-                        <svg x="-24" y=${-this.speedLongitudinal - 141} width="48" height="48">
+                        <svg x="-24" y=${-this.speedLongitudinal - 140} width="48" height="48">
                             ${LongitudinalArrowLarge}
                         </svg>
                     </g>
@@ -164,12 +164,12 @@ export class LongLatLarge extends ObElement {
                             ${LongitudinalDotActiveLarge}
                         </svg>
                         <g transform="rotate(${180})">
-                            <svg x="-4" y="${-this.speedLongitudinal - 99}" width="8" height="${this.speedLongitudinal}">
+                            <svg x="-4" y="${this.speedLongitudinal - 99}" width="8" height="${-this.speedLongitudinal}">
                                 ${LongitudinalBarLarge}
                             </svg>
                         </g>
                         <g transform="rotate(${180})">
-                            <svg x="-24" y=${-this.speedLongitudinal - 147} width="48" height="48">
+                            <svg x="-24" y=${this.speedLongitudinal - 146} width="48" height="48">
                                 ${LongitudinalArrowLarge}
                             </svg>
                         </g>
@@ -181,20 +181,6 @@ export class LongLatLarge extends ObElement {
                         ${LatitudinalLineLarge}
                     </svg>
                     <g style="visibility:${this.hiddeSpeedLatitudinalBackLeft}">
-                        <svg x="173" y="91" width="8" height="8">
-                            ${LongitudinalDotLarge}
-                        </svg>
-                        <svg x="-181" y="91" width="8" height="8">
-                            ${LongitudinalDotActiveLarge}
-                        </svg>
-                        <svg x="${-this.speedLatitudinalBack - 32}" y="91" width="${this.speedLatitudinalBack}" height="8">
-                            ${LatitudinalBarLarge}
-                        </svg>
-                        <svg x="${-this.speedLatitudinalBack - 80}" y="71" width="48" height="48">
-                            ${LatitudinalLeftArrowLarge}
-                        </svg>
-                    </g>
-                    <g style="visibility:${this.hiddeSpeedLatitudinalBackRight}">
                         <svg x="-181" y="91" width="8" height="8">
                             ${LongitudinalDotLarge}
                         </svg>
@@ -207,10 +193,24 @@ export class LongLatLarge extends ObElement {
                             </svg>
                         </g>
                         <g transform="rotate(${180})">
-                            <svg x="${-this.speedLatitudinalBack - 80}" y="-119" width="48" height="48">
+                            <svg x="${-this.speedLatitudinalBack - 79}" y="-119" width="48" height="48">
                                 ${LatitudinalLeftArrowLarge}
                             </svg>
                         </g>
+                    </g>
+                    <g style="visibility:${this.hiddeSpeedLatitudinalBackRight}">
+                        <svg x="173" y="91" width="8" height="8">
+                            ${LongitudinalDotLarge}
+                        </svg>
+                        <svg x="-181" y="91" width="8" height="8">
+                            ${LongitudinalDotActiveLarge}
+                        </svg>
+                        <svg x="${this.speedLatitudinalBack - 32}" y="91" width="${-this.speedLatitudinalBack}" height="8">
+                            ${LatitudinalBarLarge}
+                        </svg>
+                        <svg x="${this.speedLatitudinalBack - 79}" y="71" width="48" height="48">
+                            ${LatitudinalLeftArrowLarge}
+                        </svg>
                     </g>
                 </g>
 
@@ -219,6 +219,24 @@ export class LongLatLarge extends ObElement {
                         ${LatitudinalLineLarge}
                     </svg>
                     <g style="visibility:${this.hiddeSpeedLatitudinalFrontRight}">
+                        <svg x="-181" y="-67" width="8" height="8">
+                            ${LongitudinalDotActiveLarge}
+                        </svg>
+                        <svg x="173" y="-67" width="8" height="8">
+                            ${LongitudinalDotLarge}
+                        </svg>
+                        <g transform="rotate(${180})">
+                            <svg x="${32}" y="59" width="${-this.speedLatitudinalFront}" height="8">
+                                ${LatitudinalBarLarge}
+                            </svg>
+                        </g>
+                        <g>
+                            <svg x="${this.speedLatitudinalFront - 79}" y="-87" width="48" height="48">
+                                ${LatitudinalRightArrowLarge}
+                            </svg>
+                        </g>
+                    </g>
+                    <g style="visibility:${this.hiddeSpeedLatitudinalFrontLeft}">
                         <svg x="173" y="-67" width="8" height="8">
                             ${LongitudinalDotActiveLarge}
                         </svg>
@@ -229,25 +247,7 @@ export class LongLatLarge extends ObElement {
                             ${LatitudinalBarLarge}
                         </svg>
                         <g transform="rotate(${180})">
-                            <svg x="${-this.speedLatitudinalFront - 80}" y="39" width="48" height="48">
-                                ${LatitudinalRightArrowLarge}
-                            </svg>
-                        </g>
-                    </g>
-                    <g style="visibility:${this.hiddeSpeedLatitudinalFrontLeft}">
-                        <svg x="-181" y="-67" width="8" height="8">
-                            ${LongitudinalDotActiveLarge}
-                        </svg>
-                        <svg x="173" y="-67" width="8" height="8">
-                            ${LongitudinalDotLarge}
-                        </svg>
-                        <g transform="rotate(${180})">
-                            <svg x="${32}" y="59" width="${this.speedLatitudinalFront}" height="8">
-                                ${LatitudinalBarLarge}
-                            </svg>
-                        </g>
-                        <g>
-                            <svg x="${-this.speedLatitudinalFront - 80}" y="-87" width="48" height="48">
+                            <svg x="${-this.speedLatitudinalFront - 79}" y="39" width="48" height="48">
                                 ${LatitudinalRightArrowLarge}
                             </svg>
                         </g>
@@ -259,22 +259,6 @@ export class LongLatLarge extends ObElement {
                         ${LatitudinalLineLarge}
                     </svg>
                     <g style="visibility:${this.hiddeSpeedLatitudinalMiddleLeft}">
-                        <svg x="173" y="${temp - 3}" width="8" height="8">
-                            ${LongitudinalDotLarge}
-                        </svg>
-                        <svg x="-181" y="${temp - 3}" width="8" height="8">
-                            ${LongitudinalDotActiveLarge}
-                        </svg>
-                        <svg x="${-this.speedLatitudinalMiddle - 32}" y="${temp - 3}" width="${this.speedLatitudinalMiddle}" height="8">
-                            ${LatitudinalBarLarge}
-                        </svg>
-                        <g>
-                            <svg x="${-this.speedLatitudinalMiddle - 80}" y="${temp - 23}" width="48" height="48">
-                                ${LatitudinalRightArrowLarge}
-                            </svg>
-                        </g>
-                    </g>
-                    <g style="visibility:${this.hiddeSpeedLatitudinalMiddleRight}">
                         <svg x="-181" y="${temp - 3}" width="8" height="8">
                             ${LongitudinalDotLarge}
                         </svg>
@@ -287,7 +271,23 @@ export class LongLatLarge extends ObElement {
                             </svg>
                         </g>
                         <g transform="rotate(${180})">
-                            <svg x="${-this.speedLatitudinalMiddle - 80}" y="${-temp - 25}" width="48" height="48">
+                            <svg x="${-this.speedLatitudinalMiddle - 79}" y="${-temp - 25}" width="48" height="48">
+                                ${LatitudinalRightArrowLarge}
+                            </svg>
+                        </g>
+                    </g>
+                    <g style="visibility:${this.hiddeSpeedLatitudinalMiddleRight}">
+                        <svg x="173" y="${temp - 3}" width="8" height="8">
+                            ${LongitudinalDotLarge}
+                        </svg>
+                        <svg x="-181" y="${temp - 3}" width="8" height="8">
+                            ${LongitudinalDotActiveLarge}
+                        </svg>
+                        <svg x="${this.speedLatitudinalMiddle - 32}" y="${temp - 3}" width="${-this.speedLatitudinalMiddle}" height="8">
+                            ${LatitudinalBarLarge}
+                        </svg>
+                        <g>
+                            <svg x="${this.speedLatitudinalMiddle - 79}" y="${temp - 23}" width="48" height="48">
                                 ${LatitudinalRightArrowLarge}
                             </svg>
                         </g>
