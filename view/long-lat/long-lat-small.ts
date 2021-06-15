@@ -46,30 +46,30 @@ export class LongLatSmall extends ObElement {
     protected render(): unknown {
 
         //longitudinal
-        if(!this.showSpeedLongitudinal)
+        if(this.speedLongitudinal == 0)
             this.hiddeSpeedLongitudinal = 'hidden';
         else
             this.hiddeSpeedLongitudinal = '';
         //latitudinal - back
-        if(!this.showSpeedLatitudinalBack)
+        if(this.speedLatitudinalBack == 0)
             this.hiddeSpeedLatitudinalBack = 'hidden';
         else
             this.hiddeSpeedLatitudinalBack = '';
 
         //latitudinal - front
-        if(!this.showSpeedLatitudinalFront)
+        if(this.speedLatitudinalFront == 0)
             this.hiddeSpeedLatitudinalFront = 'hidden';
         else
             this.hiddeSpeedLatitudinalFront = '';
 
         //latitudinal - middle
-        if(!this.showSpeedLatitudinalMiddle)
+        if(this.speedLatitudinalMiddle == 0)
             this.hiddeSpeedLatitudinalMiddle = 'hidden';
         else
             this.hiddeSpeedLatitudinalMiddle = '';   
 
         //longitudinalFront
-        if(!this.showSpeedLongitudinalFront) {
+        if(this.speedLongitudinal < 0) {
             this.hiddeSpeedLongitudinalFront = 'hidden';
             this.hiddeSpeedLongitudinalBack = '';
         }
@@ -79,7 +79,7 @@ export class LongLatSmall extends ObElement {
         }
 
         //latitudinal-back - (left - right)
-        if(!this.showSpeedLatitudinalBackLeft) {
+        if(this.speedLatitudinalBack > 0) {
             this.hiddeSpeedLatitudinalBackLeft = 'hidden';
             this.hiddeSpeedLatitudinalBackRight = '';
         }
@@ -89,7 +89,7 @@ export class LongLatSmall extends ObElement {
         }
 
         //latitudinal-front - (left - right)
-        if(!this.showSpeedLatitudinalFrontLeft) {
+        if(this.speedLatitudinalFront > 0) {
             this.hiddeSpeedLatitudinalFrontLeft = 'hidden';
             this.hiddeSpeedLatitudinalFrontRight = '';
         }
@@ -99,7 +99,7 @@ export class LongLatSmall extends ObElement {
         }
 
         //latitudinal-middle - (left - right)
-        if(!this.showSpeedLatitudinalMiddleLeft) {
+        if(this.speedLatitudinalMiddle > 0) {
             this.hiddeSpeedLatitudinalMiddleLeft = 'hidden';
             this.hiddeSpeedLatitudinalMiddleRight = '';
         }

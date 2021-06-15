@@ -4,7 +4,10 @@ import React from "react";
 export default {
   title: 'INSTRUMENT/SOG & STW/02 A Long - Lat/Small',
   argTypes: {
-    
+    speedLongitudinal: { control: {type: 'range', min: -100, max: 100} },
+    speedLatitudinalBack: { control: {type: 'range', min: -100, max: 100} },
+    speedLatitudinalFront: { control: {type: 'range', min: -100, max: 100} },
+    speedLatitudinalMiddle: { control: {type: 'range', min: -100, max: 100} },
   }
 };
 
@@ -12,12 +15,8 @@ const Template = (args) => <ob-long-lat-small style={{width: 128, height: 128}} 
 
 export const Default = Template.bind({});
 Default.args = {
-  showSpeedLongitudinal: true,
-  showSpeedLatitudinalBack: true,
-  showSpeedLatitudinalFront: true,
-  showSpeedLatitudinalMiddle: false,
-  showSpeedLongitudinalFront: true,
-  showSpeedLatitudinalBackLeft: true,
-  showSpeedLatitudinalFrontLeft: true,
-  showSpeedLatitudinalMiddleLeft: true,
+  speedLongitudinal: 48,
+  speedLatitudinalBack: 48,
+  speedLatitudinalFront: 48,
+  speedLatitudinalMiddle: 48,
 };
