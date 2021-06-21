@@ -7,9 +7,9 @@ export default {
       rotate: { control: {type: 'range', min: 0, max: 360} },
       rotateShip: { control: {type: 'range', min: 0, max: 360} },
       rotateHdg: { control: {type: 'range', min: 0, max: 360} },
-      speedHdg: { control: {type: 'range', min: 0, max: 128} },
+      speedHdg: { control: {type: 'range', min: 0, max: 100} },
       rotateCog: { control: {type: 'range', min: 0, max: 360} },
-      speedCog: { control: {type: 'range', min: 0, max: 128} },
+      speedCog: { control: {type: 'range', min: 0, max: 100} },
       rotateCurrent: { control: {type: 'range', min: 0, max: 360} },
       rotateWind: { control: {type: 'range', min: 0, max: 360} },
   }
@@ -27,5 +27,6 @@ Default.args = {
     rotateShip: 0,
     rotateWind: 35,
     rotateCurrent: 70,
-    speedHdg: 97
+    speedHdg: 97,
+    speedCog: 97
 };

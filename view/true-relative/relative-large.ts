@@ -75,12 +75,12 @@ export class RelativeLarge extends ObElement {
                     <svg x="-4" y="-192" width="512" height="512">
                         ${TruePointerLine}
                     </svg>
-                    <svg x="-4" y=${-this.speedHdg} width="8" height="${this.speedHdg}">
+                    <svg x="-4" y=${-this.speedHdg * 1.3} width="8" height="${this.speedHdg * 1.3}">
                         <svg width="8" height="150" viewBox="0 0 8 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect id="Bar" width="8" height="150" fill="#0080FF" class="ob-instrument-dynamic-color-fill"/>
                         </svg>
                     </svg>
-                    <svg x="-24" y=${-this.speedHdg - 47} width="48" height="48">
+                    <svg x="-24" y=${-this.speedHdg * 1.3 - 47} width="48" height="48">
                         ${TrueArrow}
                     </svg>
                 </g>
@@ -89,12 +89,12 @@ export class RelativeLarge extends ObElement {
                     <svg x="-4" y="-192" width="512" height="512">
                         ${RelativePointerLine}
                     </svg>
-                    <svg x="-2" y=${-this.speedCog} width="8" height="${this.speedCog}">
+                    <svg x="-2" y=${-this.speedCog * 1.3} width="8" height="${this.speedCog * 1.3}">
                         <svg width="4" height="150" viewBox="0 0 4 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect id="Bar" width="4" height="150" fill="#0080FF" class="ob-instrument-dynamic-color-fill"/>
                         </svg>
                     </svg>
-                    <svg x="-24" y=${-this.speedCog - 47} width="48" height="48">
+                    <svg x="-24" y=${-this.speedCog * 1.3 - 47} width="48" height="48">
                         ${RelativeArrow}
                     </svg>
                 </g>
