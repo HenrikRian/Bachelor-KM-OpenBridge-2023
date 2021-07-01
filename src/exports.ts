@@ -7,63 +7,108 @@ export interface ExportDef {
 const staticExportComponents: ExportDef[] = [
   {
         name: 'FlatArrowHdgSmall',
-        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Small'],
+        path: ['M1 Maritime components', 'Heading Flat S','Setpoint=True', 'HDG'],
+        outputFolder: 'HDG_COG'
+    },
+  {
+        name: 'FlatArrowHdgMedium',
+        path: ['M1 Maritime components', 'Heading Flat M','Setpoint=True', 'HDG'],
         outputFolder: 'HDG_COG'
     },
   {
         name: 'FlatArrowHdgLarge',
-        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Large'],
+        path: ['M1 Maritime components', 'Heading Flat L','Setpoint=True', 'hdg'],
+        outputFolder: 'HDG_COG'
+    },
+  {
+        name: 'FlatArrowCogSmall',
+        path: ['M1 Maritime components', 'Heading Flat S','Setpoint=True', 'COG'],
+        outputFolder: 'HDG_COG'
+    },
+  {
+        name: 'FlatArrowCogMedium',
+        path: ['M1 Maritime components', 'Heading Flat M','Setpoint=True', 'COG'],
+        outputFolder: 'HDG_COG'
+    },
+  {
+        name: 'FlatArrowCogLarge',
+        path: ['M1 Maritime components', 'Heading Flat L','Setpoint=True', 'cog'],
         outputFolder: 'HDG_COG'
     },
   {
         name: 'TicBarSmall',
-        path: ['ROT', 'Elements', 'Tick bar/ Small'],
+        path: ['M1 Maritime components', 'ROT S Flat', 'Property 1=Flat setpoint, PS=false', 'tick-marks'],
+        outputFolder: 'ROT'
+    },{
+        name: 'TicBarMedium',
+         path: ['M1 Maritime components', 'ROT M Flat', 'Property 1=Flat setpoint, PS=false', 'tick-marks'],
         outputFolder: 'ROT'
     },{
         name: 'TicBarLarge',
-        path: ['ROT', 'Elements', 'Tick bar/ Large'],
+         path: ['M1 Maritime components', 'ROT L Flat', 'Property 1=Flat setpoint, PS=false', 'tick-marks'],
         outputFolder: 'ROT'
     },
   {
         name: 'CircleBorderInsideSmall',
-        path: ['ROT', '01 Circle', 'Small', 'Inner circle'],
+        path: ['M1 Maritime components', 'ROT S', 'Rot small', 'Inner circle (Stroke)'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleBorderOutsideSmall',
-        path: ['ROT', '01 Circle', 'Small', 'Outer circle'],
+        path: ['M1 Maritime components', 'ROT S', 'Rot small', 'Outer circle'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleDotsSmall',
-        path: ['ROT', '01 Circle', 'Small', 'rot-dots'],
+        path: ['M1 Maritime components', 'ROT S', 'Rot small', 'rot-dots'],
+        outputFolder: 'ROT'
+    },
+  {
+        name: 'CircleBorderInsideMedium',
+        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium' , 'border-inside'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleBorderOutsideMedium',
+        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium', 'border-outisde'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleTrackMedium',
+        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium', 'track (Stroke)'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleDotsMedium',
+        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium', 'rot-dots'],
         outputFolder: 'ROT'
     },
   {
         name: 'CircleBorderInsideLarge',
-        path: ['ROT', '01 Circle', 'Large', 'border-inside'],
+        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'border-inside'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleBorderOutsideLarge',
-        path: ['ROT', '01 Circle', 'Large', 'border-outside'],
+        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'border-outside'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleTrackLarge',
-        path: ['ROT', '01 Circle', 'Large', 'track'],
+        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'track (Stroke)'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleDotsLarge',
-        path: ['ROT', '01 Circle', 'Large', 'rot-dots'],
+        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'rot-dots'],
         outputFolder: 'ROT'
+    },{
+        name: 'AngleSmall',
+        path: ['M2 Maritime elements', 'Elements', 'Setpoint', 'Size=Small, Type=Circular'],
+        outputFolder: 'SetPoint'
     },
     {
         name: 'AngleMedium',
-        path: ['Set point', 'Angle','Medium'],
+        path: ['M2 Maritime elements', 'Elements','Setpoint', 'Size=Medium, Type=Circular'],
         outputFolder: 'SetPoint'
     },
   {
         name: 'AngleLarge',
-        path: ['Set point', 'Angle','Large'],
+        path: ['M2 Maritime elements', 'Elements','Setpoint', 'Size=Large, Type=Circular'],
         outputFolder: 'SetPoint'
-    },
+    },/*
     {
         name: 'RudderSmall',
         path: ['Rudder', 'Elements','Rudder/ Small'],
@@ -310,11 +355,6 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'HDG_COG'
     },
     {
-        name: 'FlatArrowHdgMedium',
-        path: ['HDG & COG', 'Elements', 'Flat compass arrow/ HDG - Medium'],
-        outputFolder: 'HDG_COG'
-    },
-    {
         name: 'WatchFaceLarge',
         path: ['HDG & COG', 'Circular HDG', 'Large', 'Watch face'],
         outputFolder: 'HDG_COG'
@@ -381,6 +421,11 @@ const staticExportComponents: ExportDef[] = [
     {
         name: 'SpeedNeedleMedium',
         path: ['SOG & STW', 'Elements', '01 Speed Needle/ Medium'],
+        outputFolder: 'SOG_STW'
+    },
+    {
+        name: 'SpeedNeedleSmall',
+        path: ['SOG & STW', 'Elements', '01 Speed Needle/ Small'],
         outputFolder: 'SOG_STW'
     },
     {
@@ -734,7 +779,9 @@ const staticExportComponents: ExportDef[] = [
         path: ['Wind symbols', 'Current symbol', 'Current arrow 4 (large)'],
         outputFolder: 'Current'
     }
+    */
 ];
+/*
 const circleDegrees = ['1°', '5°', '10°', '30°', '45°', '90°'];
 const circleLengths = ['8px', '16px', '24px'];
 const circleTickMarks: ExportDef[] = [];
@@ -749,5 +796,5 @@ for (const degree of circleDegrees) {
         circleTickMarks.push(def);
     }
 }
-
-export const exportComponents = [...staticExportComponents, ...circleTickMarks];
+*/
+export const exportComponents = [...staticExportComponents];

@@ -28,10 +28,10 @@ export function renderVerticalActiveBarMedium(value0: number, value1: number,
     return svg`
         <rect id="Active bar" x="-4" y="${Math.min(y0, y1)}" width="8" height="${Math.abs(y0 - y1)}" 
             class="ob-instrument-dynamic-color-fill"/>
-        ${cfg.showBar1 ? svg`<rect id="BaseLine" x="-7" y="${y1 - .5}" width="14" height="1" 
-                                    class="ob-instrument-dynamic-color-fill"/>` : null}
-        ${cfg.showBar0 ? svg`<rect id="BaseLine" x="-7" y="${y0 - .5}" width="14" height="1" 
-                                    class="ob-instrument-dynamic-color-fill"/>` : null}`;
+        ${ cfg.showBar1 ? svg`<path d="M-7, ${ y1 } h 14" id="BaseLine" stroke-width="1"
+                                    class="ob-instrument-dynamic-color-stroke"/>` : null }
+        ${ cfg.showBar0 ? svg`<path d="M-7, ${ y0 } h 14" id="BaseLine" stroke-width="1"
+                                    class="ob-instrument-dynamic-color-stroke"/>` : null }`;
 }
 
 export function renderVerticalActiveBarLarge(value0: number, value1: number,
@@ -46,10 +46,10 @@ export function renderVerticalActiveBarLarge(value0: number, value1: number,
     return svg`
         <rect id="Active bar" x="-8" y="${Math.min(y0, y1)}" width="16" height="${Math.abs(y0 - y1)}" 
             class="ob-instrument-dynamic-color-fill"/>
-        ${cfg.showBar1 ? svg`<rect id="BaseLine" x="-15" y="${y1 - 1}" width="30" height="2" 
-                                    class="ob-instrument-dynamic-color-fill"/>` : null}
-        ${cfg.showBar0 ? svg`<rect id="BaseLine" x="-15" y="${y0 - 1}" width="30" height="2" 
-                                    class="ob-instrument-dynamic-color-fill"/>` : null}`;
+        ${ cfg.showBar1 ? svg`<path d="M-15, ${y1} h 30" id="BaseLine" stroke-width="2"
+                                    class="ob-instrument-dynamic-color-stroke"/>` : null }
+        ${ cfg.showBar0 ? svg`<path d="M-15, ${y0} h 30" id="BaseLine" stroke-width="2"
+                                    class="ob-instrument-dynamic-color-stroke"/>` : null }`;
 }
 
 export function renderHorizontalActiveBarLarge(value0: number, value1: number,
@@ -64,10 +64,10 @@ export function renderHorizontalActiveBarLarge(value0: number, value1: number,
     return svg`
         <rect id="Active bar" y="-8" x="${Math.min(y0, y1)}" height="16" width="${Math.abs(y0 - y1)}" 
             class="ob-instrument-dynamic-color-fill"/>
-        ${cfg.showBar1 ? svg`<rect id="BaseLine" y="-15" x="${y1 - 1}" height="30" width="2" 
-                                    class="ob-instrument-dynamic-color-fill"/>` : null}
-        ${cfg.showBar0 ? svg`<rect id="BaseLine" y="-15" x="${y0 - 1}" height="30" width="2" 
-                                    class="ob-instrument-dynamic-color-fill"/>` : null}`;
+        ${cfg.showBar1 ? svg`<path d="M${y1}, -15 v 30" id="BaseLine" stroke-width="2"
+                                    class="ob-instrument-dynamic-color-stroke"/>` : null}
+        ${cfg.showBar0 ? svg`<path d="M${y0}, -15 v 30" id="BaseLine" stroke-width="2"
+                                    class="ob-instrument-dynamic-color-stroke"/>` : null}`;
 }
 
 export function renderVerticalBarLarge(value: number, range: number) {

@@ -7,6 +7,7 @@
 /gen-vue/
 /public/
 /dist
-
+/document.json
+/documentStyle.json
 .env
 *.tgz

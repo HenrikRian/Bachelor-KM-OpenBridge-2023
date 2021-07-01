@@ -29,6 +29,10 @@ export class ObElement extends LitElement {
       text {
         fill: var(--element-active-color);
       }
+          
+      path {
+        vector-effect: non-scaling-stroke; 
+       }
     `];
     }
 }

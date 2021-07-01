@@ -30,10 +30,17 @@ function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
 }
 
 async function main(option: { outFolder: string, removeAttributes: boolean }) {
-  const mainFigmaFile = process.env.FIGMA_MAINFILE as string; // 'UNbup2BF6eR8omPSRzFSlV';
+  const mainFigmaFile = '0tPmDvfXeHeQDLnd6M2MxE';
 
-  const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string); // 'XXHKjGJXg0acrBak97mFhP'
+  /*
+  const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string);
   const document: any = await getFigmaFile(mainFigmaFile);
+
+  fs.writeFileSync('documentStyle', JSON.stringify(documentStyles));
+  fs.writeFileSync('document', JSON.stringify(document));
+   */
+  const documentStyles: any = JSON.parse(fs.readFileSync('documentStyle').toString())
+  const document: any = JSON.parse(fs.readFileSync('document').toString())
   const genFolder = option.outFolder;
 
   if (!fs.existsSync(genFolder)) {
