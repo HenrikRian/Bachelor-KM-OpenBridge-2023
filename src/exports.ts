@@ -108,119 +108,99 @@ const staticExportComponents: ExportDef[] = [
         name: 'AngleLarge',
         path: ['M2 Maritime elements', 'Elements','Setpoint', 'Size=Large, Type=Circular'],
         outputFolder: 'SetPoint'
-    },/*
+    },
     {
         name: 'RudderSmall',
-        path: ['Rudder', 'Elements','Rudder/ Small'],
+        path: ['M2 Maritime elements', 'Elements', 'Rudder', 'Size=Small'],
         outputFolder: 'Rudder'
     },
     {
         name: 'RudderMedium',
-        path: ['Rudder', 'Elements','Rudder/ Medium'],
+        path: ['M2 Maritime elements', 'Elements', 'Rudder', 'Size=Medium'],
         outputFolder: 'Rudder'
     },
     {
         name: 'RudderLarge',
-        path: ['Rudder', 'Elements','Rudder/ Large'],
+        path: ['M2 Maritime elements', 'Elements', 'Rudder', 'Size=Large'],
         outputFolder: 'Rudder'
     },
+
     {
-        name: 'CombinedRollShipSmall',
-        path: ['Pitch & Roll', '03 Combined','Small', 'roll', 'Small'],
+        name: 'ShipRollSmall',
+        path: ['M2 Maritime elements', 'Elements', 'Ship - Front', 'Size=Small'],
         outputFolder: 'PitchRoll'
     },
     {
-        name: 'CombinedRollShipMedium',
-        path: ['Pitch & Roll', '03 Combined','Medium', 'roll', 'Medium'],
+        name: 'ShipRollMedium',
+        path: ['M2 Maritime elements', 'Elements', 'Ship - Front', 'Size=Medium'],
         outputFolder: 'PitchRoll'
     },
     {
-        name: 'CombinedRollShipLarge',
-        path: ['Pitch & Roll', '03 Combined','Large', 'pitch', 'Large'],
+        name: 'ShipRollLarge',
+        path: ['M2 Maritime elements', 'Elements', 'Ship - Front', 'Size=Large'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'ShipPitchSmall',
+        path: ['M2 Maritime elements', 'Elements', 'Ship - Side', 'Size=Small'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'ShipPitchMedium',
+        path: ['M2 Maritime elements', 'Elements', 'Ship - Side', 'Size=Medium'],
+        outputFolder: 'PitchRoll'
+    },
+    {
+        name: 'ShipPitchLarge',
+        path: ['M2 Maritime elements', 'Elements', 'Ship - Side', 'Size=Large'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerSmall',
-        path: ['Pitch & Roll', '01 Pitch', 'Small', 'pitch'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'PitchShipSmall',
-        path: ['Pitch & Roll', '01 Pitch', 'Small', 'Small'],
+        path: ['M1 Maritime components', 'Pitch S', 'Pitch S', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerMedium',
-        path: ['Pitch & Roll', '01 Pitch', 'Medium', 'pointer'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'PitchWatchFaceMedium',
-        path: ['Pitch & Roll', '01 Pitch', 'Medium', 'watch-face'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'PitchShipMedium',
-        path: ['Pitch & Roll', '01 Pitch', 'Medium', 'ship'],
+        path: ['M1 Maritime components', 'Pitch M', 'Pitch M', 'pointer', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerLarge',
-        path: ['Pitch & Roll', '01 Pitch', 'Large', 'pitch'],
+        path: ['M1 Maritime components', 'Pitch L', 'Pitch L', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
-        name: 'PitchWatchFaceLarge',
-        path: ['Pitch & Roll', '01 Pitch', 'Large', 'watch-face'],
+        name: 'PointerCenterSmall',
+        path: ['M1 Maritime components', 'Pitch S', 'Pitch S', 'pitch', "center"],
         outputFolder: 'PitchRoll'
     },
     {
-        name: 'PitchShipLarge',
-        path: ['Pitch & Roll', '01 Pitch', 'Large', 'ship'],
+        name: 'PointerCenterMedium',
+        path: ['M1 Maritime components', 'Pitch M', 'Pitch M', 'pointer', "center"],
         outputFolder: 'PitchRoll'
     },
-
+    {
+        name: 'PointerCenterLarge',
+        path: ['M1 Maritime components', 'Pitch L', 'Pitch L', 'pitch', "center"],
+        outputFolder: 'PitchRoll'
+    },
     {
         name: 'RollPointerSmall',
-        path: ['Pitch & Roll', '02 Roll', 'Small', 'pitch'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'RollShipSmall',
-        path: ['Pitch & Roll', '02 Roll', 'Small', 'Small'],
+        path: ['M1 Maritime components', 'Roll S', 'Roll S', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerMedium',
-        path: ['Pitch & Roll', '02 Roll', 'Medium', 'pointer'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'RollWatchFaceMedium',
-        path: ['Pitch & Roll', '02 Roll', 'Medium', 'watch-face'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'RollShipMedium',
-        path: ['Pitch & Roll', '02 Roll', 'Medium', 'Medium'],
+        path: ['M1 Maritime components', 'Roll M', 'Roll M', 'pointer', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerLarge',
-        path: ['Pitch & Roll', '02 Roll', 'Large', 'pitch'],
+        path: ['M1 Maritime components', 'Roll L', 'Roll L', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
-    {
-        name: 'RollWatchFaceLarge',
-        path: ['Pitch & Roll', '02 Roll', 'Large', 'watch-face'],
-        outputFolder: 'PitchRoll'
-    },
-    {
-        name: 'RollShipLarge',
-        path: ['Pitch & Roll', '02 Roll', 'Large', 'Large'],
-        outputFolder: 'PitchRoll'
-    },
-
+    /*
     {
         name: 'BarHorizontal100ActiveBarSmall',
         path: ['Bars', 'Horizontal +/-100', 'Small', 'Small', 'active-bar'],

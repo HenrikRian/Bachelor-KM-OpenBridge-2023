@@ -32,15 +32,16 @@ function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
 async function main(option: { outFolder: string, removeAttributes: boolean }) {
   const mainFigmaFile = '0tPmDvfXeHeQDLnd6M2MxE';
 
-  /*
+/*
   const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string);
   const document: any = await getFigmaFile(mainFigmaFile);
 
-  fs.writeFileSync('documentStyle', JSON.stringify(documentStyles));
-  fs.writeFileSync('document', JSON.stringify(document));
-   */
-  const documentStyles: any = JSON.parse(fs.readFileSync('documentStyle').toString())
-  const document: any = JSON.parse(fs.readFileSync('document').toString())
+  fs.writeFileSync('documentStyle.json', JSON.stringify(documentStyles));
+  fs.writeFileSync('document.json', JSON.stringify(document));
+  */
+
+  const documentStyles: any = JSON.parse(fs.readFileSync('documentStyle.json').toString())
+  const document: any = JSON.parse(fs.readFileSync('document.json').toString())
   const genFolder = option.outFolder;
 
   if (!fs.existsSync(genFolder)) {
@@ -71,6 +72,7 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
       reject();
       return;
     }
+    return;
     let imageData
     try {
       imageData = await fetch(urlSvgs[element.id])
