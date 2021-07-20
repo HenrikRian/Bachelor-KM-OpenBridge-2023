@@ -6,6 +6,9 @@ import CircleBorderInsideSmall
 import CircleBorderOutsideSmall
     from '../../generated-without-style/ROT/CircleBorderOutsideSmall.svg'
 
+import CircleTrackSmall
+    from '../../generated-without-style/ROT/CircleTrackSmall.svg'
+
 @customElement('ob-rot-circle-small')
 export class HdgSmall extends ObElement {
     @property({type: Number}) rateOfTurn = 0;
@@ -29,11 +32,12 @@ export class HdgSmall extends ObElement {
     }
 
     render() {
-        return  svg`<svg viewBox="-32 -32 64 64">
-    <svg x="-32" y="-32" width="64" height="64">
+        return svg`<svg viewBox="-32 -32 64 64">
+    <svg x="-26" y="-26" width="52" height="52">${CircleTrackSmall}</svg>
+    <svg x="-22" y="-22" width="44" height="44">
         ${CircleBorderInsideSmall}
     </svg>
-    <svg x="-32" y="-32" width="64" height="64">
+    <svg x="-27" y="-27" width="54" height="54">
         ${CircleBorderOutsideSmall}
     </svg>
     <g transform="rotate(${this.angle})">

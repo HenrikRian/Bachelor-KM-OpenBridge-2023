@@ -5,199 +5,228 @@ export interface ExportDef {
 }
 
 const staticExportComponents: ExportDef[] = [
-  {
+    {
         name: 'FlatArrowHdgSmall',
-        path: ['M1 Maritime components', 'Heading Flat S','Setpoint=True', 'HDG'],
+        path: ['M1 Navigation components', 'Heading Flat S', 'Setpoint=False', 'hdg'],
         outputFolder: 'HDG_COG'
     },
-  {
+    {
         name: 'FlatArrowHdgMedium',
-        path: ['M1 Maritime components', 'Heading Flat M','Setpoint=True', 'HDG'],
+        path: ['M1 Navigation components', 'Heading Flat M', 'Setpoint=False', 'hdg'],
         outputFolder: 'HDG_COG'
     },
-  {
+    {
         name: 'FlatArrowHdgLarge',
-        path: ['M1 Maritime components', 'Heading Flat L','Setpoint=True', 'hdg'],
+        path: ['M1 Navigation components', 'Heading Flat L', 'Setpoint=False', 'hdg'],
         outputFolder: 'HDG_COG'
     },
-  {
+    {
         name: 'FlatArrowCogSmall',
-        path: ['M1 Maritime components', 'Heading Flat S','Setpoint=True', 'COG'],
+        path: ['M1 Navigation components', 'Heading Flat S', 'Setpoint=False', 'cog'],
         outputFolder: 'HDG_COG'
     },
-  {
+    {
         name: 'FlatArrowCogMedium',
-        path: ['M1 Maritime components', 'Heading Flat M','Setpoint=True', 'COG'],
+        path: ['M1 Navigation components', 'Heading Flat M', 'Setpoint=False', 'cog'],
         outputFolder: 'HDG_COG'
     },
-  {
+    {
         name: 'FlatArrowCogLarge',
-        path: ['M1 Maritime components', 'Heading Flat L','Setpoint=True', 'cog'],
+        path: ['M1 Navigation components', 'Heading Flat L', 'Setpoint=False', 'cog'],
         outputFolder: 'HDG_COG'
     },
-  {
-        name: 'TicBarSmall',
-        path: ['M1 Maritime components', 'ROT S Flat', 'Property 1=Flat setpoint, PS=false', 'tick-marks'],
+    // {
+    //     name: 'BarMeterBlackSmall',
+    //     path: ['M1 Navigation components', 'ROT S Flat', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
+    //     outputFolder: 'ROT'
+    // },
+    {
+        name: 'BarMeterBlackMedium',
+        path: ['M1 Navigation components', 'ROT M Flat', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
-    },{
-        name: 'TicBarMedium',
-         path: ['M1 Maritime components', 'ROT M Flat', 'Property 1=Flat setpoint, PS=false', 'tick-marks'],
-        outputFolder: 'ROT'
-    },{
-        name: 'TicBarLarge',
-         path: ['M1 Maritime components', 'ROT L Flat', 'Property 1=Flat setpoint, PS=false', 'tick-marks'],
+    }, {
+        name: 'BarMeterBlackLarge',
+        path: ['M1 Navigation components', 'ROT L Flat', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     },
-  {
+    // {
+    //     name: 'BarMeterPSSmall',
+    //     path: ['M1 Navigation components', 'ROT S Flat', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+    //     outputFolder: 'ROT'
+    // },
+    {
+        name: 'BarMeterPSMedium',
+        path: ['M1 Navigation components', 'ROT M Flat', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'BarMeterPSLarge',
+        path: ['M1 Navigation components', 'ROT L Flat', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        outputFolder: 'ROT'
+    },
+    {
+        name: 'BarMeterNoLabelMedium',
+        path: ['M1 Navigation components', 'ROT M Flat', 'Labels=False, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'BarMeterNoLabelLarge',
+        path: ['M1 Navigation components', 'ROT L Flat', 'Labels=False, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        outputFolder: 'ROT'
+    },
+    {
         name: 'CircleBorderInsideSmall',
-        path: ['M1 Maritime components', 'ROT S', 'Rot small', 'Inner circle (Stroke)'],
+        path: ['M1 Navigation components', 'ROT Circle S', 'Type=Dots, PORT STBD=False', 'Rot medium', 'border-inside'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleBorderOutsideSmall',
-        path: ['M1 Maritime components', 'ROT S', 'Rot small', 'Outer circle'],
+        path: ['M1 Navigation components', 'ROT Circle S', 'Type=Dots, PORT STBD=False', 'Rot medium', 'border-outisde'],
+        outputFolder: 'ROT'
+    }, {
+        name: 'CircleTrackSmall',
+        path: ['M1 Navigation components', 'ROT Circle S', 'Type=Dots, PORT STBD=False', 'Rot medium', 'track (Stroke)'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleDotsSmall',
-        path: ['M1 Maritime components', 'ROT S', 'Rot small', 'rot-dots'],
+        path: ['M1 Navigation components', 'ROT Circle S', 'Type=Dots, PORT STBD=False', 'Rot medium', 'rot-dots'],
         outputFolder: 'ROT'
     },
-  {
+    {
         name: 'CircleBorderInsideMedium',
-        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium' , 'border-inside'],
+        path: ['M1 Navigation components', 'ROT Circle M', 'Type=Dots, PORT STBD=False', 'border-inside'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleBorderOutsideMedium',
-        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium', 'border-outisde'],
+        path: ['M1 Navigation components', 'ROT Circle M', 'Type=Dots, PORT STBD=False', 'border-outisde'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleTrackMedium',
-        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium', 'track (Stroke)'],
+        path: ['M1 Navigation components', 'ROT Circle M', 'Type=Dots, PORT STBD=False', 'track (Stroke)'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleDotsMedium',
-        path: ['M1 Maritime components', 'ROT M', 'For compass=False', 'Rot medium', 'rot-dots'],
+        path: ['M1 Navigation components', 'ROT Circle M', 'Type=Dots, PORT STBD=False', 'rot-dots'],
         outputFolder: 'ROT'
     },
-  {
+    {
         name: 'CircleBorderInsideLarge',
-        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'border-inside'],
+        path: ['M1 Navigation components', 'ROT Circle L', 'Type=Dots, PORT STBD=False', 'border-inside'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleBorderOutsideLarge',
-        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'border-outside'],
+        path: ['M1 Navigation components', 'ROT Circle L', 'Type=Dots, PORT STBD=False', 'border-outside'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleTrackLarge',
-        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'track (Stroke)'],
+        path: ['M1 Navigation components', 'ROT Circle L', 'Type=Dots, PORT STBD=False', 'track (Stroke)'],
         outputFolder: 'ROT'
     }, {
         name: 'CircleDotsLarge',
-        path: ['M1 Maritime components', 'ROT L', 'Type=Dots, Compass=False', 'rot-dots'],
+        path: ['M1 Navigation components', 'ROT Circle L', 'Type=Dots, PORT STBD=False', 'rot-dots'],
         outputFolder: 'ROT'
-    },{
+    },
+    {
         name: 'AngleSmall',
-        path: ['M2 Maritime elements', 'Elements', 'Setpoint', 'Size=Small, Type=Circular'],
+        path: ['M3 Elements', 'Elements', 'Setpoint', 'Size=Small, Type=Circular'],
         outputFolder: 'SetPoint'
     },
     {
         name: 'AngleMedium',
-        path: ['M2 Maritime elements', 'Elements','Setpoint', 'Size=Medium, Type=Circular'],
+        path: ['M3 Elements', 'Elements', 'Setpoint', 'Size=Medium, Type=Circular'],
         outputFolder: 'SetPoint'
     },
-  {
+    {
         name: 'AngleLarge',
-        path: ['M2 Maritime elements', 'Elements','Setpoint', 'Size=Large, Type=Circular'],
+        path: ['M3 Elements', 'Elements', 'Setpoint', 'Size=Large, Type=Circular'],
         outputFolder: 'SetPoint'
     },
     {
         name: 'RudderSmall',
-        path: ['M2 Maritime elements', 'Elements', 'Rudder', 'Size=Small'],
+        path: ['M3 Elements', 'Elements', 'Rudder', 'Size=Small'],
         outputFolder: 'Rudder'
     },
     {
         name: 'RudderMedium',
-        path: ['M2 Maritime elements', 'Elements', 'Rudder', 'Size=Medium'],
+        path: ['M3 Elements', 'Elements', 'Rudder', 'Size=Medium'],
         outputFolder: 'Rudder'
     },
     {
         name: 'RudderLarge',
-        path: ['M2 Maritime elements', 'Elements', 'Rudder', 'Size=Large'],
+        path: ['M3 Elements', 'Elements', 'Rudder', 'Size=Large'],
         outputFolder: 'Rudder'
     },
 
     {
         name: 'ShipRollSmall',
-        path: ['M2 Maritime elements', 'Elements', 'Ship - Front', 'Size=Small'],
+        path: ['M3 Elements', 'Elements', 'Ship - Front', 'Size=Small'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipRollMedium',
-        path: ['M2 Maritime elements', 'Elements', 'Ship - Front', 'Size=Medium'],
+        path: ['M3 Elements', 'Elements', 'Ship - Front', 'Size=Medium'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipRollLarge',
-        path: ['M2 Maritime elements', 'Elements', 'Ship - Front', 'Size=Large'],
+        path: ['M3 Elements', 'Elements', 'Ship - Front', 'Size=Large'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipPitchSmall',
-        path: ['M2 Maritime elements', 'Elements', 'Ship - Side', 'Size=Small'],
+        path: ['M3 Elements', 'Elements', 'Ship - Side', 'Size=Small'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipPitchMedium',
-        path: ['M2 Maritime elements', 'Elements', 'Ship - Side', 'Size=Medium'],
+        path: ['M3 Elements', 'Elements', 'Ship - Side', 'Size=Medium'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipPitchLarge',
-        path: ['M2 Maritime elements', 'Elements', 'Ship - Side', 'Size=Large'],
+        path: ['M3 Elements', 'Elements', 'Ship - Side', 'Size=Large'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerSmall',
-        path: ['M1 Maritime components', 'Pitch S', 'Pitch S', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Pitch S', 'Pitch S', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerMedium',
-        path: ['M1 Maritime components', 'Pitch M', 'Pitch M', 'pointer', "pointer-line"],
+        path: ['M1 Navigation components', 'Pitch M', 'Pitch M', 'pointer', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerLarge',
-        path: ['M1 Maritime components', 'Pitch L', 'Pitch L', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Pitch L', 'Pitch L', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PointerCenterSmall',
-        path: ['M1 Maritime components', 'Pitch S', 'Pitch S', 'pitch', "center"],
+        path: ['M1 Navigation components', 'Pitch S', 'Pitch S', 'pitch', "center"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PointerCenterMedium',
-        path: ['M1 Maritime components', 'Pitch M', 'Pitch M', 'pointer', "center"],
+        path: ['M1 Navigation components', 'Pitch M', 'Pitch M', 'pointer', "center"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PointerCenterLarge',
-        path: ['M1 Maritime components', 'Pitch L', 'Pitch L', 'pitch', "center"],
+        path: ['M1 Navigation components', 'Pitch L', 'Pitch L', 'pitch', "center"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerSmall',
-        path: ['M1 Maritime components', 'Roll S', 'Roll S', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Roll S', 'Roll S', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerMedium',
-        path: ['M1 Maritime components', 'Roll M', 'Roll M', 'pointer', "pointer-line"],
+        path: ['M1 Navigation components', 'Roll M', 'Roll M', 'pointer', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerLarge',
-        path: ['M1 Maritime components', 'Roll L', 'Roll L', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Roll L', 'Roll L', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     /*

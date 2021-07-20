@@ -17,6 +17,7 @@ interface FigmaNode {
 }
 
 function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
+  path = [...path]
   const name = path.shift();
   if (name === undefined) {
     return root;
@@ -32,16 +33,16 @@ function getElement(root: FigmaNode, path: string[]): FigmaNode | null {
 async function main(option: { outFolder: string, removeAttributes: boolean }) {
   const mainFigmaFile = '0tPmDvfXeHeQDLnd6M2MxE';
 
-/*
+
   const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string);
   const document: any = await getFigmaFile(mainFigmaFile);
 
   fs.writeFileSync('documentStyle.json', JSON.stringify(documentStyles));
   fs.writeFileSync('document.json', JSON.stringify(document));
-  */
-
+  /*
   const documentStyles: any = JSON.parse(fs.readFileSync('documentStyle.json').toString())
   const document: any = JSON.parse(fs.readFileSync('document.json').toString())
+*/
   const genFolder = option.outFolder;
 
   if (!fs.existsSync(genFolder)) {
@@ -54,6 +55,9 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
   };
   const elements = exportComponents.map(component => {
     const element = getElement(document.document as FigmaNode, component.path);
+    if (element === null) {
+      console.error(`In ${ component.name }, ${component.path}`);
+    }
     return {component: component, element: element}
   }).filter(value => value.element !== null) as {component: ExportDef, element: FigmaNode}[];
 
@@ -66,14 +70,7 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
       const element = ele.element;
     const component = ele.component;
     console.log(`Exporting ${ component.name }`);
-
-    if (element === null) {
-      console.error(`Could not find ${ component.name }`);
-      reject();
-      return;
-    }
-    return;
-    let imageData
+    let imageData;
     try {
       imageData = await fetch(urlSvgs[element.id])
     } catch (e) {
