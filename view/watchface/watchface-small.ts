@@ -63,7 +63,7 @@ export function watchFaceSmallRender(option: {
         <svg width="64" height="64" x="-32" y="-32">
              ${ innerCircleSvg }          
         </svg>
-        <svg width="56" height="56" x="-28" y="-28">
+        <svg width="44" height="44" x="-22" y="-22">
             ${ option.cross ? CrossRegularSmall : null }
         </svg>
         <svg width="91" height="91" x="-45.5" y="-45.5">

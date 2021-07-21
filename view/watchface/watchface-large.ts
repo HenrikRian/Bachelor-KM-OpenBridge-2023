@@ -7,14 +7,14 @@ import InnerCirclePortStarboardLarge
 import InnerCirclePositiveNegativeLarge
     from '../../generated-with-style/WatchFace/InnerCirclePositiveNegativeLarge.svg'
 import CrossRegularLarge from '../../generated-with-style/WatchFace/CrossRegularLarge.svg'
-import SecondaryTickmarks5Large
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks5Large.svg'
-import SecondaryTickmarks9Large
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks9Large.svg'
-import SecondaryTickmarks10Large
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks10Large.svg'
-import TertiaryTickmarksLarge
-    from '../../generated-with-style/WatchFace/TertiaryTickmarksLarge.svg'
+import SecondaryTickmarks5
+    from '../../generated-with-style/WatchFace/SecondaryTickmarks5.svg'
+import SecondaryTickmarks9
+    from '../../generated-with-style/WatchFace/SecondaryTickmarks9.svg'
+import SecondaryTickmarks10
+    from '../../generated-with-style/WatchFace/SecondaryTickmarks10.svg'
+import TertiaryTickmarks
+    from '../../generated-with-style/WatchFace/TertiaryTickmarks.svg'
 
 import {ObElement} from "../obElement";
 import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";
@@ -64,11 +64,11 @@ export function watchFaceLargeRender(option: {
     }
     let secondaryTickmarksSvg = null;
     if (option.secondaryTickMarks === 5)
-        secondaryTickmarksSvg = SecondaryTickmarks5Large
+        secondaryTickmarksSvg = SecondaryTickmarks5
     else if (option.secondaryTickMarks === 9)
-        secondaryTickmarksSvg = SecondaryTickmarks9Large
+        secondaryTickmarksSvg = SecondaryTickmarks9
     else if (option.secondaryTickMarks === 10)
-        secondaryTickmarksSvg = SecondaryTickmarks10Large
+        secondaryTickmarksSvg = SecondaryTickmarks10
 
 
     return svg`
@@ -77,9 +77,13 @@ export function watchFaceLargeRender(option: {
       <g mask="url(#clip${option.uuid})">
         <svg width="512" height="512" x="-256" y="-256">
             ${innerCircleSvg}
+        </svg>
+        <svg width="352" height="352" x="-176" y="-176">
             ${option.cross ? CrossRegularLarge : null}
+        </svg>
+        <svg width="416" height="416" x="-208" y="-208">
             ${secondaryTickmarksSvg}
-            ${option.tertiaryTickMarks !== false ? TertiaryTickmarksLarge : null}
+            ${option.tertiaryTickMarks !== false ? TertiaryTickmarks : null}
         </svg>
         <svg width="725" height="725" x="-362.5" y="-362.5">
             ${primaryTickmarksLarge(option.primaryTickMarks, option.showLabels, option.rotate)}

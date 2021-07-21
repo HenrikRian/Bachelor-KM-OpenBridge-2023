@@ -7,12 +7,12 @@ import InnerCirclePortStarboardMedium
 import InnerCirclePositiveNegativeMedium
     from '../../generated-with-style/WatchFace/InnerCirclePositiveNegativeMedium.svg'
 import CrossRegularMedium from '../../generated-with-style/WatchFace/CrossRegularMedium.svg'
-import SecondaryTickmarks5Medium
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks5Medium.svg'
-import SecondaryTickmarks9Medium
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks9Medium.svg'
-import SecondaryTickmarks10Medium
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks10Medium.svg'
+import SecondaryTickmarks5
+    from '../../generated-with-style/WatchFace/SecondaryTickmarks5.svg'
+import SecondaryTickmarks9
+    from '../../generated-with-style/WatchFace/SecondaryTickmarks9.svg'
+import SecondaryTickmarks10
+    from '../../generated-with-style/WatchFace/SecondaryTickmarks10.svg'
 
 import {ObElement} from "../obElement";
 import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";
@@ -61,11 +61,11 @@ export function watchFaceMediumRender(option: {
     }
     let secondaryTickmarksSvg = null;
     if (option.secondaryTickMarks === 5)
-        secondaryTickmarksSvg = SecondaryTickmarks5Medium
+        secondaryTickmarksSvg = SecondaryTickmarks5
     else if (option.secondaryTickMarks === 9)
-        secondaryTickmarksSvg = SecondaryTickmarks9Medium
+        secondaryTickmarksSvg = SecondaryTickmarks9
     else if (option.secondaryTickMarks === 10)
-        secondaryTickmarksSvg = SecondaryTickmarks10Medium
+        secondaryTickmarksSvg = SecondaryTickmarks10
 
 
     return svg`
@@ -75,10 +75,10 @@ export function watchFaceMediumRender(option: {
         <svg width="256" height="256" x="-128" y="-128">
              ${innerCircleSvg}          
         </svg>
-        <svg width="256" height="256" x="-128" y="-128">
+        <svg width="176" height="176" x="-88" y="-88">
             ${option.cross ? CrossRegularMedium : null}
         </svg>
-        <svg width="256" height="256" x="-128" y="-128">
+        <svg width="208" height="208" x="-104" y="-104" viewBox="0 0 416 416">
             ${secondaryTickmarksSvg}
         </svg>
         <svg width="363" height="363" x="-181.5" y="-181.5">

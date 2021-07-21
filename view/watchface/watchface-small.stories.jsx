@@ -25,7 +25,7 @@ export default {
     }
 };
 
-const Template = (args) => <ob-watchface-small style={{width: 128}} {...args}/>;
+const Template = (args) => <ob-watchface-small style={{width: 64}} {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
