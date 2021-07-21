@@ -1,7 +1,7 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
-import WatchFaceMedium from "../../generated-with-style/SOG_STW/WatchFaceMedium.svg";
-import SpeedNeedleMedium from "../../generated-with-style/SOG_STW/SpeedNeedleMedium.svg";
+import WatchFaceMedium from "../../generated-without-style/SOG_STW/WatchFaceMedium.svg";
+import SpeedNeedleMedium from "../../generated-without-style/SOG_STW/SpeedNeedleMedium.svg";
 
 @customElement('ob-speedometer-medium')
 export class SpeedometerMedium extends ObElement {

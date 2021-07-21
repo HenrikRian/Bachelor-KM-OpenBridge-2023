@@ -571,74 +571,41 @@ const staticExportComponents: ExportDef[] = [
         name: 'ThrusterPowerLarge',
         path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'Power'],
         outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterStaticLarge',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large', 'ThrusterElement'],
+    },*/ {
+        name: 'ThrusterElementCenterLineLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'ThrusterElement', 'CenterLine'],
+        outputFolder: 'Thruster'
+    },{
+        name: 'ThrusterElementTrackLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'ThrusterElement', 'Track'],
+        outputFolder: 'Thruster'
+    },{
+        name: 'ThrusterElementTickmarksLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'ThrusterElement', 'Tickmarks'],
+        outputFolder: 'Thruster'
+    },{
+        name: 'ThrusterFrontArrowLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'FrontArrow'],
         outputFolder: 'Thruster'
     },
     {
-        name: 'PointerLargeMaxWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large - max width', 'Large', 'EndPointer'],
+        name: 'ThrusterMainEngineFrontArrowLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'FrontArrow', 'Arrow'],
         outputFolder: 'Thruster'
-    }, {
-        name: 'FrontArrowLargeMaxWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'FrontArrow'],
+    },{
+        name: 'ThrusterEndPointerLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'EndPointer'],
         outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterPowerInputLargeMaxWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'PowerInput'],
+    },{
+        name: 'ThrusterPowerInputLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'PowerInput'],
         outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterPowerLargeMaxWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'Power'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterStaticLargeMaxWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - max width',  'Large', 'ThrusterElement'],
+    },{
+        name: 'ThrusterSuggestedSetPointLarge',
+        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=True, Setpoint=True, Tick marks=True', 'SuggestedSetpoint'],
         outputFolder: 'Thruster'
     },
 
-        {
-        name: 'PointerLargeMinWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element', 'Large - min width', 'Large', 'EndPointer'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'FrontArrowLargeMinWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'FrontArrow'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterPowerInputLargeMinWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'PowerInput'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterPowerLargeMinWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'Power'],
-        outputFolder: 'Thruster'
-    }, {
-        name: 'ThrusterStaticLargeMinWidth',
-        path: ['Thrusters & Propulsion', 'Thruster element','Large - min width',  'Large', 'ThrusterElement'],
-        outputFolder: 'Thruster'
-    },
-
-
-    {
-        name: 'PrimaryTickmarks90Large',
-        path: ['Watch face', '01 Primary Tickmarks', 'Large/ 1 per 90° - 90°'],
-        outputFolder: 'WatchFace'
-    }, {
-        name: 'PrimaryTickmarks45Large',
-        path: ['Watch face', '01 Primary Tickmarks', 'Large/ 2 per 90 - 45°'],
-        outputFolder: 'WatchFace'
-    }, {
-        name: 'PrimaryTickmarks30Large',
-        path: ['Watch face', '01 Primary Tickmarks', 'Large/ 3 per 90° - 30°'],
-        outputFolder: 'WatchFace'
-    }, {
-        name: 'PrimaryTickmarksLarge',
-        path: ['Watch face', '01 Primary Tickmarks', 'Large/ Angle Master'],
-        outputFolder: 'WatchFace'
-    },
-    */
     {
         name: 'SecondaryTickmarks5',
         path: ['M3 Elements', 'Elements/ Tickmarks - Compass', 'Degree=5°, Tick size=Secondary'],

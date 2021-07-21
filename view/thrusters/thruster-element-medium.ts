@@ -1,9 +1,9 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
-import ThrusterStaticMedium from '../../generated-with-style/Thruster/ThrusterStaticMedium.svg'
-import ThrusterPowerInputMedium from '../../generated-with-style/Thruster/ThrusterPowerInputMedium.svg'
-import FrontArrowMedium from '../../generated-with-style/Thruster/FrontArrowMedium.svg'
-import PointerMedium from '../../generated-with-style/Thruster/PointerMedium.svg'
+import ThrusterStaticMedium from '../../generated-without-style/Thruster/ThrusterStaticMedium.svg'
+import ThrusterPowerInputMedium from '../../generated-without-style/Thruster/ThrusterPowerInputMedium.svg'
+import FrontArrowMedium from '../../generated-without-style/Thruster/FrontArrowMedium.svg'
+import PointerMedium from '../../generated-without-style/Thruster/PointerMedium.svg'
 
 
 function value2width(value: number): number {

@@ -1,6 +1,6 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
-import MainEngineArrowMedium from '../../generated-with-style/Thruster/MainEngineArrowMedium.svg'
+import MainEngineArrowMedium from '../../generated-without-style/Thruster/MainEngineArrowMedium.svg'
 import {renderThrusterElementMedium} from "./thruster-element-medium";
 
 @customElement('ob-main-engine-medium')

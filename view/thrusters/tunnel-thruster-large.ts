@@ -7,15 +7,22 @@ import {WidthSize} from "../models";
 export class AzimuthLarge extends ObElement {
     @property({type: Number}) target = 0;
     @property({type: Number}) value = 0;
-    @property({type: String}) width = WidthSize.REGULAR;
+    @property({type: Number}) suggestedSetpoint = 0;
+    @property({type: Boolean}) showTickmarks = true;
     @property({type: Boolean}) showSetPoint = true;
+    @property({type: Boolean}) showSuggestedSetPoint = true;
 
     render() {
         return svg`<svg viewBox="-256 -40 512 80">
     <svg x="-256" y="-40" width="512" height="80">
     ${renderThrusterElementLarge({
-            value: this.value, target: this.target, showArrow: false, width: this.width,
-            showSetPoint: this.showSetPoint
+            value: this.value, 
+            target: this.target, 
+            showArrow: false,
+            showSetPoint: this.showSetPoint, 
+            suggestedSetpoint: this.suggestedSetpoint, 
+            showSuggestedSetPoint: this.showSuggestedSetPoint, 
+            showTickmarks: this.showTickmarks
         })}
     </svg>
   </svg>`;

@@ -5,7 +5,7 @@ import CircleBorderInsideMedium
     from '../../generated-without-style/ROT/CircleBorderInsideMedium.svg'
 import CircleBorderOutsideMedium
     from '../../generated-without-style/ROT/CircleBorderOutsideMedium.svg'
-import CircleTrackMedium from '../../generated-with-style/ROT/CircleTrackMedium.svg'
+import CircleTrackMedium from '../../generated-without-style/ROT/CircleTrackMedium.svg'
 
 @customElement('ob-rot-circle-medium')
 export class HdgMedium extends ObElement {

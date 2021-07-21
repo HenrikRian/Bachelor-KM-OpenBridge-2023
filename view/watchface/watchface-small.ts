@@ -1,12 +1,12 @@
 import { customElement, property, svg } from 'lit-element'
 import { primaryTickmarksSmall } from './primary-tickmarks/primary-tickmarks-small';
 import InnerCircleRegularSmall
-  from '../../generated-with-style/WatchFace/InnerCircleRegularSmall.svg'
+  from '../../generated-without-style/WatchFace/InnerCircleRegularSmall.svg'
 import InnerCirclePortStarboardSmall
-  from '../../generated-with-style/WatchFace/InnerCirclePortStarboardSmall.svg'
+  from '../../generated-without-style/WatchFace/InnerCirclePortStarboardSmall.svg'
 import InnerCirclePositiveNegativeSmall
-  from '../../generated-with-style/WatchFace/InnerCirclePositiveNegativeSmall.svg'
-import CrossRegularSmall from '../../generated-with-style/WatchFace/CrossRegularSmall.svg'
+  from '../../generated-without-style/WatchFace/InnerCirclePositiveNegativeSmall.svg'
+import CrossRegularSmall from '../../generated-without-style/WatchFace/CrossRegularSmall.svg'
 
 import { ObElement } from '../obElement';
 import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";

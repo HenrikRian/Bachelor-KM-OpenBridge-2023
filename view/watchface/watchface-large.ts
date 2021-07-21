@@ -1,20 +1,20 @@
 import {svg, customElement, property} from 'lit-element'
 import {primaryTickmarksLarge} from "./primary-tickmarks/primary-tickmarks-large";
 import InnerCircleRegularLarge
-    from '../../generated-with-style/WatchFace/InnerCircleRegularLarge.svg'
+    from '../../generated-without-style/WatchFace/InnerCircleRegularLarge.svg'
 import InnerCirclePortStarboardLarge
-    from '../../generated-with-style/WatchFace/InnerCirclePortStarboardLarge.svg'
+    from '../../generated-without-style/WatchFace/InnerCirclePortStarboardLarge.svg'
 import InnerCirclePositiveNegativeLarge
-    from '../../generated-with-style/WatchFace/InnerCirclePositiveNegativeLarge.svg'
-import CrossRegularLarge from '../../generated-with-style/WatchFace/CrossRegularLarge.svg'
+    from '../../generated-without-style/WatchFace/InnerCirclePositiveNegativeLarge.svg'
+import CrossRegularLarge from '../../generated-without-style/WatchFace/CrossRegularLarge.svg'
 import SecondaryTickmarks5
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks5.svg'
+    from '../../generated-without-style/WatchFace/SecondaryTickmarks5.svg'
 import SecondaryTickmarks9
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks9.svg'
+    from '../../generated-without-style/WatchFace/SecondaryTickmarks9.svg'
 import SecondaryTickmarks10
-    from '../../generated-with-style/WatchFace/SecondaryTickmarks10.svg'
+    from '../../generated-without-style/WatchFace/SecondaryTickmarks10.svg'
 import TertiaryTickmarks
-    from '../../generated-with-style/WatchFace/TertiaryTickmarks.svg'
+    from '../../generated-without-style/WatchFace/TertiaryTickmarks.svg'
 
 import {ObElement} from "../obElement";
 import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";

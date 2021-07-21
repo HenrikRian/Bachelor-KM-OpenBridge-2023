@@ -1,7 +1,6 @@
 import {customElement, property, svg} from "lit-element";
 import {ObElement} from "../obElement";
 import {renderThrusterElementLarge} from "./thruster-element-large";
-import {WidthSize} from "../models";
 import {watchFaceLargeRender} from "../watchface/watchface-large";
 import SetPoint from "../../generated-without-style/SetPoint/AngleLarge.svg";
 import {InnerWatchFaceType} from "../models";
@@ -12,7 +11,6 @@ export class AzimuthLarge extends ObElement {
     @property({type: Number}) value = 0;
     @property({type: Number}) angle = 0;
     @property({type: Number}) targetAngle = 0;
-    @property({type: String}) thrusterWidth = WidthSize.REGULAR;
     @property({type: Boolean}) showPortStarboard = false;
     @property({type: Boolean}) showSetPointValue = true;
     @property({type: Boolean}) showSetPointAngle = true;
@@ -39,8 +37,10 @@ export class AzimuthLarge extends ObElement {
             target: this.target,
             value: this.value,
             showArrow: true,
-            width: this.thrusterWidth,
-            showSetPoint: this.showSetPointValue
+            showSetPoint: this.showSetPointValue,
+            suggestedSetpoint: 0, 
+            showSuggestedSetPoint: false, 
+            showTickmarks: true
         })}
       </svg>
     </g>

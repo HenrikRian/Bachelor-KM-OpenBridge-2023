@@ -1,6 +1,5 @@
 import "./azimuth-large";
 import React from "react";
-import {WidthSize} from "../models";
 
 
 export default {
@@ -10,12 +9,6 @@ export default {
         value: {control: {type: 'range', min: -100, max: 100}},
         angle: {control: {type: 'range', min: 0, max: 360}},
         targetAngle: {control: {type: 'range', min: 0, max: 360}},
-        thrusterWidth: {
-            control: {
-                type: 'inline-radio',
-                options: [WidthSize.MIN, WidthSize.REGULAR, WidthSize.MAX]
-            }
-        },
     },
 };
 
@@ -27,7 +20,6 @@ Default.args = {
     value: 40,
     angle: 45,
     targetAngle: 20,
-    thrusterWidth: WidthSize.REGULAR,
     showPortStarboard: false,
     showSetPointValue: true,
     showSetPointAngle: true

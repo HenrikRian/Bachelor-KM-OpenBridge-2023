@@ -1,6 +1,6 @@
 import "./thruster-element-large";
 import React from "react";
-import {WidthSize} from "./thruster-element-large";
+
 
 
 export default {
@@ -8,12 +8,11 @@ export default {
     argTypes: {
         target: {control: {type: 'range', min: -100, max: 100}},
         value: {control: {type: 'range', min: -100, max: 100}},
-        width: {
-            control: {
-                type: 'inline-radio',
-                options: [WidthSize.MIN, WidthSize.REGULAR, WidthSize.MAX]
-            }
-        },
+        suggestedSetpoint: {control: {type: 'range', min: -100, max: 100}},
+        showSetPoint: {control: 'boolean'},
+        showTickmarks: {control: 'boolean'},
+        showSuggestedSetPoint: {control: 'boolean'},
+        showArrow: {control: 'boolean'},
     },
 };
 
@@ -23,7 +22,9 @@ export const Default = Template.bind({});
 Default.args = {
     target: 60,
     value: 40,
+    suggestedSetpoint: 10,
     showArrow: true,
-    width: WidthSize.REGULAR,
-    showSetPoint: true
+    showTickmarks: true,
+    showSetPoint: true,
+    showSuggestedSetPoint: true
 };
