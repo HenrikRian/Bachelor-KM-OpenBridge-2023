@@ -37,9 +37,9 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
     let documentStyles: any;
     let document: any;
 
-    if (true) {
+    if (false) {
         documentStyles = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string );
-        document = await getFigmaNode(mainFigmaFile, ["3818%3A123870"]);
+        document = await getFigmaNode(mainFigmaFile, ["3818%3A123870", "4536%3A113209"]);
         fs.writeFileSync('documentStyle.json', JSON.stringify(documentStyles));
         fs.writeFileSync('document.json', JSON.stringify(document));
     } else {
@@ -51,13 +51,14 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
     if (!fs.existsSync(genFolder)) {
         fs.mkdirSync(genFolder);
     }
+    let styles = documentStyles.styles
 
-    const styles = {
-        ...document.styles,
-        ...documentStyles.styles
-    };
+    for (const node of Object.values(document.nodes) as any[]) {
+        styles = {...styles, ...node.styles}
+    }
+
     const elements = exportComponents.map(component => {
-        const element = getElement(document.document as FigmaNode, component.path);
+        const element = getElement({children: Object.values(document.nodes).map((n: any)=> n.document)} as FigmaNode, component.path);
         if (element === null) {
             console.error(`In ${component.name}, ${component.path}`);
         }

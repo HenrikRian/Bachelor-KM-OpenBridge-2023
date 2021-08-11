@@ -45,7 +45,7 @@ export class AzimuthLarge extends ObElement {
       </svg>
     </g>
     ${this.showSetPointAngle ? svg`<g transform="rotate(${this.targetAngle})">
-        <svg x="-24" y="-256">${SetPoint}</svg>
+        <svg x="-32" y="-256">${SetPoint}</svg>
     </g>`: undefined }
   </svg>`
     }

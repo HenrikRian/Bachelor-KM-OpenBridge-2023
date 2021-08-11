@@ -27,22 +27,27 @@ export function renderThrusterElementLarge(option: {
 
 
     return svg`
+
+
         <svg viewBox="-256 -52 512 104">
-            <rect x="-160" y="-40" width="320" height="80" class="ob-instrument-frame-color-fill" />
-            <rect x="-159.5" y="-39.5" width="319" height="79" stroke-width="1" class="ob-border-outline-color-stroke" fill="none" />
+            <svg width="320" height="80" y="-40" x="-160" viewBox="0 0 320 80">
+                <path d="M0.5 0.5H316C317.933 0.5 319.5 2.067 319.5 4V76C319.5 77.933 317.933 79.5 316 79.5H0.5V0.5Z" class="ob-instrument-frame-color-fill"/>
+                <path d="M0.5 0.5H316C317.933 0.5 319.5 2.067 319.5 4V76C319.5 77.933 317.933 79.5 316 79.5H0.5V0.5Z" class="ob-border-outline-color-stroke" fill="none"/>
+            </svg>
             ${option.showTickmarks ? svg`
             <svg x="-159" y="-39" width="318" height="78">${ThrusterElementTickmarksLarge}</svg>` : null}
             <svg x="-159" y="-24" width="318" height="48">${ThrusterElementTrackLarge}</svg>
             <svg x="-2" y="-40" width="4" height="80">${ThrusterElementCenterLineLarge}</svg>
-            ${option.showSuggestedSetPoint ? svg`
-            <svg x="${xSuggested}" y="-54">${ThrusterSuggestedSetPointLarge}</svg>` : null}
+            
             ${option.showArrow ? svg`
-            <svg y="-40" x="-192">${FrontArrowLarge}</svg>
+            <svg y="-40" x="-176">${FrontArrowLarge}</svg>
             <svg y="-1" x="160">${PointerLarge}</svg>` : null}
             <rect id="Bar" x="${xValue}" y="-24" width="${widthValue}" height="48"
                   class="ob-instrument-dynamic-color-fill"/>
             <rect id="EndLine" width="2" height="64" y="-32" x="${xBar}"
                   class="ob-instrument-dynamic-color-fill"/>
+            ${option.showSuggestedSetPoint ? svg`
+            <svg x="${xSuggested}" y="-40">${ThrusterSuggestedSetPointLarge}</svg>` : null}
             ${option.showSetPoint ? svg`
             <svg x="${xTarget}" y="-40">${ThrusterPowerInputLarge}</svg>` : undefined}
         </svg>`;

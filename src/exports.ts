@@ -8,129 +8,129 @@ export interface ExportDef {
 const staticExportComponents: ExportDef[] = [
     {
         name: 'FlatArrowHdgSmall',
-        path: ['M3 Elements', 'Navigation elements', 'HDG', 'Size=Small, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'HDG', 'Size=Small, Type=Flat'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'FlatArrowHdgMedium',
-        path: ['M3 Elements', 'Navigation elements', 'HDG', 'Size=Medium, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'HDG', 'Size=Medium, Type=Flat'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'FlatArrowHdgLarge',
-        path: ['M3 Elements', 'Navigation elements', 'HDG', 'Size=Large, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'HDG', 'Size=Large, Type=Flat'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'HdgCircularSmall',
-        path: ['M3 Elements', 'Navigation elements', 'HDG', 'Size=Small, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'HDG', 'Size=Small, Type=Circular'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'HdgCircularMedium',
-        path: ['M3 Elements', 'Navigation elements', 'HDG', 'Size=Medium, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'HDG', 'Size=Medium, Type=Circular'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'HdgCircularLarge',
-        path: ['M3 Elements', 'Navigation elements', 'HDG', 'Size=Large, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'HDG', 'Size=Large, Type=Circular'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'FlatArrowCogSmall',
-        path: ['M3 Elements', 'Navigation elements', 'COG', 'Size=Small, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'COG', 'Size=Small, Type=Flat'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'FlatArrowCogMedium',
-        path: ['M3 Elements', 'Navigation elements', 'COG', 'Size=Medium, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'COG', 'Size=Medium, Type=Flat'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'FlatArrowCogLarge',
-        path: ['M3 Elements', 'Navigation elements', 'COG', 'Size=Medium, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'COG', 'Size=Medium, Type=Flat'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'CogCircularSmall',
-        path: ['M3 Elements', 'Navigation elements', 'COG', 'Size=Small, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'COG', 'Size=Small, Type=Circular'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'CogCircularMedium',
-        path: ['M3 Elements', 'Navigation elements', 'COG', 'Size=Medium, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'COG', 'Size=Medium, Type=Circular'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'CogCircularLarge',
-        path: ['M3 Elements', 'Navigation elements', 'COG', 'Size=Large, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'COG', 'Size=Large, Type=Circular'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'SetPointFlatSmall',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Small, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Small, Type=Flat, Condensed=False'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'SetPointFlatMedium',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Medium, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Medium, Type=Flat, Condensed=False'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'SetPointFlatLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Medium, Type=Flat'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Medium, Type=Flat, Condensed=False'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'SetPointCircularSmall',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Small, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Small, Type=Circular, Condensed=False'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'SetPointCircularMedium',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Medium, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Medium, Type=Circular, Condensed=False'],
         outputFolder: 'HDG_COG'
     },
     {
         name: 'SetPointCircularLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Large, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Large, Type=Circular, Condensed=False'],
         outputFolder: 'HDG_COG'
     },
     // {
     //     name: 'BarMeterBlackSmall',
-    //     path: ['M1 Navigation components', 'ROT S Flat', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
+    //     path: ['M1 Navigation components', 'ROT Flat S', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
     //     outputFolder: 'ROT'
     // },
     {
         name: 'BarMeterBlackMedium',
-        path: ['M1 Navigation components', 'ROT M Flat', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
+        path: ['M1 Navigation components', 'ROT Flat M', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     }, {
         name: 'BarMeterBlackLarge',
-        path: ['M1 Navigation components', 'ROT L Flat', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
+        path: ['M1 Navigation components', 'ROT Flat L', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     },
     // {
     //     name: 'BarMeterPSSmall',
-    //     path: ['M1 Navigation components', 'ROT S Flat', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+    //     path: ['M1 Navigation components', 'ROT Flat S', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
     //     outputFolder: 'ROT'
     // },
     {
         name: 'BarMeterPSMedium',
-        path: ['M1 Navigation components', 'ROT M Flat', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        path: ['M1 Navigation components', 'ROT Flat M', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     }, {
         name: 'BarMeterPSLarge',
-        path: ['M1 Navigation components', 'ROT L Flat', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        path: ['M1 Navigation components', 'ROT Flat L', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     },
     {
         name: 'BarMeterNoLabelMedium',
-        path: ['M1 Navigation components', 'ROT M Flat', 'Labels=False, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        path: ['M1 Navigation components', 'ROT Flat M', 'Labels=False, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     }, {
         name: 'BarMeterNoLabelLarge',
-        path: ['M1 Navigation components', 'ROT L Flat', 'Labels=False, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+        path: ['M1 Navigation components', 'ROT Flat L', 'Labels=False, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
         outputFolder: 'ROT'
     },
     {
@@ -186,108 +186,108 @@ const staticExportComponents: ExportDef[] = [
     },
     {
         name: 'AngleSmall',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Small, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Small, Type=Circular, Condensed=False'],
         outputFolder: 'SetPoint'
     },
     {
         name: 'AngleMedium',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Medium, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Medium, Type=Circular, Condensed=False'],
         outputFolder: 'SetPoint'
     },
     {
         name: 'AngleLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Setpoint', 'Size=Large, Type=Circular'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Setpoint', 'Size=Large, Type=Circular, Condensed=False'],
         outputFolder: 'SetPoint'
     },
     {
         name: 'RudderSmall',
-        path: ['M3 Elements', 'Navigation elements', 'Rudder', 'Size=Small'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Rudder', 'Size=Small'],
         outputFolder: 'Rudder'
     },
     {
         name: 'RudderMedium',
-        path: ['M3 Elements', 'Navigation elements', 'Rudder', 'Size=Medium'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Rudder', 'Size=Medium'],
         outputFolder: 'Rudder'
     },
     {
         name: 'RudderLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Rudder', 'Size=Large'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Rudder', 'Size=Large'],
         outputFolder: 'Rudder'
     },
 
     {
         name: 'ShipRollSmall',
-        path: ['M3 Elements', 'Navigation elements', 'Ship - Front', 'Size=Small'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Ship - Front', 'Size=Small'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipRollMedium',
-        path: ['M3 Elements', 'Navigation elements', 'Ship - Front', 'Size=Medium'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Ship - Front', 'Size=Medium'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipRollLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Ship - Front', 'Size=Large'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Ship - Front', 'Size=Large'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipPitchSmall',
-        path: ['M3 Elements', 'Navigation elements', 'Ship - Side', 'Size=Small'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Ship - Side', 'Size=Small'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipPitchMedium',
-        path: ['M3 Elements', 'Navigation elements', 'Ship - Side', 'Size=Medium'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Ship - Side', 'Size=Medium'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'ShipPitchLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Ship - Side', 'Size=Large'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Ship - Side', 'Size=Large'],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerSmall',
-        path: ['M1 Navigation components', 'Pitch S', 'Pitch S', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Pitch S', 'Alert zones=False', 'pitch', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerMedium',
-        path: ['M1 Navigation components', 'Pitch M', 'Pitch M', 'pointer', "pointer-line"],
+        path: ['M1 Navigation components', 'Pitch M', 'Alert zones=False', 'pitch', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PitchPointerLarge',
-        path: ['M1 Navigation components', 'Pitch L', 'Pitch L', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Pitch L', 'Alert zones=False', 'pitch', 'pitch', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PointerCenterSmall',
-        path: ['M1 Navigation components', 'Pitch S', 'Pitch S', 'pitch', "center"],
+        path: ['M1 Navigation components', 'Pitch S', 'Alert zones=False', 'pitch', 'pitch', "center"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PointerCenterMedium',
-        path: ['M1 Navigation components', 'Pitch M', 'Pitch M', 'pointer', "center"],
+        path: ['M1 Navigation components', 'Pitch M', 'Alert zones=False', 'pitch', 'pitch', "center"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'PointerCenterLarge',
-        path: ['M1 Navigation components', 'Pitch L', 'Pitch L', 'pitch', "center"],
+        path: ['M1 Navigation components', 'Pitch L', 'Alert zones=False', 'pitch', 'pitch', "center"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerSmall',
-        path: ['M1 Navigation components', 'Roll S', 'Roll S', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Roll S', 'Alert zones=False', 'roll', 'roll', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerMedium',
-        path: ['M1 Navigation components', 'Roll M', 'Roll M', 'pointer', "pointer-line"],
+        path: ['M1 Navigation components', 'Roll M', 'Alert zones=False', 'roll', 'roll', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     {
         name: 'RollPointerLarge',
-        path: ['M1 Navigation components', 'Roll L', 'Roll L', 'pitch', "pointer-line"],
+        path: ['M1 Navigation components', 'Roll L', 'Alert zones=False', 'roll', 'roll', "pointer-line"],
         outputFolder: 'PitchRoll'
     },
     /*
@@ -573,57 +573,57 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'Thruster'
     },*/ {
         name: 'ThrusterElementCenterLineLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'ThrusterElement', 'CenterLine'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'ThrusterElement', 'CenterLine'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterElementTrackLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'ThrusterElement', 'Track'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'ThrusterElement', 'Track'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterElementTickmarksLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'ThrusterElement', 'Tickmarks'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'ThrusterElement', 'Tickmarks'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterFrontArrowLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'FrontArrow'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'FrontArrow'],
         outputFolder: 'Thruster'
     },
     {
         name: 'ThrusterMainEngineFrontArrowLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'FrontArrow', 'Arrow'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'FrontArrow', 'Arrow'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterEndPointerLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'EndPointer'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'EndPointer'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterPowerInputLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=False, Setpoint=True, Tick marks=True', 'PowerInput'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'SetpointInput'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterSuggestedSetPointLarge',
-        path: ['M3 Elements', 'Navigation elements', 'Thruster L', 'Suggestion=True, Setpoint=True, Tick marks=True', 'SuggestedSetpoint'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'SuggestedSetpoint'],
         outputFolder: 'Thruster'
     },
 
     {
         name: 'SecondaryTickmarks5',
-        path: ['M3 Elements', 'Elements/ Tickmarks - Compass', 'Degree=5°, Tick size=Secondary'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Tickmarks - Compass', 'Degree=5°, Tick size=Secondary'],
         outputFolder: 'WatchFace',
         nonScaling: true
     }, {
         name: 'SecondaryTickmarks9',
-        path: ['M3 Elements', 'Elements/ Tickmarks - Compass', 'Degree=9°, Tick size=Secondary'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Tickmarks - Compass', 'Degree=9°, Tick size=Secondary'],
         outputFolder: 'WatchFace',
         nonScaling: true
     }, {
         name: 'SecondaryTickmarks10',
-        path: ['M3 Elements', 'Elements/ Tickmarks - Compass', 'Degree=10°, Tick size=Secondary'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Tickmarks - Compass', 'Degree=10°, Tick size=Secondary'],
         outputFolder: 'WatchFace',
         nonScaling: true
     }, {
         name: 'TertiaryTickmarks',
-        path: ['M3 Elements', 'Elements/ Tickmarks - Compass', 'Degree=1°, Tick size=Tertiary'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Tickmarks - Compass', 'Degree=1°, Tick size=Tertiary'],
         outputFolder: 'WatchFace',
         nonScaling: true
     },
@@ -636,51 +636,51 @@ const staticExportComponents: ExportDef[] = [
 
     {
         name: 'InnerCircleRegularLarge',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Large, Type=Regular'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Large, Type=Regular, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCirclePortStarboardLarge',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Large, Type=PORT STBD'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Large, Type=PORT STBD, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCirclePositiveNegativeLarge',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Large, Type=Positive / Negative'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Large, Type=Positive / Negative, Condensed=False'],
         outputFolder: 'WatchFace'
     },{
         name: 'InnerCircleRegularMedium',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Medium, Type=Regular'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Medium, Type=Regular, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCirclePortStarboardMedium',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Medium, Type=PORT STBD'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Medium, Type=PORT STBD, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCirclePositiveNegativeMedium',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Medium, Type=Positive / Negative'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Medium, Type=Positive / Negative, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCircleRegularSmall',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Small, Type=Regular'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Small, Type=Regular, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCirclePortStarboardSmall',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Small, Type=PORT STBD'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Small, Type=PORT STBD, Condensed=False'],
         outputFolder: 'WatchFace'
     }, {
         name: 'InnerCirclePositiveNegativeSmall',
-        path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Small, Type=Positive / Negative'],
+        path: ['M5 Building blocks', 'Watchface elements', 'Watchface circle', 'Size=Small, Type=Positive / Negative, Condensed=False'],
         outputFolder: 'WatchFace'
     },{
         name: 'CrossRegularLarge',
-        path: ['M3 Elements', 'Compass watchface', 'Size=Large, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True', "Watchface", "center-cross"],
+        path: ['M5 Building blocks', 'Watchface', 'Compass watchface', 'Size=Large, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True', "Watchface", "center-cross"],
         outputFolder: 'WatchFace'
     }, {
         name: 'CrossRegularMedium',
-        path: ['M3 Elements', 'Compass watchface', 'Size=Small, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True', "Cross"],
+        path: ['M5 Building blocks', 'Watchface', 'Compass watchface', 'Size=Small, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True', "Cross"],
         outputFolder: 'WatchFace'
     },{
         name: 'CrossRegularSmall',
-        path: ['M3 Elements', 'Compass watchface', 'Size=Small, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True', "Cross"],
+        path: ['M5 Building blocks', 'Watchface', 'Compass watchface', 'Size=Small, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True', "Cross"],
         outputFolder: 'WatchFace'
     },/*{
         name: 'PrimaryTickmarks90Medium',
@@ -871,7 +871,7 @@ for (const degree of circleDegrees) {
     for (const tick of tickType) {
         const def: ExportDef = {
             name: `${tick}Tickmark${degree}`,
-            path: ['M3 Elements', 'Elements/ Tickmarks - Compass', `Degree=${degree}°, Tick size=${tick}`],
+            path: ['M5 Building blocks', 'Watchface elements', 'Tickmarks - Compass', `Degree=${degree}°, Tick size=${tick}`],
             outputFolder: 'Tickmarks',
             nonScaling: true
         };
