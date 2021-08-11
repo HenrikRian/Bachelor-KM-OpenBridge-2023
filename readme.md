@@ -4,7 +4,8 @@ This is an implementation of the openbridge design system in web components.
 ## Demo ##
 A storybook demo is available [here](https://openbridge.gitlab.io/openbridge-web-components/).
 
-# How to use the components.
+# How to use the components
+## With npm
 The project can be used directly from npm.
 1. Install the package by: `npm install openbridge-web-components`
 2. Install openbridge-css: `npm install openbridge-css`
@@ -15,6 +16,18 @@ The project can be used directly from npm.
 
         `<ob-rudder-medium rudderAngle="5" rudderSetPointAngle="3" clipAngle="60" showPortStarboard="false" showSetPoint="true"/>`
 
+## Directly in html
+The components can be used directly in html (see also [demo.html](./demo.html)):
+
+        <html lang="en" theme="day"> <!-- set theme="day for day pallett -->
+        <head>
+            <script src="https://unpkg.com/openbridge-web-components@0.2.1"></script> <!--import web components-->
+            <link rel="stylesheet" href="https://unpkg.com/openbridge-css@0.2.1/dist/css/openbridge.css"> <!--import openbridge css-->
+        </head>
+        <body>
+            <ob-azimuth-large target="90" value = "80" angle = "45" targetAngle="60"/>
+        </body>
+        </html>
 
 # SVG export #
 
