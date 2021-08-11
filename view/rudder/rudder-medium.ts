@@ -32,7 +32,7 @@ ${watchFaceMediumRender({
 </svg>
 ${this.showSetPoint ? svg`
     <g transform="rotate(${180-this.rudderSetPointAngle})">
-      <svg x="-12" y="-128" width="24" height="256">
+      <svg x="-16" y="-128" width="32" height="256">
         ${SetPoint}
       </svg>
     </g>`: undefined}

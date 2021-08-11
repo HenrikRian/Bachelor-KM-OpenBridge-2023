@@ -11,7 +11,16 @@ export async function getFigmaFile(fileId: string): Promise<unknown> {
   const res = await fetch(`${baseUrl}/v1/files/${fileId}`, header);
   if (res.status !== 200) {
     const responseText = await res.text();
-    throw Error(`Something failed when downloading Figma file: ${responseText}`)
+    throw Error(`Something failed when downloading Figma file: ${fileId}\n${responseText}`)
+  }
+  return await res.json();
+}
+
+export async function getFigmaNode(fileId: string, nodeIds: string[]): Promise<unknown> {
+  const res = await fetch(`${baseUrl}/v1/files/${fileId}/nodes?ids=${nodeIds.join(",")}`, header);
+  if (res.status !== 200) {
+    const responseText = await res.text();
+    throw Error(`Something failed when downloading Figma file: ${fileId}\n${responseText}`)
   }
   return await res.json();
 }

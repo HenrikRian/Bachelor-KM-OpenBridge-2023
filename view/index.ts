@@ -33,7 +33,7 @@ import './rot/rot-flat-medium'
 import './rot/rot-flat-large'
 import './rot/rot-flat-bar-small'
 import './rot/rot-flat-bar-medium'
-import './rot/rot-flat-bar-large'
+import './rot/rot-flat-large'
 
 import './rudder/rudder-small'
 import './rudder/rudder-medium'

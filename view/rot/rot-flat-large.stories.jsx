@@ -1,9 +1,9 @@
-import "./rot-flat-bar-large";
+import "./rot-flat-large";
 import React from "react";
 
 
 export default {
-  title: 'INSTRUMENT/ROT/Flat bar/Large',
+  title: 'INSTRUMENT/ROT/Flat/Large',
   argTypes: {
     rateOfTurn: { control: {type: 'range', min: -40, max: 40} },
     portStarboard: { control: {type: 'boolean'} },

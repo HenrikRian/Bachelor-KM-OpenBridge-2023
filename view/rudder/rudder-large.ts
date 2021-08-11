@@ -32,7 +32,7 @@ ${watchFaceLargeRender({
 </svg>
 ${this.showSetPoint ? svg`
     <g transform="rotate(${180 - this.rudderSetPointAngle})">
-      <svg x="-24" y="-256" width="48" height="512">
+      <svg x="-32" y="-256" width="64" height="512">
         ${SetPoint}
       </svg>
     </g>` : null}

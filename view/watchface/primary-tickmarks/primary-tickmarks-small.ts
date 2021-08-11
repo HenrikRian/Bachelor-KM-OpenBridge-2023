@@ -7,7 +7,7 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
     <g id="Small/ Angle Master">
       <g id="Tickmarks">
        ${showDeg === 30 ?
-        svg`<g id="30Â°" v-if="showDeg===30">
+        svg`<g id="30Â°">
           <g id="60Â°">
             <g id="Thick 08px" clip-path="url(#Small/ Angle Masterclip0)">
               <path id="Vector 3" d="M17.637 29.4133L24.6028 33.435" stroke="#999999"
@@ -38,7 +38,7 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
         </g>` : null}
        ${showDeg === 45 ?
         svg`
-        <g id="45Â°" v-if="showDeg===45">
+        <g id="45Â°">
           <g id="Thick 08px_3" clip-path="url(#Small/ Angle Masterclip2)">
             <path id="Vector 3_3" d="M22.75 22.75L28.4375 28.4375" stroke="#999999"
                   class="ob-instrument-tick-mark-secondary-color-stroke"/>
@@ -70,7 +70,7 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
         </g>
       </g>
        ${showArrow ? svg`
-      <g id="NorthArrow" v-if="showPointer">
+      <g id="NorthArrow">
         <path id="Color"
               d="M45.3323 14.3321H45.6675L48.8513 22.3754H42.1485L43.7404 18.3537L45.3323 14.3321Z"
               fill="#999999" class="ob-instrument-tick-mark-secondary-color-fill"/>

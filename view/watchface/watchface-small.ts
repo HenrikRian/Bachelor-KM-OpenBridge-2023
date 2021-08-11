@@ -1,5 +1,4 @@
 import { customElement, property, svg } from 'lit-element'
-import { primaryTickmarksSmall } from './primary-tickmarks/primary-tickmarks-small';
 import InnerCircleRegularSmall
   from '../../generated-without-style/WatchFace/InnerCircleRegularSmall.svg'
 import InnerCirclePortStarboardSmall
@@ -7,9 +6,12 @@ import InnerCirclePortStarboardSmall
 import InnerCirclePositiveNegativeSmall
   from '../../generated-without-style/WatchFace/InnerCirclePositiveNegativeSmall.svg'
 import CrossRegularSmall from '../../generated-without-style/WatchFace/CrossRegularSmall.svg'
+import PrimaryTickmark45 from '../../generated-without-style/Tickmarks/PrimaryTickmark45.svg'
+import SecondaryTickmark5 from '../../generated-without-style/Tickmarks/SecondaryTickmark5.svg'
 
 import { ObElement } from '../obElement';
 import {InnerWatchFaceType, InnerWatchFaceTypeString} from "../models";
+import {primaryTickmarksSmall} from "./primary-tickmarks/primary-tickmarks-small";
 
 function startClipDegMap(startClipDeg: number) {
   const deg = startClipDeg % 360

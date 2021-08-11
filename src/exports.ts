@@ -627,6 +627,13 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'WatchFace',
         nonScaling: true
     },
+
+    {
+        name: 'NorthArrowSmall',
+        path: ['M1 Navigation components', 'Heading  S', 'Orientation=N up, Type=HDG', 'Component', 'Compass', 'North'],
+        outputFolder: 'WatchFace',
+    },
+
     {
         name: 'InnerCircleRegularLarge',
         path: ['M3 Elements', 'Elements/ Watchface circle', 'Size=Large, Type=Regular'],
@@ -855,20 +862,20 @@ const staticExportComponents: ExportDef[] = [
     }
     */
 ];
-/*
-const circleDegrees = ['1°', '5°', '10°', '30°', '45°', '90°'];
-const circleLengths = ['8px', '16px', '24px'];
+
+const circleDegrees = ['1', '2', '5', '9', '10', '30', '45', '90'];
+const tickType = ['Primary', 'Secondary', 'Tertiary'];
 const circleTickMarks: ExportDef[] = [];
 
 for (const degree of circleDegrees) {
-    for (const length of circleLengths) {
+    for (const tick of tickType) {
         const def: ExportDef = {
-            name: `Tick_${degree}_${length}`,
-            path: ['Circle tick marks', 'Tick marks', `${degree}/ ${length}`],
-            outputFolder: 'Azimuth'
+            name: `${tick}Tickmark${degree}`,
+            path: ['M3 Elements', 'Elements/ Tickmarks - Compass', `Degree=${degree}°, Tick size=${tick}`],
+            outputFolder: 'Tickmarks',
+            nonScaling: true
         };
         circleTickMarks.push(def);
     }
 }
-*/
-export const exportComponents = [...staticExportComponents];
+export const exportComponents = [...staticExportComponents, ...circleTickMarks];
