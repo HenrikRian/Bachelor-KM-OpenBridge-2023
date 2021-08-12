@@ -37,6 +37,11 @@ ${watchFaceLargeRender({
             uuid: this.uuid
         })}
 </svg>
+    <g transform="rotate(${rotate})">
+      <svg x="-32" y="-256" width="64" height="512">
+        ${HeadingLarge}
+      </svg>
+    </g>
     ${this.showCourseOverGround ? svg`
         <g transform="rotate(${rotateCog})">
           <svg x="-32" y="-256" width="64" height="512">
@@ -44,11 +49,7 @@ ${watchFaceLargeRender({
           </svg>
         </g>` : null
     }
-    <g transform="rotate(${rotate})">
-      <svg x="-32" y="-256" width="64" height="512">
-        ${HeadingLarge}
-      </svg>
-    </g>
+    
     ${this.showSetPoint ? 
             svg`
         <g transform = "rotate(${rotateSetPoint})" >

@@ -34,18 +34,8 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
     const mainFigmaFile = '0tPmDvfXeHeQDLnd6M2MxE';
 
 
-    let documentStyles: any;
-    let document: any;
-
-    if (false) {
-        documentStyles = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string );
-        document = await getFigmaNode(mainFigmaFile, ["3818%3A123870", "4536%3A113209"]);
-        fs.writeFileSync('documentStyle.json', JSON.stringify(documentStyles));
-        fs.writeFileSync('document.json', JSON.stringify(document));
-    } else {
-        documentStyles = JSON.parse(fs.readFileSync('documentStyle.json').toString())
-        document = JSON.parse(fs.readFileSync('document.json').toString())
-    }
+    const documentStyles: any = await getFigmaFile(process.env.FIGMA_DOCSTYLE as string );
+    const document: any = await getFigmaNode(mainFigmaFile, ["3818%3A123870", "4536%3A113209"]);
     const genFolder = option.outFolder;
 
     if (!fs.existsSync(genFolder)) {
@@ -87,8 +77,7 @@ async function main(option: { outFolder: string, removeAttributes: boolean }) {
                 (element as unknown) as FrameNode,
                 svg,
                 styles,
-                option.removeAttributes,
-                element.name
+                option.removeAttributes
             );
 
             const outputFolder = component.outputFolder

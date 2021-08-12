@@ -11,3 +11,4 @@
 /documentStyle.json
 .env
 *.tgz
+/.figmacache/

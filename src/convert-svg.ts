@@ -27,10 +27,21 @@ function replaceAll(string: string, search: string, replace: string): string {
   return string.split(search).join(replace);
 }
 
-export function convertSvg(figmaElement: FrameNode, svgString: string, styles: StyleDict, removeAttrs: boolean, clipPrefix: string): string {
+function makeid(): string {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const charactersLength = characters.length;
+  for (let i = 0; i < 10; i++) {
+    result += characters.charAt(Math.floor(Math.random() *
+      charactersLength));
+  }
+  return result;
+}
+
+export function convertSvg(figmaElement: FrameNode, svgString: string, styles: StyleDict, removeAttrs: boolean): string {
   const svgDoc = new DOMParser().parseFromString(svgString, 'text/svg')
   const root = svgDoc.firstChild;
-  if (root === null) return ''
+  if (root === null) return '';
 
   for (const nd of childNodes2Elements(root.childNodes)) {
     const svgId = getSvgId(nd)
@@ -41,8 +52,11 @@ export function convertSvg(figmaElement: FrameNode, svgString: string, styles: S
     parseNode(figmaElement as unknown as StyledNode, nd, styles, removeAttrs);
   }
   let out = new XMLSerializer().serializeToString(svgDoc);
+  const clipPrefix = makeid()
   out = replaceAll(out, 'url(#clip', `url(#${ clipPrefix }clip`)
   out = replaceAll(out, 'clipPath id="clip', `clipPath id="${ clipPrefix }clip`)
+  out = replaceAll(out, 'url(#path-', `url(#${ clipPrefix }path-`)
+  out = replaceAll(out, 'mask id="path-', `mask id="${ clipPrefix }path-`)
   return out;
 }
 
@@ -123,10 +137,10 @@ function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, r
   } else if (figmaNode.styles) {
     const hasBackground = figmaNode.background && figmaNode.background.length === 1;
     const svgHasFill = svgNode.hasAttribute('fill');
-    const hasStrokeInside = figmaNode.strokeAlign && figmaNode.strokeAlign === 'INSIDE';
+    const hasStrokeInsideOrOutside = figmaNode.strokeAlign && (figmaNode.strokeAlign === 'INSIDE' || figmaNode.strokeAlign === 'OUTSIDE');
     const mask = svgNode.getAttribute('mask')
-    const hasMaskInside = mask && mask.match(/inside/);
-    if (svgHasFill && !hasMaskInside && ((hasBackground && figmaNode.styles.fills) || figmaNode.styles.fill) ) {
+    const hasMaskInsideOrOutside = mask && (mask.match(/inside/) || mask.match(/outside/));
+    if (svgHasFill && !hasMaskInsideOrOutside && ((hasBackground && figmaNode.styles.fills) || figmaNode.styles.fill)) {
       // Special case for background fill for frame
       if (removeAttrs) {
         svgNode.removeAttribute('fill')
@@ -139,7 +153,7 @@ function parseNode(figmaRoot: StyledNode, svgNode: Element, styles: StyleDict, r
       }
     }
 
-    if (hasStrokeInside && hasMaskInside && svgHasFill && figmaNode.styles && figmaNode.styles.stroke) {
+    if (hasStrokeInsideOrOutside && hasMaskInsideOrOutside && svgHasFill && figmaNode.styles && figmaNode.styles.stroke) {
       if (removeAttrs) {
         svgNode.removeAttribute('fill')
       }

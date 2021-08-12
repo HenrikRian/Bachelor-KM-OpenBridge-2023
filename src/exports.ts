@@ -573,7 +573,7 @@ const staticExportComponents: ExportDef[] = [
         outputFolder: 'Thruster'
     },*/ {
         name: 'ThrusterElementCenterLineLarge',
-        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'ThrusterElement', 'CenterLine'],
+        path: ['M5 Building blocks', '01 Navigation elements', 'Thruster L', 'Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True', 'thruster', 'CenterLine'],
         outputFolder: 'Thruster'
     },{
         name: 'ThrusterElementTrackLarge',

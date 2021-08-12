@@ -37,6 +37,11 @@ ${watchFaceMediumRender({
             uuid: this.uuid
         })}
 </svg>
+    <g transform="rotate(${rotate})">
+      <svg x="-16" y="-128" width="32" height="256">
+        ${HeadingMedium}
+      </svg>
+    </g>
 ${this.showCourseOverGround ? svg`
         <g transform="rotate(${rotateCog})">
           <svg x="-16" y="-128" width="32" height="256">
@@ -44,11 +49,7 @@ ${this.showCourseOverGround ? svg`
           </svg>
         </g>` : null
     }
-    <g transform="rotate(${rotate})">
-      <svg x="-16" y="-128" width="32" height="256">
-        ${HeadingMedium}
-      </svg>
-    </g>
+    
         ${this.showSetPoint ? 
             svg`
         <g transform = "rotate(${rotateSetPoint})" >
