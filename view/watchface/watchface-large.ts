@@ -50,7 +50,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 export function watchFaceLargeRender(option: {
     innerCircle: InnerWatchFaceTypeString, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
     startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean, tertiaryTickMarks?: boolean
-    uuid: string
+    uuid: string, nsew?: boolean, scale?: number, bold?: boolean
 }) {
     const startClipDegMapped = startClipDegMap(option.startClipDeg);
     const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
@@ -86,7 +86,14 @@ export function watchFaceLargeRender(option: {
             ${option.tertiaryTickMarks !== false ? TertiaryTickmarks : null}
         </svg>
         <svg width="725" height="725" x="-362.5" y="-362.5">
-            ${primaryTickmarksLarge(option.primaryTickMarks, option.showLabels, option.rotate)}
+            ${primaryTickmarksLarge({
+        showDeg: option.primaryTickMarks,
+        showLabel: option.showLabels,
+        rotate: option.rotate,
+        nsew: option.nsew,
+        scale: option.scale,
+        bold: option.bold
+    })}
         </svg>
       </g>
       
@@ -113,6 +120,8 @@ export class WatchfaceLarge extends ObElement {
     @property({type: String}) innerCircle = InnerWatchFaceType.REGULAR;
     @property({type: Boolean}) cross = false;
     @property({type: Boolean}) showLabels = false;
+    @property({type: Boolean}) bold = false;
+    @property({type: Boolean}) nsew = false;
     @property({type: Number}) rotate = 0;
     @property({type: Number}) primaryTickmarks = 45;
     @property({type: Number}) secondaryTickmarks = 10;
@@ -130,7 +139,9 @@ export class WatchfaceLarge extends ObElement {
             endClipDeg: this.endClipDeg,
             showLabels: this.showLabels,
             cross: this.cross,
-            uuid: this.uuid
+            uuid: this.uuid,
+            nsew: this.nsew,
+            bold: this.bold
         })
     }
 }

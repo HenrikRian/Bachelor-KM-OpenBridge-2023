@@ -16,7 +16,7 @@ export default {
         primaryTickmarks: {
             control: {
                 type: 'inline-radio',
-                options: [30, 45, 90]
+                options: [10, 30, 45, 90]
             }
         },
         secondaryTickmarks: {
@@ -40,6 +40,8 @@ Default.args = {
     secondaryTickmarks: 10,
     cross: false,
     showLabels: true,
+    nsew: true,
+    bold: true,
     startClipDeg: 0,
     endClipDeg: 0,
 };
