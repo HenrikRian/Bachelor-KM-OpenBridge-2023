@@ -20,14 +20,16 @@ export class AzimuthLarge extends ObElement {
     <svg width="512" height="512" x="-256" y="-256">
         ${watchFaceLargeRender({
             innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
-            primaryTickMarks: 180,
-            secondaryTickMarks: 10,
-            tertiaryTickMarks: true,
-            showLabels: false,
-            rotate: 0,
+            labels: {
+                show: false,
+                rotate: 0
+            },
+            tickmarks: {
+                primary: 180,
+                secondary: 10,
+                tertiary: true
+            },
             cross: false,
-            startClipDeg: 0,
-            endClipDeg: 0,
             uuid: this.uuid
         })}
     </svg>

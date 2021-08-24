@@ -1,4 +1,4 @@
-import {svg, customElement, property, css} from 'lit-element'
+import {svg, customElement, property} from 'lit-element'
 import {ObElement} from "../obElement";
 import Ship from "../../generated-without-style/PitchRoll/RollShipLarge.svg";
 import Pointer from "../../generated-without-style/PitchRoll/RollPointerLarge.svg";
@@ -17,14 +17,20 @@ export function renderRollLarge(cfg: {
 <svg x="-256" y="-256">
 ${watchFaceLargeRender({
             cross: false,
-            rotate: 0,
-            showLabels: false,
-            startClipDeg: 210,
-            endClipDeg: 150,
-            primaryTickMarks: 30,
-            secondaryTickMarks: 5,
+            labels: {
+                rotate: 0,
+                show: false,
+            },
+            clip: {
+                startDeg: 210,
+                endDeg: 150,
+            },
+            tickmarks: {
+                primary: 30,
+                secondary: 5,
+                tertiary: false
+            },
             innerCircle: InnerWatchFaceType.REGULAR,
-            tertiaryTickMarks: false,
             uuid: cfg.uuid
         })}
 </svg>
@@ -37,7 +43,8 @@ ${renderBlueArch(178, -cfg.upperRoll * cfg.scale + 180, -cfg.lowerRoll * cfg.sca
     <text x="${-xLabel6}" y="${yLabel6}" class="ob-font-ui-body ob-center-label">-${30/cfg.scale}°</text>
     <text x="${xLabel6}" y="${yLabel6}" class="ob-font-ui-body ob-center-label">${30/cfg.scale}°</text>
   </svg>`;
-    }
+}
+
 
 @customElement('ob-roll-large')
 export class RollLarge extends ObElement {

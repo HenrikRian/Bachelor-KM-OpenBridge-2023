@@ -1,16 +1,14 @@
-export function mapBooleanArgs(args: any): any {
-  const out: any = {};
+export function mapBooleanArgs(args: any): void {
   Object.entries(args).forEach(
     (entry) => {
       const k = entry[0];
       const v = entry[1];
       if (v === true) {
-        out[k] = ''
+        args[k] = ''
       } else if (v !== false) {
-        out[k] = v
+        args[k] = v
+      } else {
+        delete args[k]
       }
-
-
     })
-  return out
 }

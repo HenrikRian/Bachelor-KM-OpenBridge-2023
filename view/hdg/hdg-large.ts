@@ -27,12 +27,17 @@ export class HdgLarge extends ObElement {
 <svg x="-256" y="-256">
 ${watchFaceLargeRender({
             cross: false,
-            rotate: watchFaceAngle,
-            showLabels: true,
-            startClipDeg: 0,
-            endClipDeg: 0,
-            primaryTickMarks: 45,
-            secondaryTickMarks: 5,
+            labels: {
+                show: true,
+                rotate: watchFaceAngle,
+                nsew: true,
+                bold: true
+            },
+            clip: {startDeg: 0, endDeg: 0},
+            tickmarks: {
+                primary: 45,
+                secondary: 5
+            },
             innerCircle: InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}

@@ -20,12 +20,17 @@ export class RudderLarge extends ObElement {
 <svg x="-256" y="-256">
 ${watchFaceLargeRender({
             cross: false,
-            rotate: 0,
-            showLabels: false,
-            startClipDeg: 180 + this.clipAngle,
-            endClipDeg: 180 - this.clipAngle,
-            primaryTickMarks: 90,
-            secondaryTickMarks: 5,
+            labels: {
+                show: false
+            },
+            clip: {
+                startDeg: 180 + this.clipAngle,
+                endDeg: 180 - this.clipAngle,
+            },
+            tickmarks: {
+                primary: 90,
+                secondary: 5
+            },
             innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             uuid: this.uuid
         })}

@@ -18,14 +18,12 @@ export function renderPitchLarge(cfg: {
 <svg x="-256" y="-256">
 ${ watchFaceLargeRender({
     cross: false,
-    rotate: 0,
-    showLabels: false,
-    startClipDeg: 300,
-    endClipDeg: 240,
-    primaryTickMarks: 30,
-    secondaryTickMarks: 5,
+  labels: {
+    rotate: 0, show: false,
+  },
+    clip: {startDeg: 300, endDeg: 240}, 
+    tickmarks: {primary: 30, secondary: 5, tertiary: false},
     innerCircle: InnerWatchFaceType.REGULAR,
-    tertiaryTickMarks: false,
     uuid: cfg.uuid
   }) }
 </svg>
