@@ -1,32 +1,32 @@
-import {customElement, property, svg} from "lit-element";
-import {ObElement} from "../obElement";
-import BarMeterBlackLarge from '../../generated-without-style/ROT/BarMeterBlackLarge.svg'
-import BarMeterPSLarge from '../../generated-without-style/ROT/BarMeterPSLarge.svg'
-import BarMeterNoLabelLarge from '../../generated-without-style/ROT/BarMeterNoLabelLarge.svg'
+import { customElement, property, svg } from "lit-element";
+import { ObElement } from "../obElement";
+import BarMeterBlackLarge from "../../generated-without-style/ROT/BarMeterBlackLarge.svg";
+import BarMeterPSLarge from "../../generated-without-style/ROT/BarMeterPSLarge.svg";
+import BarMeterNoLabelLarge from "../../generated-without-style/ROT/BarMeterNoLabelLarge.svg";
 
-@customElement('ob-rot-flat-bar-large')
+@customElement("ob-rot-flat-bar-large")
 export class RotFlatLarge extends ObElement {
-    @property({type: Number}) rateOfTurn = 0;
-    @property({type: Boolean}) portStarboard = false;
-    @property({type: Boolean}) label = true;
+  @property({ type: Number }) rateOfTurn = 0;
+  @property({ type: Boolean }) portStarboard = false;
+  @property({ type: Boolean }) label = true;
 
-    render() {
-        const scale = 208;
-        const range = 40;
-        const xMark = (this.rateOfTurn / range) * scale;
-        let portFill = "ob-instrument-dynamic-color-fill";
-        let starboardFill = portFill;
-        let barMeter = BarMeterBlackLarge;
-        if (this.portStarboard) {
-            portFill = "ob-instrument-port-color-fill";
-            starboardFill = "ob-instrument-starboard-color-fill";
-            barMeter = BarMeterPSLarge;
-        }
-        if (!this.label) {
-            barMeter = BarMeterNoLabelLarge;
-        }
+  render() {
+    const scale = 208;
+    const range = 40;
+    const xMark = (this.rateOfTurn / range) * scale;
+    let portFill = "ob-instrument-dynamic-color-fill";
+    let starboardFill = portFill;
+    let barMeter = BarMeterBlackLarge;
+    if (this.portStarboard) {
+      portFill = "ob-instrument-port-color-fill";
+      starboardFill = "ob-instrument-starboard-color-fill";
+      barMeter = BarMeterPSLarge;
+    }
+    if (!this.label) {
+      barMeter = BarMeterNoLabelLarge;
+    }
 
-        return svg`<svg viewBox="-256 0 512 112">
+    return svg`<svg viewBox="-256 0 512 112">
     <svg x="-256" y="0" width="512" height="40">${barMeter}</svg>
     <rect x="-208" y="40" width="416" height="16" class="ob-instrument-track-color-fill"/>
     
@@ -48,6 +48,6 @@ export class RotFlatLarge extends ObElement {
         </svg>
     </svg>
     <line x1="0" x2="0" y1="24" y2="56" stroke-width="2" class="ob-instrument-tick-mark-primary-color-stroke"/>
-  </svg>`
-    }
+  </svg>`;
+  }
 }

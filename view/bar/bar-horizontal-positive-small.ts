@@ -1,18 +1,17 @@
-import {customElement, property, svg} from 'lit-element'
-import {ObElement} from "../obElement";
-import {renderVerticalPositiveSmall} from "./bar-vertical-positive-small";
+import { customElement, property, svg } from "lit-element";
+import { ObElement } from "../obElement";
+import { renderVerticalPositiveSmall } from "./bar-vertical-positive-small";
 
-
-@customElement('ob-bar-horizontal-positive-small')
+@customElement("ob-bar-horizontal-positive-small")
 export class BarVerticalPositiveSmall extends ObElement {
-    @property({type: Number}) value = 0
+  @property({ type: Number }) value = 0;
 
-    protected render(): unknown {
-        return svg`
+  protected render(): unknown {
+    return svg`
     <svg viewBox="-32 -32 64 64">
         <g transform="rotate(90)">
             ${renderVerticalPositiveSmall(this.value)}
         </g>
     </svg>`;
-    }
+  }
 }

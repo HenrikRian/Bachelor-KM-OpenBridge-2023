@@ -1,36 +1,34 @@
-import {svg, customElement, property} from 'lit-element'
-import {ObElement} from "../obElement";
-import CircleDotsMedium from '../../generated-without-style/ROT/CircleDotsMedium.svg'
-import CircleBorderInsideMedium
-    from '../../generated-without-style/ROT/CircleBorderInsideMedium.svg'
-import CircleBorderOutsideMedium
-    from '../../generated-without-style/ROT/CircleBorderOutsideMedium.svg'
-import CircleTrackMedium from '../../generated-without-style/ROT/CircleTrackMedium.svg'
+import { svg, customElement, property } from "lit-element";
+import { ObElement } from "../obElement";
+import CircleDotsMedium from "../../generated-without-style/ROT/CircleDotsMedium.svg";
+import CircleBorderInsideMedium from "../../generated-without-style/ROT/CircleBorderInsideMedium.svg";
+import CircleBorderOutsideMedium from "../../generated-without-style/ROT/CircleBorderOutsideMedium.svg";
+import CircleTrackMedium from "../../generated-without-style/ROT/CircleTrackMedium.svg";
 
-@customElement('ob-rot-circle-medium')
+@customElement("ob-rot-circle-medium")
 export class HdgMedium extends ObElement {
-    @property({type: Number}) rateOfTurn = 0;
-    @property({type: Number, attribute: false}) angle = 0;
-    intervalHandler: NodeJS.Timeout | null = null
+  @property({ type: Number }) rateOfTurn = 0;
+  @property({ type: Number, attribute: false }) angle = 0;
+  intervalHandler: NodeJS.Timeout | null = null;
 
-    connectedCallback() {
-        super.connectedCallback();
-        const dt = 1000 / 60;
-        this.intervalHandler = setInterval(() => {
-            this.angle += this.rateOfTurn * dt / 1000;
-        }, dt);
+  connectedCallback() {
+    super.connectedCallback();
+    const dt = 1000 / 60;
+    this.intervalHandler = setInterval(() => {
+      this.angle += (this.rateOfTurn * dt) / 1000;
+    }, dt);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    if (this.intervalHandler !== null) {
+      clearInterval(this.intervalHandler);
+      this.intervalHandler = null;
     }
+  }
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        if (this.intervalHandler !== null) {
-            clearInterval(this.intervalHandler);
-            this.intervalHandler = null;
-        }
-    }
-
-    render() {
-        return  svg`<svg viewBox="-128 -128 256 256">
+  render() {
+    return svg`<svg viewBox="-128 -128 256 256">
     <svg x="-104" y="-104" width="208" height="208">
         ${CircleTrackMedium}
     </svg>
@@ -44,5 +42,5 @@ export class HdgMedium extends ObElement {
       <svg x="-100" y="-100" width="200" height="200">${CircleDotsMedium}</svg>
     </g>
   </svg>`;
-    }
+  }
 }
