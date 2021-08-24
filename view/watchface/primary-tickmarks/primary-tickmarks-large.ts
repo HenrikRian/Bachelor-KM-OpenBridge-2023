@@ -1,70 +1,15 @@
 import { svg } from "lit-element";
-
-const DIRECTION_MAPPING: Record<number, string> = {
-  0: "N",
-  45: "NE",
-  90: "E",
-  135: "SE",
-  180: "S",
-  225: "SW",
-  270: "W",
-  315: "NW",
-};
-
-export interface CircularLabelOptions {
-  show: boolean;
-  rotate?: number;
-  nsew?: boolean;
-  bold?: boolean;
-  custom?: { angle: number; text: string; bold: boolean; cssClass: string }[];
-}
+import { CircularLabelOptions } from "./circular-labels";
 
 export interface PrimaryTickmarksOptions {
   showDeg: number;
   scaleRatio?: number;
   labels: CircularLabelOptions;
+  startDeg: number;
+  endDeg: number;
 }
 
 export function primaryTickmarksLarge(option: PrimaryTickmarksOptions) {
-  const r = 228;
-  const width = 725 / 2;
-
-  function rotateLabel(deg: number) {
-    const rad = (deg / 180) * Math.PI;
-    const x = width + r * Math.sin(rad);
-    const y = width - r * Math.cos(rad);
-    return `rotate(${-(option.labels.rotate ?? 0)} ${x} ${y})`;
-  }
-
-  let labels = [];
-  if (option.labels.custom) {
-    labels = option.labels.custom;
-  } else {
-    for (let angle = 0; angle < 360; angle += option.showDeg) {
-      labels.push({
-        angle: angle,
-        text: option.labels.nsew && angle % 45 === 0,
-        bold: option.labels.bold && angle % 90 === 0,
-      });
-    }
-  }
-
-  const labelSvg = labels.map((l) => {
-    const rad = (l.angle / 180) * Math.PI;
-    const x = width + r * Math.sin(rad);
-    const y = width - r * Math.cos(rad);
-    const text = l.text
-      ? DIRECTION_MAPPING[l.angle]
-      : String(l.angle).padStart(3, "0");
-    const cssClass = l.bold ? "ob-font-ui-body-active" : "ob-font-ui-body";
-    return svg`
-          <g  transform="${rotateLabel(l.angle)}">
-            <text  x="${x}" y="${y}" style="font-size: ${
-      16 / (option.scaleRatio ?? 1)
-    }px" class="${cssClass} ob-center-label">${text}</text>
-          </g>`;
-  });
-
   return svg`<svg width="725" height="725" viewBox="0 0 725 725" fill="none"
        xmlns="http://www.w3.org/2000/svg">
     <g id="Large/ Angle Master">
@@ -108,7 +53,6 @@ export function primaryTickmarksLarge(option: PrimaryTickmarksOptions) {
       ${
         option.labels.show
           ? svg`
-        ${labelSvg}
         <svg width="24" height="416" x="350.5" y="154.5"  viewBox="0 0 24 416">
             <path d="M11.5 8H12.5L22 32H2L6.75 20L11.5 8Z" class="ob-element-active-color-fill"/>
         </svg>`

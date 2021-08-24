@@ -1,8 +1,5 @@
 import { svg, customElement, property } from "lit-element";
-import {
-  CircularLabelOptions,
-  primaryTickmarksLarge,
-} from "./primary-tickmarks/primary-tickmarks-large";
+import { primaryTickmarksLarge } from "./primary-tickmarks/primary-tickmarks-large";
 import InnerCircleRegularLarge from "../../generated-without-style/WatchFace/InnerCircleRegularLarge.svg";
 import InnerCirclePortStarboardLarge from "../../generated-without-style/WatchFace/InnerCirclePortStarboardLarge.svg";
 import InnerCirclePositiveNegativeLarge from "../../generated-without-style/WatchFace/InnerCirclePositiveNegativeLarge.svg";
@@ -14,6 +11,10 @@ import TertiaryTickmarks from "../../generated-without-style/WatchFace/TertiaryT
 
 import { ObElement } from "../obElement";
 import { InnerWatchFaceType, InnerWatchFaceTypeString } from "../models";
+import {
+  CircularLabelOptions,
+  circularLabels,
+} from "./primary-tickmarks/circular-labels";
 
 function startClipDegMap(startClipDeg: number) {
   const deg = startClipDeg % 360;
@@ -88,9 +89,23 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
     endDeg = option.clip.endDeg;
   }
 
+  if (option.labels.intervalDeg === undefined) {
+    option.labels.intervalDeg = option.tickmarks.primary;
+  }
+
   return svg`
   <svg viewBox="-256 -256 512 512">
     <g transform="rotate(${option.labels.rotate})">
+      <svg width="725" height="725" x="-362.5" y="-362.5">
+            ${circularLabels(option.labels, {
+              x0: 362.5,
+              y0: 362.5,
+              labelRadius: 228,
+              startDeg: endDeg,
+              endDeg: startDeg,
+              scaleRatio: option.scaleRatio,
+            })}
+        </svg>
       <g mask="url(#clip${option.uuid})">
         <svg width="512" height="512" x="-256" y="-256">
             ${innerCircleSvg}
@@ -107,6 +122,8 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
               showDeg: option.tickmarks.primary,
               labels: option.labels,
               scaleRatio: option.scaleRatio,
+              startDeg: startDeg,
+              endDeg: endDeg,
             })}
         </svg>
       </g>
@@ -123,7 +140,7 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
 
     <mask id="clip${option.uuid}">
       <rect height="512" width="512" x="-256" y="-256" fill="white"></rect>
-      <path d='${clipPath}' fill="black"/>
+      <path d="${clipPath}" fill="black"/>
     </mask>
   </svg>
     `;

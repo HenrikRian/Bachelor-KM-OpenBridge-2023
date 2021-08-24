@@ -14,21 +14,29 @@ export class RudderLarge extends ObElement {
   @property({ type: Boolean }) showSetPoint = true;
 
   protected render(): unknown {
+    const labels = [{ angle: 180, text: "0", bold: true }];
+    for (let i = 30; i <= this.clipAngle; i += 30) {
+      const is90 = i === 90;
+      labels.push({ angle: 180 + i, text: i.toFixed(0), bold: is90 });
+      labels.push({ angle: 180 - i, text: i.toFixed(0), bold: is90 });
+    }
     return svg`
 <svg viewBox="-256 -256 512 512">
 <svg x="-256" y="-256">
 ${watchFaceLargeRender({
   cross: false,
   labels: {
-    show: false,
+    show: true,
+    custom: labels,
   },
   clip: {
     startDeg: 180 + this.clipAngle,
     endDeg: 180 - this.clipAngle,
   },
   tickmarks: {
-    primary: 90,
-    secondary: 5,
+    primary: 30,
+    secondary: 10,
+    tertiary: true,
   },
   innerCircle: this.showPortStarboard
     ? InnerWatchFaceType.PORT_STARBOARD
