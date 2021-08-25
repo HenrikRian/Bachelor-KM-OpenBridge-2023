@@ -8,8 +8,15 @@ const DIRECTION_MAPPING: Record<number, string> = {
   180: "S",
   225: "SW",
   270: "W",
-  315: "NW",
+  315: "NW"
 };
+
+export interface CustomCircularLabel {
+  angle: number;
+  text: string;
+  bold: boolean;
+  cssClass?: string;
+}
 
 export interface CircularLabelOptions {
   show: boolean;
@@ -17,7 +24,7 @@ export interface CircularLabelOptions {
   nsew?: boolean;
   bold?: boolean;
   intervalDeg?: number;
-  custom?: { angle: number; text: string; bold: boolean; cssClass?: string }[];
+  custom?: CustomCircularLabel[];
 }
 
 export function circularLabels(
@@ -35,7 +42,7 @@ export function circularLabels(
     return;
   }
 
-  let labels = [];
+  let labels: CustomCircularLabel[] = [];
   if (option.custom) {
     labels = option.custom;
   } else if (option.intervalDeg === undefined || option.intervalDeg <= 0) {
@@ -60,7 +67,7 @@ export function circularLabels(
       labels.push({
         angle: angle,
         text: text,
-        bold: option.bold && angle % 90 === 0,
+        bold: option.bold == true && angle % 90 === 0
       });
     }
   }
@@ -69,7 +76,10 @@ export function circularLabels(
     const rad = (l.angle / 180) * Math.PI;
     const x = svgOptions.x0 + svgOptions.labelRadius * Math.sin(rad);
     const y = svgOptions.y0 - svgOptions.labelRadius * Math.cos(rad);
-    const cssClass = l.bold ? "ob-font-ui-body-active" : "ob-font-ui-body";
+    let cssClass = l.bold ? "ob-font-ui-body-active" : "ob-font-ui-body";
+    if (l.cssClass) {
+      cssClass = `${cssClass} ${l.cssClass}`
+    }
     const rotate = `rotate(${-(option.rotate ?? 0)} ${x} ${y})`;
     return svg`
           <g  transform="${rotate}">

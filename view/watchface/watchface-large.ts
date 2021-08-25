@@ -95,7 +95,7 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
 
   return svg`
   <svg viewBox="-256 -256 512 512">
-    <g transform="rotate(${option.labels.rotate})">
+    <g transform="rotate(${option.labels.rotate ?? 0})">
       <svg width="725" height="725" x="-362.5" y="-362.5">
             ${circularLabels(option.labels, {
               x0: 362.5,
