@@ -12,8 +12,8 @@ export class HdgLarge extends ObElement {
   @property({ type: Number }) courseOverGround = 0;
   @property({ type: Number }) setPoint = 0;
   @property({ type: Boolean }) northUp = false;
-  @property({ type: Boolean }) showCourseOverGround = true;
-  @property({ type: Boolean }) showSetPoint = true;
+  @property({ type: Boolean }) showCourseOverGround = false;
+  @property({ type: Boolean }) showSetPoint = false;
 
   protected render(): unknown {
     const northUp = this.northUp;

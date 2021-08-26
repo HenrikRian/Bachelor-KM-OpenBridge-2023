@@ -8,9 +8,6 @@ import InnerCirclePortStarboardLarge from "../../generated-without-style/WatchFa
 import InnerCirclePositiveNegativeLarge
   from "../../generated-without-style/WatchFace/InnerCirclePositiveNegativeLarge.svg";
 import CrossRegularLarge from "../../generated-without-style/WatchFace/CrossRegularLarge.svg";
-import SecondaryTickmarks5 from "../../generated-without-style/WatchFace/SecondaryTickmarks5.svg";
-import SecondaryTickmarks9 from "../../generated-without-style/WatchFace/SecondaryTickmarks9.svg";
-import SecondaryTickmarks10 from "../../generated-without-style/WatchFace/SecondaryTickmarks10.svg";
 import TertiaryTickmarks from "../../generated-without-style/WatchFace/TertiaryTickmarks.svg";
 
 import { ObElement } from "../obElement";
@@ -83,13 +80,6 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions): SVGTemplate
   } else if (option.innerCircle === InnerWatchFaceType.CONDENSED_PORT_STARBOARD) {
     innerCircleSvg = InnerCircleCondensedPortStarboardLarge;
   }
-  let secondaryTickmarksSvg = null;
-  if (option.tickmarks.secondary === 5)
-    secondaryTickmarksSvg = SecondaryTickmarks5;
-  else if (option.tickmarks.secondary === 9)
-    secondaryTickmarksSvg = SecondaryTickmarks9;
-  else if (option.tickmarks.secondary === 10)
-    secondaryTickmarksSvg = SecondaryTickmarks10;
 
   let startDeg = 0;
   let endDeg = 0;
@@ -134,8 +124,7 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions): SVGTemplate
             ${option.tickmarks.tertiary !== false ? TertiaryTickmarks : null}
         </svg>
       </g>
-    </g>
-    ${option.tickmarks.secondary !== null ?
+      ${option.tickmarks.secondary !== null ?
     svg`<svg width="512" height="512" x="-256" y="-256">
             ${primaryTickmarksLarge({
       showDeg: option.tickmarks.secondary,
@@ -158,7 +147,7 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions): SVGTemplate
     strokeClass: "ob-instrument-tick-mark-primary-color-stroke"
   })}
         </svg>
-        
+    </g>      
 
     <mask id="clip${option.uuid}">
       <rect height="512" width="512" x="-256" y="-256" fill="white"></rect>
