@@ -12,9 +12,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "HDG",
-      "Size=Small, Type=Flat",
+      "Size=Small, Type=Flat"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "FlatArrowHdgMedium",
@@ -22,9 +22,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "HDG",
-      "Size=Medium, Type=Flat",
+      "Size=Medium, Type=Flat"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "FlatArrowHdgLarge",
@@ -32,9 +32,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "HDG",
-      "Size=Large, Type=Flat",
+      "Size=Large, Type=Flat"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "HdgCircularSmall",
@@ -42,9 +42,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "HDG",
-      "Size=Small, Type=Circular",
+      "Size=Small, Type=Circular"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "HdgCircularMedium",
@@ -52,9 +52,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "HDG",
-      "Size=Medium, Type=Circular",
+      "Size=Medium, Type=Circular"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "HdgCircularLarge",
@@ -62,9 +62,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "HDG",
-      "Size=Large, Type=Circular",
+      "Size=Large, Type=Circular"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "FlatArrowCogSmall",
@@ -72,9 +72,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "COG",
-      "Size=Small, Type=Flat",
+      "Size=Small, Type=Flat"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "FlatArrowCogMedium",
@@ -82,9 +82,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "COG",
-      "Size=Medium, Type=Flat",
+      "Size=Medium, Type=Flat"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "FlatArrowCogLarge",
@@ -92,9 +92,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "COG",
-      "Size=Medium, Type=Flat",
+      "Size=Medium, Type=Flat"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "CogCircularSmall",
@@ -102,9 +102,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "COG",
-      "Size=Small, Type=Circular",
+      "Size=Small, Type=Circular"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "CogCircularMedium",
@@ -112,9 +112,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "COG",
-      "Size=Medium, Type=Circular",
+      "Size=Medium, Type=Circular"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "CogCircularLarge",
@@ -122,9 +122,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "COG",
-      "Size=Large, Type=Circular",
+      "Size=Large, Type=Circular"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "SetPointFlatSmall",
@@ -132,9 +132,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Small, Type=Flat, Condensed=False",
+      "Size=Small, Type=Flat, Condensed=False"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "SetPointFlatMedium",
@@ -142,9 +142,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Medium, Type=Flat, Condensed=False",
+      "Size=Medium, Type=Flat, Condensed=False"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "SetPointFlatLarge",
@@ -152,9 +152,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Medium, Type=Flat, Condensed=False",
+      "Size=Medium, Type=Flat, Condensed=False"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "SetPointCircularSmall",
@@ -162,9 +162,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Small, Type=Circular, Condensed=False",
+      "Size=Small, Type=Circular, Condensed=False"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "SetPointCircularMedium",
@@ -172,9 +172,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Medium, Type=Circular, Condensed=False",
+      "Size=Medium, Type=Circular, Condensed=False"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   {
     name: "SetPointCircularLarge",
@@ -182,9 +182,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Large, Type=Circular, Condensed=False",
+      "Size=Large, Type=Circular, Condensed=False"
     ],
-    outputFolder: "HDG_COG",
+    outputFolder: "HDG_COG"
   },
   // {
   //     name: 'BarMeterBlackSmall',
@@ -198,9 +198,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Flat M",
       "Labels=True, PORT STBD=False",
       "Component",
-      "Bar meter - Horizontal",
+      "Bar meter - Horizontal"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "BarMeterBlackLarge",
@@ -209,9 +209,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Flat L",
       "Labels=True, PORT STBD=False",
       "Component",
-      "Bar meter - Horizontal",
+      "Bar meter - Horizontal"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   // {
   //     name: 'BarMeterPSSmall',
@@ -225,9 +225,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Flat M",
       "Labels=True, PORT STBD=True",
       "Component",
-      "Bar meter - Horizontal",
+      "Bar meter - Horizontal"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "BarMeterPSLarge",
@@ -236,9 +236,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Flat L",
       "Labels=True, PORT STBD=True",
       "Component",
-      "Bar meter - Horizontal",
+      "Bar meter - Horizontal"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "BarMeterNoLabelMedium",
@@ -247,9 +247,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Flat M",
       "Labels=False, PORT STBD=True",
       "Component",
-      "Bar meter - Horizontal",
+      "Bar meter - Horizontal"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "BarMeterNoLabelLarge",
@@ -258,9 +258,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Flat L",
       "Labels=False, PORT STBD=True",
       "Component",
-      "Bar meter - Horizontal",
+      "Bar meter - Horizontal"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleBorderInsideSmall",
@@ -269,9 +269,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
-      "border-inside",
+      "border-inside"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleBorderOutsideSmall",
@@ -280,9 +280,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
-      "border-outisde",
+      "border-outisde"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleTrackSmall",
@@ -291,9 +291,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
-      "track (Stroke)",
+      "track (Stroke)"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleDotsSmall",
@@ -302,9 +302,9 @@ const staticExportComponents: ExportDef[] = [
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
-      "rot-dots",
+      "rot-dots"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleBorderInsideMedium",
@@ -312,9 +312,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
-      "border-inside",
+      "border-inside"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleBorderOutsideMedium",
@@ -322,9 +322,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
-      "border-outisde",
+      "border-outisde"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleTrackMedium",
@@ -332,9 +332,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
-      "track (Stroke)",
+      "track (Stroke)"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleDotsMedium",
@@ -342,9 +342,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
-      "rot-dots",
+      "rot-dots"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleBorderInsideLarge",
@@ -352,9 +352,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
-      "border-inside",
+      "border-inside"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleBorderOutsideLarge",
@@ -362,9 +362,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
-      "border-outside",
+      "border-outside"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleTrackLarge",
@@ -372,9 +372,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
-      "track (Stroke)",
+      "track (Stroke)"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "CircleDotsLarge",
@@ -382,9 +382,9 @@ const staticExportComponents: ExportDef[] = [
       "M1 Navigation components",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
-      "rot-dots",
+      "rot-dots"
     ],
-    outputFolder: "ROT",
+    outputFolder: "ROT"
   },
   {
     name: "AngleSmall",
@@ -392,9 +392,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Small, Type=Circular, Condensed=False",
+      "Size=Small, Type=Circular, Condensed=False"
     ],
-    outputFolder: "SetPoint",
+    outputFolder: "SetPoint"
   },
   {
     name: "AngleMedium",
@@ -402,9 +402,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Medium, Type=Circular, Condensed=False",
+      "Size=Medium, Type=Circular, Condensed=False"
     ],
-    outputFolder: "SetPoint",
+    outputFolder: "SetPoint"
   },
   {
     name: "AngleLarge",
@@ -412,9 +412,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Setpoint",
-      "Size=Large, Type=Circular, Condensed=False",
+      "Size=Large, Type=Circular, Condensed=False"
     ],
-    outputFolder: "SetPoint",
+    outputFolder: "SetPoint"
   },
   {
     name: "RudderSmall",
@@ -422,9 +422,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Rudder",
-      "Size=Small",
+      "Size=Small"
     ],
-    outputFolder: "Rudder",
+    outputFolder: "Rudder"
   },
   {
     name: "RudderMedium",
@@ -432,9 +432,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Rudder",
-      "Size=Medium",
+      "Size=Medium"
     ],
-    outputFolder: "Rudder",
+    outputFolder: "Rudder"
   },
   {
     name: "RudderLarge",
@@ -442,9 +442,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Rudder",
-      "Size=Large",
+      "Size=Large"
     ],
-    outputFolder: "Rudder",
+    outputFolder: "Rudder"
   },
 
   {
@@ -453,9 +453,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Ship - Front",
-      "Size=Small",
+      "Size=Small"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "ShipRollMedium",
@@ -463,9 +463,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Ship - Front",
-      "Size=Medium",
+      "Size=Medium"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "ShipRollLarge",
@@ -473,9 +473,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Ship - Front",
-      "Size=Large",
+      "Size=Large"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "ShipPitchSmall",
@@ -483,9 +483,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Ship - Side",
-      "Size=Small",
+      "Size=Small"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "ShipPitchMedium",
@@ -493,9 +493,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Ship - Side",
-      "Size=Medium",
+      "Size=Medium"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "ShipPitchLarge",
@@ -503,9 +503,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "01 Navigation elements",
       "Ship - Side",
-      "Size=Large",
+      "Size=Large"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "PitchPointerSmall",
@@ -515,9 +515,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "pitch",
       "pitch",
-      "pointer-line",
+      "pointer-line"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "PitchPointerMedium",
@@ -527,9 +527,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "pitch",
       "pitch",
-      "pointer-line",
+      "pointer-line"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "PitchPointerLarge",
@@ -539,9 +539,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "pitch",
       "pitch",
-      "pointer-line",
+      "pointer-line"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "PointerCenterSmall",
@@ -551,9 +551,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "pitch",
       "pitch",
-      "center",
+      "center"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "PointerCenterMedium",
@@ -563,9 +563,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "pitch",
       "pitch",
-      "center",
+      "center"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "PointerCenterLarge",
@@ -575,9 +575,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "pitch",
       "pitch",
-      "center",
+      "center"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "RollPointerSmall",
@@ -587,9 +587,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "roll",
       "roll",
-      "pointer-line",
+      "pointer-line"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "RollPointerMedium",
@@ -599,9 +599,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "roll",
       "roll",
-      "pointer-line",
+      "pointer-line"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   {
     name: "RollPointerLarge",
@@ -611,9 +611,9 @@ const staticExportComponents: ExportDef[] = [
       "Alert zones=False",
       "roll",
       "roll",
-      "pointer-line",
+      "pointer-line"
     ],
-    outputFolder: "PitchRoll",
+    outputFolder: "PitchRoll"
   },
   /*
     {
@@ -904,9 +904,9 @@ const staticExportComponents: ExportDef[] = [
       "Thruster L",
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
-      "CenterLine",
+      "CenterLine"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterElementTrackLarge",
@@ -917,9 +917,9 @@ const staticExportComponents: ExportDef[] = [
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
       "ThrusterElement",
-      "Track",
+      "Track"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterElementTickmarksLarge",
@@ -930,9 +930,9 @@ const staticExportComponents: ExportDef[] = [
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
       "ThrusterElement",
-      "Tickmarks",
+      "Tickmarks"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterFrontArrowLarge",
@@ -942,9 +942,9 @@ const staticExportComponents: ExportDef[] = [
       "Thruster L",
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
-      "FrontArrow",
+      "FrontArrow"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterMainEngineFrontArrowLarge",
@@ -955,9 +955,9 @@ const staticExportComponents: ExportDef[] = [
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
       "FrontArrow",
-      "Arrow",
+      "Arrow"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterEndPointerLarge",
@@ -967,9 +967,9 @@ const staticExportComponents: ExportDef[] = [
       "Thruster L",
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
-      "EndPointer",
+      "EndPointer"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterPowerInputLarge",
@@ -979,9 +979,9 @@ const staticExportComponents: ExportDef[] = [
       "Thruster L",
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
-      "SetpointInput",
+      "SetpointInput"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
   {
     name: "ThrusterSuggestedSetPointLarge",
@@ -991,9 +991,9 @@ const staticExportComponents: ExportDef[] = [
       "Thruster L",
       "Arrow=True, Tick marks=True, Setpoint=True, Suggestion=True",
       "thruster",
-      "SuggestedSetpoint",
+      "SuggestedSetpoint"
     ],
-    outputFolder: "Thruster",
+    outputFolder: "Thruster"
   },
 
   {
@@ -1002,10 +1002,10 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Tickmarks - Compass",
-      "Degree=5°, Tick size=Secondary",
+      "Degree=5°, Tick size=Secondary"
     ],
     outputFolder: "WatchFace",
-    nonScaling: true,
+    nonScaling: true
   },
   {
     name: "SecondaryTickmarks9",
@@ -1013,10 +1013,10 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Tickmarks - Compass",
-      "Degree=9°, Tick size=Secondary",
+      "Degree=9°, Tick size=Secondary"
     ],
     outputFolder: "WatchFace",
-    nonScaling: true,
+    nonScaling: true
   },
   {
     name: "SecondaryTickmarks10",
@@ -1024,10 +1024,10 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Tickmarks - Compass",
-      "Degree=10°, Tick size=Secondary",
+      "Degree=10°, Tick size=Secondary"
     ],
     outputFolder: "WatchFace",
-    nonScaling: true,
+    nonScaling: true
   },
   {
     name: "TertiaryTickmarks",
@@ -1035,10 +1035,10 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Tickmarks - Compass",
-      "Degree=1°, Tick size=Tertiary",
+      "Degree=1°, Tick size=Tertiary"
     ],
     outputFolder: "WatchFace",
-    nonScaling: true,
+    nonScaling: true
   },
 
   {
@@ -1049,9 +1049,9 @@ const staticExportComponents: ExportDef[] = [
       "Orientation=N up, Type=HDG",
       "Component",
       "Compass",
-      "North",
+      "North"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
 
   {
@@ -1060,9 +1060,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Large, Type=Regular, Condensed=False",
+      "Size=Large, Type=Regular, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCirclePortStarboardLarge",
@@ -1070,9 +1070,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Large, Type=PORT STBD, Condensed=False",
+      "Size=Large, Type=PORT STBD, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCirclePositiveNegativeLarge",
@@ -1080,9 +1080,29 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Large, Type=Positive / Negative, Condensed=False",
+      "Size=Large, Type=Positive / Negative, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
+  },
+  {
+    name: "InnerCircleCondensedLarge",
+    path: [
+      "M5 Building blocks",
+      "Watchface elements",
+      "Watchface circle",
+      "Size=Large, Type=Regular, Condensed=True"
+    ],
+    outputFolder: "WatchFace"
+  },
+  {
+    name: "InnerCircleCondensedPortStarboardLarge",
+    path: [
+      "M5 Building blocks",
+      "Watchface elements",
+      "Watchface circle",
+      "Size=Large, Type=PORT STBD, Condensed=True"
+    ],
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCircleRegularMedium",
@@ -1090,9 +1110,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Medium, Type=Regular, Condensed=False",
+      "Size=Medium, Type=Regular, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCirclePortStarboardMedium",
@@ -1100,9 +1120,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Medium, Type=PORT STBD, Condensed=False",
+      "Size=Medium, Type=PORT STBD, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCirclePositiveNegativeMedium",
@@ -1110,9 +1130,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Medium, Type=Positive / Negative, Condensed=False",
+      "Size=Medium, Type=Positive / Negative, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCircleRegularSmall",
@@ -1120,9 +1140,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Small, Type=Regular, Condensed=False",
+      "Size=Small, Type=Regular, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCirclePortStarboardSmall",
@@ -1130,9 +1150,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Small, Type=PORT STBD, Condensed=False",
+      "Size=Small, Type=PORT STBD, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "InnerCirclePositiveNegativeSmall",
@@ -1140,9 +1160,9 @@ const staticExportComponents: ExportDef[] = [
       "M5 Building blocks",
       "Watchface elements",
       "Watchface circle",
-      "Size=Small, Type=Positive / Negative, Condensed=False",
+      "Size=Small, Type=Positive / Negative, Condensed=False"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "CrossRegularLarge",
@@ -1152,9 +1172,9 @@ const staticExportComponents: ExportDef[] = [
       "Compass watchface",
       "Size=Large, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True",
       "Watchface",
-      "center-cross",
+      "center-cross"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "CrossRegularMedium",
@@ -1163,9 +1183,9 @@ const staticExportComponents: ExportDef[] = [
       "Watchface",
       "Compass watchface",
       "Size=Small, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True",
-      "Cross",
+      "Cross"
     ],
-    outputFolder: "WatchFace",
+    outputFolder: "WatchFace"
   },
   {
     name: "CrossRegularSmall",
@@ -1174,10 +1194,16 @@ const staticExportComponents: ExportDef[] = [
       "Watchface",
       "Compass watchface",
       "Size=Small, Marks per=90°, Labels=False, Condensed=True, Cross=True, Frame=True",
-      "Cross",
+      "Cross"
     ],
-    outputFolder: "WatchFace",
-  } /*{
+    outputFolder: "WatchFace"
+  },
+  {
+    name: "MeterLarge",
+    path: ["M5 Building blocks", "01 Navigation elements", "Needle", "Size=Large"],
+    outputFolder: "M5-01NavigationElements"
+  }
+  /*{
         name: 'PrimaryTickmarks90Medium',
         path: ['Watch face', '01 Primary Tickmarks', 'Medium/ 1 per 90° - 90°'],
         outputFolder: 'WatchFace'
@@ -1355,7 +1381,7 @@ const staticExportComponents: ExportDef[] = [
         path: ['Wind symbols', 'Current symbol', 'Current arrow 4 (large)'],
         outputFolder: 'Current'
     }
-    */,
+    */
 ];
 
 const circleDegrees = ["1", "2", "5", "9", "10", "30", "45", "90"];
@@ -1370,10 +1396,10 @@ for (const degree of circleDegrees) {
         "M5 Building blocks",
         "Watchface elements",
         "Tickmarks - Compass",
-        `Degree=${degree}°, Tick size=${tick}`,
+        `Degree=${degree}°, Tick size=${tick}`
       ],
       outputFolder: "Tickmarks",
-      nonScaling: true,
+      nonScaling: true
     };
     circleTickMarks.push(def);
   }

@@ -27,7 +27,7 @@ export class AzimuthLarge extends ObElement {
             rotate: 0,
           },
           tickmarks: {
-            primary: 180,
+            primary: 90,
             secondary: 10,
             tertiary: true,
           },

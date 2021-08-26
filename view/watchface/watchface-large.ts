@@ -1,8 +1,12 @@
-import { svg, customElement, property } from "lit-element";
+import { svg, customElement, property, SVGTemplateResult } from "lit-element";
 import { primaryTickmarksLarge } from "./primary-tickmarks/primary-tickmarks-large";
 import InnerCircleRegularLarge from "../../generated-without-style/WatchFace/InnerCircleRegularLarge.svg";
+import InnerCircleCondensedLarge from "../../generated-without-style/WatchFace/InnerCircleCondensedLarge.svg";
+import InnerCircleCondensedPortStarboardLarge
+  from "../../generated-without-style/WatchFace/InnerCircleCondensedPortStarboardLarge.svg";
 import InnerCirclePortStarboardLarge from "../../generated-without-style/WatchFace/InnerCirclePortStarboardLarge.svg";
-import InnerCirclePositiveNegativeLarge from "../../generated-without-style/WatchFace/InnerCirclePositiveNegativeLarge.svg";
+import InnerCirclePositiveNegativeLarge
+  from "../../generated-without-style/WatchFace/InnerCirclePositiveNegativeLarge.svg";
 import CrossRegularLarge from "../../generated-without-style/WatchFace/CrossRegularLarge.svg";
 import SecondaryTickmarks5 from "../../generated-without-style/WatchFace/SecondaryTickmarks5.svg";
 import SecondaryTickmarks9 from "../../generated-without-style/WatchFace/SecondaryTickmarks9.svg";
@@ -13,7 +17,7 @@ import { ObElement } from "../obElement";
 import { InnerWatchFaceType, InnerWatchFaceTypeString } from "../models";
 import {
   CircularLabelOptions,
-  circularLabels,
+  circularLabels
 } from "./primary-tickmarks/circular-labels";
 
 function startClipDegMap(startClipDeg: number) {
@@ -49,6 +53,7 @@ interface WatchFaceLargeOptions {
   innerCircle: InnerWatchFaceTypeString;
   tickmarks: {
     primary: number;
+    primarySize?: number;
     secondary: number | null;
     tertiary?: boolean;
   };
@@ -59,7 +64,7 @@ interface WatchFaceLargeOptions {
   scaleRatio?: number;
 }
 
-export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
+export function watchFaceLargeRender(option: WatchFaceLargeOptions): SVGTemplateResult {
   let startClipDegMapped = 0;
   let endClipDegMapped = 0;
   if (option.clip) {
@@ -73,6 +78,10 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
     innerCircleSvg = InnerCirclePortStarboardLarge;
   } else if (option.innerCircle === InnerWatchFaceType.POSITIVE_NEGATIVE) {
     innerCircleSvg = InnerCirclePositiveNegativeLarge;
+  } else if (option.innerCircle === InnerWatchFaceType.CONDENSED) {
+    innerCircleSvg = InnerCircleCondensedLarge;
+  } else if (option.innerCircle === InnerWatchFaceType.CONDENSED_PORT_STARBOARD) {
+    innerCircleSvg = InnerCircleCondensedPortStarboardLarge;
   }
   let secondaryTickmarksSvg = null;
   if (option.tickmarks.secondary === 5)
@@ -89,6 +98,14 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
     endDeg = option.clip.endDeg;
   }
 
+  const firstLabel = endDeg;
+  let lastLabel = startDeg ?? 360;
+  if (lastLabel < firstLabel) {
+    lastLabel += 360;
+  } else if (lastLabel == firstLabel) {
+    lastLabel = 359.99;
+  }
+
   if (option.labels.intervalDeg === undefined) {
     option.labels.intervalDeg = option.tickmarks.primary;
   }
@@ -98,13 +115,13 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
     <g transform="rotate(${option.labels.rotate ?? 0})">
       <svg width="725" height="725" x="-362.5" y="-362.5">
             ${circularLabels(option.labels, {
-              x0: 362.5,
-              y0: 362.5,
-              labelRadius: 228,
-              startDeg: endDeg,
-              endDeg: startDeg,
-              scaleRatio: option.scaleRatio,
-            })}
+    x0: 362.5,
+    y0: 362.5,
+    labelRadius: 228,
+    startDeg: firstLabel,
+    endDeg: lastLabel,
+    scaleRatio: option.scaleRatio
+  })}
         </svg>
       <g mask="url(#clip${option.uuid})">
         <svg width="512" height="512" x="-256" y="-256">
@@ -114,29 +131,34 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions) {
             ${option.cross ? CrossRegularLarge : null}
         </svg>
         <svg width="416" height="416" x="-208" y="-208">
-            ${secondaryTickmarksSvg}
             ${option.tickmarks.tertiary !== false ? TertiaryTickmarks : null}
         </svg>
-        <svg width="725" height="725" x="-362.5" y="-362.5">
-            ${primaryTickmarksLarge({
-              showDeg: option.tickmarks.primary,
-              labels: option.labels,
-              scaleRatio: option.scaleRatio,
-              startDeg: startDeg,
-              endDeg: endDeg,
-            })}
-        </svg>
-      </g>
-      
-      <g transform="rotate(${startDeg})">
-          <path id="Vector 3_4" d="M0 -208.265L0 -176.225" stroke-width="2" 
-          class="ob-instrument-tick-mark-primary-color-stroke"/>
-      </g>
-      <g transform="rotate(${endDeg})">
-          <path id="Vector 3_4" d="M0 -208.265L0 -176.225" stroke-width="2" 
-          class="ob-instrument-tick-mark-primary-color-stroke"/>
       </g>
     </g>
+    ${option.tickmarks.secondary !== null ?
+    svg`<svg width="512" height="512" x="-256" y="-256">
+            ${primaryTickmarksLarge({
+      showDeg: option.tickmarks.secondary,
+      labels: option.labels,
+      scaleRatio: option.scaleRatio,
+      startDeg: firstLabel,
+      endDeg: lastLabel,
+      size: (option.tickmarks.primarySize ?? 1) * .5,
+      strokeClass: "ob-instrument-tick-mark-secondary-color-stroke"
+    })}</svg>` : null}
+      
+    <svg width="512" height="512" x="-256" y="-256">
+            ${primaryTickmarksLarge({
+    showDeg: option.tickmarks.primary,
+    labels: option.labels,
+    scaleRatio: option.scaleRatio,
+    startDeg: firstLabel,
+    endDeg: lastLabel,
+    size: option.tickmarks.primarySize,
+    strokeClass: "ob-instrument-tick-mark-primary-color-stroke"
+  })}
+        </svg>
+        
 
     <mask id="clip${option.uuid}">
       <rect height="512" width="512" x="-256" y="-256" fill="white"></rect>
@@ -159,22 +181,22 @@ export class WatchfaceLarge extends ObElement {
   @property({ type: Number }) startClipDeg = 0;
   @property({ type: Number }) endClipDeg = 0;
 
-  render() {
+  render(): SVGTemplateResult {
     return watchFaceLargeRender({
       innerCircle: this.innerCircle,
       tickmarks: {
         primary: this.primaryTickmarks,
-        secondary: this.secondaryTickmarks,
+        secondary: this.secondaryTickmarks
       },
       clip: { startDeg: this.startClipDeg, endDeg: this.endClipDeg },
       labels: {
         show: this.showLabels,
         rotate: this.rotate,
         nsew: this.nsew,
-        bold: this.bold,
+        bold: this.bold
       },
       cross: this.cross,
-      uuid: this.uuid,
+      uuid: this.uuid
     });
   }
 }
