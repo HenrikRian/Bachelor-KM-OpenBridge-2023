@@ -56,6 +56,7 @@ interface WatchFaceLargeOptions {
   };
   uuid: string;
   cross: boolean;
+  showArrow?: boolean;
   clip?: { startDeg: number; endDeg: number };
   labels: CircularLabelOptions;
   scaleRatio?: number;
@@ -147,6 +148,14 @@ export function watchFaceLargeRender(option: WatchFaceLargeOptions): SVGTemplate
     strokeClass: "ob-instrument-tick-mark-primary-color-stroke"
   })}
         </svg>
+        ${
+        option.showArrow===true
+          ? svg`
+        <svg width="24" height="416" x="-12" y="-208"  viewBox="0 0 24 416">
+            <path d="M11.5 8H12.5L22 32H2L6.75 20L11.5 8Z" class="ob-element-active-color-fill"/>
+        </svg>`
+          : null
+      }
     </g>      
 
     <mask id="clip${option.uuid}">
@@ -162,6 +171,7 @@ export class WatchfaceLarge extends ObElement {
   @property({ type: String }) innerCircle = InnerWatchFaceType.REGULAR;
   @property({ type: Boolean }) cross = false;
   @property({ type: Boolean }) showLabels = false;
+  @property({ type: Boolean }) showArrow = false;
   @property({ type: Boolean }) bold = false;
   @property({ type: Boolean }) nsew = false;
   @property({ type: Number }) rotate = 0;
@@ -177,6 +187,7 @@ export class WatchfaceLarge extends ObElement {
         primary: this.primaryTickmarks,
         secondary: this.secondaryTickmarks
       },
+      showArrow: this.showArrow,
       clip: { startDeg: this.startClipDeg, endDeg: this.endClipDeg },
       labels: {
         show: this.showLabels,

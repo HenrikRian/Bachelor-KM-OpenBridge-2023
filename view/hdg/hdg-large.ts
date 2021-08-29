@@ -30,21 +30,22 @@ export class HdgLarge extends ObElement {
 <svg viewBox="-256 -256 512 512">
 <svg x="-256" y="-256">
 ${watchFaceLargeRender({
-  cross: false,
-  labels: {
-    show: true,
-    rotate: watchFaceAngle,
-    nsew: true,
-    bold: true,
-  },
-  clip: { startDeg: 0, endDeg: 0 },
-  tickmarks: {
-    primary: 45,
-    secondary: 5,
-  },
-  innerCircle: InnerWatchFaceType.REGULAR,
-  uuid: this.uuid,
-})}
+      cross: false,
+      labels: {
+        show: true,
+        rotate: watchFaceAngle,
+        nsew: true,
+        bold: true
+      },
+      showArrow: true,
+      clip: { startDeg: 0, endDeg: 0 },
+      tickmarks: {
+        primary: 45,
+        secondary: 5
+      },
+      innerCircle: InnerWatchFaceType.REGULAR,
+      uuid: this.uuid
+    })}
 </svg>
     <g transform="rotate(${rotate})">
       <svg x="-32" y="-256" width="64" height="512">

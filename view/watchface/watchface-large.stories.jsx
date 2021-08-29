@@ -18,14 +18,16 @@ export default {
     rotate: { control: { type: "range", min: 0, max: 360 } },
     primaryTickmarks: {
       control: {
-        type: "inline-radio",
-        options: [10, 30, 45, 90],
+        type: "range",
+        min: 10,
+        max: 180,
       },
     },
     secondaryTickmarks: {
       control: {
-        type: "inline-radio",
-        options: [5, 9, 10],
+        type: "range",
+        min: 2,
+        max: 90
       },
     },
     startClipDeg: { control: { type: "range", min: -360, max: 360 } },
@@ -45,6 +47,7 @@ Default.args = {
   secondaryTickmarks: 10,
   cross: false,
   showLabels: true,
+  showArrow: true,
   nsew: true,
   bold: true,
   startClipDeg: 0,
