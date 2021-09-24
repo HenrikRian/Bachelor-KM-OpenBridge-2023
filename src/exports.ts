@@ -188,13 +188,13 @@ const staticExportComponents: ExportDef[] = [
   },
   // {
   //     name: 'BarMeterBlackSmall',
-  //     path: ['M1 Navigation components', 'ROT Flat S', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
+  //     path: ['M1 Navigation ', 'ROT Flat S', 'Labels=True, PORT STBD=False', 'Component', 'Bar meter - Horizontal'],
   //     outputFolder: 'ROT'
   // },
   {
     name: "BarMeterBlackMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Flat M",
       "Labels=True, PORT STBD=False",
       "Component",
@@ -205,7 +205,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "BarMeterBlackLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Flat L",
       "Labels=True, PORT STBD=False",
       "Component",
@@ -215,13 +215,13 @@ const staticExportComponents: ExportDef[] = [
   },
   // {
   //     name: 'BarMeterPSSmall',
-  //     path: ['M1 Navigation components', 'ROT Flat S', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
+  //     path: ['M1 Navigation ', 'ROT Flat S', 'Labels=True, PORT STBD=True', 'Component', 'Bar meter - Horizontal'],
   //     outputFolder: 'ROT'
   // },
   {
     name: "BarMeterPSMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Flat M",
       "Labels=True, PORT STBD=True",
       "Component",
@@ -232,7 +232,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "BarMeterPSLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Flat L",
       "Labels=True, PORT STBD=True",
       "Component",
@@ -243,7 +243,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "BarMeterNoLabelMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Flat M",
       "Labels=False, PORT STBD=True",
       "Component",
@@ -254,7 +254,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "BarMeterNoLabelLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Flat L",
       "Labels=False, PORT STBD=True",
       "Component",
@@ -265,7 +265,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleBorderInsideSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
@@ -276,7 +276,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleBorderOutsideSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
@@ -287,7 +287,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleTrackSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
@@ -298,7 +298,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleDotsSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle S",
       "Type=Dots, PORT STBD=False",
       "Rot medium",
@@ -309,7 +309,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleBorderInsideMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
       "border-inside"
@@ -319,7 +319,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleBorderOutsideMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
       "border-outisde"
@@ -329,7 +329,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleTrackMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
       "track (Stroke)"
@@ -339,7 +339,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleDotsMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle M",
       "Type=Dots, PORT STBD=False",
       "rot-dots"
@@ -349,7 +349,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleBorderInsideLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
       "border-inside"
@@ -359,7 +359,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleBorderOutsideLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
       "border-outside"
@@ -369,7 +369,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleTrackLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
       "track (Stroke)"
@@ -379,7 +379,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "CircleDotsLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "ROT Circle L",
       "Type=Dots, PORT STBD=False",
       "rot-dots"
@@ -510,7 +510,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "PitchPointerSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Pitch S",
       "Alert zones=False",
       "pitch",
@@ -522,7 +522,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "PitchPointerMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Pitch M",
       "Alert zones=False",
       "pitch",
@@ -534,7 +534,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "PitchPointerLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Pitch L",
       "Alert zones=False",
       "pitch",
@@ -546,7 +546,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "PointerCenterSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Pitch S",
       "Alert zones=False",
       "pitch",
@@ -558,7 +558,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "PointerCenterMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Pitch M",
       "Alert zones=False",
       "pitch",
@@ -570,7 +570,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "PointerCenterLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Pitch L",
       "Alert zones=False",
       "pitch",
@@ -582,7 +582,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "RollPointerSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Roll S",
       "Alert zones=False",
       "roll",
@@ -594,7 +594,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "RollPointerMedium",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Roll M",
       "Alert zones=False",
       "roll",
@@ -606,7 +606,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "RollPointerLarge",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Roll L",
       "Alert zones=False",
       "roll",
@@ -1044,7 +1044,7 @@ const staticExportComponents: ExportDef[] = [
   {
     name: "NorthArrowSmall",
     path: [
-      "M1 Navigation components",
+      "M1 Navigation ",
       "Heading  S",
       "Orientation=N up, Type=HDG",
       "Component",
