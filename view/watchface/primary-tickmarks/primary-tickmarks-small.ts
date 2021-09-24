@@ -1,13 +1,12 @@
-import {svg} from 'lit-element'
+import { svg } from "lit-element";
 
 export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
-
-
-    return svg`<svg width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return svg`<svg width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g id="Small/ Angle Master">
       <g id="Tickmarks">
-       ${showDeg === 30 ?
-        svg`<g id="30Â°" v-if="showDeg===30">
+       ${
+         showDeg === 30
+           ? svg`<g id="30Â°">
           <g id="60Â°">
             <g id="Thick 08px" clip-path="url(#Small/ Angle Masterclip0)">
               <path id="Vector 3" d="M17.637 29.4133L24.6028 33.435" stroke="#999999"
@@ -35,10 +34,13 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
                     class="ob-instrument-tick-mark-secondary-color-stroke"/>
             </g>
           </g>
-        </g>` : null}
-       ${showDeg === 45 ?
-        svg`
-        <g id="45Â°" v-if="showDeg===45">
+        </g>`
+           : null
+       }
+       ${
+         showDeg === 45
+           ? svg`
+        <g id="45Â°">
           <g id="Thick 08px_3" clip-path="url(#Small/ Angle Masterclip2)">
             <path id="Vector 3_3" d="M22.75 22.75L28.4375 28.4375" stroke="#999999"
                   class="ob-instrument-tick-mark-secondary-color-stroke"/>
@@ -52,7 +54,9 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
             <path id="Vector 6_3" d="M62.5625 28.4375L68.25 22.75" stroke="#999999"
                   class="ob-instrument-tick-mark-secondary-color-stroke"/>
           </g>
-        </g>` : null}
+        </g>`
+           : null
+       }
         <g id="90Â°">
           <g id="Thick 08px_4">
             <path id="Vector 3_4" d="M45.4999 13.3266L45.4999 21.37" stroke="#999999"
@@ -69,12 +73,16 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
           </g>
         </g>
       </g>
-       ${showArrow ? svg`
-      <g id="NorthArrow" v-if="showPointer">
+       ${
+         showArrow
+           ? svg`
+      <g id="NorthArrow">
         <path id="Color"
               d="M45.3323 14.3321H45.6675L48.8513 22.3754H42.1485L43.7404 18.3537L45.3323 14.3321Z"
               fill="#999999" class="ob-instrument-tick-mark-secondary-color-fill"/>
-      </g>` : null}
+      </g>`
+           : null
+       }
     </g>
     <defs>
       <clipPath id="Small/ Angle Masterclip0">
@@ -92,5 +100,4 @@ export function primaryTickmarksSmall(showDeg: number, showArrow: boolean) {
     </defs>
   </svg>
 `;
-
 }

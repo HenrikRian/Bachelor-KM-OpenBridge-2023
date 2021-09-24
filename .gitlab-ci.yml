@@ -6,7 +6,7 @@ image: node:12
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-  - node_modules/
+    - node_modules/
 
 before_script:
   - yarn install
@@ -16,11 +16,13 @@ build:
     - yarn run start
     - yarn run build
     - yarn pack
+    - yarn run build:storybook
   artifacts:
     paths:
       - "generated-with-style/"
       - "generated-without-style/"
       - "openbridge-web-components-v*.tgz"
+      - "public"
 
 pages:
   stage: deploy
