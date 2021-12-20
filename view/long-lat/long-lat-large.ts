@@ -1,21 +1,26 @@
-import {svg, customElement, property} from 'lit-element'
-import {ObElement} from "../obElement";
+import { customElement, property, svg } from 'lit-element'
+import { ObElement } from '../obElement';
 
 import ShipLarge from '../../generated-with-style/02 A Long - Lat/LongLatShipLarge.svg';
 
-import LongitudinalLineLarge from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalLineLarge.svg';
-import LongitudinalDotLarge from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalDotLarge.svg';
-import LongitudinalDotActiveLarge from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalDotActiveLarge.svg';
-//import LongitudinalBarLarge from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalBarLarge.svg';
+import LongitudinalLineLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalLineLarge.svg';
+import LongitudinalDotLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalDotLarge.svg';
+import LongitudinalDotActiveLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalDotActiveLarge.svg';
 import LongitudinalBarLarge from './svgFiles/longitudinalBarLarge.svg';
-import LongitudinalArrowLarge from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalArrowLarge.svg';
+import LongitudinalArrowLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLongitudinalArrowLarge.svg';
 
-import LatitudinalLineLarge from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalLineLarge.svg';
-//import LatitudinalBarLarge from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalBarLarge.svg';
+import LatitudinalLineLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalLineLarge.svg';
 import LatitudinalBarLarge from './svgFiles/latitudinalBarLarge.svg';
-import LatitudinalLeftArrowLarge from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalLeftArrowLarge.svg';
+import LatitudinalLeftArrowLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalLeftArrowLarge.svg';
 
-import LatitudinalRightArrowLarge from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalRightArrowLarge.svg';
+import LatitudinalRightArrowLarge
+    from '../../generated-with-style/02 A Long - Lat/LongLatLatitudinalRightArrowLarge.svg';
 
 @customElement('ob-long-lat-large')
 export class LongLatLarge extends ObElement {
@@ -28,32 +33,32 @@ export class LongLatLarge extends ObElement {
 
 
     @property({type: Boolean}) showSpeedLongitudinal = true; 
-    hiddeSpeedLongitudinal = ''; //hidden
+    hiddeSpeedLongitudinal = ''; 
 
     @property({type: Boolean}) showSpeedLatitudinalBack = true;
-    hiddeSpeedLatitudinalBack = ''; //hidden
+    hiddeSpeedLatitudinalBack = ''; 
 
     @property({type: Boolean}) showSpeedLatitudinalFront = true;
-    hiddeSpeedLatitudinalFront = ''; //hidden
+    hiddeSpeedLatitudinalFront = ''; 
 
     @property({type: Boolean}) showSpeedLatitudinalMiddle = false;
-    hiddeSpeedLatitudinalMiddle = ''; //hidden
+    hiddeSpeedLatitudinalMiddle = ''; 
 
     @property({type: Boolean}) showSpeedLongitudinalFront = true;
-    hiddeSpeedLongitudinalFront = ''; //hidden
-    hiddeSpeedLongitudinalBack = 'hidden'; //''
+    hiddeSpeedLongitudinalFront = ''; 
+    hiddeSpeedLongitudinalBack = 'hidden'; 
 
     @property({type: Boolean}) showSpeedLatitudinalBackLeft = false;
-    hiddeSpeedLatitudinalBackLeft = ''; //hidden
-    hiddeSpeedLatitudinalBackRight = 'hidden'; //''
+    hiddeSpeedLatitudinalBackLeft = ''; 
+    hiddeSpeedLatitudinalBackRight = 'hidden'; 
 
     @property({type: Boolean}) showSpeedLatitudinalFrontLeft = false;
-    hiddeSpeedLatitudinalFrontLeft = ''; //hidden
-    hiddeSpeedLatitudinalFrontRight = 'hidden'; //''
+    hiddeSpeedLatitudinalFrontLeft = ''; 
+    hiddeSpeedLatitudinalFrontRight = 'hidden'; 
 
     @property({type: Boolean}) showSpeedLatitudinalMiddleLeft = false;
-    hiddeSpeedLatitudinalMiddleLeft = ''; //hidden
-    hiddeSpeedLatitudinalMiddleRight = 'hidden'; //''
+    hiddeSpeedLatitudinalMiddleLeft = ''; 
+    hiddeSpeedLatitudinalMiddleRight = 'hidden'; 
 
     protected render(): unknown {
         //longitudinal
@@ -302,23 +307,10 @@ export class LongLatLarge extends ObElement {
 
                 <g style="visibility:${this.hiddeSpeedLatitudinalMiddle}">
                     <svg  x="-32" y="${label - 16}" height="30" width="64">
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="element-active-color" width="64" height="24">${this.title}</text>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="element-active-color" class="ob-font-ui-body" width="64" height="24">${this.title}</text>
                     </svg>
                 </g>
 
             </svg>`;
     }
 }
-
-/*
-//LongitudinalBarLarge
-<svg width="8" height="128" viewBox="0 0 8 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect id="Bar" width="8" height="128" fill="#0080FF" class="ob-instrument-dynamic-color-fill"/>
-</svg>
-
-//LatitudinalBarLarge
-<svg width="128" height="8" viewBox="0 0 128 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect id="Bar" y="8" width="8" height="128" transform="rotate(-90 0 8)" fill="#0080FF" class="ob-instrument-dynamic-color-fill"/>
-</svg>
-
-*/

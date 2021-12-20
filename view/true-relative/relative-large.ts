@@ -1,24 +1,20 @@
-import {svg, customElement, property} from 'lit-element'
-import HdgLarge from '../../generated-with-style/Compass/HdgLarge.svg';
+import { customElement, property, svg } from 'lit-element'
 import ShipLarge from '../../generated-with-style/Compass/ShipLarge.svg';
-import CogLarge from '../../generated-with-style/Compass/CogLarge.svg';
 import CurrentLarge from '../../generated-with-style/Compass/CurrentLarge.svg';
 import WindLarge from '../../generated-with-style/Compass/WindLarge.svg';
 import CenterLarge from '../../generated-with-style/Compass/CenterLarge.svg';
 
 
 import TrueArrow from '../../generated-with-style/True/TrueArrowLarge.svg';
-import TrueBar from '../../generated-with-style/True/TrueBarLarge.svg';
 import TruePointerLine from '../../generated-with-style/True/TruePointerLineLarge.svg';
 
 import RelativeArrow from '../../generated-with-style/Relative/RelativeArrowLarge.svg';
-import RelativeBar from '../../generated-with-style/Relative/RelativeBarLarge.svg';
 import RelativePointerLine from '../../generated-with-style/Relative/RelativePointerLineLarge.svg';
 
 
-import {ObElement} from "../obElement";
-import {watchFaceLargeRender} from "../watchface/watchface-large";
-import {InnerWatchFaceType} from "../models";
+import { ObElement } from '../obElement';
+import { watchFaceLargeRender } from '../watchface/watchface-large';
+import { InnerWatchFaceType } from '../models';
 
 @customElement('ob-relative-large')
 export class RelativeLarge extends ObElement {
@@ -113,16 +109,3 @@ export class RelativeLarge extends ObElement {
             </svg>`;
     }
 }
-
-
-/*
-
-//RelativeArrowLarge
-
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="Arrow">
-        <path id="Arrow_2" d="M24 5.2L41 46L6.99999 46L24 5.2Z" fill="#F7F7F7" stroke="#0080FF" stroke-width="4" class="ob-instrument-dynamic-color-stroke ob-container-background-color-fill"/>
-    </g>
-</svg>
-
-*/

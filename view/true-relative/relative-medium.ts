@@ -1,21 +1,17 @@
-import {svg, customElement, property} from 'lit-element'
-import HdgMedium from '../../generated-with-style/Compass/HdgMedium.svg';
+import { customElement, property, svg } from 'lit-element';
 import ShipMedium from '../../generated-with-style/Compass/ShipMedium.svg';
-import CogMedium from '../../generated-with-style/Compass/CogMedium.svg';
 import CurrentMedium from '../../generated-with-style/Compass/CurrentMedium.svg';
 import WindMedium from '../../generated-with-style/Compass/WindMedium.svg';
 import CenterMedium from '../../generated-with-style/Compass/CenterMedium.svg';
 
-import {ObElement} from "../obElement";
-import {watchFaceMediumRender} from "../watchface/watchface-medium";
-import {InnerWatchFaceType} from "../models";
+import { ObElement } from '../obElement';
+import { watchFaceMediumRender } from '../watchface/watchface-medium';
+import { InnerWatchFaceType } from '../models';
 
 import TrueArrow from '../../generated-with-style/True/TrueArrowMedium.svg';
-import TrueBar from '../../generated-with-style/True/TrueBarMedium.svg';
 import TruePointerLine from '../../generated-with-style/True/TruePointerLineMedium.svg';
 
 import RelativeArrow from '../../generated-with-style/Relative/RelativeArrowMedium.svg';
-import RelativeBar from '../../generated-with-style/Relative/RelativeBarMedium.svg';
 import RelativePointerLine from '../../generated-with-style/Relative/RelativePointerLineMedium.svg';
 
 @customElement('ob-relative-medium')
@@ -110,16 +106,3 @@ export class RelativeMedium extends ObElement {
             </svg>`;
     }
 }
-
-
-/*
-
-//RelativeArrowMedium
-
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="Arrow">
-        <path id="Arrow_2" d="M12 2.6L20.5 23L3.5 23L12 2.6Z" fill="#F7F7F7" stroke="#0080FF" stroke-width="2" class="ob-instrument-dynamic-color-stroke ob-container-background-color-fill"/>
-    </g>
-</svg>
-
-*/
