@@ -22,6 +22,7 @@ export class AzimuthMedium extends ObElement {
             innerCircle: this.showPortStarboard ? InnerWatchFaceType.PORT_STARBOARD : InnerWatchFaceType.REGULAR,
             primaryTickMarks: 90,
             secondaryTickMarks: 10,
+            typeOfLabel: true,
             showLabels: false,
             rotate: 0,
             cross: false,

@@ -16,6 +16,7 @@ export function renderRollMedium(cfg: {
 ${watchFaceMediumRender({
             cross: false,
             rotate: 0,
+            typeOfLabel: true,
             showLabels: false,
             startClipDeg: 210,
             endClipDeg: 150,

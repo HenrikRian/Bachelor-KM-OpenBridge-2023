@@ -23,6 +23,7 @@ export class HdgLarge extends ObElement {
 ${watchFaceLargeRender({
             cross: false,
             rotate: watchFaceAngle,
+            typeOfLabel: false,
             showLabels: true,
             startClipDeg: 0,
             endClipDeg: 0,

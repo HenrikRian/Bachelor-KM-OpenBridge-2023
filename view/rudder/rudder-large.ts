@@ -21,6 +21,7 @@ export class RudderLarge extends ObElement {
 ${watchFaceLargeRender({
             cross: false,
             rotate: 0,
+            typeOfLabel: true,
             showLabels: false,
             startClipDeg: 180 + this.clipAngle,
             endClipDeg: 180 - this.clipAngle,

@@ -20,6 +20,7 @@ export class HdgMedium extends ObElement{
 ${watchFaceMediumRender({
             cross: false,
             rotate: watchFaceAngle,
+            typeOfLabel: false,
             showLabels: true,
             startClipDeg: 0,
             endClipDeg: 0,

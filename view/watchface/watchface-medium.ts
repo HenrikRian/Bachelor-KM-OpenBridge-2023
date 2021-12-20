@@ -47,7 +47,7 @@ function clipPathGen(startClipDegMapped: number, endClipDegMapped: number): stri
 
 export function watchFaceMediumRender(option: {
     innerCircle: InnerWatchFaceTypeString, primaryTickMarks: number, secondaryTickMarks: number | null, rotate: number,
-    startClipDeg: number, endClipDeg: number, showLabels: boolean, cross: boolean, uuid: string
+    startClipDeg: number, endClipDeg: number, typeOfLabel: boolean, showLabels: boolean, cross: boolean, uuid: string
 }) {
     const startClipDegMapped = startClipDegMap(option.startClipDeg);
     const endClipDegMapped = endClipDegMap(startClipDegMapped, option.endClipDeg);
@@ -69,35 +69,35 @@ export function watchFaceMediumRender(option: {
 
 
     return svg`
-  <svg viewBox="-128 -128 256 256">
-    <g transform="rotate(${option.rotate})">
-      <g mask="url(#clipPathWatchFaceMedium${option.uuid})">
-        <svg width="256" height="256" x="-128" y="-128">
-             ${innerCircleSvg}          
-        </svg>
-        <svg width="256" height="256" x="-128" y="-128">
-            ${option.cross ? CrossRegularMedium : null}
-        </svg>
-        <svg width="256" height="256" x="-128" y="-128">
-            ${secondaryTickmarksSvg}
-        </svg>
-        <svg width="363" height="363" x="-181.5" y="-181.5">
-            ${primaryTickmarksMedium(option.primaryTickMarks, option.showLabels, option.rotate)}
-        </svg>
-      </g>
-      <g transform="rotate(${option.startClipDeg})">
-        <path id="Vector 3_4" d="M0 -104.2761L0 -88.2337" class="ob-instrument-tick-mark-primary-color-stroke"/>
-      </g>
-      <g transform="rotate(${option.endClipDeg})">
-        <path id="Vector 3_4" d="M0 -104.2761L0 -88.2337" class="ob-instrument-tick-mark-primary-color-stroke"/>
-      </g>
-    </g>
+        <svg viewBox="-128 -128 256 256">
+            <g transform="rotate(${option.rotate})">
+                <g mask="url(#clipPathWatchFaceMedium${option.uuid})">
+                    <svg width="256" height="256" x="-128" y="-128">
+                        ${innerCircleSvg}          
+                    </svg>
+                    <svg width="256" height="256" x="-128" y="-128">
+                        ${option.cross ? CrossRegularMedium : null}
+                    </svg>
+                    <svg width="256" height="256" x="-128" y="-128">
+                        ${secondaryTickmarksSvg}
+                    </svg>
+                    <svg width="363" height="363" x="-181.5" y="-181.5">
+                        ${primaryTickmarksMedium(option.typeOfLabel, option.primaryTickMarks, option.showLabels, option.rotate)}
+                    </svg>
+                </g>
+                <g transform="rotate(${option.startClipDeg})">
+                    <path id="Vector 3_4" d="M0 -104.2761L0 -88.2337" class="ob-instrument-tick-mark-primary-color-stroke"/>
+                </g>
+                <g transform="rotate(${option.endClipDeg})">
+                    <path id="Vector 3_4" d="M0 -104.2761L0 -88.2337" class="ob-instrument-tick-mark-primary-color-stroke"/>
+                </g>
+            </g>
 
-    <mask id="clipPathWatchFaceMedium${option.uuid}">
-      <rect height="256" width="256" x="-128" y="-128" fill="white"></rect>
-      <path d='${clipPath}' fill="black"/>
-    </mask>
-  </svg>
+            <mask id="clipPathWatchFaceMedium${option.uuid}">
+                <rect height="256" width="256" x="-128" y="-128" fill="white"></rect>
+                <path d='${clipPath}' fill="black"/>
+            </mask>
+        </svg>
     `
 }
 
@@ -105,6 +105,7 @@ export function watchFaceMediumRender(option: {
 export class WatchfaceMedium extends ObElement {
     @property({type: String}) innerCircle = InnerWatchFaceType.REGULAR;
     @property({type: Boolean}) cross = false;
+    @property({type: Boolean}) typeOfLabel = false;
     @property({type: Boolean}) showLabels = false;
     @property({type: Number}) rotate = 0;
     @property({type: Number}) primaryTickmarks = 45;
@@ -121,6 +122,7 @@ export class WatchfaceMedium extends ObElement {
             rotate: this.rotate,
             startClipDeg: this.startClipDeg,
             endClipDeg: this.endClipDeg,
+            typeOfLabel: this.typeOfLabel,
             showLabels: this.showLabels,
             cross: this.cross,
             uuid: this.uuid

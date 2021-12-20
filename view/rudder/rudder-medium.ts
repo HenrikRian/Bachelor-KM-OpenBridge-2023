@@ -21,6 +21,7 @@ export class RudderMedium extends ObElement {
 ${watchFaceMediumRender({
             cross: false,
             rotate: 0,
+            typeOfLabel: true,
             showLabels: false,
             startClipDeg: 180 + this.clipAngle,
             endClipDeg: 180 - this.clipAngle,
