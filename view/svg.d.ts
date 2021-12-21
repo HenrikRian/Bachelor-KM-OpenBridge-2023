@@ -1,6 +1,7 @@
 declare module '*.svg' {
     import {SVGTemplateResult} from 'lit-element';
-    export default SVGTemplateResult;
+    const svg: SVGTemplateResult
+    export default svg;
 }
 
 declare module '*.css';
