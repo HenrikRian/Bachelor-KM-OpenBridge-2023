@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+}
+a:visited{
+    color:blue;
+}
+.scaled{
+    transform: scale(0.5);
+    margin: 0px;
+    padding: 0px;
+}
